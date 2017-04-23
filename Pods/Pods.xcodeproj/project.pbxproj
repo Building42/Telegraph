@@ -1,0 +1,1590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E0A66E720E662CE6D18A209668C6AD /* Telegraph-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE22F00D5D9CD41D05C7191AFD463EA3 /* Telegraph-dummy.m */; };
+		019D150B4736A2182E84E06194A51CFC /* HTTPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD2F66C8569E184EA367906334A3F68 /* HTTPParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		01AC8ACDFFD4FA6B303327050EA3F2DC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23ACDF78EE35F4CB799D0642CDF2884 /* HTTPClient.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		036A6E0A570678A7AE7FA311073B367C /* NSRegularExpression+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197456B110D280F55896ACCC487963D4 /* NSRegularExpression+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		05395994AB6C4367495294C533E2CF9C /* Pods-iOS Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE096826B452DC3FCBFB8FD677922A5D /* Pods-iOS Example-dummy.m */; };
+		083ED5645C43F51A4351133B8A2982AB /* HTTPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21F518738EC9BB57D5AB054DD91281 /* HTTPConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		100A288E7A043E6B9D7B99F13CC24E3D /* HTTPHeader+WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8BFBD86D481CB1FC02EBA3AB12298C /* HTTPHeader+WebSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1299693A20B74AEFD7ADFA6D7959F02F /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FDC17C73EB10F04E1B062C40CA41F /* HTTPParserC.framework */; };
+		1C5CB1CC559C35ADE4DEAC7D93C8521C /* WebSocketMessage+Write.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D29969458E7B8ACE86CA8C0586A5247 /* WebSocketMessage+Write.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1D3F14572B709AA364026BB3D125284C /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FA8F5A15C409D12B20B189323F1CA1 /* WebSocketConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2DAA98C8614A6DED26CE8712531AE1FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD35079F53959A3923D0486AF36038C /* Foundation.framework */; };
+		3B699917CEFC313CFE793822FF639126 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA271EB84E6E624CC9E4883BC50FD296 /* Data+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3C944BE977597FBADF71C9EB5D1D83C8 /* URI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE9C35A7687531E3BC89D431C08E1CC /* URI.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		41EA9D5DCC8365B270DFDF94AFC3BCF4 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F56BF78982C2FD926F7E82C6B5A47 /* HTTPResponse.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4569ECDFE23E9FA2ABA6746E542ADF9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD35079F53959A3923D0486AF36038C /* Foundation.framework */; };
+		4CED1D4A8869F4F11EA6D6A05755BD37 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3C71FA2779E77814F88416DDA1383F /* String+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4D88E346CE65746D712EB5B0441F4C89 /* Pods-Telegraph-TelegraphTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D023805751DBE3FBB2EA46E307B4F40F /* Pods-Telegraph-TelegraphTests-dummy.m */; };
+		50BCC4788F3F7FF14A34D832F7EDEE85 /* Pods-Telegraph-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EA349813ECDE4599F4B92259B04722D /* Pods-Telegraph-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50C08FFFDBC367406C0647532A4ED58D /* Delegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3128A138F865A77EDF1FF7BD86B5848 /* Delegator.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		568D39AF327B060789C9712F007A0C67 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D264CA91DE4F9CF118F177534297E4 /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		581E7EE65ABD8763EFB8EC9489E7650F /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11807D54BDA82EE59483E54A3F2AF02 /* DispatchQueue+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		59E0B35BC93BE9C0A10915DE51885A75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD35079F53959A3923D0486AF36038C /* Foundation.framework */; };
+		6559F815294842989A2E7300C0EF2AB5 /* WebSocketParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23501804F28EBC2AF8ECF9CFD85E1EE0 /* WebSocketParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		673BF2280767B6B0616990780581DDB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD35079F53959A3923D0486AF36038C /* Foundation.framework */; };
+		6877E81C453FB2D9DE4CF309A95D1824 /* WebSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850A138F831F630601C9E670C70C6818 /* WebSocketMessage.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6D022DFC24DDFC270BAC30D195419E04 /* Server+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1A47A696D4CEFDD163C8698880E33E /* Server+Routing.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6DD8991568C7235499099058202C9124 /* HTTPRequest+Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A3F66B20B309F7565467642E4FD67 /* HTTPRequest+Host.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		70F9A2BC362CED2FEAD2112E6F154A26 /* WebSocketErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51438A5F0195A6B76AFF2BF33E83851 /* WebSocketErrorHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		774A22B2FFBA8BA32D50F9D69709C61B /* WebSocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F370E579EDD6F19FE84F0D05252A37 /* WebSocketError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		795CCC5CD5109CA391BCC1F76441263A /* WebSocketMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F35B60077F490F57032DD3DF9813FEB /* WebSocketMessageHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7E4F0161B4D135DA3A0763619A56C2F5 /* CocoaAsyncSocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DBDCB82C7B3BF93C334740B2A0195DCA /* CocoaAsyncSocket-dummy.m */; };
+		81D5D2C61538C02A1F79593967611240 /* ServerWebSocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4B00B0C3388D1AD62D1081F5EF64A /* ServerWebSocketDelegate.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		846B007F9012CF40A21B03336009D73F /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28CEDF0FBAD2F42AFC08DC3B08D4DC3 /* HTTPRequest.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8908B5CE89490D66D76D388944126364 /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E037093796EC92BE9189C8D742409D2 /* DateFormatter+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8A654CE33892A31305627B0B3E7F2442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD35079F53959A3923D0486AF36038C /* Foundation.framework */; };
+		8D2F535D99E2C48A21391A11D88D75C5 /* TCPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE02283DA21FA54AB13D694E7653AA /* TCPConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8ECA898E09DCE99D145CA1B58C342B1C /* HTTPRouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9251144BB674386E2AC2B22460E8D6 /* HTTPRouteHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8F93B4FFBD92E60A41F75CC2CDB332BC /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA76F87DD3E312A7E2334CC46A8F4C32 /* CocoaAsyncSocket.framework */; };
+		932CC62578EE0D9735BF73AB62F64A96 /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D2661EF52F832676028BFCD9CC3E9FE /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93DD3D7BBD91A86A50CEAC23A2E04631 /* HTTPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92C5AB11F798427B27F9EAA2A4FDAB9 /* HTTPVersion.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		974F2DABF2745517F7BF9D3B765E4AA3 /* HTTPWebSocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69017064FF1755484469E35CDB87E887 /* HTTPWebSocketHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9DDD04A9BE2B88E2453BE7E1E15FC1C4 /* HTTPParserC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D40DB787BC785CA987D75FE71ECB3FD6 /* HTTPParserC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A37E6A4E3F53DE12D0EEB05EC8410901 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBCB94B7F7949F675C7677EF8854FDA /* Certificate.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A79A7301124865AE48195CAE5C3455A3 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8735BD87C5B06FF4F3B47A9AD3107 /* DispatchTimer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A882891E5A89CADF96C2CA79606409CA /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 481526F0DC457913B8D2B715C52D2665 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAAFC6BDAAB84CDC96E665E381C0E4A8 /* HTTPRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B14A9F21EFFCF43462153DF4B0C50C /* HTTPRequestHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AAE8147ECF6B5B21F867EFC07E13CCB2 /* HTTPErrorDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2595ADCDD1AFCABC94FB88317E4BE18B /* HTTPErrorDefaultHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AC63FDA66DD3BC2F412D9CC48FB2F22E /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B128467AE2E616364FEE6E5F84387 /* SHA1.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AC7DC2A21843CD99040DCD79FF3BE91B /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = C3B2BEC6C597865223A01A7A0C4196E9 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACBA2311B6AD55B8F5C47C6211ADFBCF /* TCPSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454F33646E1934EBB83ED3ABA1025092 /* TCPSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		ACE9E67A98169BF813E6F7E022108E73 /* CertificateIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834D006C727E6669F019803C9FE8972 /* CertificateIdentity.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AE6E3948D0335DB77FF0D432942D0CD5 /* Telegraph-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96890AC0BCF3FB5D09A92546F9236D56 /* Telegraph-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B00B6646DCAD0D1E2D89BA433BDDA052 /* Server+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D00626E89166588A0B562486BFE807 /* Server+Config.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B2F83AE6FD87C85834218E7A98D9CB8D /* WebSocketMessageDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF19F4FB728B1E1199C4182C3C1DE45 /* WebSocketMessageDefaultHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B688B80E8B12B7F6988B29DC592DA94D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B489C2D116FB0C47B79AD15A2F9C8103 /* Security.framework */; };
+		B8B657D86708204DB86461C7321A51EC /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AE364FE877A930DD77F31F8C2D653A /* WebSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BA0D35A1F3E7CB77198150C2BE323727 /* HTTPRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BF866C4EA1F273AA8741EAD379D1F /* HTTPRoute.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BA1ED6BB7964C2516CF0AF06A2DF7FA9 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B7A7D798720C3B8CBC9B99298EF935 /* Server.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BA27CBF891ED57B6E699565EB92D0118 /* TLSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C2B79714786230D612AE41BC5EB882 /* TLSConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BBA5DF2BCBAB83CFCCCBB8C311A9D847 /* WebSocketConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680E2736311D34F2041C115AB579E19 /* WebSocketConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BC01A16025DF338AC62738A0A8C11A8E /* HTTPMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503F9F2583D3E621E0E30F552E2409B /* HTTPMessage.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BCBD59E9239921B4920BDCFC84329BDA /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 9D72B49377BBB2F01A3F9146E14F111D /* http_parser.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BE8773E054D3552838FD7910BC12E775 /* TLSPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4F97D13370B576F5C6CF99B7A2E871 /* TLSPolicy.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C05127239168B189DA823E01BEA2E70E /* HTTPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A087DD1B5112D4991E53DB1DFDFF29D /* HTTPConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C4B445F903B8483F848BA83AA64AE5B6 /* WebSocketErrorDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CBFC68C5FF40C4AC7F7BEF23983B45 /* WebSocketErrorDefaultHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C5E99729C8A52B7BE3E7C9C90AE0A799 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC738D1B1E2B1DC9ADF7EB2152EC5B /* Array+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C75DAD196191AD9D4E16A45395CDE280 /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0F5F4A8C87ACA52087E3E60DDC0C9F /* URL+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C76FDC3E98DD853F45A5DA45D3E152C1 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F260A2A3488C886B39309DAE2BFB743 /* HTTPMethod.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C8F4B2D507492444C6CB81C26359B9AB /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1CC15404712B2F02B052298139759 /* KeychainManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CDF6D7A18CF08BB253F058B7F47B8CBB /* HTTPErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA060A2FBA0A4C8655B9B889F786EDB /* HTTPErrorHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D01B2EBC1AB52980422F5A831BBCE3F4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DFD9DD23FAFDD23B7E0830117F5CD87 /* CFNetwork.framework */; };
+		D04D891CFD767819FCE9D63B43A902E9 /* Pods-Telegraph-TelegraphTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ACD9F5EC7E82D55701967122958A20E /* Pods-Telegraph-TelegraphTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D229692F2762D47C57E938936D586461 /* Client+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06158009BC3F0A37E633D4221B20207 /* Client+Config.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D4F3A9C876C2555804DF618E207DCEA1 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AF740B8650E60BB35C19B88E6A6502 /* HTTPHeader.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DEE171CD6754EB4466FB1F7255F5E407 /* HTTPParserC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 467DBE5E49F96613286DFE0E770EEE83 /* HTTPParserC-dummy.m */; };
+		E31C714C2B0FB06EF82B7C3871E0527A /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5782BCF952F59DA25F34F849EBB6C /* WebSocketClient.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E3A1CA41B9C136851F97F564F84AB488 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 482C10D90F6176E3352320315DE8526B /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E4230DB0D114C94B081018C1AC1E9972 /* CocoaAsyncSocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F5EC9FE99C3DAB09CA65D2B6CD2ECB27 /* CocoaAsyncSocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E73C489199040A88554B8FD281CB73DA /* TCPListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534C881FCF3961A2D0A733031094BAF9 /* TCPListener.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E956E0494C05D7A0B76C00236B8EC82C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD35079F53959A3923D0486AF36038C /* Foundation.framework */; };
+		E9713A30EF6D6F9343F402B4F457B5F9 /* Streams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662652BA808B75386673261BFFC3E1F9 /* Streams.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EED862C910B98A9E88EB15136A767D8E /* Pods-Telegraph-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4158141327C35A26D4E63D505A650BAB /* Pods-Telegraph-dummy.m */; };
+		F05EA4757E18290E46506FCF2CF2DF75 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E6AF4FB292FEB280AC667EFD8C4D /* HTTPError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F328C772550B3D7FBEAEAE795575FE1C /* UInt+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F829CE10EC07B0E374872E90CCE3E /* UInt+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F4F276A571F20D23A0BFD846073FBFF3 /* HTTPMessage+WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1E919BC682E7E8D04343F835262872 /* HTTPMessage+WebSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F61156794DC4EB48EEF4C10E2874E13D /* Pods-iOS Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87DD238E2EEC79BDC69A3B196FE0A508 /* Pods-iOS Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F85D139C38A58D26BB87E6F76165273C /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AB8E9057D9B1EE4C61C47BCC086BAD /* HTTPStatus.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FF8A03CB1A7784220A94E0C9CD983DCE /* HTTPMessage+Write.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC78BDE0ABF9ECFEF89AF6736E81116 /* HTTPMessage+Write.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0BA86F163A125E8549D406DC41343CDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DE9D75CE80E8536BD8DBA95F4193FCD;
+			remoteInfo = Telegraph;
+		};
+		10231D4E554F869C6E352420148F9F96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC0D2D2B4EE7C873431AB3502859CA60;
+			remoteInfo = CocoaAsyncSocket;
+		};
+		214E49A45B0A94F5F03D8955286EF25D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC0D2D2B4EE7C873431AB3502859CA60;
+			remoteInfo = CocoaAsyncSocket;
+		};
+		37DAE0FC63BACC4A2C70D66780E9EE8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4F63B6599F6376EBE6567019B9DA42B;
+			remoteInfo = HTTPParserC;
+		};
+		47815D1BF1E478B42C22C75FBA26F1BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC0D2D2B4EE7C873431AB3502859CA60;
+			remoteInfo = CocoaAsyncSocket;
+		};
+		68B24B6BD4742E697749389BA81197D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4F63B6599F6376EBE6567019B9DA42B;
+			remoteInfo = HTTPParserC;
+		};
+		710B93B6DDD8693D19AE40437F6844E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC0D2D2B4EE7C873431AB3502859CA60;
+			remoteInfo = CocoaAsyncSocket;
+		};
+		AFB7BC086273CB462F668338C81DC697 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4F63B6599F6376EBE6567019B9DA42B;
+			remoteInfo = HTTPParserC;
+		};
+		D8F781E4F6E6994196CCD10CA0671216 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4F63B6599F6376EBE6567019B9DA42B;
+			remoteInfo = HTTPParserC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00AC738D1B1E2B1DC9ADF7EB2152EC5B /* Array+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		06FAEDA9DDC68B0F36013F323761613B /* Pods-iOS Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		0ACD9F5EC7E82D55701967122958A20E /* Pods-Telegraph-TelegraphTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Telegraph-TelegraphTests-umbrella.h"; sourceTree = "<group>"; };
+		0B1A47A696D4CEFDD163C8698880E33E /* Server+Routing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Server+Routing.swift"; sourceTree = "<group>"; };
+		0CB372D19CD787CFDA2A468AA92B1E4B /* Pods-Telegraph-TelegraphTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph-TelegraphTests-frameworks.sh"; sourceTree = "<group>"; };
+		0D29969458E7B8ACE86CA8C0586A5247 /* WebSocketMessage+Write.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "WebSocketMessage+Write.swift"; sourceTree = "<group>"; };
+		1342DC6B0A41C375A35E79740D33177C /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HTTPParserC.framework; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16D00626E89166588A0B562486BFE807 /* Server+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Server+Config.swift"; sourceTree = "<group>"; };
+		18B416059E32EF3B09C4D4EE16F76022 /* CocoaAsyncSocket.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaAsyncSocket.xcconfig; sourceTree = "<group>"; };
+		197456B110D280F55896ACCC487963D4 /* NSRegularExpression+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Ext.swift"; sourceTree = "<group>"; };
+		1CC78BDE0ABF9ECFEF89AF6736E81116 /* HTTPMessage+Write.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HTTPMessage+Write.swift"; sourceTree = "<group>"; };
+		1F35B60077F490F57032DD3DF9813FEB /* WebSocketMessageHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketMessageHandler.swift; sourceTree = "<group>"; };
+		22160F953041C6E11AF1161860E75E94 /* CocoaAsyncSocket.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CocoaAsyncSocket.modulemap; sourceTree = "<group>"; };
+		223FDC17C73EB10F04E1B062C40CA41F /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B843E4DD1070E4A925449CA9531D6F /* Pods-Telegraph-TelegraphTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph-TelegraphTests-resources.sh"; sourceTree = "<group>"; };
+		23501804F28EBC2AF8ECF9CFD85E1EE0 /* WebSocketParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketParser.swift; sourceTree = "<group>"; };
+		2595ADCDD1AFCABC94FB88317E4BE18B /* HTTPErrorDefaultHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPErrorDefaultHandler.swift; sourceTree = "<group>"; };
+		27C2B79714786230D612AE41BC5EB882 /* TLSConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TLSConfig.swift; sourceTree = "<group>"; };
+		2834D006C727E6669F019803C9FE8972 /* CertificateIdentity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CertificateIdentity.swift; sourceTree = "<group>"; };
+		28BDFA12913BAA4F254C8F92B33007A4 /* Pods-Telegraph.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph.modulemap"; sourceTree = "<group>"; };
+		35BD848D829810A2B2441FCA9B413EE4 /* CocoaAsyncSocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-prefix.pch"; sourceTree = "<group>"; };
+		3A087DD1B5112D4991E53DB1DFDFF29D /* HTTPConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPConnection.swift; sourceTree = "<group>"; };
+		3B58E6AF4FB292FEB280AC667EFD8C4D /* HTTPError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		4158141327C35A26D4E63D505A650BAB /* Pods-Telegraph-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Telegraph-dummy.m"; sourceTree = "<group>"; };
+		43A49B9BED575A4DDEC6402012E5CD95 /* Pods-Telegraph-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4531AC13D4AC304DD70C05C011B3C724 /* Pods-Telegraph-TelegraphTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph-TelegraphTests.modulemap"; sourceTree = "<group>"; };
+		454F33646E1934EBB83ED3ABA1025092 /* TCPSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TCPSocket.swift; sourceTree = "<group>"; };
+		467DBE5E49F96613286DFE0E770EEE83 /* HTTPParserC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HTTPParserC-dummy.m"; sourceTree = "<group>"; };
+		4680E2736311D34F2041C115AB579E19 /* WebSocketConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketConfig.swift; sourceTree = "<group>"; };
+		47821E3BDDF9A1520CE8CF991B036003 /* Telegraph.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Telegraph.modulemap; sourceTree = "<group>"; };
+		481526F0DC457913B8D2B715C52D2665 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		482C10D90F6176E3352320315DE8526B /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		494403A26DCE23FB1337D90A4C46E960 /* Pods-iOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS Example.modulemap"; sourceTree = "<group>"; };
+		4CDBD8FF838CE7226F83B1FAEB051B3F /* Pods-iOS Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-frameworks.sh"; sourceTree = "<group>"; };
+		4D2661EF52F832676028BFCD9CC3E9FE /* http_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = http_parser.h; path = "http-parser/http_parser.h"; sourceTree = "<group>"; };
+		4E037093796EC92BE9189C8D742409D2 /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
+		4E4F97D13370B576F5C6CF99B7A2E871 /* TLSPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TLSPolicy.swift; sourceTree = "<group>"; };
+		4EA349813ECDE4599F4B92259B04722D /* Pods-Telegraph-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Telegraph-umbrella.h"; sourceTree = "<group>"; };
+		4F260A2A3488C886B39309DAE2BFB743 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		4F3F829CE10EC07B0E374872E90CCE3E /* UInt+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UInt+Ext.swift"; sourceTree = "<group>"; };
+		5070A4370FE4FC962676D05C21577AE1 /* HTTPParserC.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = HTTPParserC.modulemap; sourceTree = "<group>"; };
+		50DE02283DA21FA54AB13D694E7653AA /* TCPConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TCPConnection.swift; sourceTree = "<group>"; };
+		534C881FCF3961A2D0A733031094BAF9 /* TCPListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TCPListener.swift; sourceTree = "<group>"; };
+		55CBFC68C5FF40C4AC7F7BEF23983B45 /* WebSocketErrorDefaultHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketErrorDefaultHandler.swift; sourceTree = "<group>"; };
+		560D3B812CB0876F8ADEFBD906A14463 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56B7A7D798720C3B8CBC9B99298EF935 /* Server.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		5DB1CC15404712B2F02B052298139759 /* KeychainManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		5E0F5F4A8C87ACA52087E3E60DDC0C9F /* URL+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
+		5F98F712AE98503538DA5F47BC96FEF1 /* Pods_Telegraph_TelegraphTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_TelegraphTests.framework; path = "Pods-Telegraph-TelegraphTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FF19F4FB728B1E1199C4182C3C1DE45 /* WebSocketMessageDefaultHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketMessageDefaultHandler.swift; sourceTree = "<group>"; };
+		662652BA808B75386673261BFFC3E1F9 /* Streams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Streams.swift; sourceTree = "<group>"; };
+		67AB8E9057D9B1EE4C61C47BCC086BAD /* HTTPStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
+		69017064FF1755484469E35CDB87E887 /* HTTPWebSocketHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPWebSocketHandler.swift; sourceTree = "<group>"; };
+		6BC16175C2341460D74CB6654AEA0720 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DFD9DD23FAFDD23B7E0830117F5CD87 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		6EA060A2FBA0A4C8655B9B889F786EDB /* HTTPErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPErrorHandler.swift; sourceTree = "<group>"; };
+		6ED8735BD87C5B06FF4F3B47A9AD3107 /* DispatchTimer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
+		70AE364FE877A930DD77F31F8C2D653A /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		75FA8F5A15C409D12B20B189323F1CA1 /* WebSocketConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketConnection.swift; sourceTree = "<group>"; };
+		77DB78AB1CAC5E562D2E521B0DCE1E66 /* HTTPParserC-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPParserC-prefix.pch"; sourceTree = "<group>"; };
+		7A1F9B7655F3AF14A5FABC6A0CA43BB3 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Example.framework; path = "Pods-iOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83A4B00B0C3388D1AD62D1081F5EF64A /* ServerWebSocketDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServerWebSocketDelegate.swift; sourceTree = "<group>"; };
+		843A3F66B20B309F7565467642E4FD67 /* HTTPRequest+Host.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HTTPRequest+Host.swift"; sourceTree = "<group>"; };
+		850A138F831F630601C9E670C70C6818 /* WebSocketMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketMessage.swift; sourceTree = "<group>"; };
+		87DD238E2EEC79BDC69A3B196FE0A508 /* Pods-iOS Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Example-umbrella.h"; sourceTree = "<group>"; };
+		8D9BA341039A2F3EFE69C976AED1B47A /* Pods-Telegraph-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Telegraph-acknowledgements.plist"; sourceTree = "<group>"; };
+		8DF6FBEAF2262C072BE9F678579D50A5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		939B128467AE2E616364FEE6E5F84387 /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93F370E579EDD6F19FE84F0D05252A37 /* WebSocketError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketError.swift; sourceTree = "<group>"; };
+		9503F9F2583D3E621E0E30F552E2409B /* HTTPMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPMessage.swift; sourceTree = "<group>"; };
+		957F797A935752104FD020628342CF21 /* Pods-Telegraph-TelegraphTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph-TelegraphTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		96890AC0BCF3FB5D09A92546F9236D56 /* Telegraph-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Telegraph-umbrella.h"; sourceTree = "<group>"; };
+		98C3821A7E5D9C395B1841D966571B57 /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
+		9A9251144BB674386E2AC2B22460E8D6 /* HTTPRouteHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRouteHandler.swift; sourceTree = "<group>"; };
+		9AD2F66C8569E184EA367906334A3F68 /* HTTPParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPParser.swift; sourceTree = "<group>"; };
+		9B24F3EDDCF039341F8CDC9B6D6FB8B7 /* Pods_Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph.framework; path = "Pods-Telegraph.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D72B49377BBB2F01A3F9146E14F111D /* http_parser.c */ = {isa = PBXFileReference; includeInIndex = 1; name = http_parser.c; path = "http-parser/http_parser.c"; sourceTree = "<group>"; };
+		A06158009BC3F0A37E633D4221B20207 /* Client+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Client+Config.swift"; sourceTree = "<group>"; };
+		A11807D54BDA82EE59483E54A3F2AF02 /* DispatchQueue+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Ext.swift"; sourceTree = "<group>"; };
+		A794CA2F4630BD2103CF238997E15B8C /* Pods-Telegraph-TelegraphTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Telegraph-TelegraphTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AA271EB84E6E624CC9E4883BC50FD296 /* Data+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
+		AA76F87DD3E312A7E2334CC46A8F4C32 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE22F00D5D9CD41D05C7191AFD463EA3 /* Telegraph-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Telegraph-dummy.m"; sourceTree = "<group>"; };
+		AF21F518738EC9BB57D5AB054DD91281 /* HTTPConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPConfig.swift; sourceTree = "<group>"; };
+		AFBCB94B7F7949F675C7677EF8854FDA /* Certificate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
+		B489C2D116FB0C47B79AD15A2F9C8103 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		B51438A5F0195A6B76AFF2BF33E83851 /* WebSocketErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketErrorHandler.swift; sourceTree = "<group>"; };
+		BD1E919BC682E7E8D04343F835262872 /* HTTPMessage+WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HTTPMessage+WebSocket.swift"; sourceTree = "<group>"; };
+		BE096826B452DC3FCBFB8FD677922A5D /* Pods-iOS Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Example-dummy.m"; sourceTree = "<group>"; };
+		C0485C678802D3D904C3A223E7A607AF /* HTTPParserC.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HTTPParserC.xcconfig; sourceTree = "<group>"; };
+		C097BBBE974E0E96891F6E42EBCFAC03 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Telegraph.framework; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C28CEDF0FBAD2F42AFC08DC3B08D4DC3 /* HTTPRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		C3974444E54B61C012A8713510FC8C9C /* Pods-Telegraph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph.release.xcconfig"; sourceTree = "<group>"; };
+		C3B2BEC6C597865223A01A7A0C4196E9 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		C3F768855C846D47B602156BAA040E10 /* Telegraph-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Telegraph-prefix.pch"; sourceTree = "<group>"; };
+		C3FF6FA322B14542DDAE6BA3297B4485 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C56EC6B6361D56AFC675B9EF6D8B25E5 /* Pods-Telegraph-TelegraphTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph-TelegraphTests.release.xcconfig"; sourceTree = "<group>"; };
+		CAC676BFEEF62569F605EBF4E5891517 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF4CAA68F92D73D4FDD7B68DFC782D61 /* Pods-iOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D023805751DBE3FBB2EA46E307B4F40F /* Pods-Telegraph-TelegraphTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Telegraph-TelegraphTests-dummy.m"; sourceTree = "<group>"; };
+		D0AF740B8650E60BB35C19B88E6A6502 /* HTTPHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		D40DB787BC785CA987D75FE71ECB3FD6 /* HTTPParserC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPParserC-umbrella.h"; sourceTree = "<group>"; };
+		D4C5782BCF952F59DA25F34F849EBB6C /* WebSocketClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
+		D92C5AB11F798427B27F9EAA2A4FDAB9 /* HTTPVersion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPVersion.swift; sourceTree = "<group>"; };
+		D94DDA789DD65624F8027F8D43F7AD79 /* Pods-iOS Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-resources.sh"; sourceTree = "<group>"; };
+		DBDCB82C7B3BF93C334740B2A0195DCA /* CocoaAsyncSocket-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-dummy.m"; sourceTree = "<group>"; };
+		DC6CDEF7E81C2809EDE268EBC1EFAA82 /* Pods-Telegraph-TelegraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph-TelegraphTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF49FA742540E4D2A36DD73CA5AAEE52 /* Telegraph.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Telegraph.xcconfig; sourceTree = "<group>"; };
+		E9389238A672DB1CB1EFF6128E657854 /* Pods-Telegraph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph.debug.xcconfig"; sourceTree = "<group>"; };
+		E9E26F00329E2907C8A71607EFACF314 /* Pods-Telegraph-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph-resources.sh"; sourceTree = "<group>"; };
+		EAE9C35A7687531E3BC89D431C08E1CC /* URI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URI.swift; sourceTree = "<group>"; };
+		EBA638F4F1506A1E7C8248B6F6C3F9FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC8BFBD86D481CB1FC02EBA3AB12298C /* HTTPHeader+WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HTTPHeader+WebSocket.swift"; sourceTree = "<group>"; };
+		EE9F56BF78982C2FD926F7E82C6B5A47 /* HTTPResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
+		F0D264CA91DE4F9CF118F177534297E4 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
+		F23ACDF78EE35F4CB799D0642CDF2884 /* HTTPClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		F3128A138F865A77EDF1FF7BD86B5848 /* Delegator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Delegator.swift; sourceTree = "<group>"; };
+		F4C20FE88A3E5C4C6E837FDE31AF9166 /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F5EC9FE99C3DAB09CA65D2B6CD2ECB27 /* CocoaAsyncSocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-umbrella.h"; sourceTree = "<group>"; };
+		F672D12DEB7B408D9B83411325A7E3B6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6B14A9F21EFFCF43462153DF4B0C50C /* HTTPRequestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRequestHandler.swift; sourceTree = "<group>"; };
+		F83BF866C4EA1F273AA8741EAD379D1F /* HTTPRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRoute.swift; sourceTree = "<group>"; };
+		FCD35079F53959A3923D0486AF36038C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FF3C71FA2779E77814F88416DDA1383F /* String+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24CBDE96BF002C75347FADA8961E42ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E956E0494C05D7A0B76C00236B8EC82C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76B8D66FF2789CDEE269E22C09B12BF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4569ECDFE23E9FA2ABA6746E542ADF9F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5E601B7A9EC4A4222FEB53B83AAF88B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A654CE33892A31305627B0B3E7F2442 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1B02A6581C5EC2070AC7BB38AB4AFF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F93B4FFBD92E60A41F75CC2CDB332BC /* CocoaAsyncSocket.framework in Frameworks */,
+				59E0B35BC93BE9C0A10915DE51885A75 /* Foundation.framework in Frameworks */,
+				1299693A20B74AEFD7ADFA6D7959F02F /* HTTPParserC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1C2C126168B038B9B15BF2A4C96FDDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01B2EBC1AB52980422F5A831BBCE3F4 /* CFNetwork.framework in Frameworks */,
+				2DAA98C8614A6DED26CE8712531AE1FC /* Foundation.framework in Frameworks */,
+				B688B80E8B12B7F6988B29DC592DA94D /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C4CF90CB0CCBF01AA025823B0C9BB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				673BF2280767B6B0616990780581DDB0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0EE1C84183BAC6BB354B34E39BEF8BB0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5070A4370FE4FC962676D05C21577AE1 /* HTTPParserC.modulemap */,
+				C0485C678802D3D904C3A223E7A607AF /* HTTPParserC.xcconfig */,
+				467DBE5E49F96613286DFE0E770EEE83 /* HTTPParserC-dummy.m */,
+				77DB78AB1CAC5E562D2E521B0DCE1E66 /* HTTPParserC-prefix.pch */,
+				D40DB787BC785CA987D75FE71ECB3FD6 /* HTTPParserC-umbrella.h */,
+				EBA638F4F1506A1E7C8248B6F6C3F9FE /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HTTPParserC";
+			sourceTree = "<group>";
+		};
+		1146F723E2258FE3B35F4704C04B7ACB /* Telegraph */ = {
+			isa = PBXGroup;
+			children = (
+				3F767D0A38D71B1AC24B3E103F6DF306 /* Source */,
+			);
+			name = Telegraph;
+			path = Telegraph;
+			sourceTree = "<group>";
+		};
+		1383C52B20F62A87C533FF41E201D686 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8DF6FBEAF2262C072BE9F678579D50A5 /* Info.plist */,
+				47821E3BDDF9A1520CE8CF991B036003 /* Telegraph.modulemap */,
+				DF49FA742540E4D2A36DD73CA5AAEE52 /* Telegraph.xcconfig */,
+				AE22F00D5D9CD41D05C7191AFD463EA3 /* Telegraph-dummy.m */,
+				C3F768855C846D47B602156BAA040E10 /* Telegraph-prefix.pch */,
+				96890AC0BCF3FB5D09A92546F9236D56 /* Telegraph-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/Telegraph";
+			sourceTree = "<group>";
+		};
+		20C37E9BE29C377896FCCFBAA04AE635 /* HTTPParserC */ = {
+			isa = PBXGroup;
+			children = (
+				9D72B49377BBB2F01A3F9146E14F111D /* http_parser.c */,
+				4D2661EF52F832676028BFCD9CC3E9FE /* http_parser.h */,
+				0EE1C84183BAC6BB354B34E39BEF8BB0 /* Support Files */,
+			);
+			name = HTTPParserC;
+			path = HTTPParserC;
+			sourceTree = "<group>";
+		};
+		2F19C981DE61091724ED4D3B4A911642 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A867FFDD5337BBDD6296A6FA547B706 /* Telegraph */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3F767D0A38D71B1AC24B3E103F6DF306 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				00AC738D1B1E2B1DC9ADF7EB2152EC5B /* Array+Ext.swift */,
+				AFBCB94B7F7949F675C7677EF8854FDA /* Certificate.swift */,
+				2834D006C727E6669F019803C9FE8972 /* CertificateIdentity.swift */,
+				A06158009BC3F0A37E633D4221B20207 /* Client+Config.swift */,
+				AA271EB84E6E624CC9E4883BC50FD296 /* Data+Ext.swift */,
+				4E037093796EC92BE9189C8D742409D2 /* DateFormatter+Ext.swift */,
+				F3128A138F865A77EDF1FF7BD86B5848 /* Delegator.swift */,
+				A11807D54BDA82EE59483E54A3F2AF02 /* DispatchQueue+Ext.swift */,
+				6ED8735BD87C5B06FF4F3B47A9AD3107 /* DispatchTimer.swift */,
+				F23ACDF78EE35F4CB799D0642CDF2884 /* HTTPClient.swift */,
+				AF21F518738EC9BB57D5AB054DD91281 /* HTTPConfig.swift */,
+				3A087DD1B5112D4991E53DB1DFDFF29D /* HTTPConnection.swift */,
+				3B58E6AF4FB292FEB280AC667EFD8C4D /* HTTPError.swift */,
+				2595ADCDD1AFCABC94FB88317E4BE18B /* HTTPErrorDefaultHandler.swift */,
+				6EA060A2FBA0A4C8655B9B889F786EDB /* HTTPErrorHandler.swift */,
+				D0AF740B8650E60BB35C19B88E6A6502 /* HTTPHeader.swift */,
+				EC8BFBD86D481CB1FC02EBA3AB12298C /* HTTPHeader+WebSocket.swift */,
+				9503F9F2583D3E621E0E30F552E2409B /* HTTPMessage.swift */,
+				BD1E919BC682E7E8D04343F835262872 /* HTTPMessage+WebSocket.swift */,
+				1CC78BDE0ABF9ECFEF89AF6736E81116 /* HTTPMessage+Write.swift */,
+				4F260A2A3488C886B39309DAE2BFB743 /* HTTPMethod.swift */,
+				9AD2F66C8569E184EA367906334A3F68 /* HTTPParser.swift */,
+				C28CEDF0FBAD2F42AFC08DC3B08D4DC3 /* HTTPRequest.swift */,
+				843A3F66B20B309F7565467642E4FD67 /* HTTPRequest+Host.swift */,
+				F6B14A9F21EFFCF43462153DF4B0C50C /* HTTPRequestHandler.swift */,
+				EE9F56BF78982C2FD926F7E82C6B5A47 /* HTTPResponse.swift */,
+				F83BF866C4EA1F273AA8741EAD379D1F /* HTTPRoute.swift */,
+				9A9251144BB674386E2AC2B22460E8D6 /* HTTPRouteHandler.swift */,
+				67AB8E9057D9B1EE4C61C47BCC086BAD /* HTTPStatus.swift */,
+				D92C5AB11F798427B27F9EAA2A4FDAB9 /* HTTPVersion.swift */,
+				69017064FF1755484469E35CDB87E887 /* HTTPWebSocketHandler.swift */,
+				5DB1CC15404712B2F02B052298139759 /* KeychainManager.swift */,
+				197456B110D280F55896ACCC487963D4 /* NSRegularExpression+Ext.swift */,
+				56B7A7D798720C3B8CBC9B99298EF935 /* Server.swift */,
+				16D00626E89166588A0B562486BFE807 /* Server+Config.swift */,
+				0B1A47A696D4CEFDD163C8698880E33E /* Server+Routing.swift */,
+				83A4B00B0C3388D1AD62D1081F5EF64A /* ServerWebSocketDelegate.swift */,
+				939B128467AE2E616364FEE6E5F84387 /* SHA1.swift */,
+				662652BA808B75386673261BFFC3E1F9 /* Streams.swift */,
+				FF3C71FA2779E77814F88416DDA1383F /* String+Ext.swift */,
+				50DE02283DA21FA54AB13D694E7653AA /* TCPConnection.swift */,
+				534C881FCF3961A2D0A733031094BAF9 /* TCPListener.swift */,
+				454F33646E1934EBB83ED3ABA1025092 /* TCPSocket.swift */,
+				27C2B79714786230D612AE41BC5EB882 /* TLSConfig.swift */,
+				4E4F97D13370B576F5C6CF99B7A2E871 /* TLSPolicy.swift */,
+				4F3F829CE10EC07B0E374872E90CCE3E /* UInt+Ext.swift */,
+				EAE9C35A7687531E3BC89D431C08E1CC /* URI.swift */,
+				5E0F5F4A8C87ACA52087E3E60DDC0C9F /* URL+Ext.swift */,
+				70AE364FE877A930DD77F31F8C2D653A /* WebSocket.swift */,
+				D4C5782BCF952F59DA25F34F849EBB6C /* WebSocketClient.swift */,
+				4680E2736311D34F2041C115AB579E19 /* WebSocketConfig.swift */,
+				75FA8F5A15C409D12B20B189323F1CA1 /* WebSocketConnection.swift */,
+				93F370E579EDD6F19FE84F0D05252A37 /* WebSocketError.swift */,
+				55CBFC68C5FF40C4AC7F7BEF23983B45 /* WebSocketErrorDefaultHandler.swift */,
+				B51438A5F0195A6B76AFF2BF33E83851 /* WebSocketErrorHandler.swift */,
+				850A138F831F630601C9E670C70C6818 /* WebSocketMessage.swift */,
+				0D29969458E7B8ACE86CA8C0586A5247 /* WebSocketMessage+Write.swift */,
+				5FF19F4FB728B1E1199C4182C3C1DE45 /* WebSocketMessageDefaultHandler.swift */,
+				1F35B60077F490F57032DD3DF9813FEB /* WebSocketMessageHandler.swift */,
+				23501804F28EBC2AF8ECF9CFD85E1EE0 /* WebSocketParser.swift */,
+			);
+			name = Source;
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4A867FFDD5337BBDD6296A6FA547B706 /* Telegraph */ = {
+			isa = PBXGroup;
+			children = (
+				1383C52B20F62A87C533FF41E201D686 /* Support Files */,
+				1146F723E2258FE3B35F4704C04B7ACB /* Telegraph */,
+			);
+			name = Telegraph;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4E41DA03731A619AC132735451952C3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BC16175C2341460D74CB6654AEA0720 /* CocoaAsyncSocket.framework */,
+				1342DC6B0A41C375A35E79740D33177C /* HTTPParserC.framework */,
+				7A1F9B7655F3AF14A5FABC6A0CA43BB3 /* Pods_iOS_Example.framework */,
+				9B24F3EDDCF039341F8CDC9B6D6FB8B7 /* Pods_Telegraph.framework */,
+				5F98F712AE98503538DA5F47BC96FEF1 /* Pods_Telegraph_TelegraphTests.framework */,
+				C097BBBE974E0E96891F6E42EBCFAC03 /* Telegraph.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51927F4AE4DBFEBB4F3253505CA2C1DB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6DFD9DD23FAFDD23B7E0830117F5CD87 /* CFNetwork.framework */,
+				FCD35079F53959A3923D0486AF36038C /* Foundation.framework */,
+				B489C2D116FB0C47B79AD15A2F9C8103 /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		543809601A775ECCA2CF7B994D0BE78E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA4720F99200F50DBAFC048D0E5BF5A3 /* Pods-iOS Example */,
+				D3E0AA336FE59489BC8A01AF7A7E6F4B /* Pods-Telegraph */,
+				B52C00B846AA3AFE21338F073D57120F /* Pods-Telegraph-TelegraphTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		747674DE5F2C36EB8BF638653DC7C15F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA76F87DD3E312A7E2334CC46A8F4C32 /* CocoaAsyncSocket.framework */,
+				223FDC17C73EB10F04E1B062C40CA41F /* HTTPParserC.framework */,
+				51927F4AE4DBFEBB4F3253505CA2C1DB /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		755CA4EED0B0B77F99B11CFA1B84780A /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				481526F0DC457913B8D2B715C52D2665 /* GCDAsyncSocket.h */,
+				F0D264CA91DE4F9CF118F177534297E4 /* GCDAsyncSocket.m */,
+				C3B2BEC6C597865223A01A7A0C4196E9 /* GCDAsyncUdpSocket.h */,
+				482C10D90F6176E3352320315DE8526B /* GCDAsyncUdpSocket.m */,
+			);
+			name = GCD;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				2F19C981DE61091724ED4D3B4A911642 /* Development Pods */,
+				747674DE5F2C36EB8BF638653DC7C15F /* Frameworks */,
+				83CF90971C8DED396B340B7265C60BA3 /* Pods */,
+				4E41DA03731A619AC132735451952C3E /* Products */,
+				543809601A775ECCA2CF7B994D0BE78E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		83CF90971C8DED396B340B7265C60BA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89348F994BD806442C1AF1744B943FF5 /* CocoaAsyncSocket */,
+				20C37E9BE29C377896FCCFBAA04AE635 /* HTTPParserC */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		89348F994BD806442C1AF1744B943FF5 /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				755CA4EED0B0B77F99B11CFA1B84780A /* GCD */,
+				C102D67C33B43D01749A3116F2F15DA6 /* Support Files */,
+			);
+			name = CocoaAsyncSocket;
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		AA4720F99200F50DBAFC048D0E5BF5A3 /* Pods-iOS Example */ = {
+			isa = PBXGroup;
+			children = (
+				F672D12DEB7B408D9B83411325A7E3B6 /* Info.plist */,
+				494403A26DCE23FB1337D90A4C46E960 /* Pods-iOS Example.modulemap */,
+				CF4CAA68F92D73D4FDD7B68DFC782D61 /* Pods-iOS Example-acknowledgements.markdown */,
+				06FAEDA9DDC68B0F36013F323761613B /* Pods-iOS Example-acknowledgements.plist */,
+				BE096826B452DC3FCBFB8FD677922A5D /* Pods-iOS Example-dummy.m */,
+				4CDBD8FF838CE7226F83B1FAEB051B3F /* Pods-iOS Example-frameworks.sh */,
+				D94DDA789DD65624F8027F8D43F7AD79 /* Pods-iOS Example-resources.sh */,
+				87DD238E2EEC79BDC69A3B196FE0A508 /* Pods-iOS Example-umbrella.h */,
+				F4C20FE88A3E5C4C6E837FDE31AF9166 /* Pods-iOS Example.debug.xcconfig */,
+				98C3821A7E5D9C395B1841D966571B57 /* Pods-iOS Example.release.xcconfig */,
+			);
+			name = "Pods-iOS Example";
+			path = "Target Support Files/Pods-iOS Example";
+			sourceTree = "<group>";
+		};
+		B52C00B846AA3AFE21338F073D57120F /* Pods-Telegraph-TelegraphTests */ = {
+			isa = PBXGroup;
+			children = (
+				560D3B812CB0876F8ADEFBD906A14463 /* Info.plist */,
+				4531AC13D4AC304DD70C05C011B3C724 /* Pods-Telegraph-TelegraphTests.modulemap */,
+				957F797A935752104FD020628342CF21 /* Pods-Telegraph-TelegraphTests-acknowledgements.markdown */,
+				A794CA2F4630BD2103CF238997E15B8C /* Pods-Telegraph-TelegraphTests-acknowledgements.plist */,
+				D023805751DBE3FBB2EA46E307B4F40F /* Pods-Telegraph-TelegraphTests-dummy.m */,
+				0CB372D19CD787CFDA2A468AA92B1E4B /* Pods-Telegraph-TelegraphTests-frameworks.sh */,
+				22B843E4DD1070E4A925449CA9531D6F /* Pods-Telegraph-TelegraphTests-resources.sh */,
+				0ACD9F5EC7E82D55701967122958A20E /* Pods-Telegraph-TelegraphTests-umbrella.h */,
+				DC6CDEF7E81C2809EDE268EBC1EFAA82 /* Pods-Telegraph-TelegraphTests.debug.xcconfig */,
+				C56EC6B6361D56AFC675B9EF6D8B25E5 /* Pods-Telegraph-TelegraphTests.release.xcconfig */,
+			);
+			name = "Pods-Telegraph-TelegraphTests";
+			path = "Target Support Files/Pods-Telegraph-TelegraphTests";
+			sourceTree = "<group>";
+		};
+		C102D67C33B43D01749A3116F2F15DA6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				22160F953041C6E11AF1161860E75E94 /* CocoaAsyncSocket.modulemap */,
+				18B416059E32EF3B09C4D4EE16F76022 /* CocoaAsyncSocket.xcconfig */,
+				DBDCB82C7B3BF93C334740B2A0195DCA /* CocoaAsyncSocket-dummy.m */,
+				35BD848D829810A2B2441FCA9B413EE4 /* CocoaAsyncSocket-prefix.pch */,
+				F5EC9FE99C3DAB09CA65D2B6CD2ECB27 /* CocoaAsyncSocket-umbrella.h */,
+				CAC676BFEEF62569F605EBF4E5891517 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CocoaAsyncSocket";
+			sourceTree = "<group>";
+		};
+		D3E0AA336FE59489BC8A01AF7A7E6F4B /* Pods-Telegraph */ = {
+			isa = PBXGroup;
+			children = (
+				C3FF6FA322B14542DDAE6BA3297B4485 /* Info.plist */,
+				28BDFA12913BAA4F254C8F92B33007A4 /* Pods-Telegraph.modulemap */,
+				43A49B9BED575A4DDEC6402012E5CD95 /* Pods-Telegraph-acknowledgements.markdown */,
+				8D9BA341039A2F3EFE69C976AED1B47A /* Pods-Telegraph-acknowledgements.plist */,
+				4158141327C35A26D4E63D505A650BAB /* Pods-Telegraph-dummy.m */,
+				E9E26F00329E2907C8A71607EFACF314 /* Pods-Telegraph-resources.sh */,
+				4EA349813ECDE4599F4B92259B04722D /* Pods-Telegraph-umbrella.h */,
+				E9389238A672DB1CB1EFF6128E657854 /* Pods-Telegraph.debug.xcconfig */,
+				C3974444E54B61C012A8713510FC8C9C /* Pods-Telegraph.release.xcconfig */,
+			);
+			name = "Pods-Telegraph";
+			path = "Target Support Files/Pods-Telegraph";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		066131069354C4CC132CAB645145E8F7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4230DB0D114C94B081018C1AC1E9972 /* CocoaAsyncSocket-umbrella.h in Headers */,
+				A882891E5A89CADF96C2CA79606409CA /* GCDAsyncSocket.h in Headers */,
+				AC7DC2A21843CD99040DCD79FF3BE91B /* GCDAsyncUdpSocket.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B19548BAD70F76835E511FABE479C6B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50BCC4788F3F7FF14A34D832F7EDEE85 /* Pods-Telegraph-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3A0491969F19B9ED45F232A034F6D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6E3948D0335DB77FF0D432942D0CD5 /* Telegraph-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EF05A1F35F75BBABC6C40A87CC4F8DA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				932CC62578EE0D9735BF73AB62F64A96 /* http_parser.h in Headers */,
+				9DDD04A9BE2B88E2453BE7E1E15FC1C4 /* HTTPParserC-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62FC49C930A413EF687E75B858A688E7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D04D891CFD767819FCE9D63B43A902E9 /* Pods-Telegraph-TelegraphTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D38AFF04A8095E4B7C759E9C336882 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F61156794DC4EB48EEF4C10E2874E13D /* Pods-iOS Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0DE9D75CE80E8536BD8DBA95F4193FCD /* Telegraph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5916CE86E04532AD69C06F990A2059B2 /* Build configuration list for PBXNativeTarget "Telegraph" */;
+			buildPhases = (
+				16F85D7DDFA90BE53868347A539BEDB4 /* Sources */,
+				C1B02A6581C5EC2070AC7BB38AB4AFF6 /* Frameworks */,
+				4E3A0491969F19B9ED45F232A034F6D6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A9DC9B60D1A0A314C03C0237DDE9F2E /* PBXTargetDependency */,
+				5265071BC7A348B875A7687657F0B4FC /* PBXTargetDependency */,
+			);
+			name = Telegraph;
+			productName = Telegraph;
+			productReference = C097BBBE974E0E96891F6E42EBCFAC03 /* Telegraph.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		594E8D7EFF6D92C30B65D847FA6CB8A6 /* Pods-iOS Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D312F99682178D554B3A40F02007D00 /* Build configuration list for PBXNativeTarget "Pods-iOS Example" */;
+			buildPhases = (
+				684663BF9B2C94B56BAB55E11F30DCF2 /* Sources */,
+				B5E601B7A9EC4A4222FEB53B83AAF88B /* Frameworks */,
+				B6D38AFF04A8095E4B7C759E9C336882 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAFEB7A9F6F625BA88AC3B4CF27E90C3 /* PBXTargetDependency */,
+				9DC1F2F683734966F924429AC45FB935 /* PBXTargetDependency */,
+				6983C1B95330B256F786BF3D6A3AEA6D /* PBXTargetDependency */,
+			);
+			name = "Pods-iOS Example";
+			productName = "Pods-iOS Example";
+			productReference = 7A1F9B7655F3AF14A5FABC6A0CA43BB3 /* Pods_iOS_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		82C87FFB6E151657D42328252B28576A /* Pods-Telegraph-TelegraphTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36B5C0880F5F11D47DED6CF42FD738D8 /* Build configuration list for PBXNativeTarget "Pods-Telegraph-TelegraphTests" */;
+			buildPhases = (
+				133B79263413848C0A3C8B0574381242 /* Sources */,
+				E9C4CF90CB0CCBF01AA025823B0C9BB9 /* Frameworks */,
+				62FC49C930A413EF687E75B858A688E7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79FC2D9F1DA92C4BA849929754A7DB69 /* PBXTargetDependency */,
+				29C1AF59336E5AAEE80502B5499DCCB8 /* PBXTargetDependency */,
+			);
+			name = "Pods-Telegraph-TelegraphTests";
+			productName = "Pods-Telegraph-TelegraphTests";
+			productReference = 5F98F712AE98503538DA5F47BC96FEF1 /* Pods_Telegraph_TelegraphTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2A03B912F777B2BFB05E7B9E903B15F /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */;
+			buildPhases = (
+				FD452A203117FF8DFA26B0711D439093 /* Sources */,
+				D1C2C126168B038B9B15BF2A4C96FDDC /* Frameworks */,
+				066131069354C4CC132CAB645145E8F7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaAsyncSocket;
+			productName = CocoaAsyncSocket;
+			productReference = 6BC16175C2341460D74CB6654AEA0720 /* CocoaAsyncSocket.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B4F63B6599F6376EBE6567019B9DA42B /* HTTPParserC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61FFB2C901CAE0320671DFBF97235897 /* Build configuration list for PBXNativeTarget "HTTPParserC" */;
+			buildPhases = (
+				256F28029695A0E1AE65D07FBA83875F /* Sources */,
+				76B8D66FF2789CDEE269E22C09B12BF3 /* Frameworks */,
+				5EF05A1F35F75BBABC6C40A87CC4F8DA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HTTPParserC;
+			productName = HTTPParserC;
+			productReference = 1342DC6B0A41C375A35E79740D33177C /* HTTPParserC.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FB1470AB88837F72FB8EB1E9428056D3 /* Pods-Telegraph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4B20286C32634C66F9347454B331692 /* Build configuration list for PBXNativeTarget "Pods-Telegraph" */;
+			buildPhases = (
+				2A3648608E9B204721ADCD2707987B6E /* Sources */,
+				24CBDE96BF002C75347FADA8961E42ED /* Frameworks */,
+				2B19548BAD70F76835E511FABE479C6B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF52E2D7671C36E1A795FCBE4601988D /* PBXTargetDependency */,
+				BBBFC8D081DE90ACC564B0AD5D168FCE /* PBXTargetDependency */,
+			);
+			name = "Pods-Telegraph";
+			productName = "Pods-Telegraph";
+			productReference = 9B24F3EDDCF039341F8CDC9B6D6FB8B7 /* Pods_Telegraph.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4E41DA03731A619AC132735451952C3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */,
+				B4F63B6599F6376EBE6567019B9DA42B /* HTTPParserC */,
+				594E8D7EFF6D92C30B65D847FA6CB8A6 /* Pods-iOS Example */,
+				FB1470AB88837F72FB8EB1E9428056D3 /* Pods-Telegraph */,
+				82C87FFB6E151657D42328252B28576A /* Pods-Telegraph-TelegraphTests */,
+				0DE9D75CE80E8536BD8DBA95F4193FCD /* Telegraph */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		133B79263413848C0A3C8B0574381242 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D88E346CE65746D712EB5B0441F4C89 /* Pods-Telegraph-TelegraphTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16F85D7DDFA90BE53868347A539BEDB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E99729C8A52B7BE3E7C9C90AE0A799 /* Array+Ext.swift in Sources */,
+				A37E6A4E3F53DE12D0EEB05EC8410901 /* Certificate.swift in Sources */,
+				ACE9E67A98169BF813E6F7E022108E73 /* CertificateIdentity.swift in Sources */,
+				D229692F2762D47C57E938936D586461 /* Client+Config.swift in Sources */,
+				3B699917CEFC313CFE793822FF639126 /* Data+Ext.swift in Sources */,
+				8908B5CE89490D66D76D388944126364 /* DateFormatter+Ext.swift in Sources */,
+				50C08FFFDBC367406C0647532A4ED58D /* Delegator.swift in Sources */,
+				581E7EE65ABD8763EFB8EC9489E7650F /* DispatchQueue+Ext.swift in Sources */,
+				A79A7301124865AE48195CAE5C3455A3 /* DispatchTimer.swift in Sources */,
+				01AC8ACDFFD4FA6B303327050EA3F2DC /* HTTPClient.swift in Sources */,
+				083ED5645C43F51A4351133B8A2982AB /* HTTPConfig.swift in Sources */,
+				C05127239168B189DA823E01BEA2E70E /* HTTPConnection.swift in Sources */,
+				F05EA4757E18290E46506FCF2CF2DF75 /* HTTPError.swift in Sources */,
+				AAE8147ECF6B5B21F867EFC07E13CCB2 /* HTTPErrorDefaultHandler.swift in Sources */,
+				CDF6D7A18CF08BB253F058B7F47B8CBB /* HTTPErrorHandler.swift in Sources */,
+				100A288E7A043E6B9D7B99F13CC24E3D /* HTTPHeader+WebSocket.swift in Sources */,
+				D4F3A9C876C2555804DF618E207DCEA1 /* HTTPHeader.swift in Sources */,
+				F4F276A571F20D23A0BFD846073FBFF3 /* HTTPMessage+WebSocket.swift in Sources */,
+				FF8A03CB1A7784220A94E0C9CD983DCE /* HTTPMessage+Write.swift in Sources */,
+				BC01A16025DF338AC62738A0A8C11A8E /* HTTPMessage.swift in Sources */,
+				C76FDC3E98DD853F45A5DA45D3E152C1 /* HTTPMethod.swift in Sources */,
+				019D150B4736A2182E84E06194A51CFC /* HTTPParser.swift in Sources */,
+				6DD8991568C7235499099058202C9124 /* HTTPRequest+Host.swift in Sources */,
+				846B007F9012CF40A21B03336009D73F /* HTTPRequest.swift in Sources */,
+				AAAFC6BDAAB84CDC96E665E381C0E4A8 /* HTTPRequestHandler.swift in Sources */,
+				41EA9D5DCC8365B270DFDF94AFC3BCF4 /* HTTPResponse.swift in Sources */,
+				BA0D35A1F3E7CB77198150C2BE323727 /* HTTPRoute.swift in Sources */,
+				8ECA898E09DCE99D145CA1B58C342B1C /* HTTPRouteHandler.swift in Sources */,
+				F85D139C38A58D26BB87E6F76165273C /* HTTPStatus.swift in Sources */,
+				93DD3D7BBD91A86A50CEAC23A2E04631 /* HTTPVersion.swift in Sources */,
+				974F2DABF2745517F7BF9D3B765E4AA3 /* HTTPWebSocketHandler.swift in Sources */,
+				C8F4B2D507492444C6CB81C26359B9AB /* KeychainManager.swift in Sources */,
+				036A6E0A570678A7AE7FA311073B367C /* NSRegularExpression+Ext.swift in Sources */,
+				B00B6646DCAD0D1E2D89BA433BDDA052 /* Server+Config.swift in Sources */,
+				6D022DFC24DDFC270BAC30D195419E04 /* Server+Routing.swift in Sources */,
+				BA1ED6BB7964C2516CF0AF06A2DF7FA9 /* Server.swift in Sources */,
+				81D5D2C61538C02A1F79593967611240 /* ServerWebSocketDelegate.swift in Sources */,
+				AC63FDA66DD3BC2F412D9CC48FB2F22E /* SHA1.swift in Sources */,
+				E9713A30EF6D6F9343F402B4F457B5F9 /* Streams.swift in Sources */,
+				4CED1D4A8869F4F11EA6D6A05755BD37 /* String+Ext.swift in Sources */,
+				8D2F535D99E2C48A21391A11D88D75C5 /* TCPConnection.swift in Sources */,
+				E73C489199040A88554B8FD281CB73DA /* TCPListener.swift in Sources */,
+				ACBA2311B6AD55B8F5C47C6211ADFBCF /* TCPSocket.swift in Sources */,
+				00E0A66E720E662CE6D18A209668C6AD /* Telegraph-dummy.m in Sources */,
+				BA27CBF891ED57B6E699565EB92D0118 /* TLSConfig.swift in Sources */,
+				BE8773E054D3552838FD7910BC12E775 /* TLSPolicy.swift in Sources */,
+				F328C772550B3D7FBEAEAE795575FE1C /* UInt+Ext.swift in Sources */,
+				3C944BE977597FBADF71C9EB5D1D83C8 /* URI.swift in Sources */,
+				C75DAD196191AD9D4E16A45395CDE280 /* URL+Ext.swift in Sources */,
+				B8B657D86708204DB86461C7321A51EC /* WebSocket.swift in Sources */,
+				E31C714C2B0FB06EF82B7C3871E0527A /* WebSocketClient.swift in Sources */,
+				BBA5DF2BCBAB83CFCCCBB8C311A9D847 /* WebSocketConfig.swift in Sources */,
+				1D3F14572B709AA364026BB3D125284C /* WebSocketConnection.swift in Sources */,
+				774A22B2FFBA8BA32D50F9D69709C61B /* WebSocketError.swift in Sources */,
+				C4B445F903B8483F848BA83AA64AE5B6 /* WebSocketErrorDefaultHandler.swift in Sources */,
+				70F9A2BC362CED2FEAD2112E6F154A26 /* WebSocketErrorHandler.swift in Sources */,
+				1C5CB1CC559C35ADE4DEAC7D93C8521C /* WebSocketMessage+Write.swift in Sources */,
+				6877E81C453FB2D9DE4CF309A95D1824 /* WebSocketMessage.swift in Sources */,
+				B2F83AE6FD87C85834218E7A98D9CB8D /* WebSocketMessageDefaultHandler.swift in Sources */,
+				795CCC5CD5109CA391BCC1F76441263A /* WebSocketMessageHandler.swift in Sources */,
+				6559F815294842989A2E7300C0EF2AB5 /* WebSocketParser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		256F28029695A0E1AE65D07FBA83875F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCBD59E9239921B4920BDCFC84329BDA /* http_parser.c in Sources */,
+				DEE171CD6754EB4466FB1F7255F5E407 /* HTTPParserC-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A3648608E9B204721ADCD2707987B6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED862C910B98A9E88EB15136A767D8E /* Pods-Telegraph-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		684663BF9B2C94B56BAB55E11F30DCF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05395994AB6C4367495294C533E2CF9C /* Pods-iOS Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD452A203117FF8DFA26B0711D439093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4F0161B4D135DA3A0763619A56C2F5 /* CocoaAsyncSocket-dummy.m in Sources */,
+				568D39AF327B060789C9712F007A0C67 /* GCDAsyncSocket.m in Sources */,
+				E3A1CA41B9C136851F97F564F84AB488 /* GCDAsyncUdpSocket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29C1AF59336E5AAEE80502B5499DCCB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HTTPParserC;
+			target = B4F63B6599F6376EBE6567019B9DA42B /* HTTPParserC */;
+			targetProxy = 68B24B6BD4742E697749389BA81197D6 /* PBXContainerItemProxy */;
+		};
+		5265071BC7A348B875A7687657F0B4FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HTTPParserC;
+			target = B4F63B6599F6376EBE6567019B9DA42B /* HTTPParserC */;
+			targetProxy = AFB7BC086273CB462F668338C81DC697 /* PBXContainerItemProxy */;
+		};
+		6983C1B95330B256F786BF3D6A3AEA6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Telegraph;
+			target = 0DE9D75CE80E8536BD8DBA95F4193FCD /* Telegraph */;
+			targetProxy = 0BA86F163A125E8549D406DC41343CDF /* PBXContainerItemProxy */;
+		};
+		79FC2D9F1DA92C4BA849929754A7DB69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaAsyncSocket;
+			target = AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */;
+			targetProxy = 214E49A45B0A94F5F03D8955286EF25D /* PBXContainerItemProxy */;
+		};
+		7A9DC9B60D1A0A314C03C0237DDE9F2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaAsyncSocket;
+			target = AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */;
+			targetProxy = 710B93B6DDD8693D19AE40437F6844E5 /* PBXContainerItemProxy */;
+		};
+		9DC1F2F683734966F924429AC45FB935 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HTTPParserC;
+			target = B4F63B6599F6376EBE6567019B9DA42B /* HTTPParserC */;
+			targetProxy = 37DAE0FC63BACC4A2C70D66780E9EE8F /* PBXContainerItemProxy */;
+		};
+		BBBFC8D081DE90ACC564B0AD5D168FCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HTTPParserC;
+			target = B4F63B6599F6376EBE6567019B9DA42B /* HTTPParserC */;
+			targetProxy = D8F781E4F6E6994196CCD10CA0671216 /* PBXContainerItemProxy */;
+		};
+		BF52E2D7671C36E1A795FCBE4601988D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaAsyncSocket;
+			target = AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */;
+			targetProxy = 47815D1BF1E478B42C22C75FBA26F1BF /* PBXContainerItemProxy */;
+		};
+		CAFEB7A9F6F625BA88AC3B4CF27E90C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaAsyncSocket;
+			target = AC0D2D2B4EE7C873431AB3502859CA60 /* CocoaAsyncSocket */;
+			targetProxy = 10231D4E554F869C6E352420148F9F96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0285230B5232E09D00BE71360D9D5042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF49FA742540E4D2A36DD73CA5AAEE52 /* Telegraph.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Telegraph/Telegraph-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Telegraph/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Telegraph/Telegraph.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Telegraph;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1579D62CD1E9169363CE42105AB57D0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0485C678802D3D904C3A223E7A607AF /* HTTPParserC.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC/HTTPParserC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTTPParserC/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HTTPParserC/HTTPParserC.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = HTTPParserC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1A37D63153A464E344962373348B4545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18B416059E32EF3B09C4D4EE16F76022 /* CocoaAsyncSocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26C54C617F13839BA7BDCED36556AA3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18B416059E32EF3B09C4D4EE16F76022 /* CocoaAsyncSocket.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket/CocoaAsyncSocket.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		273936488C15BFA1369A11E18CFF5C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0485C678802D3D904C3A223E7A607AF /* HTTPParserC.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC/HTTPParserC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTTPParserC/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HTTPParserC/HTTPParserC.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = HTTPParserC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3299A8C1FB5586CF12EA231722DF198B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9389238A672DB1CB1EFF6128E657854 /* Pods-Telegraph.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Telegraph/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Telegraph/Pods-Telegraph.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Telegraph;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		747811F532FB89291B949367CE46BD4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4C20FE88A3E5C4C6E837FDE31AF9166 /* Pods-iOS Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Example/Pods-iOS Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_iOS_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7B4AA456F0C32584E5C309CC2F4E5BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC6CDEF7E81C2809EDE268EBC1EFAA82 /* Pods-Telegraph-TelegraphTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Telegraph-TelegraphTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Telegraph-TelegraphTests/Pods-Telegraph-TelegraphTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Telegraph_TelegraphTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		97750B2D2B9A80BBABF0CFFF2AC20CB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98C3821A7E5D9C395B1841D966571B57 /* Pods-iOS Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Example/Pods-iOS Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_iOS_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BD7883775AB4853780C2F1DC2F0042FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF49FA742540E4D2A36DD73CA5AAEE52 /* Telegraph.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Telegraph/Telegraph-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Telegraph/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Telegraph/Telegraph.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Telegraph;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C28ACC136459EF0092E4E7D041864539 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C56EC6B6361D56AFC675B9EF6D8B25E5 /* Pods-Telegraph-TelegraphTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Telegraph-TelegraphTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Telegraph-TelegraphTests/Pods-Telegraph-TelegraphTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Telegraph_TelegraphTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D648154124D4481857F91D85BA7AAFAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3974444E54B61C012A8713510FC8C9C /* Pods-Telegraph.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Telegraph/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Telegraph/Pods-Telegraph.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Telegraph;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36B5C0880F5F11D47DED6CF42FD738D8 /* Build configuration list for PBXNativeTarget "Pods-Telegraph-TelegraphTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B4AA456F0C32584E5C309CC2F4E5BC6 /* Debug */,
+				C28ACC136459EF0092E4E7D041864539 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5916CE86E04532AD69C06F990A2059B2 /* Build configuration list for PBXNativeTarget "Telegraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD7883775AB4853780C2F1DC2F0042FE /* Debug */,
+				0285230B5232E09D00BE71360D9D5042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D312F99682178D554B3A40F02007D00 /* Build configuration list for PBXNativeTarget "Pods-iOS Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				747811F532FB89291B949367CE46BD4F /* Debug */,
+				97750B2D2B9A80BBABF0CFFF2AC20CB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61FFB2C901CAE0320671DFBF97235897 /* Build configuration list for PBXNativeTarget "HTTPParserC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				273936488C15BFA1369A11E18CFF5C26 /* Debug */,
+				1579D62CD1E9169363CE42105AB57D0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4B20286C32634C66F9347454B331692 /* Build configuration list for PBXNativeTarget "Pods-Telegraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3299A8C1FB5586CF12EA231722DF198B /* Debug */,
+				D648154124D4481857F91D85BA7AAFAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2A03B912F777B2BFB05E7B9E903B15F /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26C54C617F13839BA7BDCED36556AA3B /* Debug */,
+				1A37D63153A464E344962373348B4545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

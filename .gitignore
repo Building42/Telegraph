@@ -1,0 +1,34 @@
+# OSX
+.DS_Store
+.Trashes
+*.swp
+*.lock
+
+# Xcode
+build/
+DerivedData/
+xcuserdata
+*.xccheckout
+
+*.mode1v3
+*.mode2v3
+*.moved-aside
+*.pbxuser
+*.perspectivev3
+
+# OCLint
+compile_commands.json
+oclint.html
+xcodebuild.log
+
+# Third party tools
+.idea/
+FauxPasConfig/
+
+# Exceptions
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+!Podfile.lock
+!Pods/Manifest.lock

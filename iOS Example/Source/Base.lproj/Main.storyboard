@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QE7-R0-tvF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="1r3-4c-zLM">
+            <objects>
+                <viewController id="QE7-R0-tvF" customClass="ViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DV0-r5-8uY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xmd-dA-sqU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zj3-aC-3uf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gPZ-Yc-Vnn">
+                                <rect key="frame" x="99" y="252" width="177" height="163"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W5j-dX-f2m">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="163"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MHK-rl-dH9">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="163"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gPZ-Yc-Vnn" firstAttribute="centerX" secondItem="zj3-aC-3uf" secondAttribute="centerX" id="JAn-si-QIj"/>
+                            <constraint firstItem="gPZ-Yc-Vnn" firstAttribute="centerY" secondItem="zj3-aC-3uf" secondAttribute="centerY" id="NpU-cN-1wU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6j-lL-0Ds" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="-105"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="177" height="163"/>
+    </resources>
+</document>

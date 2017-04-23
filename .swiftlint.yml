@@ -1,0 +1,23 @@
+disabled_rules:
+  - cyclomatic_complexity
+  - force_cast
+  - force_try
+  - line_length
+  - todo
+  - valid_docs
+  - variable_name
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - empty_count
+  - explicit_init
+  - first_where
+  - nimble_operator
+  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+excluded:
+  - Pods

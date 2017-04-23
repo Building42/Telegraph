@@ -1,0 +1,6 @@
+framework module Telegraph {
+  umbrella header "Telegraph-umbrella.h"
+
+  export *
+  module * { export * }
+}
