@@ -1,8 +1,8 @@
-![Telegraph: Secure Web Server for iOS](https://github.com/Building42/Telegraph/raw/master/iOS%20Example/Source/Assets.xcassets/Logo.imageset/logo.png)
+![Telegraph: Secure Web Server for iOS and tvOS](https://github.com/Building42/Telegraph/raw/master/Resources/logo.png)
 
 [![Version](https://img.shields.io/cocoapods/v/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph) [![License](https://img.shields.io/cocoapods/l/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph) [![Platform](https://img.shields.io/cocoapods/p/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
 
-Telegraph is a Secure Web Server for iOS written in Swift.
+Telegraph is a Secure Web Server for iOS and tvOS written in Swift.
 
 - [Features](#features)
 - [Requirements](#requirements)
@@ -25,7 +25,7 @@ Telegraph is a Secure Web Server for iOS written in Swift.
 
 ## Requirements
 
-- iOS 9.0+
+- iOS 9.0+ or tvOS 9.0+
 - Xcode 8.1+
 - Swift 3.1+
 
