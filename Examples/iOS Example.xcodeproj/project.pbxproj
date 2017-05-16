@@ -335,7 +335,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24C1EF2CF91078B034DEF7E6 /* Pods-iOS Example.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.iOS-Example";
@@ -348,7 +347,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C61B08A10D94728CE856F71 /* Pods-iOS Example.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.iOS-Example";
