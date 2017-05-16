@@ -74,7 +74,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
       if config.maskMessages { message.generateMask() }
 
       // Send the message
-      message.writeTo(stream: socket, headerTimeout: config.writeHeaderTimeout, payloadTimeout: config.writePayloadTimeout)
+      message.write(to: socket, headerTimeout: config.writeHeaderTimeout, payloadTimeout: config.writePayloadTimeout)
 
       // Close the connection if the opcode instructs so
       if message.opcode == .connectionClose {

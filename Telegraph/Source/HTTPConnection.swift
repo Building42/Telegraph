@@ -48,12 +48,14 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
 
   /// Sends the request by writing it to the stream.
   public func send(request: HTTPRequest) {
-    request.writeTo(stream: socket, headerTimeout: config.writeHeaderTimeout, bodyTimeout: config.writeBodyTimeout)
+    request.prepareForWrite()
+    request.write(to: socket, headerTimeout: config.writeHeaderTimeout, bodyTimeout: config.writeBodyTimeout)
   }
 
   /// Sends the response by writing it to the stream.
   public func send(response: HTTPResponse) {
-    response.writeTo(stream: socket, headerTimeout: config.writeHeaderTimeout, bodyTimeout: config.writeBodyTimeout)
+    response.prepareForWrite()
+    response.write(to: socket, headerTimeout: config.writeHeaderTimeout, bodyTimeout: config.writeBodyTimeout)
   }
 
   /// Handles incoming data.

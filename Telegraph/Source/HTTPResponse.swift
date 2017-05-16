@@ -30,6 +30,7 @@ open class HTTPResponse: HTTPMessage {
   override open func prepareForWrite() {
     super.prepareForWrite()
 
+    // Set the date header
     headers.date = HTTPResponse.dateFormatter.string(from: Date())
 
     // If a body is allowed set the content length (even when 0)

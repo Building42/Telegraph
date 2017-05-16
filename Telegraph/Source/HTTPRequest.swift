@@ -25,6 +25,8 @@ open class HTTPRequest: HTTPMessage {
   }
 
   override open func prepareForWrite() {
+    super.prepareForWrite()
+
     // Write the content length only if we have a body
     headers.contentLength = body.isEmpty ? nil : body.count
   }

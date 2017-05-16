@@ -9,7 +9,7 @@
 import Foundation
 
 extension WebSocketMessage {
-  open func writeTo(stream: WriteStream, headerTimeout: TimeInterval, payloadTimeout: TimeInterval) {
+  open func write(to stream: WriteStream, headerTimeout: TimeInterval, payloadTimeout: TimeInterval) {
     var header = Data()
 
     // FIN and Mask bits
