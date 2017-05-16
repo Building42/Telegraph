@@ -40,13 +40,8 @@ $ gem install cocoapods
 To integrate the HTTP Parser C library into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
 use_frameworks!
-
-target '<Your Target Name>' do
-    pod 'HTTPParserC'
-end
+pod 'Telegraph'
 ```
 
 Then, run the following command:
