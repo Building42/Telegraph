@@ -9,11 +9,7 @@
 //  TODO: routes should first be matched on route and properly handle the case of 405 - method not allowed
 //
 
-public protocol HTTPRouteHandler: HTTPRequestHandler {
-  var routes: [HTTPRoute] { get set }
-}
-
-open class HTTPRouteDefaultHandler: HTTPRouteHandler {
+open class HTTPRouteHandler: HTTPRequestHandler {
   public var routes = [HTTPRoute]()
 
   open func respond(to request: HTTPRequest, nextHandler: HTTPRequest.Handler) throws -> HTTPResponse? {

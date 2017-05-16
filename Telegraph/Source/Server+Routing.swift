@@ -34,7 +34,7 @@ extension Server {
 
   /// Adds a route.
   public func route(_ httpRoute: HTTPRoute) {
-    guard var routeHandler = httpConfig.requestHandlers.first(ofType: HTTPRouteHandler.self) else {
+    guard let routeHandler = httpConfig.requestHandlers.first(ofType: HTTPRouteHandler.self) else {
       fatalError("Could not add route - the server doesn't have a route handler")
     }
 

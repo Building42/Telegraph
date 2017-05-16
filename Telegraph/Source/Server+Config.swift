@@ -10,7 +10,7 @@ import Foundation
 
 extension HTTPConfig {
   public static var serverDefault: HTTPConfig {
-    return HTTPConfig(requestHandlers: [HTTPWebSocketHandler(), HTTPRouteDefaultHandler()])
+    return HTTPConfig(requestHandlers: [HTTPWebSocketHandler(), HTTPRouteHandler()])
   }
 }
 
