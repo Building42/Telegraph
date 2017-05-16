@@ -133,7 +133,8 @@ server.httpConfig.requestHandlers = [AwesomeHandler, HTTPWebSocketHandler, HTTPR
 
 Note that the order of the request handlers is important and you probably want to include the `HTTPRouteHandler` as the last request handler or your Server won't handle any route requests. The `HTTPRouteHandler` doesn't call any handlers, so don't specify any handlers after the `HTTPRouteHandler`.
 
-But what if you want to add headers to a response? Simply call the chain and modify the result:
+#####But what if you want to add headers to a response? 
+Simply call the chain and modify the result:
 
 ```swift
 open class AnotherAwesomeHandler: HTTPRequestHandler {
@@ -147,6 +148,18 @@ open class AnotherAwesomeHandler: HTTPRequestHandler {
     }
 }
 ```
+
+#####What if I just want to serve static content from a folder in my Bundle? 
+You can simple initialise a file handler giving it a path and put it in the request chain. It'll serve all GET requests for you.
+
+		let folderURL = Bundle.main.resourceURL!.appendingPathComponent("www") //optional, main bundle is default
+		let baseURI = "/httpContent" //optional, "/" is default
+		let indexFile = "dir.html" //optional, "index.html" is default
+		
+		server.httpConfig.requestHandlers = [HTTPFileHandler(folderURL, baseURI:baseURI, indexFile:indexFile), HTTPWebSocketHandler, HTTPRouteHandler]
+
+
+
 ### HTTP: Client
 For client connections we'll use Apple's [URLSession](https://developer.apple.com/reference/foundation/urlsession) class. Ray Wenderlich has an [excellent tutorial](https://www.raywenderlich.com/110458/nsurlsession-tutorial-getting-started) on it.
 We're going to have to manually verify the TLS handshake (App Transport Security needs to be disabled for this):
@@ -286,7 +299,8 @@ Your pull requests are most welcome and appreciated!
 
 [Building42](https://github.com/Building42)<br />
 [Yvo van Beek](https://github.com/Zyphrax)<br />
-[Bernd de Graaf](https://github.com/Vernadsky)
+[Bernd de Graaf](https://github.com/Vernadsky)<br />
+[Dominik Pich](https://github.com/Daij-Djan)
 
 This library was inspired by the following libraries. A big thank you to their creators!
 - [CocoaHTTPServer](https://github.com/robbiehanson/CocoaHTTPServer) - a Web Server written in Objective-C
