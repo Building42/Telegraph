@@ -91,12 +91,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CocoaAsyncSocket-tvOS/CocoaAsyncSocket.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HTTPParserC-tvOS/HTTPParserC.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Telegraph-tvOS/Telegraph.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/CocoaAsyncSocket-tvOS/CocoaAsyncSocket.framework"
   install_framework "$BUILT_PRODUCTS_DIR/HTTPParserC-tvOS/HTTPParserC.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Telegraph-tvOS/Telegraph.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
