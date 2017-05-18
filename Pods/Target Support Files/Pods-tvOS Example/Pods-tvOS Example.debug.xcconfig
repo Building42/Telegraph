@@ -1,9 +1,10 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket-tvOS" "$PODS_CONFIGURATION_BUILD_DIR/HTTPParserC-tvOS"
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket-tvOS" "$PODS_CONFIGURATION_BUILD_DIR/HTTPParserC-tvOS" "$PODS_CONFIGURATION_BUILD_DIR/Telegraph-tvOS"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Telegraph"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket-tvOS/CocoaAsyncSocket.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/HTTPParserC-tvOS/HTTPParserC.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Telegraph"
-OTHER_LDFLAGS = $(inherited) -framework "CocoaAsyncSocket" -framework "HTTPParserC"
+OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/CocoaAsyncSocket-tvOS/CocoaAsyncSocket.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/HTTPParserC-tvOS/HTTPParserC.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/Telegraph-tvOS/Telegraph.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "CocoaAsyncSocket" -framework "HTTPParserC" -framework "Telegraph"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/..

@@ -59,12 +59,12 @@ class SecurityTests: XCTestCase {
   }
 
   func testIdentityCreateFromPKCS12() {
-    let testIdentity = CertificateIdentity(p12URL: testIdentityURL)
+    let testIdentity = CertificateIdentity(p12URL: testIdentityURL, passphrase: "test")
     XCTAssertNotNil(testIdentity, "Identity could not be created from PKCS12 file")
   }
 
   func testIdentityKeychainMethods() {
-    let testIdentity = CertificateIdentity(p12URL: testIdentityURL)!
+    let testIdentity = CertificateIdentity(p12URL: testIdentityURL, passphrase: "test")!
 
     // Remove identity in case a previous test failed
     try? CertificateIdentity.removeFromKeychain(label: testIdentityLabel)

@@ -1,8 +1,11 @@
-![Telegraph: Secure Web Server for iOS and tvOS](https://github.com/Building42/Telegraph/raw/master/Resources/logo.png)
+![Telegraph: Secure Web Server for iOS, tvOS and macOS](https://github.com/Building42/Telegraph/raw/master/Resources/logo.png)
 
-[![Version](https://img.shields.io/cocoapods/v/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph) [![License](https://img.shields.io/cocoapods/l/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph) [![Platform](https://img.shields.io/cocoapods/p/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![License](https://img.shields.io/cocoapods/l/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
+[![Platform](https://img.shields.io/cocoapods/p/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
 
-Telegraph is a Secure Web Server for iOS and tvOS written in Swift.
+Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 
 - [Features](#features)
 - [Requirements](#requirements)
@@ -25,7 +28,7 @@ Telegraph is a Secure Web Server for iOS and tvOS written in Swift.
 
 ## Requirements
 
-- iOS 9.0+ or tvOS 9.0+
+- iOS 9.0+, tvOS 9.0+ or macOS 10.10+
 - Xcode 8.1+
 - Swift 3.1+
 
@@ -52,6 +55,25 @@ Then, run the following command:
 $ pod install
 ```
 
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Telegraph into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "Building42/Telegraph" "master"
+```
+
+Run `carthage update` to build the framework and drag the `CocoaAsyncSocket`, `HTTPParserC` and `Telegraph` frameworks into your Xcode project.
+
 ## Usage
 ### Configure App Transport Security
 With iOS 9 Apple introduced APS (App Transport Security) in an effort to improve user security and privacy by requiring apps to use secure network connections over HTTPS. It means that without additional configuration unsecure HTTP requests in apps that target iOS 9 or higher will fail. In iOS 9, APS is unfortunately also activated for LAN connections. Apple fixed this in iOS 10, by adding `NSAllowsLocalNetworking`.
@@ -73,8 +95,10 @@ let caCertificateURL = Bundle.main.url(forResource: "ca", withExtension: "der")!
 let caCertificate = Certificate(derURL: caCertificateURL)!
 
 let identityURL = Bundle.main.url(forResource: "localhost", withExtension: "p12")!
-let identity = CertificateIdentity(p12URL: identityURL)!
+let identity = CertificateIdentity(p12URL: identityURL, passphrase: "test")!
 ```
+
+> Note: macOS doesn't accept P12 files without passphrase.
 
 ### HTTP: Server
 You most likely want to create a secure server by passing in the certificates:

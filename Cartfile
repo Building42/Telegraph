@@ -1,0 +1,2 @@
+github "robbiehanson/CocoaAsyncSocket" ~> 7.6.1
+github "Building42/HTTPParserC" ~> 2.7.3
