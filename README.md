@@ -287,6 +287,13 @@ Please check the following:
 
 Have a look at the example project in this repository for a working starting point.
 
+### Chrome doesn't display images from my bundle
+During the build of your project Apple tries to optimize your images to reduce the size of your bundle. This optimization process sometimes causes the images to become unreadable by Chrome. Test your image url in Safari to double check if this is the case.
+
+To solve this you can go to the property inspector in Xcode and change the type of the resource from `Default - PNG image` to `Data`. After that the build process won't optimize your file. I've also done this with `logo.png` in the example projects.
+
+If you want to reduce the size of your images, I highly recommend [ImageOptim](https://imageoptim.com).
+
 ### Why can't I use port 80 and 443?
 The first 1024 port numbers are restricted to root access only and your app doesn't have root access on the device. If you try to open a Server on those ports you will get a permission denied error when you start the server. For more information, read [why are the first 1024 ports restricted to the root user only](https://unix.stackexchange.com/questions/16564/why-are-the-first-1024-ports-restricted-to-the-root-user-only).
 
