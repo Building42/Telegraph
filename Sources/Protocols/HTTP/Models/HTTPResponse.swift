@@ -10,7 +10,7 @@ import Foundation
 
 open class HTTPResponse: HTTPMessage {
   public typealias Handler = (HTTPResponse, Error) -> Void
-  public static let dateFormatter = DateFormatter(dateFormat: "EE, d MMM yyyy HH:mm zzz")
+  public static let dateFormatter = DateFormatter.rfc7231
 
   public var status: HTTPStatus
   public var closeAfterWrite = false

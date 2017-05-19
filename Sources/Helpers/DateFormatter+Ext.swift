@@ -9,9 +9,17 @@
 import Foundation
 
 extension DateFormatter {
+  /// Initializes a new DateFormatter with a custom date format.
   convenience init(dateFormat: String) {
     self.init()
-    self.locale = Locale(identifier: "en_US_POSIX")
     self.dateFormat = dateFormat
+  }
+
+  /// Returns a DateFormatter configured according to the RFC7231 spec.
+  public static var rfc7231: DateFormatter {
+    let formatter = DateFormatter(dateFormat: "EE, d MMM yyyy HH:mm:ss zzz")
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    formatter.timeZone = TimeZone(abbreviation: "GMT")
+    return formatter
   }
 }
