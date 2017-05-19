@@ -72,9 +72,15 @@ extension URI: CustomStringConvertible {
 
 extension URI {
   public func relativePath(from path: String) -> String? {
-    guard self.path.hasPrefix(path) else { return nil }
-    var result = self.path.replacingOccurrences(of: path, with: "")
+    var result = self.path
+
+    // Remove the part of the path that overlaps
+    guard let range = result.range(of: path) else { return nil }
+    result = result.replacingCharacters(in: range, with: "")
+
+    // Remove leading slash
     if result.hasPrefix("/") { result.remove(at: result.startIndex) }
+
     return result
   }
 }
