@@ -47,8 +47,18 @@ extension Server {
 
   /// Adds a route that serves files from a directory.
   public func serveDirectory(_ url: URL, _ uri: String = "/", index: String? = "index.html") {
-    let handler = HTTPFileHandler(directoryURL: url, baseURI: URI(path: uri), index: index)
-    route(.get, "\(uri)/*") { request in try handler.respond(to: request, nextHandler: { _ in HTTPResponse(.notFound) }) }
+    var baseURI = URI(path: uri)
+
+    // Construct the uri, do not match exactly to support subdirectories
+    var routeURI = baseURI.path
+    if !routeURI.hasSuffix("*") {
+      if !routeURI.hasSuffix("/") { routeURI += "/" }
+      routeURI += "*"
+    }
+
+    // Wrap the file handler into a route
+    let handler = HTTPFileHandler(directoryURL: url, baseURI: baseURI, index: index)
+    route(.get, routeURI) { request in try handler.respond(to: request, nextHandler: { _ in HTTPResponse(.notFound) }) }
   }
 }
 
