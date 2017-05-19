@@ -2,8 +2,12 @@
 All notable changes to this project will be documented in this file.
 `Telegraph` adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.1](https://github.com/Building42/Telegraph/releases/tag/0.4.1)
+- Fix URI relative path function
+
 ## [0.4.0](https://github.com/Building42/Telegraph/releases/tag/0.4.0)
 - Add serving static files (thanks [Daij-Djan](https://github.com/Daij-Djan))
+- Add new route helpers
 - Change Date header to RFC7231 format
 
 ## [0.3.0](https://github.com/Building42/Telegraph/releases/tag/0.3.0)
