@@ -37,6 +37,23 @@ extension Server {
   }
 }
 
+// MARK: Serve static content methods
+
+extension Server {
+  /// Adds a route that serves files from a bundle.
+  public func serveBundle(_ bundle: Bundle, _ uri: String = "/", index: String? = "index.html") {
+    serveDirectory(bundle.resourceURL!, uri, index: index)
+  }
+
+  /// Adds a route that serves files from a directory.
+  public func serveDirectory(_ url: URL, _ uri: String = "/", index: String? = "index.html") {
+    let handler = HTTPFileHandler(directoryURL: url, baseURI: URI(path: uri), index: index)
+    route(.get, "\(uri)/*") { request in try handler.respond(to: request, nextHandler: { _ in HTTPResponse(.notFound) }) }
+  }
+}
+
+// MARK: Response helper methods
+
 extension Server {
   /// Adds a route that responds to *method* on *uri* that responds with a *response*.
   public func route(_ method: HTTPMethod, _ uri: String, response: @escaping () -> HTTPResponse) {

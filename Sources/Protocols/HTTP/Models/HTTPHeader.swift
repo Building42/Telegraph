@@ -138,6 +138,11 @@ extension CustomKeyIndexable where Key == HTTPHeader, Value == String {
     set { self["Host"] = newValue }
   }
 
+  public var lastModified: String? {
+    get { return self["Last-Modified"] }
+    set { self["Last-Modified"] = newValue }
+  }
+
   public var server: String? {
     get { return self["Server"] }
     set { self["Server"] = newValue }

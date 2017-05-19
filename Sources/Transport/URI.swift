@@ -13,7 +13,13 @@ public struct URI {
 
   public var path: String {
     get { return components.path }
-    set { components.path = newValue.isEmpty ? "/" : newValue }
+    set {
+      // Make sure the path starts with a slash
+      var newPath = newValue
+      if !newPath.hasPrefix("/") { newPath.insert("/", at: newPath.startIndex) }
+
+      components.path = newPath
+    }
   }
 
   public var query: String? {
@@ -61,5 +67,14 @@ public struct URI {
 extension URI: CustomStringConvertible {
   public var description: String {
     return components.description
+  }
+}
+
+extension URI {
+  public func relativePath(from path: String) -> String? {
+    guard self.path.hasPrefix(path) else { return nil }
+    var result = self.path.replacingOccurrences(of: path, with: "")
+    if result.hasPrefix("/") { result.remove(at: result.startIndex) }
+    return result
   }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8284FF251ECEA49900303A00 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8284FF241ECEA49900303A00 /* index.html */; };
 		82EF341E1ECD33CF002DC910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF341D1ECD33CF002DC910 /* AppDelegate.swift */; };
 		82EF34201ECD33CF002DC910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF341F1ECD33CF002DC910 /* ViewController.swift */; };
 		82EF34231ECD33CF002DC910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EF34211ECD33CF002DC910 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		4D215157A3CDE984D6549450 /* Pods_tvOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8284FF241ECEA49900303A00 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		82EF341A1ECD33CF002DC910 /* tvOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF341D1ECD33CF002DC910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82EF341F1ECD33CF002DC910 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		82EF344E1ECD3B77002DC910 /* TelegraphDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelegraphDemo.swift; sourceTree = "<group>"; };
 		82EF345C1ECD3C52002DC910 /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
 		82EF345E1ECD3C52002DC910 /* localhost.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = localhost.p12; sourceTree = "<group>"; };
-		82EF345F1ECD3C52002DC910 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		82EF345F1ECD3C52002DC910 /* logo.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = logo.png; sourceTree = "<group>"; };
 		A7812D37ACEF4DBABC9BCCF8 /* Pods-tvOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-tvOS Example/Pods-tvOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C48A993D74159CC56A269E3A /* Pods-tvOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-tvOS Example/Pods-tvOS Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 				82EF345C1ECD3C52002DC910 /* ca.der */,
 				82EF345E1ECD3C52002DC910 /* localhost.p12 */,
 				82EF345F1ECD3C52002DC910 /* logo.png */,
+				8284FF241ECEA49900303A00 /* index.html */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -180,6 +183,7 @@
 				82EF34251ECD33CF002DC910 /* Assets.xcassets in Resources */,
 				82EF34611ECD3C52002DC910 /* ca.der in Resources */,
 				82EF34641ECD3C52002DC910 /* logo.png in Resources */,
+				8284FF251ECEA49900303A00 /* index.html in Resources */,
 				82EF34631ECD3C52002DC910 /* localhost.p12 in Resources */,
 				82EF34231ECD33CF002DC910 /* Main.storyboard in Resources */,
 			);

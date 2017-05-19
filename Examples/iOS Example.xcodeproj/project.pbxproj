@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8284FF211ECEA0BB00303A00 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8284FF201ECEA0BB00303A00 /* index.html */; };
 		82EF33F41ECD330C002DC910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF33F31ECD330C002DC910 /* AppDelegate.swift */; };
 		82EF33F61ECD330C002DC910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF33F51ECD330C002DC910 /* ViewController.swift */; };
 		82EF33F91ECD330C002DC910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EF33F71ECD330C002DC910 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		234407767F1874AC21FDB244 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45012B20641F7A3E629E72DA /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
+		8284FF201ECEA0BB00303A00 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		82EF33F01ECD330C002DC910 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF33F31ECD330C002DC910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82EF33F51ECD330C002DC910 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,7 +34,7 @@
 		82EF344B1ECD3AA1002DC910 /* TelegraphDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TelegraphDemo.swift; sourceTree = "<group>"; };
 		82EF34511ECD3C19002DC910 /* ca.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.der; sourceTree = "<group>"; };
 		82EF34531ECD3C19002DC910 /* localhost.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = localhost.p12; sourceTree = "<group>"; };
-		82EF34541ECD3C19002DC910 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		82EF34541ECD3C19002DC910 /* logo.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = logo.png; sourceTree = "<group>"; };
 		E64D1C8B585D28877B982668 /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 				82EF34511ECD3C19002DC910 /* ca.der */,
 				82EF34531ECD3C19002DC910 /* localhost.p12 */,
 				82EF34541ECD3C19002DC910 /* logo.png */,
+				8284FF201ECEA0BB00303A00 /* index.html */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8284FF211ECEA0BB00303A00 /* index.html in Resources */,
 				82EF33FE1ECD330C002DC910 /* LaunchScreen.storyboard in Resources */,
 				82EF34581ECD3C19002DC910 /* localhost.p12 in Resources */,
 				82EF33FB1ECD330C002DC910 /* Assets.xcassets in Resources */,

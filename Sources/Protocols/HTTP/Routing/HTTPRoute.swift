@@ -37,11 +37,8 @@ public struct HTTPRoute {
 
 extension HTTPRoute {
   fileprivate static func pattern(basedOn uri: String) throws -> String {
-    // Routes should start with a slash
-    var pattern = uri
-    if !pattern.hasPrefix("/") { pattern.insert("/", at: pattern.startIndex) }
-
     // Check if the uri is a valid route specification
+    var pattern = URI(path: uri).path
     guard try Regex(pattern: "[-.:()\\w\\/]").matches(value: pattern) else { throw HTTPRouteError.invalidURI }
 
     // Allow easy optional slash pattern, for example /hello(/)
@@ -49,7 +46,7 @@ extension HTTPRoute {
 
     // Limit what the regex will match by fixating the start and the end
     pattern.insert("^", at: pattern.startIndex)
-    pattern.insert("$", at: pattern.endIndex)
+    if !pattern.hasSuffix("*") { pattern.insert("$", at: pattern.endIndex) }
     return pattern
   }
 

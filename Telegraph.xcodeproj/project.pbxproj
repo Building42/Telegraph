@@ -198,6 +198,12 @@
 		825A72C31ECD2E890043AC8D /* URI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A720E1ECD2E890043AC8D /* URI.swift */; };
 		825A72C41ECD2E890043AC8D /* URI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A720E1ECD2E890043AC8D /* URI.swift */; };
 		825A72C51ECD2E890043AC8D /* URI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A720E1ECD2E890043AC8D /* URI.swift */; };
+		8284FF161ECE89BF00303A00 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */; };
+		8284FF171ECE89BF00303A00 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */; };
+		8284FF181ECE89BF00303A00 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */; };
+		8284FF1D1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
+		8284FF1E1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
+		8284FF1F1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
 		86C74C85E35BB03C3BFCDE53 /* Pods_Telegraph_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2EF39D1E765E3BF1C49151 /* Pods_Telegraph_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -291,6 +297,8 @@
 		825A720C1ECD2E890043AC8D /* TCPListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPListener.swift; sourceTree = "<group>"; };
 		825A720D1ECD2E890043AC8D /* TCPSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPSocket.swift; sourceTree = "<group>"; };
 		825A720E1ECD2E890043AC8D /* URI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URI.swift; sourceTree = "<group>"; };
+		8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
+		8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPFileHandler.swift; sourceTree = "<group>"; };
 		85DDF80A3A8C22A66A8DB2E5 /* Pods-Telegraph iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS.release.xcconfig"; sourceTree = "<group>"; };
 		8CC69BEDDD25DDAD51D9539A /* Pods-Telegraph tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph tvOS/Pods-Telegraph tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		94D91D1D5B633103A4F20D7E /* Pods_Telegraph_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +426,7 @@
 				825A71CD1ECD2E890043AC8D /* Delegator.swift */,
 				825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */,
 				825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */,
+				8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */,
 				825A71D01ECD2E890043AC8D /* NSRegularExpression+Ext.swift */,
 				825A71D11ECD2E890043AC8D /* String+Ext.swift */,
 				825A71D21ECD2E890043AC8D /* UInt+Ext.swift */,
@@ -450,6 +459,7 @@
 			children = (
 				825A71D81ECD2E890043AC8D /* HTTPErrorDefaultHandler.swift */,
 				825A71D91ECD2E890043AC8D /* HTTPErrorHandler.swift */,
+				8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */,
 				825A71DA1ECD2E890043AC8D /* HTTPRequestHandler.swift */,
 			);
 			path = Handlers;
@@ -1038,9 +1048,11 @@
 				825A72601ECD2E890043AC8D /* HTTPStatus.swift in Sources */,
 				825A723C1ECD2E890043AC8D /* HTTPErrorHandler.swift in Sources */,
 				825A726F1ECD2E890043AC8D /* HTTPWebSocketHandler.swift in Sources */,
+				8284FF161ECE89BF00303A00 /* FileManager+Ext.swift in Sources */,
 				825A72301ECD2E890043AC8D /* UInt+Ext.swift in Sources */,
 				825A729C1ECD2E890043AC8D /* CertificateIdentity.swift in Sources */,
 				825A72961ECD2E890043AC8D /* WebSocketParser.swift in Sources */,
+				8284FF1D1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */,
 				825A72781ECD2E890043AC8D /* WebSocketMessageDefaultHandler.swift in Sources */,
 				825A72331ECD2E890043AC8D /* URL+Ext.swift in Sources */,
 				825A722A1ECD2E890043AC8D /* NSRegularExpression+Ext.swift in Sources */,
@@ -1104,9 +1116,11 @@
 				825A72611ECD2E890043AC8D /* HTTPStatus.swift in Sources */,
 				825A723D1ECD2E890043AC8D /* HTTPErrorHandler.swift in Sources */,
 				825A72701ECD2E890043AC8D /* HTTPWebSocketHandler.swift in Sources */,
+				8284FF171ECE89BF00303A00 /* FileManager+Ext.swift in Sources */,
 				825A72311ECD2E890043AC8D /* UInt+Ext.swift in Sources */,
 				825A729D1ECD2E890043AC8D /* CertificateIdentity.swift in Sources */,
 				825A72971ECD2E890043AC8D /* WebSocketParser.swift in Sources */,
+				8284FF1E1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */,
 				825A72791ECD2E890043AC8D /* WebSocketMessageDefaultHandler.swift in Sources */,
 				825A72341ECD2E890043AC8D /* URL+Ext.swift in Sources */,
 				825A722B1ECD2E890043AC8D /* NSRegularExpression+Ext.swift in Sources */,
@@ -1170,9 +1184,11 @@
 				825A72621ECD2E890043AC8D /* HTTPStatus.swift in Sources */,
 				825A723E1ECD2E890043AC8D /* HTTPErrorHandler.swift in Sources */,
 				825A72711ECD2E890043AC8D /* HTTPWebSocketHandler.swift in Sources */,
+				8284FF181ECE89BF00303A00 /* FileManager+Ext.swift in Sources */,
 				825A72321ECD2E890043AC8D /* UInt+Ext.swift in Sources */,
 				825A729E1ECD2E890043AC8D /* CertificateIdentity.swift in Sources */,
 				825A72981ECD2E890043AC8D /* WebSocketParser.swift in Sources */,
+				8284FF1F1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */,
 				825A727A1ECD2E890043AC8D /* WebSocketMessageDefaultHandler.swift in Sources */,
 				825A72351ECD2E890043AC8D /* URL+Ext.swift in Sources */,
 				825A722C1ECD2E890043AC8D /* NSRegularExpression+Ext.swift in Sources */,
