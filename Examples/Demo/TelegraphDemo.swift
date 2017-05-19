@@ -46,7 +46,8 @@ class TelegraphDemo: NSObject {
     // Define the demo routes
     server.route(.get, "hello/:name", serverHandleGreeting)
     server.route(.get, "hello(/)", serverHandleGreeting)
-    server.route(.get, "/") { HTTPResponse(.ok, content: "Server is running") }
+    server.route(.get, "secret") { .forbidden }
+    server.route(.get, "/") { (.ok, "Server is running") }
 
     // Start the server on localhost, we'll skip error handling for the demo
     // Note: if you test in your browser, don't forget to type https://

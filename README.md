@@ -116,9 +116,10 @@ try! server.start(onPort: 9000)
 Routes consist of three parts: HTTP method, path and handler:
 
 ```swift
-server.route(.get, "hello/:name", handleGreeting)
 server.route(.post, "test", handleTest)
-server.route(.get, "/") { HTTPResponse(.ok, content: "Server is running") }
+server.route(.get, "hello/:name", handleGreeting)
+server.route(.get, "secret") { .forbidden }
+server.route(.get, "/") { (.ok, "Server is running") }
 ```
 Slashes at the start of the path are optional. Routes are case insensitive. You can specify custom regular expressions for more advanced route matching. When none of the routes are matched, the server will return a 404 not found.
 

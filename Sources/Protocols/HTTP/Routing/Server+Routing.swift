@@ -9,11 +9,6 @@
 import Foundation
 
 extension Server {
-  /// Adds a route that responds to *method* on *uri* that responds with a *response*.
-  public func route(_ method: HTTPMethod, _ uri: String, response: @escaping () -> HTTPResponse) {
-    route(method, uri, { _ in response() })
-  }
-
   /// Adds a route handler consisting of a HTTP method, uri and handler closure.
   public func route(_ method: HTTPMethod, _ uri: String, _ handler: @escaping HTTPRequest.Handler) {
     guard let httpRoute = try? HTTPRoute(methods: [method], uri: uri, handler: handler) else {
@@ -39,5 +34,25 @@ extension Server {
     }
 
     routeHandler.routes.append(httpRoute)
+  }
+}
+
+extension Server {
+  /// Adds a route that responds to *method* on *uri* that responds with a *response*.
+  public func route(_ method: HTTPMethod, _ uri: String, response: @escaping () -> HTTPResponse) {
+    route(method, uri, { _ in response() })
+  }
+
+  /// Adds a route that responds to *method* on *uri* that responds with a *statusCode*.
+  public func route(_ method: HTTPMethod, _ uri: String, statusCode: @escaping () -> HTTPStatusCode) {
+    route(method, uri, { _ in HTTPResponse(statusCode()) })
+  }
+
+  /// Adds a route that responds to *method* on *uri* that responds with *statusCode* and text content.
+  public func route(_ method: HTTPMethod, _ uri: String, content: @escaping () -> (HTTPStatusCode, String)) {
+    route(method, uri, { _ in
+      let result = content()
+      return HTTPResponse(result.0, content: result.1)
+    })
   }
 }
