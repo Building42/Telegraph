@@ -119,6 +119,7 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
 
   /// Handles an incoming response.
   fileprivate func received(response: HTTPResponse, error: Error?) {
+    upgrading = response.isConnectionUpgrade
     delegate?.connection(self, handleIncomingResponse: response, error: error)
   }
 }
