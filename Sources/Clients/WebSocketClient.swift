@@ -131,6 +131,9 @@ extension WebSocketClient {
 
 extension WebSocketClient: WebSocketConnectionDelegate {
   public func connection(_ webSocketConnection: WebSocketConnection, didCloseWithError error: Error?) {
+    connection?.delegate = nil
+    connection = nil
+
     delegate?.webSocketClient(self, didDisconnectWithError: error)
   }
 
