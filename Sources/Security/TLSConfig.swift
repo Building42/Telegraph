@@ -40,7 +40,7 @@ extension TLSConfig {
     }
 
     // Set the certificate
-    if !certificates.isEmpty {
+    if !allCertificates.isEmpty {
       rawConfig[kCFStreamSSLCertificates as String] = allCertificates as CFArray
     }
 
