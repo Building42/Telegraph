@@ -1,5 +1,6 @@
 ![Telegraph: Secure Web Server for iOS, tvOS and macOS](https://github.com/Building42/Telegraph/raw/master/Resources/logo.png)
 
+[![Build Status](https://travis-ci.org/Building42/Telegraph.svg?branch=master)](https://travis-ci.org/Building42/Telegraph)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
