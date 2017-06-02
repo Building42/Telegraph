@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 `Telegraph` adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.5.0](https://github.com/Building42/Telegraph/releases/tag/0.5.0)
+- Improve connection handling and thread safety of the WebSocket client
+- Allow empty certificates list in TLSConfig (thanks [JulianEberius](https://github.com/JulianEberius))
+
 ## [0.4.1](https://github.com/Building42/Telegraph/releases/tag/0.4.1)
 - Fix URI relative path function
 
