@@ -103,10 +103,11 @@ open class WebSocketConnection: TCPConnection, WebSocket {
       // Reset the ping timer
       pingTimer?.start(afterSec: config.pingInterval)
 
+      // Inform the delegate of the incoming message
+      delegate?.connection(self, didReceiveMessage: message)
+
       // Pass the message through the handler
       try config.messageHandler.incoming(message: message, from: self)
-
-      delegate?.connection(self, didReceiveMessage: message)
     } catch {
       config.errorHandler.incoming(error: error, webSocket: self, message: message)
     }
