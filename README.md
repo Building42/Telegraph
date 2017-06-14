@@ -197,9 +197,8 @@ For the common name you aren't limited to the hostname or IP address of the devi
 ### WebSockets: Server-side
 Your Server will automatically recognize WebSocket requests, thanks to the `HTTPWebSocketHandler` that is by default in the list of HTTP request handlers. Set the WebSocket delegate to handle incoming messages:
 ```swift
-server.webSocketDelegator.setDelegate(self)
+server.webSocketDelegate = self
 ```
-The `Delegator` is a smart class that will handle multi-threading unpleasantries when it comes to delegates.
 Next step is to implement the `ServerWebSocketDelegate` methods:
 ```swift
 func server(_ server: Server, webSocketDidConnect webSocket: WebSocket, handshake: HTTPRequest) {
