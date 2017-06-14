@@ -50,6 +50,9 @@ class TelegraphDemo: NSObject {
     server.route(.get, "status") { (.ok, "Server is running") }
     server.serveBundle(.main, "/")
 
+    // Increase the ping/pong interval
+    server.webSocketConfig.pingInterval = 10
+
     // Start the server on localhost, we'll skip error handling for the demo
     // Note: if you test in your browser, don't forget to type https://
     try! server.start(onPort: 9000)
