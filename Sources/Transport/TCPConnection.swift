@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol TCPConnection: class, Equatable, Hashable {
+public protocol TCPConnection: class, Hashable {
   func open()
   func close(immediately: Bool)
 }
