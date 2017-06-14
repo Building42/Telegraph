@@ -69,11 +69,11 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   /// Sends a websocket message
   open func send(message: WebSocketMessage) {
     do {
-      // Pass the message through the handler and mask it
+      // Pass the message through the handler
       try config.messageHandler.outgoing(message: message, to: self)
-      if config.maskMessages { message.generateMask() }
 
       // Send the message
+      message.maskBit = config.maskMessages
       message.write(to: socket, headerTimeout: config.writeHeaderTimeout, payloadTimeout: config.writePayloadTimeout)
 
       // Close the connection if the opcode instructs so

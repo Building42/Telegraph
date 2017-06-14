@@ -10,8 +10,8 @@ import Foundation
 
 open class WebSocketMessage {
   public internal(set) var finBit = true
+  public internal(set) var maskBit = true
   public internal(set) var opcode: WebSocketOpcode
-  public internal(set) var maskBytes: [UInt8]?
   public internal(set) var payload: WebSocketPayload
 
   internal init() {
@@ -71,10 +71,8 @@ extension WebSocketMessage {
 // MARK: Masking
 
 extension WebSocketMessage {
-  var maskBit: Bool { return maskBytes != nil }
-
-  public func generateMask() {
-    maskBytes = [UInt8.random, UInt8.random, UInt8.random, UInt8.random]
+  public func generateMask() -> [UInt8] {
+    return [UInt8.random, UInt8.random, UInt8.random, UInt8.random]
   }
 }
 

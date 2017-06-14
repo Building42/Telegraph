@@ -42,6 +42,7 @@ public class WebSocketParser {
   public fileprivate(set) lazy var message = WebSocketMessage()
   public fileprivate(set) lazy var nextPart = Part.finAndOpcode
   public fileprivate(set) lazy var bytesParsed = 0
+  public fileprivate(set) lazy var maskingKey = [UInt8](repeating: 0, count: 4)
   public fileprivate(set) lazy var payload = Data()
   public fileprivate(set) lazy var payloadLength: UInt64 = 0
 
@@ -84,15 +85,14 @@ public class WebSocketParser {
 
       case .maskAndPayloadLength:
         // Extract the mask bit
-        let maskBit = byte & WebSocketMasks.maskBit != 0
-        message.maskBytes = maskBit ? [UInt8]() : nil
+        message.maskBit = byte & WebSocketMasks.maskBit != 0
 
         // Extract the payload length
         payloadLength = UInt64(byte & WebSocketMasks.payloadLength)
 
         switch payloadLength {
         case 0: try finishMessage()
-        case 1..<126: nextPart = maskBit ? .maskingKey(byteNo: 1) : .payload
+        case 1..<126: nextPart = message.maskBit ? .maskingKey(byteNo: 1) : .payload
         case 126: nextPart = .extendedPayloadLength16(byteNo: 1)
         case 127: nextPart = .extendedPayloadLength64(byteNo: 1)
         default: break
@@ -130,14 +130,11 @@ public class WebSocketParser {
       case .maskingKey(let byteNo):
         // Extract the masking key
         switch byteNo {
-        case 1:
-          message.maskBytes = [byte, 0, 0, 0]
-          nextPart = .maskingKey(byteNo: 2)
-        case 2..<4:
-          message.maskBytes![byteNo - 1] = byte
+        case 1, 2, 3:
+          maskingKey[byteNo - 1] = byte
           nextPart = .maskingKey(byteNo: byteNo + 1)
         case 4:
-          message.maskBytes![3] = byte
+          maskingKey[3] = byte
           nextPart = .payload
         default: break
         }
@@ -157,6 +154,7 @@ public class WebSocketParser {
   public func reset() {
     message = WebSocketMessage()
     nextPart = .finAndOpcode
+    maskingKey = [UInt8](repeating: 0, count: 4)
     payloadLength = 0
     payload = Data()
   }
@@ -164,12 +162,11 @@ public class WebSocketParser {
   /// Interprets the payload and calls the delegate to inform of the new message.
   private func finishMessage() throws {
     // Do we have to unmask the payload?
-    if let maskBytes = message.maskBytes, !maskBytes.isEmpty {
-      payload.mask(with: maskBytes)
+    if message.maskBit {
+      payload.mask(with: maskingKey)
     }
 
     switch message.opcode {
-    case .binaryFrame, .continuationFrame, .ping, .pong:
     case .binaryFrame, .continuationFrame:
       // Binary payload
       message.payload = .binary(payload)
