@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## 0.6.0 (master)
 - Improve websocket ping/pong by not masking empty payloads
+- **Breaking:** Removed [Delegator](https://github.com/Building42/Telegraph/blob/0.5.0/Sources/Helpers/Delegator.swift) helper, webSocketDelegator has become webSocketDelegate
 - **Breaking:** WebSocketMessage masking key has moved to the WebSocketParser
 - **Breaking:** WebSocketMessage generateMask signature has changed
 

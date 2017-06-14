@@ -41,7 +41,8 @@ class TelegraphDemo: NSObject {
   func setupServer() {
     // Create a secure server
     server = Server(identity: identity, caCertificates: [caCertificate])
-    server.webSocketDelegator.setDelegate(self)
+    server.webSocketConfig.pingInterval = 10
+    server.webSocketDelegate = self
 
     // Define the demo routes
     server.route(.get, "hello/:name", serverHandleGreeting)
@@ -49,9 +50,6 @@ class TelegraphDemo: NSObject {
     server.route(.get, "secret/*") { .forbidden }
     server.route(.get, "status") { (.ok, "Server is running") }
     server.serveBundle(.main, "/")
-
-    // Increase the ping/pong interval
-    server.webSocketConfig.pingInterval = 10
 
     // Start the server on localhost, we'll skip error handling for the demo
     // Note: if you test in your browser, don't forget to type https://

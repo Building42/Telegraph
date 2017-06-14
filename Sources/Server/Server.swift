@@ -9,10 +9,11 @@
 import Foundation
 
 open class Server {
-  public var httpConfig = HTTPConfig.serverDefault
+  public var delegateQueue: DispatchQueue = DispatchQueue(label: "Telegraph.Server.delegate")
 
+  public var httpConfig = HTTPConfig.serverDefault
   public var webSocketConfig = WebSocketConfig.serverDefault
-  public var webSocketDelegator = Delegator<ServerWebSocketDelegate>()
+  public weak var webSocketDelegate: ServerWebSocketDelegate?
 
   fileprivate let workQueue = DispatchQueue(label: "Telegraph.Server.work")
   fileprivate var listener: TCPListener
@@ -127,8 +128,8 @@ extension Server: HTTPConnectionDelegate {
       webSocketConnection.open()
 
       // Call the delegate
-      me.webSocketDelegator.async { delegate in
-        delegate.server(me, webSocketDidConnect: webSocketConnection, handshake: request)
+      me.delegateQueue.async(weak: me) { server in
+        server.webSocketDelegate?.server(server, webSocketDidConnect: webSocketConnection, handshake: request)
       }
     }
 
@@ -145,23 +146,23 @@ extension Server: WebSocketConnectionDelegate {
       me.webSocketConnections.remove(webSocketConnection)
 
       // Call the delegate
-      me.webSocketDelegator.async { delegate in
-        delegate.server(me, webSocketDidDisconnect: webSocketConnection, error: error)
+      me.delegateQueue.async(weak: me) { server in
+        server.webSocketDelegate?.server(server, webSocketDidDisconnect: webSocketConnection, error: error)
       }
     }
   }
 
   public func connection(_ webSocketConnection: WebSocketConnection, didReceiveMessage message: WebSocketMessage) {
     // Call the delegate
-    webSocketDelegator.async(weak: self) { me, delegate in
-      delegate.server(me, webSocket: webSocketConnection, didReceiveMessage: message)
+    delegateQueue.async(weak: self) { server in
+      server.webSocketDelegate?.server(server, webSocket: webSocketConnection, didReceiveMessage: message)
     }
   }
 
   public func connection(_ webSocketConnection: WebSocketConnection, didSendMessage message: WebSocketMessage) {
     // Call the delegate
-    webSocketDelegator.async(weak: self) { me, delegate in
-      delegate.server(me, webSocket: webSocketConnection, didSendMessage: message)
+    delegateQueue.async(weak: self) { server in
+      server.webSocketDelegate?.server(server, webSocket: webSocketConnection, didSendMessage: message)
     }
   }
 }

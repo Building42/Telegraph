@@ -36,9 +36,6 @@
 		825A721E1ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
 		825A721F1ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
 		825A72201ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
-		825A72211ECD2E890043AC8D /* Delegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CD1ECD2E890043AC8D /* Delegator.swift */; };
-		825A72221ECD2E890043AC8D /* Delegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CD1ECD2E890043AC8D /* Delegator.swift */; };
-		825A72231ECD2E890043AC8D /* Delegator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CD1ECD2E890043AC8D /* Delegator.swift */; };
 		825A72241ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */; };
 		825A72251ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */; };
 		825A72261ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */; };
@@ -242,7 +239,6 @@
 		825A71CA1ECD2E890043AC8D /* Array+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		825A71CB1ECD2E890043AC8D /* Data+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
 		825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
-		825A71CD1ECD2E890043AC8D /* Delegator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegator.swift; sourceTree = "<group>"; };
 		825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Ext.swift"; sourceTree = "<group>"; };
 		825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
 		825A71D01ECD2E890043AC8D /* NSRegularExpression+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Ext.swift"; sourceTree = "<group>"; };
@@ -423,7 +419,6 @@
 				825A71CA1ECD2E890043AC8D /* Array+Ext.swift */,
 				825A71CB1ECD2E890043AC8D /* Data+Ext.swift */,
 				825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */,
-				825A71CD1ECD2E890043AC8D /* Delegator.swift */,
 				825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */,
 				825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */,
 				8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */,
@@ -999,7 +994,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				825A72BD1ECD2E890043AC8D /* TCPListener.swift in Sources */,
-				825A72211ECD2E890043AC8D /* Delegator.swift in Sources */,
 				825A72121ECD2E890043AC8D /* HTTPClient.swift in Sources */,
 				825A72AB1ECD2E890043AC8D /* Server+Config.swift in Sources */,
 				825A728D1ECD2E890043AC8D /* WebSocketError.swift in Sources */,
@@ -1067,7 +1061,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				825A72BE1ECD2E890043AC8D /* TCPListener.swift in Sources */,
-				825A72221ECD2E890043AC8D /* Delegator.swift in Sources */,
 				825A72131ECD2E890043AC8D /* HTTPClient.swift in Sources */,
 				825A72AC1ECD2E890043AC8D /* Server+Config.swift in Sources */,
 				825A728E1ECD2E890043AC8D /* WebSocketError.swift in Sources */,
@@ -1135,7 +1128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				825A72BF1ECD2E890043AC8D /* TCPListener.swift in Sources */,
-				825A72231ECD2E890043AC8D /* Delegator.swift in Sources */,
 				825A72141ECD2E890043AC8D /* HTTPClient.swift in Sources */,
 				825A72AD1ECD2E890043AC8D /* Server+Config.swift in Sources */,
 				825A728F1ECD2E890043AC8D /* WebSocketError.swift in Sources */,
