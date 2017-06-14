@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 `Telegraph` adheres to [Semantic Versioning](http://semver.org/).
 
-## 0.6.0 (master)
+## [0.6.0](https://github.com/Building42/Telegraph/releases/tag/0.6.0)
 - Improve websocket ping/pong by not masking empty payloads
 - Fix Xcode 9 warnings
 - **Breaking:** Removed [Delegator](https://github.com/Building42/Telegraph/blob/0.5.0/Sources/Helpers/Delegator.swift) helper, webSocketDelegator has become webSocketDelegate

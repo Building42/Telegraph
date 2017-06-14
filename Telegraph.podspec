@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Telegraph'
-  s.version = '0.5.0'
+  s.version = '0.6.0'
 
   s.license = { :type => 'MPL2', :file => 'LICENSE' }
   s.summary = 'A Secure Web Server for iOS, tvOS and macOS'
@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
 
   s.dependency 'CocoaAsyncSocket', '~> 7.5.1'
-  s.dependency 'HTTPParserC', '~> 2.7.1'
+  s.dependency 'HTTPParserC', '~> 2.7.3'
 end
