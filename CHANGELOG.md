@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 `Telegraph` adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.6.0 (master)
+- Improve websocket ping/pong by not masking empty payloads
+- **Breaking:** WebSocketMessage masking key has moved to the WebSocketParser
+- **Breaking:** WebSocketMessage generateMask signature has changed
+
 ## [0.5.0](https://github.com/Building42/Telegraph/releases/tag/0.5.0)
 - Improve connection handling and thread safety of the WebSocket client
 - Allow empty certificates list in TLSConfig (thanks [JulianEberius](https://github.com/JulianEberius))
