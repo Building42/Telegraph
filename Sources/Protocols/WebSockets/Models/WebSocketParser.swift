@@ -170,6 +170,7 @@ public class WebSocketParser {
 
     switch message.opcode {
     case .binaryFrame, .continuationFrame, .ping, .pong:
+    case .binaryFrame, .continuationFrame:
       // Binary payload
       message.payload = .binary(payload)
     case .textFrame:
@@ -180,6 +181,9 @@ public class WebSocketParser {
       // Close payload
       // TODO: properly handle WebSocket close codes
       message.payload = .close(code: 0, reason: "Close payloads are not implemented")
+    case .ping, .pong:
+      // Ping / pong with optional payload
+      message.payload = payload.count > 0 ? .binary(payload) : .none
     }
 
     // Keep a reference to the message and reset
