@@ -1,6 +1,6 @@
 {
   "name": "Telegraph",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "license": {
     "type": "MPL2",
     "file": "LICENSE"
@@ -11,7 +11,7 @@
   "authors": "Building42",
   "source": {
     "git": "https://github.com/Building42/Telegraph.git",
-    "tag": "0.6.0"
+    "tag": "0.7.0"
   },
   "source_files": "Sources/**/*.swift",
   "platforms": {
