@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
-`Telegraph` adheres to [Semantic Versioning](http://semver.org/).
+Telegraph adheres to [Semantic Versioning](http://semver.org/).
+
+## 0.7.0 (master)
+- Add the option to bind the server to a specific interface (thanks [didi25](https://github.com/didi25))
 
 ## [0.6.0](https://github.com/Building42/Telegraph/releases/tag/0.6.0)
 - Improve websocket ping/pong by not masking empty payloads

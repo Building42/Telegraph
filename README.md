@@ -113,6 +113,11 @@ serverHTTP = Server()
 try! server.start(onPort: 9000)
 ```
 
+You can limit the server to localhost connections by specifying an interface when you start it:
+```swift
+try! server.start(onInterface: "localhost", onPort: 9000)
+```
+
 ### HTTP: Routes
 Routes consist of three parts: HTTP method, path and handler:
 
