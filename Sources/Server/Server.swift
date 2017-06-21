@@ -32,8 +32,13 @@ open class Server {
   }
 
   /// Starts the server on the specified port.
-  open func start(onInterface interface: String? = nil, onPort port: UInt16) throws {
-    try listener.accept(onInterface: interface, onPort: port)
+  open func start(onPort port: UInt16) throws {
+    try listener.accept(onPort: port)
+  }
+
+  /// Starts the server on the specified network interface and port.
+  open func start(onInterface interface: String?, port: UInt16) throws {
+    try listener.accept(onInterface: interface, port: port)
   }
 
   /// Stops the server, optionally we wait for requests to finish.

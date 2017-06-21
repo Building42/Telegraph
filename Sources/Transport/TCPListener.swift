@@ -30,7 +30,11 @@ public final class TCPListener: NSObject {
     socket.setDelegate(self, delegateQueue: socketDelegateQueue)
   }
 
-  public func accept(onInterface interface: String? = nil, onPort port: UInt16) throws {
+  public func accept(onPort port: UInt16) throws {
+    try socket.accept(onPort: port)
+  }
+
+  public func accept(onInterface interface: String?, port: UInt16) throws {
     try socket.accept(onInterface: interface, port: port)
   }
 

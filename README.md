@@ -115,7 +115,7 @@ try! server.start(onPort: 9000)
 
 You can limit the server to localhost connections by specifying an interface when you start it:
 ```swift
-try! server.start(onInterface: "localhost", onPort: 9000)
+try! server.start(onInterface: "localhost", port: 9000)
 ```
 
 ### HTTP: Routes
