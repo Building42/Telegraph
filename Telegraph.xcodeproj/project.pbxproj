@@ -750,6 +750,7 @@
 				TargetAttributes = {
 					8253CA131E498EBA0078D520 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -759,6 +760,7 @@
 					};
 					825A71A11ECD28710043AC8D = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					825A71AE1ECD28CE0043AC8D = {
@@ -771,7 +773,7 @@
 					};
 					D9899DD21DF4A092008766B5 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8253CA131E498EBA0078D520;
 					};
