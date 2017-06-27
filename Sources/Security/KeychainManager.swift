@@ -11,55 +11,60 @@ import Security
 
 public class KeychainManager {
   public static let shared = KeychainManager()
+  public var accessibility = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
 
-  private typealias KeychainClass = CFString
-  private typealias KeychainValue = AnyObject
-  private typealias KeychainQuery = [NSString: AnyObject]
-  private let accessibility = kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+  public typealias KeychainClass = CFString
+  public typealias KeychainValue = AnyObject
+  public typealias KeychainQuery = [NSString: AnyObject]
+}
 
-  public func add(certificate: SecCertificate, label: String) throws {
-    try add(value: certificate, label: label)
+// MARK: PKCS12 methods
+
+extension KeychainManager {
+  /// Imports the PKCS12 data into the keychain.
+  public func importPKCS12(data: Data, passphrase: String, options: KeychainQuery = KeychainQuery()) -> SecIdentity? {
+    var query = options
+    query[kSecImportExportPassphrase] = passphrase as NSString
+
+    // Import the data
+    var importResult: CFArray?
+    let status = SecPKCS12Import(data as NSData, query as CFDictionary, &importResult)
+    guard status == errSecSuccess else { return nil }
+
+    // The result is an array of dictionaries, we are looking for the one that contains the identity
+    let importArray = importResult as? [[NSString: AnyObject]]
+    let importIdentity = importArray?.flatMap { dict in dict[kSecImportItemIdentity as NSString] }.first
+
+    // Let's double check that we have a result and that it is a SecIdentity
+    guard let rawResult = importIdentity, CFGetTypeID(rawResult) == SecIdentityGetTypeID() else { return nil }
+    let result = rawResult as! SecIdentity
+
+    return result
   }
+}
 
-  public func find(certificateWithLabel label: String) throws -> SecCertificate {
-    return try find(kSecClassCertificate, label: label)
-  }
+// MARK: Query methods
 
-  public func remove(certificateWithLabel label: String) throws {
-    try remove(kSecClassCertificate, label: label)
-  }
-
-  public func add(identity: SecIdentity, label: String) throws {
-    try add(value: identity, label: label)
-  }
-
-  public func find(identityWithLabel label: String) throws -> SecIdentity {
-    return try find(kSecClassIdentity, label: label)
-  }
-
-  public func remove(identityWithLabel label: String) throws {
-    try remove(kSecClassIdentity, label: label)
-  }
-
-  private func add(value: KeychainValue, label: String) throws {
+extension KeychainManager {
+  /// Adds a value to the keychain.
+  public func add(value: KeychainValue, label: String, options: KeychainQuery = KeychainQuery()) throws {
     // Don't specify kSecClass otherwise SecItemCopyMatching won't be able to find identities
-    let query: KeychainQuery = [
-      kSecAttrLabel: label as NSString,
-      kSecAttrAccessible: accessibility,
-      kSecValueRef: value
-    ]
+    var query = options
+    query[kSecAttrLabel] = label as NSString
+    query[kSecAttrAccessible] = accessibility
+    query[kSecValueRef] = value
 
     var result: AnyObject?
     let status = SecItemAdd(query as CFDictionary, &result)
     guard status == errSecSuccess else { throw KeychainError(code: status) }
   }
 
-  private func find<T>(_ kClass: KeychainClass, label: String) throws -> T {
-    let query: KeychainQuery = [
-      kSecClass: kClass,
-      kSecAttrLabel: label as NSString,
-      kSecReturnRef: kCFBooleanTrue
-    ]
+  /// Finds an item in the keychain.
+  public func find<T>(_ kClass: KeychainClass, label: String, options: KeychainQuery = KeychainQuery()) throws -> T {
+    var query = options
+    query[kSecClass] = kClass
+    query[kSecAttrLabel] = label as NSString
+    query[kSecReturnRef] = kCFBooleanTrue
 
     var result: AnyObject?
     let status = SecItemCopyMatching(query as CFDictionary, &result)
@@ -71,46 +76,13 @@ public class KeychainManager {
     return typedItem
   }
 
-  private func remove(_ kClass: KeychainClass, label: String) throws {
-    let query: KeychainQuery = [
-      kSecClass: kClass,
-      kSecAttrLabel: label as NSString
-    ]
+  /// Removes an item from the keychain.
+  public func remove(_ kClass: KeychainClass, label: String, options: KeychainQuery = KeychainQuery()) throws {
+    var query = options
+    query[kSecClass] = kClass
+    query[kSecAttrLabel] = label as NSString
 
     let status = SecItemDelete(query as CFDictionary)
     guard status == errSecSuccess else { throw KeychainError(code: status) }
-  }
-}
-
-public enum KeychainError: Error {
-  case invalidResult
-  case itemAlreadyExists
-  case itemNotFound
-  case other(code: OSStatus)
-
-  init(code: OSStatus) {
-    switch code {
-    case errSecDuplicateItem:
-      self = .itemAlreadyExists
-    case errSecItemNotFound:
-      self = .itemNotFound
-    default:
-      self = .other(code: code)
-    }
-  }
-}
-
-extension KeychainError: CustomStringConvertible {
-  public var description: String {
-    switch self {
-    case .invalidResult:
-      return "The keychain item returned wasn't of the expected type"
-    case .itemAlreadyExists:
-      return "The keychain item already exists"
-    case .itemNotFound:
-      return "The keychain item doesn't exist"
-    case .other(let code):
-      return "The keychain operation failed with code \(code)"
-    }
   }
 }

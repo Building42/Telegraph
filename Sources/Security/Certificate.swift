@@ -39,15 +39,14 @@ extension Certificate {
 
 extension Certificate {
   public convenience init(fromKeychain label: String) throws {
-    let rawValue = try KeychainManager.shared.find(certificateWithLabel: label)
-    self.init(rawValue: rawValue)
+    self.init(rawValue: try KeychainManager.shared.find(kSecClassCertificate, label: label))
   }
 
   public func addToKeychain(label: String) throws {
-    try KeychainManager.shared.add(certificate: rawValue, label: label)
+    try KeychainManager.shared.add(value: rawValue, label: label)
   }
 
   public static func removeFromKeychain(label: String) throws {
-    try KeychainManager.shared.remove(certificateWithLabel: label)
+    try KeychainManager.shared.remove(kSecClassCertificate, label: label)
   }
 }

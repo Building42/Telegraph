@@ -11,30 +11,19 @@ import Foundation
 open class CertificateIdentity: RawRepresentable {
   public let rawValue: SecIdentity
 
+  /// Initializes a new CertificateIdentity instance.
   public required init(rawValue: SecIdentity) {
     self.rawValue = rawValue
   }
 
-  public convenience init?(p12Data: Data, passphrase: String = "") {
-    let options: [NSString: AnyObject] = [
-      kSecImportExportPassphrase: passphrase as NSString
-    ]
-
-    // Import the PKCS12 file, this is the only way on iOS to create a SecIdentity
-    var result: CFArray?
-    let status = SecPKCS12Import(p12Data as NSData, options as CFDictionary, &result)
-    guard status == errSecSuccess else { return nil }
-
-    // The result is an array of dictionaries, we are looking for the one that contains the identity
-    let resultArray = result as? [[NSString: AnyObject]]
-    let resultIdentity = resultArray?.flatMap { dict in dict[kSecImportItemIdentity as NSString] }.first
-
-    // Let's double check that we have a result and that it is a SecIdentity
-    guard let rawValue = resultIdentity, CFGetTypeID(rawValue) == SecIdentityGetTypeID() else { return nil }
-    self.init(rawValue: rawValue as! SecIdentity)
+  /// Creates a CertificateIdentity by importing PCKS12 data.
+  public convenience init?(p12Data: Data, passphrase: String) {
+    guard let rawValue = KeychainManager.shared.importPKCS12(data: p12Data, passphrase: passphrase) else { return nil }
+    self.init(rawValue: rawValue)
   }
 
-  public convenience init?(p12URL: URL, passphrase: String = "") {
+  /// Creates a CertificateIdentity by importing PCKS12 data from the provided url.
+  public convenience init?(p12URL: URL, passphrase: String) {
     guard let data = try? Data(contentsOf: p12URL) else { return nil }
     self.init(p12Data: data, passphrase: passphrase)
   }
@@ -44,15 +33,32 @@ open class CertificateIdentity: RawRepresentable {
 
 extension CertificateIdentity {
   public convenience init(fromKeychain label: String) throws {
-    let rawValue = try KeychainManager.shared.find(identityWithLabel: label)
-    self.init(rawValue: rawValue)
+    self.init(rawValue: try KeychainManager.shared.find(kSecClassIdentity, label: label))
   }
 
   public func addToKeychain(label: String) throws {
-    try KeychainManager.shared.add(identity: rawValue, label: label)
+    try KeychainManager.shared.add(value: rawValue, label: label)
   }
 
   public static func removeFromKeychain(label: String) throws {
-    try KeychainManager.shared.remove(identityWithLabel: label)
+    try KeychainManager.shared.remove(kSecClassIdentity, label: label)
   }
 }
+
+// MARK: Optional passphrases (passphrases are required on MacOS)
+
+#if os(iOS) || os(watchOS) || os(tvOS)
+
+  extension CertificateIdentity {
+    /// Creates a CertificateIdentity by importing PCKS12 data, without passphrase.
+    public convenience init?(p12Data: Data) {
+      self.init(p12Data: p12Data, passphrase: "")
+    }
+
+    /// Creates a CertificateIdentity by importing PCKS12 data from the provided url, without passphrase.
+    public convenience init?(p12URL: URL) {
+      self.init(p12URL: p12URL, passphrase: "")
+    }
+  }
+
+#endif
