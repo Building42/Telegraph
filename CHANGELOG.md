@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
-## 0.8.0 (master)
+## [0.8.0](https://github.com/Building42/Telegraph/releases/tag/0.8.0)
 - Prevent private key issues on locked devices, [kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly](https://developer.apple.com/documentation/security/ksecattraccessibleafterfirstunlockthisdeviceonly) is now default
 - **Breaking:** `CertificateIdentity` initializers without passphrase are no longer available on MacOS (see [README](README.md))
 - **Breaking:** `KeychainManager` lost a few helper functions. If you need a keychain library, check out [LockSmith](https://github.com/matthewpalmer/Locksmith).
