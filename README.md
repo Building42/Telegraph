@@ -128,10 +128,9 @@ server.route(.get, "secret/*") { .forbidden }
 server.route(.get, "status") { (.ok, "Server is running") }
 server.serveBundle(.main, "/")
 
-# Specific directory in the main bundle:
-let wwwUrl = Bundle.main.url(forResource: "www", withExtension: nil)!
-let wwwBundle = Bundle(url: wwwUrl)!
-server.serveBundle(wwwBundle, "/")
+// You can also serve custom urls, for example the Demo folder in your bundle
+let demoBundleURL = Bundle.main.url(forResource: "Demo", withExtension: nil)!
+server.serveDirectory(demoBundleURL, "/demo")
 ```
 Slashes at the start of the path are optional. Routes are case insensitive. You can specify custom regular expressions for more advanced route matching. When none of the routes are matched, the server will return a 404 not found.
 
