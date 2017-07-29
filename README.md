@@ -157,7 +157,7 @@ open class AwesomeHandler: HTTPRequestHandler {
 }
 ```
 
-You can enable the message handler by setting it in het HTTP configuration:
+You can enable the message handler by setting it in the HTTP configuration:
 
 ```swift
 server.httpConfig.requestHandlers = [AwesomeHandler, HTTPWebSocketHandler, HTTPRouteHandler]
