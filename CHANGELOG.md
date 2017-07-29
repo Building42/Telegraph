@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.8.1](https://github.com/Building42/Telegraph/releases/tag/0.8.1)
+- Set CocoaAsyncSocket to version 7.6.1
+- Few new examples in the README (thanks [TomasHubelbauer](https://github.com/TomasHubelbauer))
+- The dependency versions are now less strict. Useful if you are using an older version of CocoaAsyncSocket.
+
 ## [0.8.0](https://github.com/Building42/Telegraph/releases/tag/0.8.0)
 - Prevent private key issues on locked devices, [kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly](https://developer.apple.com/documentation/security/ksecattraccessibleafterfirstunlockthisdeviceonly) is now default
 - **Breaking:** `CertificateIdentity` initializers without passphrase are no longer available on MacOS (see [README](README.md))

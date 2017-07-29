@@ -1,9 +1,9 @@
 PODS:
   - CocoaAsyncSocket (7.6.1)
   - HTTPParserC (2.7.3)
-  - Telegraph (0.8.0):
-    - CocoaAsyncSocket (~> 7.6.1)
-    - HTTPParserC (~> 2.7.3)
+  - Telegraph (0.8.1):
+    - CocoaAsyncSocket (~> 7.5)
+    - HTTPParserC (~> 2.7)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 7eadd3f59e1a6c84e2aefc93e9ff7b55156fe174
   HTTPParserC: 93cbbe5aec9b051138cfb971981e0ef345c54502
-  Telegraph: 708d4c266205740acefc11797e147921a6f17419
+  Telegraph: 8788b152c7ee13cd00f4a38e9d2fd63e8e2169ce
 
 PODFILE CHECKSUM: 1c68b492ad0bd012890fee4e99e71b286ce4d99e
 
