@@ -148,39 +148,55 @@ When a HTTP request is handled by the Server it is passed through a chain of mes
 Below is an example of a message handler:
 
 ```swift
-open class AwesomeHandler: HTTPRequestHandler {
-  open func respond(to request: HTTPRequest, nextHandler: HTTPRequest.Handler) throws -> HTTPResponse? {
+public class HTTPGETOnlyHandler: HTTPRequestHandler {
+  public func respond(to request: HTTPRequest, nextHandler: HTTPRequest.Handler) throws -> HTTPResponse? {
     // If this is a GET request, pass it to the next handler
     if request.method == .get {
       return try nextHandler(request)
     }
 
     // Otherwise return 403 - Forbidden
-    return HTTPResponse(.forbidden, content: "Only GET requests are awesome")
-    }
+    return HTTPResponse(.forbidden, content: "Only GET requests are allowed")
+  }
 }
 ```
 
 You can enable the message handler by setting it in the HTTP configuration:
 
 ```swift
-server.httpConfig.requestHandlers = [AwesomeHandler, HTTPWebSocketHandler, HTTPRouteHandler]
+server.httpConfig.requestHandlers.insert(HTTPGETOnlyHandler(), at: 0)
 ```
 
-Note that the order of the request handlers is important and you probably want to include the `HTTPRouteHandler` as the last request handler or your Server won't handle any route requests. The `HTTPRouteHandler` doesn't call any handlers, so don't specify any handlers after the `HTTPRouteHandler`.
+Note that the order of the request handlers is important. You'll probably want to have the `HTTPRouteHandler` as the last request handler or your Server won't handle any route requests. The `HTTPRouteHandler` doesn't call any handlers, so don't specify any handlers after the `HTTPRouteHandler`.
+
+You can also modify the request in handlers. This handler copies the QueryString items into the request's `params` dictionary:
+
+```swift
+public class HTTPRequestParamsHandler: HTTPRequestHandler {
+  public func respond(to request: HTTPRequest, nextHandler: HTTPRequest.Handler) throws -> HTTPResponse? {
+    // Extract the QueryString items and put them in the HTTPRequest params
+    request.uri.queryItems?.forEach { item in
+      request.params[item.name] = item.value
+    }
+
+    // Continue with the rest of the handlers
+    return try nextHandler(request)
+  }
+}
+```
 
 But what if you want to add headers to a response? Simply call the chain and modify the result:
 
 ```swift
-open class AnotherAwesomeHandler: HTTPRequestHandler {
-  open func respond(to request: HTTPRequest, nextHandler: HTTPRequest.Handler) throws -> HTTPResponse? {
+public class HTTPAppDetailsHandler: HTTPRequestHandler {
+  public func respond(to request: HTTPRequest, nextHandler: HTTPRequest.Handler) throws -> HTTPResponse? {
     //  Let the other handlers create a response
     let response = try nextHandler(request)
 
     // Add our own bit of magic
-    response.headers["X-App-Version"] = "Awesome 1.0"
+    response.headers["X-App-Version"] = "My App 1.0"
     return response
-    }
+  }
 }
 ```
 ### HTTP: Client
