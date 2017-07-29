@@ -12,7 +12,7 @@
 		02351E92F8B09C0AAAD4ECFE78603A73 /* WebSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546A70BE6965D5EEB52409FC5EFF21C /* WebSocketMessage.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		03BF793DA42F593E36B2FF22D33847E2 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D91E6ED59EC6B080E15A3B30CAF334 /* DispatchTimer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		041F2F5406991D70E4223A2AA8DF503B /* HTTPMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A7D0DC475E9ABD62F52F9571AC976 /* HTTPMessage.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		05A92C6AEEC1698D36F3994A6F6B3F91 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 79CA89D5E19C9301F0255A77F6274A37 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05A92C6AEEC1698D36F3994A6F6B3F91 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F1AB373FD452FC6B433EFF325870D969 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0627F4BBDDAB9919D5C4345715B0EC22 /* ServerWebSocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F48608E52969E7C9AEFB965313019 /* ServerWebSocketDelegate.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		06AD14A1BD588C020D9ACE00BFBB224D /* WebSocketMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434B1A93B4107664093BDD9FFB818E3 /* WebSocketMessageHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		072B2DBA79F5C233410C1B515828CEF3 /* Server+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB7C0F9C204BB32D5BDB8EEBEA537C /* Server+Routing.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -22,7 +22,7 @@
 		0B8BC1512AFD0256976EFDF7B84BDFD6 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E538B0E78BCF8EC70C483F384850310 /* FileManager+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0BEE62789CA837A3815CAB4C4A917454 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1E222193BA22973B9F5E77D7EA044B /* String+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0C86FD4FDF09B7F2A797FCD58A929A2F /* HTTPRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E55899AEE0750B47E3C41381176A7 /* HTTPRoute.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0CF6871FD75099DBA0F9BB27BB2C1CB7 /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C2C3555ECFBD88758864C984E6ADDD6 /* http_parser.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0CF6871FD75099DBA0F9BB27BB2C1CB7 /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = A6CA06A991E8CC6417B3A5A1BD6B1F5E /* http_parser.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0D0A18F247B87A8E98534DD5D77B0648 /* UInt+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B458C7FA336CEF51B67D6449DC52DE /* UInt+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0D4C405215D98C22F8F987C5AC9B9FFD /* Client+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6E85DBE29A3C6D2293068164467FAD /* Client+Config.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0DF38ABC70B3E0346DD14BD2F9AC5BEA /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF193CEC0488875B4870706E93E2E96 /* HTTPMethod.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -36,15 +36,15 @@
 		17B20F1DE3AB23D029387779033F90A8 /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F14256138A52D404A0223E2013032A /* DateFormatter+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		17D5F3C92CE9B2CD9C651254E3307D46 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F665EFB0411C94E7036B6CEA3B7915E /* HTTPRequest.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		181F0B969820626967DBF6F7942D2C4C /* Pods-Telegraph iOS-TelegraphTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 614E85307363745CA782A3B8EE929069 /* Pods-Telegraph iOS-TelegraphTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		19BEB58771D53609F1E73A3A4A2F771C /* HTTPParserC-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FA411D4743A805E02270EDB56304690 /* HTTPParserC-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19BEB58771D53609F1E73A3A4A2F771C /* HTTPParserC-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3EC2BB6BA9D8D2FA1428356B793C5D /* HTTPParserC-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B410CF3C8B321A6AB9E27161EF56A87 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AA761C9671F137F0558B83505C95B /* HTTPResponse.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1C1F0E1C98413C20ABF5A427D6B40CB9 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40B0AD327763E512CD31728E90C91E /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1C1F0E1C98413C20ABF5A427D6B40CB9 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC73A4822A2386DDF26C1D48455857F /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1D5CACAC376BB2EA320E2A36666BAC6D /* Pods-tvOS Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1246BC5B73FE155BB361A6C0975A2 /* Pods-tvOS Example-dummy.m */; };
 		1F6830393972B2CB4632A5A2F42CAF92 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E538B0E78BCF8EC70C483F384850310 /* FileManager+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		23D7873BF273355D1D8E7BD1EC01A2E5 /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01236581AE503ABE4C8941DEC30B7728 /* WebSocketConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2418880E25BCB749B37C5032646E225B /* TCPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E02E59CB159C63D4805EB428D476 /* TCPConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2472D41AC54C1C68DD015B704E5B2FFC /* CocoaAsyncSocket-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B0DBCCD5A6B355453F0711D672F64876 /* CocoaAsyncSocket-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24F49EA007A152322A24F766F7D63B6E /* HTTPParserC-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A7D327A296983020984916A771FB118 /* HTTPParserC-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2472D41AC54C1C68DD015B704E5B2FFC /* CocoaAsyncSocket-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96EAB7B8213375943D5C8339EC241C44 /* CocoaAsyncSocket-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24F49EA007A152322A24F766F7D63B6E /* HTTPParserC-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE642C06A00F85D0DF7C7D0730EF6C79 /* HTTPParserC-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25BCAC3F9674049B4D7F00DE256F9C88 /* Server+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992FE778D11098F49CF3F5C1FEA0727 /* Server+Config.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		261BF4753F873F5F67B9DC24B08CF026 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D91E6ED59EC6B080E15A3B30CAF334 /* DispatchTimer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		262E75EA64B15425708CA9902EC35E42 /* Client+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6E85DBE29A3C6D2293068164467FAD /* Client+Config.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -61,11 +61,11 @@
 		32EBFE63E182D49DF6C964F9EEA7E4BF /* Pods-Telegraph macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A28DD9814030AAB19BF0C26BC3130D56 /* Pods-Telegraph macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		33210BBE67E40D8E953519DFB46B1D8D /* WebSocketErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BDCE9C5F508C2287E97AB42AC027A /* WebSocketErrorHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		33656130E7D5AF7FFF8E116861B09C4E /* HTTPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC1E7C30BE04EF9D600EF721C89055 /* HTTPConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		37043D74C375B1C6D06E4D6AD596B41B /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A3F515BE326D10266DBE66ED417EF82 /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37043D74C375B1C6D06E4D6AD596B41B /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCACAF48C7D8DFD31805BE163DB9409 /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		370DE6F69A390668E04A7A83D75A8388 /* UInt+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B458C7FA336CEF51B67D6449DC52DE /* UInt+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		379D5DEA6197975A82AC56B859A09F45 /* FileManager+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E538B0E78BCF8EC70C483F384850310 /* FileManager+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		38795E3B870106C41DE34D43A22658F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4DAC925AD533A439CF3E1FA1665623 /* Foundation.framework */; };
-		3B022B650AA3A637067B41D21E10504B /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F561F6F9291EB1A184C1BCCD7536D3 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B022B650AA3A637067B41D21E10504B /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B343268E0ED1DD52FC4BDA60EF1309FA /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C29CCE1AFA1ADD887565F97D23DF7AA /* Telegraph-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4D00A94440C908A5A670E3A78AA7 /* Telegraph-tvOS-dummy.m */; };
 		3CA98C27AEE720F3A8BF5BAB2DF7EE12 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04943377C2199235CDBD0739B307A1F /* Data+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3CE72E14F06E2B62C352E2992E43B211 /* WebSocketParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1940192D97567CF05B64EBEF34199 /* WebSocketParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -84,7 +84,7 @@
 		4927A3FF21D38DB00CCFBA05AF44AD9B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E57A0E1728A25D34050A16AD334204E /* Cocoa.framework */; };
 		494B8FE4F98A6B9F03793D47056C0CDA /* ServerWebSocketDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F48608E52969E7C9AEFB965313019 /* ServerWebSocketDelegate.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4AF2FCA5D966EF6307717AB6DF2AA64C /* HTTPMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377A7D0DC475E9ABD62F52F9571AC976 /* HTTPMessage.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		4E4459A5BF790864ACB16CC138A14E7F /* CocoaAsyncSocket-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE8FE5430DB56057CB85C95A09C10EA /* CocoaAsyncSocket-tvOS-dummy.m */; };
+		4E4459A5BF790864ACB16CC138A14E7F /* CocoaAsyncSocket-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868551AD10522CE1AB9F0C24CB8D85E /* CocoaAsyncSocket-tvOS-dummy.m */; };
 		4EF6D32D37F081B5149C71DD9ED56D9D /* Server+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992FE778D11098F49CF3F5C1FEA0727 /* Server+Config.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		502E5FFBE2C8615C92C67DE0755DB20D /* UInt+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B458C7FA336CEF51B67D6449DC52DE /* UInt+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		510B6A2A027D759BE3EEDB16C3BEE7D0 /* HTTPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309223F24097B53EEF1A777C7CBF7C1 /* HTTPParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -116,23 +116,23 @@
 		694632FA0EB58CD6CA5210E57748B688 /* WebSocketErrorDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A18129879A269C7DF9B09889A3C40D /* WebSocketErrorDefaultHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		697D8F424321BB93D689E7CADB38B370 /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A5C157ED3D3FCD3D5C4A10F0257BF3 /* DispatchQueue+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		69B57565AECA16C6039CAF8DC9285CF0 /* HTTPHeader+WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F21609857E4D6890A14A591BF9645 /* HTTPHeader+WebSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		69D1C4F24477E24A43120319EA340A34 /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A3F515BE326D10266DBE66ED417EF82 /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69D1C4F24477E24A43120319EA340A34 /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCACAF48C7D8DFD31805BE163DB9409 /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69DC09665C0F230E0AF713FD23853F49 /* HTTPRequest+Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A7C7F54541D1B880384B8E6BA542 /* HTTPRequest+Host.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6A9000A2B568E823F80138363F7DC429 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E57A0E1728A25D34050A16AD334204E /* Cocoa.framework */; };
 		6B305EDDDD96E4D7ED33E029308B944B /* WebSocketConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D22ABC4AAF100E4929903C076BABE5F /* WebSocketConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6B4481661778D1C9CD742AE77FCAACD8 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC076E5E00864A8B15C2ADCE59BCE6 /* Array+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		6C23AE791E1D412E6795567DB383F591 /* HTTPParserC-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C5DCEF9B9C8736DFF00397F1A9DB4B /* HTTPParserC-OSX-dummy.m */; };
+		6C23AE791E1D412E6795567DB383F591 /* HTTPParserC-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D464488C0E5E6675B728A5F8F35F76D4 /* HTTPParserC-OSX-dummy.m */; };
 		6D860E4E76292DFCBDEFB34A8B3F5333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4DAC925AD533A439CF3E1FA1665623 /* Foundation.framework */; };
 		6DD004C58A419B289996ABC1BCD23867 /* Pods-macOS Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 256DBF977B04A42BF416E82052AE5DF1 /* Pods-macOS Example-dummy.m */; };
-		702016B00FD8D2D8BE17DF833C08EAA3 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AC9C2EB3EEA769D372B010DC3D101 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		702016B00FD8D2D8BE17DF833C08EAA3 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C07FC72E44DEB12BEE2E87A0B4A4ABD7 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		723F60B39D0F5323761ADDDB2215F521 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B48D826092E2A711A219C92B16417 /* Server.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7388B108A03EBD0FCF5AB7E8BD877AC5 /* TLSPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4EAAAF8A6E31737E6500EE34E8BB1 /* TLSPolicy.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		73BAB4C8B8540A763E830B644E012DB3 /* TCPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E02E59CB159C63D4805EB428D476 /* TCPConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		73D3E9EB9F0C037FBAE0695B3B55703E /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFBD763E381ADEB51F994C65354CC12 /* CoreServices.framework */; };
-		7489323C27D8AD4BA8626683DD2F5D50 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40B0AD327763E512CD31728E90C91E /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		74A04330BD785B102ADE0BF176C4A658 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AC9C2EB3EEA769D372B010DC3D101 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7489323C27D8AD4BA8626683DD2F5D50 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC73A4822A2386DDF26C1D48455857F /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		74A04330BD785B102ADE0BF176C4A658 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C07FC72E44DEB12BEE2E87A0B4A4ABD7 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7595671A8315A33D08AB32C7443BF965 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D91E6ED59EC6B080E15A3B30CAF334 /* DispatchTimer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		75FDA43F465F344CBBE44635EC8D632C /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C40B0AD327763E512CD31728E90C91E /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		75FDA43F465F344CBBE44635EC8D632C /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC73A4822A2386DDF26C1D48455857F /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7982B395E57B63A8BE727A1C046EE56F /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB48130C43EEA74F72000ADCAC3F5E8 /* KeychainError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		79ECE6AD583B942CE8B4D31871CC31E3 /* WebSocketMessageDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399B6AEDA408967183E09E1BC06FCF5 /* WebSocketMessageDefaultHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		79F11AB451A70D08B4FBE63645FD35BF /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C589063E5E8BDF60EB9AE4F08E2C769 /* HTTPFileHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -141,7 +141,7 @@
 		7E2F9FBEE213CE0871B215A778D10F00 /* HTTPMessage+WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F5137A675A6E8877D154C38DD5CE5 /* HTTPMessage+WebSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7FB061F2FBEC8887D1503B1EF7A89119 /* HTTPConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC1E7C30BE04EF9D600EF721C89055 /* HTTPConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		803B6659B69F18E93DE501755B6CC506 /* HTTPRouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F58EBD875AF72A4FAD1E3F43CBE194 /* HTTPRouteHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		80584CFB4594C0E14C52FF5721A9752E /* CocoaAsyncSocket-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B49FA4397FAF35CC622386D1682BE9 /* CocoaAsyncSocket-iOS-dummy.m */; };
+		80584CFB4594C0E14C52FF5721A9752E /* CocoaAsyncSocket-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD99A84AEDA41996A8D0515691AF3637 /* CocoaAsyncSocket-iOS-dummy.m */; };
 		8094C1C91C662F81B91F73F072BBB077 /* WebSocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC7F8131DED1BA4B17D583462F9798B /* WebSocketError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		80A79B7AA1DA7E48C28DB1FF959673DA /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04943377C2199235CDBD0739B307A1F /* Data+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		814B54D57AC2977509851D85FEED75BA /* HTTPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309223F24097B53EEF1A777C7CBF7C1 /* HTTPParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -158,7 +158,7 @@
 		8BE082C3200265B6A43F950EBCC2A34B /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4E935927541D7A659C63DE056AB675 /* HTTPHeader.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8CEECF4ADA9E70E1B6717FD37A0D3CDE /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B48D826092E2A711A219C92B16417 /* Server.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8E3C04E369FA9132D15C927A00A9CC6D /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F665EFB0411C94E7036B6CEA3B7915E /* HTTPRequest.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8F0DE4845734C3EE692A3B245412BE82 /* HTTPParserC-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5354B815191C0D6E3B313626B26CAF /* HTTPParserC-tvOS-dummy.m */; };
+		8F0DE4845734C3EE692A3B245412BE82 /* HTTPParserC-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCB71C4BB34305A82EE62E0FC7EE767 /* HTTPParserC-tvOS-dummy.m */; };
 		91A5C8466F207A419F9977001C508C42 /* HTTPRouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F58EBD875AF72A4FAD1E3F43CBE194 /* HTTPRouteHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		920C9E7E4F107C1773F1E0052F241948 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89443E07D13B53940017443C4B2372A4 /* WebSocket.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		925190E66E5FEA7EB1EF7CD9211E7001 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4DAC925AD533A439CF3E1FA1665623 /* Foundation.framework */; };
@@ -179,12 +179,12 @@
 		9E6171A0E2F42066F2516F514953D4F7 /* Pods-Telegraph tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB58125AF8898C4998B1AEDBB8CC832A /* Pods-Telegraph tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F56AA19508FC87DEBC8E9388C14BCAB /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12328F18D07039D6FF6B88D833C0985 /* SHA1.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9F7DE3F837DDB5FFB0E29D95AB8DF5A1 /* HTTPWebSocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB71850A0847F5DFA99FD90162CEC9 /* HTTPWebSocketHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A1FDFBF7543209A84445B1B0BDF15EC5 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 79CA89D5E19C9301F0255A77F6274A37 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1FDFBF7543209A84445B1B0BDF15EC5 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F1AB373FD452FC6B433EFF325870D969 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EF687E1FAB0ECF90E2DF799A9FD3B1 /* TLSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91539D615BB028B6E37443C9D91329D /* TLSConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A8DFAF883D722FBAE8929288805C9FE9 /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01236581AE503ABE4C8941DEC30B7728 /* WebSocketConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A97536294EEBE648F4443D6F3C85A03B /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C2C3555ECFBD88758864C984E6ADDD6 /* http_parser.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A97536294EEBE648F4443D6F3C85A03B /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = A6CA06A991E8CC6417B3A5A1BD6B1F5E /* http_parser.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		A9BEF1357C040F9085A27A434F4DB8DA /* WebSocketErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BDCE9C5F508C2287E97AB42AC027A /* WebSocketErrorHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		AA06B0B4EA5A92394B65F05B7AFA7383 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F561F6F9291EB1A184C1BCCD7536D3 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA06B0B4EA5A92394B65F05B7AFA7383 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B343268E0ED1DD52FC4BDA60EF1309FA /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA2765784B6D4EE57E4994F689354F09 /* HTTPErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9423CB642B8DE8E94FFEEFC01435D4 /* HTTPErrorHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AA71D233C0916C7D7AE9E3A9E67EA922 /* Pods-iOS Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D146FC2EA1CE487230318DB9A118A9 /* Pods-iOS Example-dummy.m */; };
 		AC474DB9253C63FB85CD3EEAA23613FD /* CertificateIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D1A97F66176960059C2E692F08CB32 /* CertificateIdentity.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -197,7 +197,7 @@
 		B0126EA496CAF629C1F31213F8620E49 /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04943377C2199235CDBD0739B307A1F /* Data+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B03BFEBA71CDC41CB24C3D9A5DB7DA00 /* Streams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475C8C0F2FCE1B3FF459D79E39A4A015 /* Streams.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B12C879951589986E571917AB5A81A2A /* HTTPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCABCF0CAB20199DCF27DF0DE9070BBB /* HTTPConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B22D5D5FCE52B226670A84113044B4F8 /* CocoaAsyncSocket-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6624DBD14C112C5824D5F766918951EC /* CocoaAsyncSocket-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B22D5D5FCE52B226670A84113044B4F8 /* CocoaAsyncSocket-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD1F841086BBC8CD91C5B64D85F21A5 /* CocoaAsyncSocket-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2CCD9A1965073521D3FE1CED1F12515 /* Streams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475C8C0F2FCE1B3FF459D79E39A4A015 /* Streams.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B321E7BE56F0CE78818317FEADC7507D /* WebSocketConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D22ABC4AAF100E4929903C076BABE5F /* WebSocketConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B39B02DB38FC8F89229AA4BD91AC1049 /* WebSocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC7F8131DED1BA4B17D583462F9798B /* WebSocketError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -205,7 +205,7 @@
 		B47FB60D3060C6CCFAFA0AFD7E7FA166 /* HTTPRequest+Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A7C7F54541D1B880384B8E6BA542 /* HTTPRequest+Host.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B51F648705B5661447D0D6DAD91606C5 /* WebSocketMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B434B1A93B4107664093BDD9FFB818E3 /* WebSocketMessageHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B5CC5B05F804C1C03C8355DABB241907 /* NSRegularExpression+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10DAA3CDB463DA7F2AE2B5AF56313E /* NSRegularExpression+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B6038160DC7870E644C59B70EC7A2B1F /* HTTPParserC-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB41DA6CBE7D18FF2AED601C032410 /* HTTPParserC-iOS-dummy.m */; };
+		B6038160DC7870E644C59B70EC7A2B1F /* HTTPParserC-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 742AFC26BE805A3635F54DCE9825F5ED /* HTTPParserC-iOS-dummy.m */; };
 		B77D54C4FE2292E225552733F565384B /* TLSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91539D615BB028B6E37443C9D91329D /* TLSConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B7EABD50615ED3FF6B7AE47FB1DC022B /* CertificateIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D1A97F66176960059C2E692F08CB32 /* CertificateIdentity.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BB5CB32F2DD2053AC5667AA92C083A74 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC076E5E00864A8B15C2ADCE59BCE6 /* Array+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -216,22 +216,22 @@
 		C1739BBA214E21F1C7D71FB529F7BD3E /* HTTPRequest+Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A7C7F54541D1B880384B8E6BA542 /* HTTPRequest+Host.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C18BB7A898191C4C7A69B5FF7F55960D /* TCPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584E02E59CB159C63D4805EB428D476 /* TCPConnection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C1A2C9FA5A1C25AF1507D28B7BB8BFF7 /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A5C157ED3D3FCD3D5C4A10F0257BF3 /* DispatchQueue+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C24718D2005E3D30019AD2BA104A3958 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AC9C2EB3EEA769D372B010DC3D101 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C24718D2005E3D30019AD2BA104A3958 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C07FC72E44DEB12BEE2E87A0B4A4ABD7 /* GCDAsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C50B4A74B2B914D9669CC8E82707038A /* HTTPRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E7AD01FB730496C2CDCDCF3A06AFB6 /* HTTPRequestHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C605F4BA8827561CB2D656091A65D7D2 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 72F561F6F9291EB1A184C1BCCD7536D3 /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C605F4BA8827561CB2D656091A65D7D2 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = B343268E0ED1DD52FC4BDA60EF1309FA /* GCDAsyncSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6CD78FC2543B2BE5AE29278839662E9 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF12017EA3E9E67EB83BBB966C912B82 /* HTTPParserC.framework */; };
 		C8CBA17EE93D9981862C0B627BA825B3 /* HTTPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09917D6D313A0EC96061A168D6497822 /* HTTPVersion.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C8EE45A503F2BF8BCB815A1B9F5A0865 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972584828128B500A908B9CF78F3BCB5 /* WebSocketClient.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C94C91132B74EBC73300AC49CF06B6C0 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 79CA89D5E19C9301F0255A77F6274A37 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C94C91132B74EBC73300AC49CF06B6C0 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = F1AB373FD452FC6B433EFF325870D969 /* GCDAsyncUdpSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9577C37778ACC4D6705D69090707012 /* TCPListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3603612CE449DC121B08969707D312 /* TCPListener.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C977C077F5087271A756D4E39D61C8C5 /* TLSPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4EAAAF8A6E31737E6500EE34E8BB1 /* TLSPolicy.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CB12D440AB216BA110888918A2338653 /* CocoaAsyncSocket-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8FD82CEAA7D0E3D194B01058F294034 /* CocoaAsyncSocket-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB12D440AB216BA110888918A2338653 /* CocoaAsyncSocket-OSX-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59116F9997DAA00BFAB2658A72C3C14D /* CocoaAsyncSocket-OSX-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB553E8150E7605E1DF03850BBD622F3 /* Telegraph-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F14A6189207D82F72BA2D244FF28F7C9 /* Telegraph-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC0DEBB6FD7F30E7C2323A76B19071C8 /* Telegraph-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E87838BD4D5EBD9C92EB32351A17689D /* Telegraph-iOS-dummy.m */; };
 		CF5C585A8783D30CD09DD8283E4972B1 /* NSRegularExpression+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10DAA3CDB463DA7F2AE2B5AF56313E /* NSRegularExpression+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D1C524B6E492EE7DAFAD8BC5DA4566AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD699141C374840F4F3845C675D9BB5 /* Foundation.framework */; };
 		D2EE9134ED6FFD8A159105E6CE2F1D51 /* HTTPRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E55899AEE0750B47E3C41381176A7 /* HTTPRoute.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D37FBD960937D991D30AC9E851F35A5E /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C2C3555ECFBD88758864C984E6ADDD6 /* http_parser.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D37FBD960937D991D30AC9E851F35A5E /* http_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = A6CA06A991E8CC6417B3A5A1BD6B1F5E /* http_parser.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D5148A5748FAD023F257EEF789B714AF /* WebSocketParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1940192D97567CF05B64EBEF34199 /* WebSocketParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D6D2D821C8BA47D001CB1BDBEF54673B /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64EA49F5BD9065C350A0D2177BBFFB /* KeychainManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D8AFC3884EB95EBC552F8E6D4013CE1E /* Pods-Telegraph iOS-TelegraphTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2757EF9D9F9556597AB6D48798F88B1D /* Pods-Telegraph iOS-TelegraphTests-dummy.m */; };
@@ -239,7 +239,7 @@
 		DDD9F1429D93E06AA8CA34C7AB011D67 /* HTTPVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09917D6D313A0EC96061A168D6497822 /* HTTPVersion.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DE424DEE46F4390415028FFC7C90DDA9 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C589063E5E8BDF60EB9AE4F08E2C769 /* HTTPFileHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DE84E627467CCCE1E3FF2C5958840C1A /* HTTPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309223F24097B53EEF1A777C7CBF7C1 /* HTTPParser.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		DEF751668CF842988A12E77A2100638F /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A3F515BE326D10266DBE66ED417EF82 /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEF751668CF842988A12E77A2100638F /* http_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCACAF48C7D8DFD31805BE163DB9409 /* http_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF9A1E693D50547063B239A5C1AAFF16 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09967356785504909042BF2B5788CA3B /* HTTPError.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E031CCF4DA9FD83EBD8B75ACF26F9D9E /* WebSocketConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D22ABC4AAF100E4929903C076BABE5F /* WebSocketConfig.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E0981048899228F331B8CBBC1D58ECF5 /* WebSocketMessage+Write.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4D5238B0FD2BBC7AE78B0DCE4C007 /* WebSocketMessage+Write.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -248,7 +248,7 @@
 		E2355A00D3469CA2FC74DC336DEA7908 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4DAC925AD533A439CF3E1FA1665623 /* Foundation.framework */; };
 		E32124B244BF0E818261978B3B9F69F5 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C589063E5E8BDF60EB9AE4F08E2C769 /* HTTPFileHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E411D61FB68BDE1FDCFD90B874750675 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B48D826092E2A711A219C92B16417 /* Server.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E5B53414CBC7F7AA193DD74955538EE2 /* CocoaAsyncSocket-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFA950B48D184D24D11AD8D702C0063 /* CocoaAsyncSocket-OSX-dummy.m */; };
+		E5B53414CBC7F7AA193DD74955538EE2 /* CocoaAsyncSocket-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC48DF99EE24509CC00796728A064BC /* CocoaAsyncSocket-OSX-dummy.m */; };
 		E6E5B055062D0FA96D565767B66634F4 /* HTTPErrorDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCE7EC2909B3961CB4AFC43D615BF37 /* HTTPErrorDefaultHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E77FA3AC35C4C444F1831025FE9B97C2 /* Pods-Telegraph macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7D37F0B07D22385BFDF9F7431E294 /* Pods-Telegraph macOS-dummy.m */; };
 		E8107C163569D33337C99F74B2D16B67 /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6751C3299FD5B5BE79C197BDAFCCB78F /* HTTPStatus.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -260,7 +260,7 @@
 		ED94ACB58A9FE195AA194E9BAF94FF56 /* WebSocketMessageDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399B6AEDA408967183E09E1BC06FCF5 /* WebSocketMessageDefaultHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EDCB70430A2D68A76A07C4AA5A36A0FE /* TCPListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3603612CE449DC121B08969707D312 /* TCPListener.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EECD4591DD95772D9529F90A82F508C1 /* Telegraph-OSX-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64060B50DA935E41956536F3902CAA75 /* Telegraph-OSX-dummy.m */; };
-		F20BBC6D43E4252566ED2C9B50B6441B /* HTTPParserC-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 643358310712D96C56749E3EF315B5CC /* HTTPParserC-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F20BBC6D43E4252566ED2C9B50B6441B /* HTTPParserC-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE11E31A59A44BD9A856B6B9F6AFE6D5 /* HTTPParserC-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F21FEC6A6C6B141F1FC744335CA0B713 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12328F18D07039D6FF6B88D833C0985 /* SHA1.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F234FACAF390DB905B5721A4356EAC93 /* HTTPErrorDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCE7EC2909B3961CB4AFC43D615BF37 /* HTTPErrorDefaultHandler.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F2DE3F00D72A4C96888B6987214CB57A /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A5C157ED3D3FCD3D5C4A10F0257BF3 /* DispatchQueue+Ext.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -436,19 +436,20 @@
 
 /* Begin PBXFileReference section */
 		01236581AE503ABE4C8941DEC30B7728 /* WebSocketConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketConnection.swift; sourceTree = "<group>"; };
+		02353394B77C2B89D8B2872CED6C63A6 /* HTTPParserC-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-iOS-prefix.pch"; path = "../HTTPParserC-iOS/HTTPParserC-iOS-prefix.pch"; sourceTree = "<group>"; };
 		035E55899AEE0750B47E3C41381176A7 /* HTTPRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRoute.swift; sourceTree = "<group>"; };
 		0361514E8BF4ACEE9D901211B54DEE5D /* Telegraph-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Telegraph-OSX-umbrella.h"; sourceTree = "<group>"; };
 		058EDC06D5E5E0B979CCAB15F69BA559 /* Pods_tvOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tvOS_Example.framework; path = "Pods-tvOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A79F9A1B3D04416CEE854C624F446D /* HTTPParserC-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "HTTPParserC-iOS.modulemap"; path = "../HTTPParserC-iOS/HTTPParserC-iOS.modulemap"; sourceTree = "<group>"; };
 		0830BE95437761FFD86F353D0298894C /* Certificate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
 		09917D6D313A0EC96061A168D6497822 /* HTTPVersion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPVersion.swift; sourceTree = "<group>"; };
 		09967356785504909042BF2B5788CA3B /* HTTPError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		0AB1940192D97567CF05B64EBEF34199 /* WebSocketParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketParser.swift; sourceTree = "<group>"; };
 		0BDEA238A968F70DB359DBC4395C2F69 /* Telegraph-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Telegraph-iOS-prefix.pch"; path = "../Telegraph-iOS/Telegraph-iOS-prefix.pch"; sourceTree = "<group>"; };
-		0C26F01C5FCF89534109DC57FA2F9633 /* CocoaAsyncSocket-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CocoaAsyncSocket-tvOS.modulemap"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.modulemap"; sourceTree = "<group>"; };
 		0D22ABC4AAF100E4929903C076BABE5F /* WebSocketConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketConfig.swift; sourceTree = "<group>"; };
 		0E2B48D826092E2A711A219C92B16417 /* Server.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		0F10DAA3CDB463DA7F2AE2B5AF56313E /* NSRegularExpression+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Ext.swift"; sourceTree = "<group>"; };
-		0FA3319DDF380FB377E25D094C8679F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FC73A4822A2386DDF26C1D48455857F /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
 		11003106DA77BC7AAD2AD8A60CBC046A /* Pods-Telegraph macOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph macOS-resources.sh"; sourceTree = "<group>"; };
 		1253419BE45ECD218124C37629626FD8 /* URI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URI.swift; sourceTree = "<group>"; };
 		149958E9666857348CBCDE1E3F10CEDD /* Pods-Telegraph macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph macOS.modulemap"; sourceTree = "<group>"; };
@@ -463,26 +464,23 @@
 		1C589063E5E8BDF60EB9AE4F08E2C769 /* HTTPFileHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPFileHandler.swift; sourceTree = "<group>"; };
 		1C5F888F0AA0FCCC11AB6688ECBF7499 /* Pods-Telegraph iOS-TelegraphTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph iOS-TelegraphTests.release.xcconfig"; sourceTree = "<group>"; };
 		1E3603612CE449DC121B08969707D312 /* TCPListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TCPListener.swift; sourceTree = "<group>"; };
+		1EC6776FDCF1929469E700F9D87042F7 /* CocoaAsyncSocket-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CocoaAsyncSocket-OSX.xcconfig"; sourceTree = "<group>"; };
 		1F7EAEF3E84F13333E2D4055BF781A81 /* Pods-Telegraph macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		1F986AC0AD1B5F946594A1B231F4C5FD /* CocoaAsyncSocket-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "CocoaAsyncSocket-OSX.modulemap"; sourceTree = "<group>"; };
-		2493874D8DC69BA7DEAD0AEEBB057EF5 /* HTTPParserC-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-iOS-prefix.pch"; path = "../HTTPParserC-iOS/HTTPParserC-iOS-prefix.pch"; sourceTree = "<group>"; };
-		24A43032112184B8356EB7A299396C0E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../HTTPParserC-tvOS/Info.plist"; sourceTree = "<group>"; };
+		2474AF650F9253746C110D2324C632AD /* HTTPParserC-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPParserC-OSX-prefix.pch"; sourceTree = "<group>"; };
 		256DBF977B04A42BF416E82052AE5DF1 /* Pods-macOS Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-macOS Example-dummy.m"; sourceTree = "<group>"; };
+		26ED07C91DCE5F5A99D0A628F4A54873 /* CocoaAsyncSocket-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-tvOS-prefix.pch"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		2757EF9D9F9556597AB6D48798F88B1D /* Pods-Telegraph iOS-TelegraphTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Telegraph iOS-TelegraphTests-dummy.m"; sourceTree = "<group>"; };
 		2782790DD03FCC52F38BAF86E4E8A5E3 /* Pods-Telegraph iOS-TelegraphTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph iOS-TelegraphTests-frameworks.sh"; sourceTree = "<group>"; };
-		2DE8FE5430DB56057CB85C95A09C10EA /* CocoaAsyncSocket-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CocoaAsyncSocket-tvOS-dummy.m"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-dummy.m"; sourceTree = "<group>"; };
 		35D91E6ED59EC6B080E15A3B30CAF334 /* DispatchTimer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
 		377A7D0DC475E9ABD62F52F9571AC976 /* HTTPMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPMessage.swift; sourceTree = "<group>"; };
 		3844158460C44CABCC22B3856E0C420B /* Pods-Telegraph iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph iOS.release.xcconfig"; sourceTree = "<group>"; };
-		38FE39B535C2B444625BCE7E5FDA44F8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AD1246BC5B73FE155BB361A6C0975A2 /* Pods-tvOS Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tvOS Example-dummy.m"; sourceTree = "<group>"; };
 		3B53E0112CA8241DE1798F475D7B8426 /* Pods-Telegraph tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Telegraph tvOS-dummy.m"; sourceTree = "<group>"; };
 		3BCE7EC2909B3961CB4AFC43D615BF37 /* HTTPErrorDefaultHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPErrorDefaultHandler.swift; sourceTree = "<group>"; };
-		3CFD669CEA33D4BA0825E46C3BCFE043 /* CocoaAsyncSocket-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-iOS-prefix.pch"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-prefix.pch"; sourceTree = "<group>"; };
 		3D1E222193BA22973B9F5E77D7EA044B /* String+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		3DA8D2DBDADEC69ACE7FBDBEDBD8DD5F /* Pods-macOS Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS Example-frameworks.sh"; sourceTree = "<group>"; };
+		3FA1D0774B523FC1E15BED41A3A1CB04 /* CocoaAsyncSocket-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CocoaAsyncSocket-iOS.xcconfig"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS.xcconfig"; sourceTree = "<group>"; };
 		40976E633A382566B3CC2986B6CD88DC /* Pods-iOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS Example.modulemap"; sourceTree = "<group>"; };
-		40C5DCEF9B9C8736DFF00397F1A9DB4B /* HTTPParserC-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HTTPParserC-OSX-dummy.m"; sourceTree = "<group>"; };
 		415EB7014C61B8D4F4F8CCA11F605352 /* Telegraph-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Telegraph-OSX.xcconfig"; sourceTree = "<group>"; };
 		42B699F17032B2D7D5F34BDF401F55A0 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = "CocoaAsyncSocket-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4546A70BE6965D5EEB52409FC5EFF21C /* WebSocketMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketMessage.swift; sourceTree = "<group>"; };
@@ -490,16 +488,15 @@
 		488BA23ECDB2D475F6F155CDB9989E48 /* Pods-tvOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-tvOS Example.modulemap"; sourceTree = "<group>"; };
 		496D2AB931720CF68ED290FB2F51C521 /* Pods-Telegraph iOS-TelegraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph iOS-TelegraphTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A4F5137A675A6E8877D154C38DD5CE5 /* HTTPMessage+WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HTTPMessage+WebSocket.swift"; sourceTree = "<group>"; };
-		4C40B0AD327763E512CD31728E90C91E /* GCDAsyncSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncSocket.m; path = Source/GCD/GCDAsyncSocket.m; sourceTree = "<group>"; };
 		4C74048DC8F92C94BE06793DBCA8746C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D3BDCE9C5F508C2287E97AB42AC027A /* WebSocketErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketErrorHandler.swift; sourceTree = "<group>"; };
 		4EC79709678872D1F0060FD93CB2389E /* Pods-Telegraph iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Telegraph iOS-umbrella.h"; sourceTree = "<group>"; };
-		4FA0826590357539AA62021CBEB05BE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CocoaAsyncSocket-iOS/Info.plist"; sourceTree = "<group>"; };
 		4FF7D37F0B07D22385BFDF9F7431E294 /* Pods-Telegraph macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Telegraph macOS-dummy.m"; sourceTree = "<group>"; };
 		4FFBD763E381ADEB51F994C65354CC12 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		50E7AD01FB730496C2CDCDCF3A06AFB6 /* HTTPRequestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRequestHandler.swift; sourceTree = "<group>"; };
 		5148B7FC85A9E90DE1A09D2B2F8DF9E8 /* TCPSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TCPSocket.swift; sourceTree = "<group>"; };
 		5249D64DAC7784DA07FBAC9D237275B5 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HTTPParserC.framework; path = "HTTPParserC-OSX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		524AC7DD25248C962DDC2E4EE899B7FD /* HTTPParserC-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "HTTPParserC-tvOS.xcconfig"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS.xcconfig"; sourceTree = "<group>"; };
 		52D146FC2EA1CE487230318DB9A118A9 /* Pods-iOS Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Example-dummy.m"; sourceTree = "<group>"; };
 		52F0C5E3939DAA84843EFE7B4BB06F90 /* Pods_Telegraph_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_macOS.framework; path = "Pods-Telegraph macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5309223F24097B53EEF1A777C7CBF7C1 /* HTTPParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPParser.swift; sourceTree = "<group>"; };
@@ -510,147 +507,150 @@
 		573D523ECCF0D8CC03934998B1EE1575 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Telegraph.framework; path = "Telegraph-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5791339503527DCEFC890CFF7B48C124 /* URL+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		58043AB5904D7D86ABEF1F3163665D04 /* Pods-Telegraph tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph tvOS.modulemap"; sourceTree = "<group>"; };
+		59116F9997DAA00BFAB2658A72C3C14D /* CocoaAsyncSocket-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-OSX-umbrella.h"; sourceTree = "<group>"; };
 		5985B06E2EF27625BC58E052828BD3FD /* HTTPClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		5992FE778D11098F49CF3F5C1FEA0727 /* Server+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Server+Config.swift"; sourceTree = "<group>"; };
 		5BC7F8131DED1BA4B17D583462F9798B /* WebSocketError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketError.swift; sourceTree = "<group>"; };
-		5DFB41DA6CBE7D18FF2AED601C032410 /* HTTPParserC-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "HTTPParserC-iOS-dummy.m"; path = "../HTTPParserC-iOS/HTTPParserC-iOS-dummy.m"; sourceTree = "<group>"; };
+		5BEDF10550AEB9D0BDCFD4846A2C8718 /* CocoaAsyncSocket-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-iOS-prefix.pch"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-prefix.pch"; sourceTree = "<group>"; };
 		5E57A0E1728A25D34050A16AD334204E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5F4FAD493C3875E79A764604DBAAD499 /* Pods-tvOS Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tvOS Example-frameworks.sh"; sourceTree = "<group>"; };
 		5F9F48608E52969E7C9AEFB965313019 /* ServerWebSocketDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServerWebSocketDelegate.swift; sourceTree = "<group>"; };
 		60647644F98926D72DE8C348ACBAA8DF /* Telegraph-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Telegraph-iOS.xcconfig"; path = "../Telegraph-iOS/Telegraph-iOS.xcconfig"; sourceTree = "<group>"; };
 		614E85307363745CA782A3B8EE929069 /* Pods-Telegraph iOS-TelegraphTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Telegraph iOS-TelegraphTests-umbrella.h"; sourceTree = "<group>"; };
+		61FA276A60D918020348287775DBA274 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../HTTPParserC-tvOS/Info.plist"; sourceTree = "<group>"; };
 		64060B50DA935E41956536F3902CAA75 /* Telegraph-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Telegraph-OSX-dummy.m"; sourceTree = "<group>"; };
-		643358310712D96C56749E3EF315B5CC /* HTTPParserC-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-tvOS-umbrella.h"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS-umbrella.h"; sourceTree = "<group>"; };
-		6624DBD14C112C5824D5F766918951EC /* CocoaAsyncSocket-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-iOS-umbrella.h"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-umbrella.h"; sourceTree = "<group>"; };
 		66D3A1FE0E43D9C6B248E4312539F52E /* Pods-Telegraph iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6751C3299FD5B5BE79C197BDAFCCB78F /* HTTPStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
 		680BC992097E538F9F5A93B3CDFBE29F /* Pods-Telegraph iOS-TelegraphTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph iOS-TelegraphTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		69C34038A8CAFB36C41FEB1DCA047965 /* Pods-iOS Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-resources.sh"; sourceTree = "<group>"; };
 		6A0951CE0DA0BD6CA6DE248714C4AFAD /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6A6D8D5BE86A313171695337632568CB /* Pods-Telegraph tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6C2C3555ECFBD88758864C984E6ADDD6 /* http_parser.c */ = {isa = PBXFileReference; includeInIndex = 1; name = http_parser.c; path = Sources/http_parser.c; sourceTree = "<group>"; };
+		6AE112886FDD59758B4CE4A6C255DAE6 /* HTTPParserC-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "HTTPParserC-OSX.xcconfig"; sourceTree = "<group>"; };
 		6C49EA2A037A47E8847CE011ABCBEEA0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Telegraph-tvOS/Info.plist"; sourceTree = "<group>"; };
 		6D1115357BD5657EF02D27045D355A28 /* Pods-Telegraph tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph tvOS-resources.sh"; sourceTree = "<group>"; };
 		6D64EA49F5BD9065C350A0D2177BBFFB /* KeychainManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
-		6EE1ED61E62578703D3F88A99F46C551 /* CocoaAsyncSocket-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CocoaAsyncSocket-tvOS.xcconfig"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.xcconfig"; sourceTree = "<group>"; };
 		6F665EFB0411C94E7036B6CEA3B7915E /* HTTPRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		6FC583E2CFF866C2FA929425D4B0553E /* Telegraph-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Telegraph-tvOS.modulemap"; path = "../Telegraph-tvOS/Telegraph-tvOS.modulemap"; sourceTree = "<group>"; };
 		701A0018CF8AD8212E4CAD4BBE873C07 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72D6A9440F002CCEE70126BFAA52643D /* CocoaAsyncSocket-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-tvOS-prefix.pch"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		72F4D5238B0FD2BBC7AE78B0DCE4C007 /* WebSocketMessage+Write.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "WebSocketMessage+Write.swift"; sourceTree = "<group>"; };
-		72F561F6F9291EB1A184C1BCCD7536D3 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
+		742AFC26BE805A3635F54DCE9825F5ED /* HTTPParserC-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "HTTPParserC-iOS-dummy.m"; path = "../HTTPParserC-iOS/HTTPParserC-iOS-dummy.m"; sourceTree = "<group>"; };
 		752A76D0B0F41A03A2982DE34B54CEA5 /* Pods-iOS Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Example-umbrella.h"; sourceTree = "<group>"; };
-		75BB470080FAB84D1727E1886B799A78 /* CocoaAsyncSocket-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-OSX-prefix.pch"; sourceTree = "<group>"; };
-		79CA89D5E19C9301F0255A77F6274A37 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		7A3F515BE326D10266DBE66ED417EF82 /* http_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = http_parser.h; path = Sources/http_parser.h; sourceTree = "<group>"; };
 		7AAB71850A0847F5DFA99FD90162CEC9 /* HTTPWebSocketHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPWebSocketHandler.swift; sourceTree = "<group>"; };
+		7AD1F841086BBC8CD91C5B64D85F21A5 /* CocoaAsyncSocket-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-iOS-umbrella.h"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-umbrella.h"; sourceTree = "<group>"; };
 		7B6E85DBE29A3C6D2293068164467FAD /* Client+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Client+Config.swift"; sourceTree = "<group>"; };
 		7E0C4D00A94440C908A5A670E3A78AA7 /* Telegraph-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Telegraph-tvOS-dummy.m"; path = "../Telegraph-tvOS/Telegraph-tvOS-dummy.m"; sourceTree = "<group>"; };
-		7E1D1B463CD79632AEDF2165AA8DF9DE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../HTTPParserC-iOS/Info.plist"; sourceTree = "<group>"; };
 		7E538B0E78BCF8EC70C483F384850310 /* FileManager+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
 		7E9423CB642B8DE8E94FFEEFC01435D4 /* HTTPErrorHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPErrorHandler.swift; sourceTree = "<group>"; };
-		7F1AC9C2EB3EEA769D372B010DC3D101 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
-		815EA4C32022722F650250FAA3BA1D82 /* HTTPParserC-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "HTTPParserC-iOS.xcconfig"; path = "../HTTPParserC-iOS/HTTPParserC-iOS.xcconfig"; sourceTree = "<group>"; };
 		81B7393AF0D8C1399BBF76E38D334646 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		85215C02BEA6C3F8D485F86DDFEC6FD7 /* CocoaAsyncSocket-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CocoaAsyncSocket-iOS.modulemap"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS.modulemap"; sourceTree = "<group>"; };
 		85FC1E7C30BE04EF9D600EF721C89055 /* HTTPConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPConfig.swift; sourceTree = "<group>"; };
+		872A0B38B23B712CE1E676591FC953BA /* CocoaAsyncSocket-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "CocoaAsyncSocket-OSX.modulemap"; sourceTree = "<group>"; };
+		8868551AD10522CE1AB9F0C24CB8D85E /* CocoaAsyncSocket-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CocoaAsyncSocket-tvOS-dummy.m"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-dummy.m"; sourceTree = "<group>"; };
 		88D3E8735BEED14703F3B4F8E8F4FC68 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = "CocoaAsyncSocket-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89443E07D13B53940017443C4B2372A4 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		89D7C10BCFE4BDB32BE51A288C00AEF0 /* Pods_Telegraph_iOS_TelegraphTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_iOS_TelegraphTests.framework; path = "Pods-Telegraph iOS-TelegraphTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A7D327A296983020984916A771FB118 /* HTTPParserC-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPParserC-OSX-umbrella.h"; sourceTree = "<group>"; };
 		8B2558DA88A651187E4883E3CAADABD5 /* Pods_macOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_macOS_Example.framework; path = "Pods-macOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B369B2DA9B0F68C25704B0E9126D404 /* Telegraph-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Telegraph-OSX.modulemap"; sourceTree = "<group>"; };
 		8BC95E90391ADACBA5D90A8794290B39 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Example.framework; path = "Pods-iOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BF2C87D7F9CF25534C2C00D5B1586D2 /* HTTPParserC-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "HTTPParserC-tvOS.modulemap"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS.modulemap"; sourceTree = "<group>"; };
 		8C0AE6B9342F6878B9E434583EE18829 /* Pods-macOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-macOS Example.modulemap"; sourceTree = "<group>"; };
-		8FA411D4743A805E02270EDB56304690 /* HTTPParserC-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-iOS-umbrella.h"; path = "../HTTPParserC-iOS/HTTPParserC-iOS-umbrella.h"; sourceTree = "<group>"; };
 		9178E63BBD2FA45E6FC5836A6F2EEE00 /* Pods-tvOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tvOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		91B5BD4AE79DC31A987B8262A95F3C34 /* Pods-iOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		925DE9831F54C5558B59539341B0F50F /* Telegraph-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Telegraph-iOS-umbrella.h"; path = "../Telegraph-iOS/Telegraph-iOS-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95539B3DC4CD802167C59AA49C990AAE /* Pods-Telegraph iOS-TelegraphTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph iOS-TelegraphTests-resources.sh"; sourceTree = "<group>"; };
+		96EAB7B8213375943D5C8339EC241C44 /* CocoaAsyncSocket-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-tvOS-umbrella.h"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		972584828128B500A908B9CF78F3BCB5 /* WebSocketClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
-		9C5354B815191C0D6E3B313626B26CAF /* HTTPParserC-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "HTTPParserC-tvOS-dummy.m"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS-dummy.m"; sourceTree = "<group>"; };
+		99780AD5779EA57AC6B9177EB1887141 /* CocoaAsyncSocket-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-OSX-prefix.pch"; sourceTree = "<group>"; };
+		9A2029BEFEC2F7DF6454CD02AE3CEB4E /* CocoaAsyncSocket-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CocoaAsyncSocket-tvOS.xcconfig"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.xcconfig"; sourceTree = "<group>"; };
 		9C5ABDEAF3DDCE45383B15549B382917 /* Pods-macOS Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-macOS Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D3EC2BB6BA9D8D2FA1428356B793C5D /* HTTPParserC-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-iOS-umbrella.h"; path = "../HTTPParserC-iOS/HTTPParserC-iOS-umbrella.h"; sourceTree = "<group>"; };
 		9F574A0D7DCC76E93188445B29A12636 /* Pods-Telegraph iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Telegraph iOS-dummy.m"; sourceTree = "<group>"; };
 		9F9AA761C9671F137F0558B83505C95B /* HTTPResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		A28DD9814030AAB19BF0C26BC3130D56 /* Pods-Telegraph macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Telegraph macOS-umbrella.h"; sourceTree = "<group>"; };
 		A31AECF78287A63D3A18CEA64C37D153 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HTTPParserC.framework; path = "HTTPParserC-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E261146FABC7C8C1A84BFA2EF47F97 /* Pods-tvOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tvOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A3FCF463294A44788D12C69EBDA2C9CA /* CocoaAsyncSocket-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CocoaAsyncSocket-iOS.modulemap"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS.modulemap"; sourceTree = "<group>"; };
 		A4F14256138A52D404A0223E2013032A /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
 		A6BD12138059D481055D92CCC80960FD /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HTTPParserC.framework; path = "HTTPParserC-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CA06A991E8CC6417B3A5A1BD6B1F5E /* http_parser.c */ = {isa = PBXFileReference; includeInIndex = 1; name = http_parser.c; path = Sources/http_parser.c; sourceTree = "<group>"; };
+		A865FD205FFD53F910C6075D7F2BDEA5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../HTTPParserC-iOS/Info.plist"; sourceTree = "<group>"; };
 		AADC8EAFCFC1645B9DD4027B69C77CE3 /* Pods-macOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		AB58125AF8898C4998B1AEDBB8CC832A /* Pods-Telegraph tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Telegraph tvOS-umbrella.h"; sourceTree = "<group>"; };
 		AD5674B77C47EB174FD92ADB6009CD0A /* Pods-macOS Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS Example-resources.sh"; sourceTree = "<group>"; };
 		AEF193CEC0488875B4870706E93E2E96 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		AF9AEA02CFB335C025298DE2C840C5E3 /* Pods-Telegraph iOS-TelegraphTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Telegraph iOS-TelegraphTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B04943377C2199235CDBD0739B307A1F /* Data+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
-		B0DBCCD5A6B355453F0711D672F64876 /* CocoaAsyncSocket-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-tvOS-umbrella.h"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		B18B9F1E9DD979952E74C68EF0ECA866 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		B1B95C11F45974666609E4BAC0C5E688 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1FF9A4CBDF216BFD55CA36DFA0343FD /* Pods_Telegraph_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_iOS.framework; path = "Pods-Telegraph iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BF81F8E69882F5FD058F2E8709FA11 /* Pods-iOS Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		B2C96C6435109D34C9727A6E170E503B /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Telegraph.framework; path = "Telegraph-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3D5D6963A6C032E89FBBE97B78D219B /* CocoaAsyncSocket-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CocoaAsyncSocket-iOS.xcconfig"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS.xcconfig"; sourceTree = "<group>"; };
-		B3FC0F66F7937B7A69F4B08C1598FAD4 /* HTTPParserC-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "HTTPParserC-tvOS.xcconfig"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS.xcconfig"; sourceTree = "<group>"; };
+		B343268E0ED1DD52FC4BDA60EF1309FA /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
 		B434B1A93B4107664093BDD9FFB818E3 /* WebSocketMessageHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketMessageHandler.swift; sourceTree = "<group>"; };
 		B51AA06311F7F1D894F832241FF85772 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		B5FED085A66044314622640E57940D3A /* Pods-Telegraph iOS-TelegraphTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph iOS-TelegraphTests.modulemap"; sourceTree = "<group>"; };
-		B63BD2FFF2FDE4F6E4F7581D4355AB4B /* HTTPParserC-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "HTTPParserC-OSX.modulemap"; sourceTree = "<group>"; };
 		B88721370792F2202D5D32AED662BA14 /* Telegraph-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Telegraph-iOS.modulemap"; path = "../Telegraph-iOS/Telegraph-iOS.modulemap"; sourceTree = "<group>"; };
-		B8FD82CEAA7D0E3D194B01058F294034 /* CocoaAsyncSocket-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-OSX-umbrella.h"; sourceTree = "<group>"; };
+		B8AB9B1D073F36383018EAEF9884FB72 /* HTTPParserC-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-tvOS-prefix.pch"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS-prefix.pch"; sourceTree = "<group>"; };
+		B9E8CB49F8A4923FC58D0439A7F4DF70 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA4DAC925AD533A439CF3E1FA1665623 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		BB92846BA1E429E843FF60CE866ACE29 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CocoaAsyncSocket-tvOS/Info.plist"; sourceTree = "<group>"; };
 		BC6780C80E8FE0CC3593F224B319413B /* Pods-Telegraph macOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph macOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BCD699141C374840F4F3845C675D9BB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BCE6736308EDD2506FA34CBD3CD6C64F /* Pods-Telegraph tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BE11E31A59A44BD9A856B6B9F6AFE6D5 /* HTTPParserC-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-tvOS-umbrella.h"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		BE18A7C7F54541D1B880384B8E6BA542 /* HTTPRequest+Host.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HTTPRequest+Host.swift"; sourceTree = "<group>"; };
+		BE642C06A00F85D0DF7C7D0730EF6C79 /* HTTPParserC-OSX-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPParserC-OSX-umbrella.h"; sourceTree = "<group>"; };
+		C07FC72E44DEB12BEE2E87A0B4A4ABD7 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		C09ACA47FD093473C4B85767C7965359 /* Pods-tvOS Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tvOS Example-umbrella.h"; sourceTree = "<group>"; };
 		C0E34E529EF94FFF6DCC2430C630FAFD /* Pods-Telegraph tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		C1798C2CD832E108BAC02893D01E0C0B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1F5B62AF9EDB06FDC6F25A3661D3E86 /* HTTPParserC-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "HTTPParserC-iOS.xcconfig"; path = "../HTTPParserC-iOS/HTTPParserC-iOS.xcconfig"; sourceTree = "<group>"; };
 		C4E4EAAAF8A6E31737E6500EE34E8BB1 /* TLSPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TLSPolicy.swift; sourceTree = "<group>"; };
-		C6FE3D54DACCCC8AC859E03AD74A64C8 /* HTTPParserC-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "HTTPParserC-tvOS.modulemap"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS.modulemap"; sourceTree = "<group>"; };
 		C8F0A6B66FFE471B05A62709635FBDDB /* Pods-tvOS Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tvOS Example-resources.sh"; sourceTree = "<group>"; };
 		C91539D615BB028B6E37443C9D91329D /* TLSConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TLSConfig.swift; sourceTree = "<group>"; };
 		C9EB7C0F9C204BB32D5BDB8EEBEA537C /* Server+Routing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Server+Routing.swift"; sourceTree = "<group>"; };
 		C9FCB202B7233EAD57ACDDF4B8998786 /* Telegraph-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Telegraph-tvOS-prefix.pch"; path = "../Telegraph-tvOS/Telegraph-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		CA3088BE751795104AC95AE33B678878 /* HTTPParserC-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "HTTPParserC-OSX.xcconfig"; sourceTree = "<group>"; };
-		CB04C836CA18D57512D4574C862323B5 /* CocoaAsyncSocket-OSX.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CocoaAsyncSocket-OSX.xcconfig"; sourceTree = "<group>"; };
 		CBB0248E9E0E113DA2371B1DEDF3376F /* Telegraph-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Telegraph-OSX-prefix.pch"; sourceTree = "<group>"; };
 		CC5922F531DFA26CD3A949FC9373BBF5 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Telegraph.framework; path = "Telegraph-OSX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD99A84AEDA41996A8D0515691AF3637 /* CocoaAsyncSocket-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CocoaAsyncSocket-iOS-dummy.m"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-dummy.m"; sourceTree = "<group>"; };
+		CDCACAF48C7D8DFD31805BE163DB9409 /* http_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = http_parser.h; path = Sources/http_parser.h; sourceTree = "<group>"; };
 		CE67106E85548C8284F2F460F035F01C /* Pods-tvOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tvOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CF12017EA3E9E67EB83BBB966C912B82 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF307DC12989A5EF9C5F2999E41B86EA /* Pods-Telegraph macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph macOS.release.xcconfig"; sourceTree = "<group>"; };
 		D32876C50AC4B3461F06BC4B4A31BFA3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		D3375940C4BB081154B8C99B865BC516 /* CocoaAsyncSocket-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CocoaAsyncSocket-tvOS.modulemap"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.modulemap"; sourceTree = "<group>"; };
 		D399B6AEDA408967183E09E1BC06FCF5 /* WebSocketMessageDefaultHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketMessageDefaultHandler.swift; sourceTree = "<group>"; };
-		D3B49FA4397FAF35CC622386D1682BE9 /* CocoaAsyncSocket-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CocoaAsyncSocket-iOS-dummy.m"; path = "../CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-dummy.m"; sourceTree = "<group>"; };
+		D464488C0E5E6675B728A5F8F35F76D4 /* HTTPParserC-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HTTPParserC-OSX-dummy.m"; sourceTree = "<group>"; };
 		D46F21609857E4D6890A14A591BF9645 /* HTTPHeader+WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HTTPHeader+WebSocket.swift"; sourceTree = "<group>"; };
 		D4BC076E5E00864A8B15C2ADCE59BCE6 /* Array+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
-		D82B6B389A8E21BDB52722B4FABDC8A0 /* HTTPParserC-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-tvOS-prefix.pch"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		D97B8E51D004EDE02254891DF89F4BA8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAFA950B48D184D24D11AD8D702C0063 /* CocoaAsyncSocket-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-OSX-dummy.m"; sourceTree = "<group>"; };
 		DC8F37A40077D4005FDE59E23AFACEB0 /* Pods-macOS Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-macOS Example-umbrella.h"; sourceTree = "<group>"; };
 		DC9A6C55DDDEE6720BE6ADCA6D77D9C0 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = "CocoaAsyncSocket-OSX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE06F0CEC99019690B74F3D04CBF4442 /* Pods-Telegraph iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Telegraph iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		DEC48DF99EE24509CC00796728A064BC /* CocoaAsyncSocket-OSX-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-OSX-dummy.m"; sourceTree = "<group>"; };
+		E26ABEFCA33C81BAA9CEF461E815095F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2C9F28C213E6C461835E9E17D7503E5 /* Pods_Telegraph_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_tvOS.framework; path = "Pods-Telegraph tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A5C157ED3D3FCD3D5C4A10F0257BF3 /* DispatchQueue+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Ext.swift"; sourceTree = "<group>"; };
+		E48240BD3146E93E89BF98006151D740 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CocoaAsyncSocket-iOS/Info.plist"; sourceTree = "<group>"; };
 		E5ECA0363907FBE99FA83CAB7EC6D0E2 /* Pods-tvOS Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tvOS Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		E87838BD4D5EBD9C92EB32351A17689D /* Telegraph-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Telegraph-iOS-dummy.m"; path = "../Telegraph-iOS/Telegraph-iOS-dummy.m"; sourceTree = "<group>"; };
 		ED4E935927541D7A659C63DE056AB675 /* HTTPHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		EE33F4B4C00C4B8C4DAD8D3E3AF75CE6 /* Pods-Telegraph macOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Telegraph macOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		EEB48130C43EEA74F72000ADCAC3F5E8 /* KeychainError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
-		EED24BE85C2758FA8BB881C4B9B31ECE /* HTTPParserC-OSX-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPParserC-OSX-prefix.pch"; sourceTree = "<group>"; };
 		EF496B20D33AE62D3E19AB303C8DC0A0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F58EBD875AF72A4FAD1E3F43CBE194 /* HTTPRouteHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRouteHandler.swift; sourceTree = "<group>"; };
 		F12328F18D07039D6FF6B88D833C0985 /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
 		F14A6189207D82F72BA2D244FF28F7C9 /* Telegraph-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Telegraph-tvOS-umbrella.h"; path = "../Telegraph-tvOS/Telegraph-tvOS-umbrella.h"; sourceTree = "<group>"; };
+		F1AB373FD452FC6B433EFF325870D969 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncUdpSocket.h; path = Source/GCD/GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		F2A18129879A269C7DF9B09889A3C40D /* WebSocketErrorDefaultHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketErrorDefaultHandler.swift; sourceTree = "<group>"; };
-		F2F0CE8746AA53BCF54A0F7F77D16906 /* HTTPParserC-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "HTTPParserC-iOS.modulemap"; path = "../HTTPParserC-iOS/HTTPParserC-iOS.modulemap"; sourceTree = "<group>"; };
 		F30C6DF88AF9FF974006AA257AD53F7C /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		F310A8E05F31CF541634E332BF767824 /* Pods-iOS Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-frameworks.sh"; sourceTree = "<group>"; };
+		F84055B269C22C9EDCD03C4014EF3A49 /* HTTPParserC-OSX.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "HTTPParserC-OSX.modulemap"; sourceTree = "<group>"; };
 		F8B458C7FA336CEF51B67D6449DC52DE /* UInt+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UInt+Ext.swift"; sourceTree = "<group>"; };
 		F9AF45D9207533001AEE9BEA7ADAF823 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Telegraph-iOS/Info.plist"; sourceTree = "<group>"; };
+		FBCB71C4BB34305A82EE62E0FC7EE767 /* HTTPParserC-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "HTTPParserC-tvOS-dummy.m"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS-dummy.m"; sourceTree = "<group>"; };
 		FC2E60D58E008F4B4E0CFBAE5A5D3B86 /* Pods-macOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-macOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FCABCF0CAB20199DCF27DF0DE9070BBB /* HTTPConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPConnection.swift; sourceTree = "<group>"; };
+		FD6578EEB84305521FB50E0083A974CA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CocoaAsyncSocket-tvOS/Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -797,6 +797,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05743C24B667372400BCEBBCB4FA2358 /* HTTPParserC */ = {
+			isa = PBXGroup;
+			children = (
+				A6CA06A991E8CC6417B3A5A1BD6B1F5E /* http_parser.c */,
+				CDCACAF48C7D8DFD31805BE163DB9409 /* http_parser.h */,
+				6801B6CDF714B89046D19CEF29C8505F /* Support Files */,
+			);
+			name = HTTPParserC;
+			path = HTTPParserC;
+			sourceTree = "<group>";
+		};
+		0E639A7C6A3D669B66962C9110D40C44 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				85215C02BEA6C3F8D485F86DDFEC6FD7 /* CocoaAsyncSocket-iOS.modulemap */,
+				3FA1D0774B523FC1E15BED41A3A1CB04 /* CocoaAsyncSocket-iOS.xcconfig */,
+				CD99A84AEDA41996A8D0515691AF3637 /* CocoaAsyncSocket-iOS-dummy.m */,
+				5BEDF10550AEB9D0BDCFD4846A2C8718 /* CocoaAsyncSocket-iOS-prefix.pch */,
+				7AD1F841086BBC8CD91C5B64D85F21A5 /* CocoaAsyncSocket-iOS-umbrella.h */,
+				872A0B38B23B712CE1E676591FC953BA /* CocoaAsyncSocket-OSX.modulemap */,
+				1EC6776FDCF1929469E700F9D87042F7 /* CocoaAsyncSocket-OSX.xcconfig */,
+				DEC48DF99EE24509CC00796728A064BC /* CocoaAsyncSocket-OSX-dummy.m */,
+				99780AD5779EA57AC6B9177EB1887141 /* CocoaAsyncSocket-OSX-prefix.pch */,
+				59116F9997DAA00BFAB2658A72C3C14D /* CocoaAsyncSocket-OSX-umbrella.h */,
+				D3375940C4BB081154B8C99B865BC516 /* CocoaAsyncSocket-tvOS.modulemap */,
+				9A2029BEFEC2F7DF6454CD02AE3CEB4E /* CocoaAsyncSocket-tvOS.xcconfig */,
+				8868551AD10522CE1AB9F0C24CB8D85E /* CocoaAsyncSocket-tvOS-dummy.m */,
+				26ED07C91DCE5F5A99D0A628F4A54873 /* CocoaAsyncSocket-tvOS-prefix.pch */,
+				96EAB7B8213375943D5C8339EC241C44 /* CocoaAsyncSocket-tvOS-umbrella.h */,
+				FD6578EEB84305521FB50E0083A974CA /* Info.plist */,
+				B9E8CB49F8A4923FC58D0439A7F4DF70 /* Info.plist */,
+				E48240BD3146E93E89BF98006151D740 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CocoaAsyncSocket-OSX";
+			sourceTree = "<group>";
+		};
 		1A3213395701035FEE6359399CA981A0 /* Transport */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,32 +926,6 @@
 			path = "Target Support Files/Pods-macOS Example";
 			sourceTree = "<group>";
 		};
-		327A9EEA5CFCBDE831C2A76D9FE17268 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F2F0CE8746AA53BCF54A0F7F77D16906 /* HTTPParserC-iOS.modulemap */,
-				815EA4C32022722F650250FAA3BA1D82 /* HTTPParserC-iOS.xcconfig */,
-				5DFB41DA6CBE7D18FF2AED601C032410 /* HTTPParserC-iOS-dummy.m */,
-				2493874D8DC69BA7DEAD0AEEBB057EF5 /* HTTPParserC-iOS-prefix.pch */,
-				8FA411D4743A805E02270EDB56304690 /* HTTPParserC-iOS-umbrella.h */,
-				B63BD2FFF2FDE4F6E4F7581D4355AB4B /* HTTPParserC-OSX.modulemap */,
-				CA3088BE751795104AC95AE33B678878 /* HTTPParserC-OSX.xcconfig */,
-				40C5DCEF9B9C8736DFF00397F1A9DB4B /* HTTPParserC-OSX-dummy.m */,
-				EED24BE85C2758FA8BB881C4B9B31ECE /* HTTPParserC-OSX-prefix.pch */,
-				8A7D327A296983020984916A771FB118 /* HTTPParserC-OSX-umbrella.h */,
-				C6FE3D54DACCCC8AC859E03AD74A64C8 /* HTTPParserC-tvOS.modulemap */,
-				B3FC0F66F7937B7A69F4B08C1598FAD4 /* HTTPParserC-tvOS.xcconfig */,
-				9C5354B815191C0D6E3B313626B26CAF /* HTTPParserC-tvOS-dummy.m */,
-				D82B6B389A8E21BDB52722B4FABDC8A0 /* HTTPParserC-tvOS-prefix.pch */,
-				643358310712D96C56749E3EF315B5CC /* HTTPParserC-tvOS-umbrella.h */,
-				24A43032112184B8356EB7A299396C0E /* Info.plist */,
-				0FA3319DDF380FB377E25D094C8679F2 /* Info.plist */,
-				7E1D1B463CD79632AEDF2165AA8DF9DE /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/HTTPParserC-OSX";
-			sourceTree = "<group>";
-		};
 		35F4BFD5AF1AEDB33A23C3EB1C5C367C /* Pods-Telegraph iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,17 +978,6 @@
 			path = "Target Support Files/Pods-iOS Example";
 			sourceTree = "<group>";
 		};
-		5C5BE8B5E645960829E803BCC283FEF6 /* GCD */ = {
-			isa = PBXGroup;
-			children = (
-				72F561F6F9291EB1A184C1BCCD7536D3 /* GCDAsyncSocket.h */,
-				4C40B0AD327763E512CD31728E90C91E /* GCDAsyncSocket.m */,
-				79CA89D5E19C9301F0255A77F6274A37 /* GCDAsyncUdpSocket.h */,
-				7F1AC9C2EB3EEA769D372B010DC3D101 /* GCDAsyncUdpSocket.m */,
-			);
-			name = GCD;
-			sourceTree = "<group>";
-		};
 		5E2BC1FE0FE1ABF5F36AED8547D8B0DA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,14 +1002,30 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		7A91BFE28FA1331CBE33DD86BE1FC72E /* CocoaAsyncSocket */ = {
+		6801B6CDF714B89046D19CEF29C8505F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5C5BE8B5E645960829E803BCC283FEF6 /* GCD */,
-				CBD0B74C3CFF36CAAF7E4D43592FCFE7 /* Support Files */,
+				06A79F9A1B3D04416CEE854C624F446D /* HTTPParserC-iOS.modulemap */,
+				C1F5B62AF9EDB06FDC6F25A3661D3E86 /* HTTPParserC-iOS.xcconfig */,
+				742AFC26BE805A3635F54DCE9825F5ED /* HTTPParserC-iOS-dummy.m */,
+				02353394B77C2B89D8B2872CED6C63A6 /* HTTPParserC-iOS-prefix.pch */,
+				9D3EC2BB6BA9D8D2FA1428356B793C5D /* HTTPParserC-iOS-umbrella.h */,
+				F84055B269C22C9EDCD03C4014EF3A49 /* HTTPParserC-OSX.modulemap */,
+				6AE112886FDD59758B4CE4A6C255DAE6 /* HTTPParserC-OSX.xcconfig */,
+				D464488C0E5E6675B728A5F8F35F76D4 /* HTTPParserC-OSX-dummy.m */,
+				2474AF650F9253746C110D2324C632AD /* HTTPParserC-OSX-prefix.pch */,
+				BE642C06A00F85D0DF7C7D0730EF6C79 /* HTTPParserC-OSX-umbrella.h */,
+				8BF2C87D7F9CF25534C2C00D5B1586D2 /* HTTPParserC-tvOS.modulemap */,
+				524AC7DD25248C962DDC2E4EE899B7FD /* HTTPParserC-tvOS.xcconfig */,
+				FBCB71C4BB34305A82EE62E0FC7EE767 /* HTTPParserC-tvOS-dummy.m */,
+				B8AB9B1D073F36383018EAEF9884FB72 /* HTTPParserC-tvOS-prefix.pch */,
+				BE11E31A59A44BD9A856B6B9F6AFE6D5 /* HTTPParserC-tvOS-umbrella.h */,
+				61FA276A60D918020348287775DBA274 /* Info.plist */,
+				E26ABEFCA33C81BAA9CEF461E815095F /* Info.plist */,
+				A865FD205FFD53F910C6075D7F2BDEA5 /* Info.plist */,
 			);
-			name = CocoaAsyncSocket;
-			path = CocoaAsyncSocket;
+			name = "Support Files";
+			path = "../Target Support Files/HTTPParserC-OSX";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -1018,7 +1034,7 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				2F19C981DE61091724ED4D3B4A911642 /* Development Pods */,
 				D1DCDDCE8DED90117CEA4704A03D110E /* Frameworks */,
-				83CF90971C8DED396B340B7265C60BA3 /* Pods */,
+				E8AF675D7BB90324F063770C1EE87F66 /* Pods */,
 				A571C9D026AA72F11F02695D1107E583 /* Products */,
 				F294EC22783BDCC12F49CD51B20B490A /* Targets Support Files */,
 			);
@@ -1047,13 +1063,17 @@
 			path = Handlers;
 			sourceTree = "<group>";
 		};
-		83CF90971C8DED396B340B7265C60BA3 /* Pods */ = {
+		8C27EA2B616DE3E1CA34BE0D9A4BF8A3 /* CocoaAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				7A91BFE28FA1331CBE33DD86BE1FC72E /* CocoaAsyncSocket */,
-				F8FE557E6640CC9DD93393775C2A5AD9 /* HTTPParserC */,
+				B343268E0ED1DD52FC4BDA60EF1309FA /* GCDAsyncSocket.h */,
+				0FC73A4822A2386DDF26C1D48455857F /* GCDAsyncSocket.m */,
+				F1AB373FD452FC6B433EFF325870D969 /* GCDAsyncUdpSocket.h */,
+				C07FC72E44DEB12BEE2E87A0B4A4ABD7 /* GCDAsyncUdpSocket.m */,
+				0E639A7C6A3D669B66962C9110D40C44 /* Support Files */,
 			);
-			name = Pods;
+			name = CocoaAsyncSocket;
+			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
 		8F56A03A58476B7CD690CB8713C2E7CB /* OS X */ = {
@@ -1141,32 +1161,6 @@
 			);
 			name = Clients;
 			path = Clients;
-			sourceTree = "<group>";
-		};
-		CBD0B74C3CFF36CAAF7E4D43592FCFE7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A3FCF463294A44788D12C69EBDA2C9CA /* CocoaAsyncSocket-iOS.modulemap */,
-				B3D5D6963A6C032E89FBBE97B78D219B /* CocoaAsyncSocket-iOS.xcconfig */,
-				D3B49FA4397FAF35CC622386D1682BE9 /* CocoaAsyncSocket-iOS-dummy.m */,
-				3CFD669CEA33D4BA0825E46C3BCFE043 /* CocoaAsyncSocket-iOS-prefix.pch */,
-				6624DBD14C112C5824D5F766918951EC /* CocoaAsyncSocket-iOS-umbrella.h */,
-				1F986AC0AD1B5F946594A1B231F4C5FD /* CocoaAsyncSocket-OSX.modulemap */,
-				CB04C836CA18D57512D4574C862323B5 /* CocoaAsyncSocket-OSX.xcconfig */,
-				DAFA950B48D184D24D11AD8D702C0063 /* CocoaAsyncSocket-OSX-dummy.m */,
-				75BB470080FAB84D1727E1886B799A78 /* CocoaAsyncSocket-OSX-prefix.pch */,
-				B8FD82CEAA7D0E3D194B01058F294034 /* CocoaAsyncSocket-OSX-umbrella.h */,
-				0C26F01C5FCF89534109DC57FA2F9633 /* CocoaAsyncSocket-tvOS.modulemap */,
-				6EE1ED61E62578703D3F88A99F46C551 /* CocoaAsyncSocket-tvOS.xcconfig */,
-				2DE8FE5430DB56057CB85C95A09C10EA /* CocoaAsyncSocket-tvOS-dummy.m */,
-				72D6A9440F002CCEE70126BFAA52643D /* CocoaAsyncSocket-tvOS-prefix.pch */,
-				B0DBCCD5A6B355453F0711D672F64876 /* CocoaAsyncSocket-tvOS-umbrella.h */,
-				BB92846BA1E429E843FF60CE866ACE29 /* Info.plist */,
-				38FE39B535C2B444625BCE7E5FDA44F8 /* Info.plist */,
-				4FA0826590357539AA62021CBEB05BE3 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/CocoaAsyncSocket-OSX";
 			sourceTree = "<group>";
 		};
 		CC939A102E08E328BA6DD3D4835928A0 /* Security */ = {
@@ -1281,6 +1275,15 @@
 			path = Handlers;
 			sourceTree = "<group>";
 		};
+		E8AF675D7BB90324F063770C1EE87F66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C27EA2B616DE3E1CA34BE0D9A4BF8A3 /* CocoaAsyncSocket */,
+				05743C24B667372400BCEBBCB4FA2358 /* HTTPParserC */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F294EC22783BDCC12F49CD51B20B490A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1293,17 +1296,6 @@
 				FE8642756953C1F9C1030F31F85167A7 /* Pods-tvOS Example */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F8FE557E6640CC9DD93393775C2A5AD9 /* HTTPParserC */ = {
-			isa = PBXGroup;
-			children = (
-				6C2C3555ECFBD88758864C984E6ADDD6 /* http_parser.c */,
-				7A3F515BE326D10266DBE66ED417EF82 /* http_parser.h */,
-				327A9EEA5CFCBDE831C2A76D9FE17268 /* Support Files */,
-			);
-			name = HTTPParserC;
-			path = HTTPParserC;
 			sourceTree = "<group>";
 		};
 		FB18C72A68D29568A0DBB4617D7074E7 /* WebSockets */ = {
@@ -2424,7 +2416,7 @@
 		};
 		2352135590403057BB0466A3928CD38C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3FC0F66F7937B7A69F4B08C1598FAD4 /* HTTPParserC-tvOS.xcconfig */;
+			baseConfigurationReference = 524AC7DD25248C962DDC2E4EE899B7FD /* HTTPParserC-tvOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2529,7 +2521,7 @@
 		};
 		4A28E1D50DAE2308D39FDC3C3C2710DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EE1ED61E62578703D3F88A99F46C551 /* CocoaAsyncSocket-tvOS.xcconfig */;
+			baseConfigurationReference = 9A2029BEFEC2F7DF6454CD02AE3CEB4E /* CocoaAsyncSocket-tvOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2562,7 +2554,7 @@
 		};
 		4D23C10EDF219625D19606F4ED50D386 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA3088BE751795104AC95AE33B678878 /* HTTPParserC-OSX.xcconfig */;
+			baseConfigurationReference = 6AE112886FDD59758B4CE4A6C255DAE6 /* HTTPParserC-OSX.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2668,7 +2660,7 @@
 		};
 		51FB4F9B1A64046948068B84C3FF5D99 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3D5D6963A6C032E89FBBE97B78D219B /* CocoaAsyncSocket-iOS.xcconfig */;
+			baseConfigurationReference = 3FA1D0774B523FC1E15BED41A3A1CB04 /* CocoaAsyncSocket-iOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2775,7 +2767,7 @@
 		};
 		6F44114D0FF268286D4B6AE2662C0779 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB04C836CA18D57512D4574C862323B5 /* CocoaAsyncSocket-OSX.xcconfig */;
+			baseConfigurationReference = 1EC6776FDCF1929469E700F9D87042F7 /* CocoaAsyncSocket-OSX.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2845,7 +2837,7 @@
 		};
 		A842997C5FA78DBCC44BDAB0C1E3B831 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3FC0F66F7937B7A69F4B08C1598FAD4 /* HTTPParserC-tvOS.xcconfig */;
+			baseConfigurationReference = 524AC7DD25248C962DDC2E4EE899B7FD /* HTTPParserC-tvOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2964,7 +2956,7 @@
 		};
 		BCD6A0062361B4957EB03A6E3A4C4D2D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 815EA4C32022722F650250FAA3BA1D82 /* HTTPParserC-iOS.xcconfig */;
+			baseConfigurationReference = C1F5B62AF9EDB06FDC6F25A3661D3E86 /* HTTPParserC-iOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3037,7 +3029,7 @@
 		};
 		CE6FBD78425698AD0E2F0013DD65403C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3D5D6963A6C032E89FBBE97B78D219B /* CocoaAsyncSocket-iOS.xcconfig */;
+			baseConfigurationReference = 3FA1D0774B523FC1E15BED41A3A1CB04 /* CocoaAsyncSocket-iOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3070,7 +3062,7 @@
 		};
 		CF48A7759989E0999BF57EED98B6058E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB04C836CA18D57512D4574C862323B5 /* CocoaAsyncSocket-OSX.xcconfig */;
+			baseConfigurationReference = 1EC6776FDCF1929469E700F9D87042F7 /* CocoaAsyncSocket-OSX.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3104,7 +3096,7 @@
 		};
 		E3D86AC10A0F9A7B91240B824691E380 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EE1ED61E62578703D3F88A99F46C551 /* CocoaAsyncSocket-tvOS.xcconfig */;
+			baseConfigurationReference = 9A2029BEFEC2F7DF6454CD02AE3CEB4E /* CocoaAsyncSocket-tvOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3173,7 +3165,7 @@
 		};
 		E502CEA737D6E23D0FB8D63ECEBC2044 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA3088BE751795104AC95AE33B678878 /* HTTPParserC-OSX.xcconfig */;
+			baseConfigurationReference = 6AE112886FDD59758B4CE4A6C255DAE6 /* HTTPParserC-OSX.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3475,7 +3467,7 @@
 		};
 		FB8A16A1C40063CB7A3A95BDDA388595 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 815EA4C32022722F650250FAA3BA1D82 /* HTTPParserC-iOS.xcconfig */;
+			baseConfigurationReference = C1F5B62AF9EDB06FDC6F25A3661D3E86 /* HTTPParserC-iOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
