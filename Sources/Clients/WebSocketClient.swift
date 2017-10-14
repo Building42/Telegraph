@@ -24,8 +24,8 @@ public protocol WebSocketClientDelegate: class {
 }
 
 open class WebSocketClient: WebSocket {
-  fileprivate let workQueue = DispatchQueue(label: "WebSocketClient.work")
-  fileprivate let delegateQueue = DispatchQueue(label: "WebSocketClient.delegate")
+  fileprivate let workQueue = DispatchQueue(label: "Telegraph.WebSocketClient.work")
+  fileprivate let delegateQueue = DispatchQueue(label: "Telegraph.WebSocketClient.delegate")
   fileprivate var httpClient: HTTPClient?
   fileprivate var connection: WebSocketConnection?
 
