@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9](https://github.com/Building42/Telegraph/releases/tag/0.9)
+- Add support for iOS 8
+- Fix exclusive access issues reported by Xcode in the `HTTPParser`
+- Update CocoaPods to version 1.3.1
+
 ## [0.8.1](https://github.com/Building42/Telegraph/releases/tag/0.8.1)
 - Set CocoaAsyncSocket to version 7.6.1
 - Few new examples in the README (thanks [TomasHubelbauer](https://github.com/TomasHubelbauer))
