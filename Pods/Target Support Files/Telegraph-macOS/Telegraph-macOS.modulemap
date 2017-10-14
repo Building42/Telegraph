@@ -1,5 +1,5 @@
 framework module Telegraph {
-  umbrella header "Telegraph-OSX-umbrella.h"
+  umbrella header "Telegraph-macOS-umbrella.h"
 
   export *
   module * { export * }
