@@ -9,7 +9,7 @@
 Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 
 - [Features](#features)
-- [Requirements](#requirements)
+- [Platforms](#platforms)
 - [Installation](#installation)
 - [Usage](#usage)
 - [TODOs](#todos)
@@ -27,11 +27,11 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 - [x] Customizable, from time-outs to message handlers
 - [x] Simple, well commented code
 
-## Requirements
+## Platforms
 
-- iOS 9.0+, tvOS 9.0+ or macOS 10.10+
-- Xcode 8.1+
-- Swift 3.1+
+- iOS 8.0+
+- tvOS 9.0+
+- macOS 10.10+
 
 ## Installation
 

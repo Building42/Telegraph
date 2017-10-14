@@ -59,7 +59,11 @@ extension HTTPRoute {
     let params = paramRegex.matchAll(in: pattern).flatMap { $0.groupValues }
 
     // Change the parameters to capture groups
-    pattern = paramRegex.stringByReplacingMatches(in: pattern, withPattern: "(?<$1>[-.()\\\\w]+)")
+    if #available(iOS 9, *) {
+      pattern = paramRegex.stringByReplacingMatches(in: pattern, withPattern: "(?<$1>[-.()\\\\w]+)")
+    } else {
+      pattern = paramRegex.stringByReplacingMatches(in: pattern, withPattern: "([-.()\\\\w]+)")
+    }
 
     return (try Regex(pattern: pattern, options: .caseInsensitive), params)
   }

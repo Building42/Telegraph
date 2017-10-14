@@ -2420,6 +2420,37 @@
 			};
 			name = Release;
 		};
+		20DBBB4FCD08DD6C4C29F13B74DBF55C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B565BEA153CA57DF05ED5B01845752F /* Telegraph-iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Telegraph-iOS/Telegraph-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Telegraph-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Telegraph-iOS/Telegraph-iOS.modulemap";
+				PRODUCT_NAME = Telegraph;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		2641CF5791257E54681D0AC42BCE614C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AADC8EAFCFC1645B9DD4027B69C77CE3 /* Pods-macOS Example.release.xcconfig */;
@@ -2645,37 +2676,6 @@
 			};
 			name = Debug;
 		};
-		52EFA4610B22F7A2FEA40C302DF18898 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B565BEA153CA57DF05ED5B01845752F /* Telegraph-iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Telegraph-iOS/Telegraph-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Telegraph-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Telegraph-iOS/Telegraph-iOS.modulemap";
-				PRODUCT_NAME = Telegraph;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		58EA2B6B432A0A3C20E657A4731AB28F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F2EDCD68D6EAF5268EF49BC6615CE2F /* CocoaAsyncSocket-macOS.xcconfig */;
@@ -2793,38 +2793,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		65B9551BB80C0078B0ED6C9AE3D96075 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B565BEA153CA57DF05ED5B01845752F /* Telegraph-iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Telegraph-iOS/Telegraph-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Telegraph-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Telegraph-iOS/Telegraph-iOS.modulemap";
-				PRODUCT_NAME = Telegraph;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3339,6 +3307,38 @@
 			};
 			name = Release;
 		};
+		DE4A1FF0E5CF2CBBDA1334D9CF27DC43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B565BEA153CA57DF05ED5B01845752F /* Telegraph-iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Telegraph-iOS/Telegraph-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Telegraph-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Telegraph-iOS/Telegraph-iOS.modulemap";
+				PRODUCT_NAME = Telegraph;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E3C8AC54FC70A257AD0F3A474A3D6333 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50B162D4B087D3177AA443A76589BDB2 /* CocoaAsyncSocket-iOS.xcconfig */;
@@ -3554,8 +3554,8 @@
 		FCC99CBA384FF47A82E83EF33734D7A8 /* Build configuration list for PBXNativeTarget "Telegraph-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52EFA4610B22F7A2FEA40C302DF18898 /* Debug */,
-				65B9551BB80C0078B0ED6C9AE3D96075 /* Release */,
+				20DBBB4FCD08DD6C4C29F13B74DBF55C /* Debug */,
+				DE4A1FF0E5CF2CBBDA1334D9CF27DC43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
