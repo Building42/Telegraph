@@ -353,4 +353,6 @@ This library was inspired by the following libraries. A big thank you to their c
 ## License
 
 Telegraph is available under the Mozilla Public License, version 2.0.<br />
+You are welcome to use Telegraph in your commercial or open-source apps.<br />
+
 See the LICENSE file for more info.
