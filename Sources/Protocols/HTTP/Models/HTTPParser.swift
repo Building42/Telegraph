@@ -89,7 +89,7 @@ extension HTTPParser {
     return continueParsing
   }
 
-  fileprivate func parsedURI(fragment: String) -> Int32 {
+  fileprivate func parsedURI(cParser: http_parser, fragment: String) -> Int32 {
     // Start a new request if this is the first fragment
     if request == nil { message = HTTPRequest() }
 
@@ -107,7 +107,7 @@ extension HTTPParser {
     return continueParsing
   }
 
-  fileprivate func parsedStatus(fragment: String) -> Int32 {
+  fileprivate func parsedStatus(cParser: http_parser, fragment: String) -> Int32 {
     // Start a new response if this is the first fragment
     if response == nil { message = HTTPResponse() }
 
@@ -161,14 +161,14 @@ extension HTTPParser {
     return continueParsing
   }
 
-  fileprivate func parsedBody(data: Data) -> Int32 {
+  fileprivate func parsedBody(fragment: Data) -> Int32 {
     // Store the body fragment
-    message?.body.append(data)
+    message?.body.append(fragment)
 
     return continueParsing
   }
 
-  fileprivate func messageComplete() -> Int32 {
+  fileprivate func messageComplete(cParser: http_parser) -> Int32 {
     // Set the http version and method
     message?.version = cParser.httpVersion
     request?.method = HTTPMethod(rawValue: cParser.httpMethodName)
@@ -221,7 +221,7 @@ fileprivate extension http_parser {
   }
 
   var httpMethodName: String {
-    let methodCode = http_method(self.method)
+    let methodCode = http_method(method)
     return String(cString: http_method_str(methodCode))
   }
 
@@ -234,55 +234,58 @@ fileprivate extension http_parser {
   }
 
   var isStatusComplete: Bool {
-    return self.state >= 16
+    return state >= 16
   }
 
   var isURIComplete: Bool {
-    return self.state >= 31
+    return state >= 31
   }
 
   var parser: HTTPParser? {
-    return Unmanaged<HTTPParser>.fromOpaque(self.data).takeUnretainedValue()
+    return Unmanaged<HTTPParser>.fromOpaque(data).takeUnretainedValue()
   }
 }
 
 // MARK: CParser callbacks
 
-fileprivate func onMessageBegin(cParser: CParserPointer?) -> Int32 {
-  return cParser?.pointee.parser?.messageBegin() ?? stopParsing
+fileprivate func onMessageBegin(cParserPointer: CParserPointer?) -> Int32 {
+  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
+  return parser.messageBegin()
 }
 
-fileprivate func onHeadersComplete(cParser: CParserPointer?) -> Int32 {
-  return cParser?.pointee.parser?.headersComplete() ?? stopParsing
+fileprivate func onHeadersComplete(cParserPointer: CParserPointer?) -> Int32 {
+    guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
+  return parser.headersComplete()
 }
 
-fileprivate func onMessageComplete(cParser: CParserPointer?) -> Int32 {
-  return cParser?.pointee.parser?.messageComplete() ?? stopParsing
+fileprivate func onMessageComplete(cParserPointer: CParserPointer?) -> Int32 {
+  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
+  return parser.messageComplete(cParser: cParser)
 }
 
-fileprivate func onParsedURL(cParser: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  let fragment = String(bytes: bytes, count: length)
-  return cParser?.pointee.parser?.parsedURI(fragment: fragment) ?? stopParsing
+fileprivate func onParsedURL(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
+  return parser.parsedURI(cParser: cParser, fragment: String(bytes: bytes, count: length))
 }
 
-fileprivate func onParsedStatus(cParser: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  let fragment = String(bytes: bytes, count: length)
-  return cParser?.pointee.parser?.parsedStatus(fragment: fragment) ?? stopParsing
+fileprivate func onParsedStatus(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
+  return parser.parsedStatus(cParser: cParser, fragment: String(bytes: bytes, count: length))
 }
 
-fileprivate func onParsedHeaderField(cParser: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  let fragment = String(bytes: bytes, count: length)
-  return cParser?.pointee.parser?.parsedHeaderKey(fragment: fragment) ?? stopParsing
+fileprivate func onParsedHeaderField(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
+  return parser.parsedHeaderKey(fragment: String(bytes: bytes, count: length))
 }
 
-fileprivate func onParsedHeaderValue(cParser: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  let fragment = String(bytes: bytes, count: length)
-  return cParser?.pointee.parser?.parsedHeaderValue(fragment: fragment) ?? stopParsing
+fileprivate func onParsedHeaderValue(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
+  return parser.parsedHeaderValue(fragment: String(bytes: bytes, count: length))
 }
 
-fileprivate func onParsedBody(cParser: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  let fragment = Data(bytes: bytes, count: length)
-  return cParser?.pointee.parser?.parsedBody(data: fragment) ?? stopParsing
+fileprivate func onParsedBody(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
+  return parser.parsedBody(fragment: Data(bytes: bytes, count: length))
 }
 
 // MARK: HTTPParserDelegate defaults
