@@ -39,8 +39,8 @@ public struct SHA1 {
 
     // Create the two message bit-size words
     let messageBitSize = UInt64(message.count) * 8
-    let largeSize = UInt32(truncatingBitPattern: messageBitSize >> 32)
-    let smallSize = UInt32(truncatingBitPattern: messageBitSize)
+    let largeSize = UInt32(truncatingIfNeeded: messageBitSize >> 32)
+    let smallSize = UInt32(truncatingIfNeeded: messageBitSize)
 
     // Create a buffer to hold a chunk
     var chunk = [UInt32](repeating: 0x00000000, count: 80)

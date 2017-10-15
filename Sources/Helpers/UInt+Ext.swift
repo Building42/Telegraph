@@ -19,8 +19,8 @@ extension UInt8 {
 extension UInt16 {
   public var bytes: [UInt8] {
     return [
-      UInt8(truncatingBitPattern: self >> 8),
-      UInt8(truncatingBitPattern: self)
+      UInt8(truncatingIfNeeded: self >> 8),
+      UInt8(truncatingIfNeeded: self)
     ]
   }
 }
@@ -28,16 +28,16 @@ extension UInt16 {
 extension UInt32 {
   public var bytes: [UInt8] {
     return [
-      UInt8(truncatingBitPattern: self >> 24),
-      UInt8(truncatingBitPattern: self >> 16),
-      UInt8(truncatingBitPattern: self >> 8),
-      UInt8(truncatingBitPattern: self)
+      UInt8(truncatingIfNeeded: self >> 24),
+      UInt8(truncatingIfNeeded: self >> 16),
+      UInt8(truncatingIfNeeded: self >> 8),
+      UInt8(truncatingIfNeeded: self)
     ]
   }
 }
 
 extension UInt64 {
   public var bytes: [UInt8] {
-    return (0..<8).reversed().map { UInt8(truncatingBitPattern: self >> 8 * $0) }
+    return (0..<8).reversed().map { UInt8(truncatingIfNeeded: self >> 8 * $0) }
   }
 }

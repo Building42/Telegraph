@@ -14,6 +14,9 @@
     "tag": "0.9"
   },
   "source_files": "Sources/**/*.swift",
+  "xcconfig": {
+    "SWIFT_VERSION": "4.0"
+  },
   "platforms": {
     "ios": "8.0",
     "tvos": "9.0",

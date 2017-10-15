@@ -38,7 +38,7 @@ struct RegexMatch {
 
   init(input: String, result: NSTextCheckingResult) {
     value = input.substring(with: result.range) ?? ""
-    groupValues = (1..<result.numberOfRanges).flatMap { input.substring(with: result.rangeAt($0)) }
+    groupValues = (1..<result.numberOfRanges).flatMap { input.substring(with: result.range(at: $0)) }
   }
 }
 
@@ -56,9 +56,9 @@ extension String {
   }
 
   fileprivate func substring(with range: NSRange) -> String? {
-    guard let range = range.toRange() else { return nil }
+    guard let range = Range(range) else { return nil }
     let from = index(startIndex, offsetBy: range.lowerBound)
     let to = index(startIndex, offsetBy: range.upperBound)
-    return self[from..<to]
+    return String(self[from..<to])
   }
 }
