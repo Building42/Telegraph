@@ -69,6 +69,7 @@ class TelegraphDemo: NSObject {
     // Demonstrate a WebSocket client connection
     webSocketClient = try! WebSocketClient("wss://localhost:9000", certificates: [caCertificate])
     webSocketClient.delegate = self
+    webSocketClient.headers.webSocketProtocol = "myProtocol"
     webSocketClient.headers["X-Name"] = "Yvo"
     webSocketClient.connect()
   }

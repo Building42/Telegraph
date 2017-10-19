@@ -76,8 +76,12 @@ open class WebSocketClient: WebSocket {
   private func performHandshake(timeout: TimeInterval) {
     // Create the handshake request
     let handshakeRequest = HTTPRequest()
-    handshakeRequest.headers = headers
     handshakeRequest.webSocketHandshake(host: url.host!, port: url.port ?? url.portBasedOnScheme)
+
+    // Apply the custom headers
+    for header in headers {
+      handshakeRequest.headers[header.key] = header.value
+    }
 
     // Set the URI on the request
     if let uri = URI(url: url) {
