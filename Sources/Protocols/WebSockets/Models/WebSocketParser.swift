@@ -40,11 +40,11 @@ public class WebSocketParser {
   public let maxPayloadLength: UInt64
   public weak var delegate: WebSocketParserDelegate?
   public fileprivate(set) lazy var message = WebSocketMessage()
-  public fileprivate(set) lazy var nextPart = Part.finAndOpcode
-  public fileprivate(set) lazy var bytesParsed = 0
   public fileprivate(set) lazy var maskingKey = [UInt8](repeating: 0, count: 4)
   public fileprivate(set) lazy var payload = Data()
-  public fileprivate(set) lazy var payloadLength: UInt64 = 0
+  public fileprivate(set) var nextPart = Part.finAndOpcode
+  public fileprivate(set) var bytesParsed = 0
+  public fileprivate(set) var payloadLength: UInt64 = 0
 
   /// Describes the different parts to parse.
   public enum Part {
@@ -54,6 +54,7 @@ public class WebSocketParser {
     case extendedPayloadLength64(byteNo: Int)
     case maskingKey(byteNo: Int)
     case payload
+    case endOfMessage
   }
 
   /// Initializes a websocket parser.
@@ -91,7 +92,7 @@ public class WebSocketParser {
         payloadLength = UInt64(byte & WebSocketMasks.payloadLength)
 
         switch payloadLength {
-        case 0: try finishMessage()
+        case 0: nextPart = message.maskBit ? .maskingKey(byteNo: 1) : .endOfMessage
         case 1..<126: nextPart = message.maskBit ? .maskingKey(byteNo: 1) : .payload
         case 126: nextPart = .extendedPayloadLength16(byteNo: 1)
         case 127: nextPart = .extendedPayloadLength64(byteNo: 1)
@@ -135,7 +136,7 @@ public class WebSocketParser {
           nextPart = .maskingKey(byteNo: byteNo + 1)
         case 4:
           maskingKey[3] = byte
-          nextPart = .payload
+          nextPart = payloadLength > 0 ? .payload : .endOfMessage
         default: break
         }
 
@@ -144,8 +145,15 @@ public class WebSocketParser {
 
         // Was that the last byte of payload data?
         if UInt64(payload.count) == payloadLength {
-          try finishMessage()
+          nextPart = .endOfMessage
         }
+
+      case .endOfMessage: break
+      }
+
+      // Are we done with the message?
+      if case .endOfMessage = nextPart {
+        try finishMessage()
       }
     }
   }

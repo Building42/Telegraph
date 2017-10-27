@@ -16,14 +16,13 @@ extension WebSocketMessage {
     var payloadData = payload.data
     let payloadLength = payloadData?.count ?? 0
     let hasPayload = payloadLength > 0
-    let maskPayload = hasPayload && maskBit
 
     // Byte 1: FIN bit + Opcode
     let firstByte = finBit ? WebSocketMasks.finBit : 0
     header.append(firstByte | opcode.rawValue)
 
     // Byte 2: Mask bit + Payload length
-    let secondByte = maskPayload ? WebSocketMasks.maskBit : 0
+    let secondByte = maskBit ? WebSocketMasks.maskBit : 0
     switch payloadLength {
 
     // Small payload: [L]
@@ -45,7 +44,7 @@ extension WebSocketMessage {
     }
 
     // Masking key
-    if maskPayload {
+    if maskBit {
       let maskingKey = generateMask()
       payloadData?.mask(with: maskingKey)
       header.append(contentsOf: maskingKey)
