@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.10](https://github.com/Building42/Telegraph/releases/tag/0.10)
+- Convert to Swift 4
+- Allow custom WebSocket protocol and other headers
+- Fix WebSocket bitmask handling for empty payloads
+
 ## [0.9](https://github.com/Building42/Telegraph/releases/tag/0.9)
 - Add support for iOS 8
 - Fix exclusive access issues reported by Xcode in the `HTTPParser`

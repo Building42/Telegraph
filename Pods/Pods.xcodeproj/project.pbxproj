@@ -439,35 +439,35 @@
 		0B2E51ECC1CC9CBE1E61F071F8B1B4BC /* CocoaAsyncSocket-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-tvOS-umbrella.h"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		11003106DA77BC7AAD2AD8A60CBC046A /* Pods-Telegraph macOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph macOS-resources.sh"; sourceTree = "<group>"; };
 		12EB35E99DC5BD643233C5A889BBB1FC /* HTTPRouteHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRouteHandler.swift; sourceTree = "<group>"; };
-		149958E9666857348CBCDE1E3F10CEDD /* Pods-Telegraph macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Telegraph macOS.modulemap"; sourceTree = "<group>"; };
+		149958E9666857348CBCDE1E3F10CEDD /* Pods-Telegraph macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph macOS.modulemap"; sourceTree = "<group>"; };
 		14AEF75AD5BCEC245E9A96C1B5147B2B /* Pods-Telegraph iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph iOS-resources.sh"; sourceTree = "<group>"; };
 		14F883A5B61EBAEDF62F2C299B5C49DD /* Pods-macOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		150529EB459A2192DDD6F7B9F27795D1 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		153290BE5108CB9F8642018AD764B04A /* CocoaAsyncSocket-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "CocoaAsyncSocket-tvOS.modulemap"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.modulemap"; sourceTree = "<group>"; };
-		16A0C96A92730961CB43FF3034B4B9FE /* Telegraph-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Telegraph-tvOS.modulemap"; path = "../Telegraph-tvOS/Telegraph-tvOS.modulemap"; sourceTree = "<group>"; };
+		153290BE5108CB9F8642018AD764B04A /* CocoaAsyncSocket-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CocoaAsyncSocket-tvOS.modulemap"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.modulemap"; sourceTree = "<group>"; };
+		16A0C96A92730961CB43FF3034B4B9FE /* Telegraph-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Telegraph-tvOS.modulemap"; path = "../Telegraph-tvOS/Telegraph-tvOS.modulemap"; sourceTree = "<group>"; };
 		16DE06AEE1D818B62AF3FAA4ED87C3E1 /* Pods-Telegraph tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Telegraph tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		1881D7948F3C296E62B4FDED8BDF0E75 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CocoaAsyncSocket-tvOS/Info.plist"; sourceTree = "<group>"; };
 		192194C1CD2B3D62EB939349C453E8E6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A37FD5A595F3303492B9E679243F312 /* TLSConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TLSConfig.swift; sourceTree = "<group>"; };
-		1A4B6AEA3265371857B879C9C49BFD09 /* Telegraph-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Telegraph-macOS.modulemap"; path = "../Telegraph-macOS/Telegraph-macOS.modulemap"; sourceTree = "<group>"; };
+		1A4B6AEA3265371857B879C9C49BFD09 /* Telegraph-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "Telegraph-macOS.modulemap"; path = "../Telegraph-macOS/Telegraph-macOS.modulemap"; sourceTree = "<group>"; };
 		1A605972DB2614E0CEBAD87C2D626ED8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC0754308541C22719AD26EA669F080 /* WebSocketConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketConfig.swift; sourceTree = "<group>"; };
 		1B8D2EB914E09D5845C58C930AE2FB4A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CocoaAsyncSocket-macOS/Info.plist"; sourceTree = "<group>"; };
 		1C4F8486835C5C88B77BE1D4520007FF /* Server+Routing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Server+Routing.swift"; sourceTree = "<group>"; };
 		1C5F888F0AA0FCCC11AB6688ECBF7499 /* Pods-Telegraph iOS-TelegraphTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph iOS-TelegraphTests.release.xcconfig"; sourceTree = "<group>"; };
-		1DF1555C324AE634327A769E588A7A4E /* CocoaAsyncSocket-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "CocoaAsyncSocket-iOS.modulemap"; sourceTree = "<group>"; };
-		1EB24EBD70AD0A1F01AB0ACD9F806817 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F67E59DF143ED006BAA16AD9D97A235 /* HTTPParserC-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "HTTPParserC-macOS.modulemap"; path = "../HTTPParserC-macOS/HTTPParserC-macOS.modulemap"; sourceTree = "<group>"; };
+		1DF1555C324AE634327A769E588A7A4E /* CocoaAsyncSocket-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "CocoaAsyncSocket-iOS.modulemap"; sourceTree = "<group>"; };
+		1EB24EBD70AD0A1F01AB0ACD9F806817 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HTTPParserC.framework; path = "HTTPParserC-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F67E59DF143ED006BAA16AD9D97A235 /* HTTPParserC-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "HTTPParserC-macOS.modulemap"; path = "../HTTPParserC-macOS/HTTPParserC-macOS.modulemap"; sourceTree = "<group>"; };
 		1F7EAEF3E84F13333E2D4055BF781A81 /* Pods-Telegraph macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		1F9058E7F0CEF8D9F8A69635DAECDF5B /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F9058E7F0CEF8D9F8A69635DAECDF5B /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = "CocoaAsyncSocket-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21859C71CE9797F29574A90749B447FA /* CocoaAsyncSocket-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaAsyncSocket-iOS-dummy.m"; sourceTree = "<group>"; };
-		23C74602189BD2601AE13C92FA9A97C7 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23C74602189BD2601AE13C92FA9A97C7 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Telegraph.framework; path = "Telegraph-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		256DBF977B04A42BF416E82052AE5DF1 /* Pods-macOS Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-macOS Example-dummy.m"; sourceTree = "<group>"; };
 		258551298A0D5ED6685BE08D57FD5F17 /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
 		25EFE394544C0495C59A426F0B360DDC /* URL+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		2757EF9D9F9556597AB6D48798F88B1D /* Pods-Telegraph iOS-TelegraphTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Telegraph iOS-TelegraphTests-dummy.m"; sourceTree = "<group>"; };
 		2782790DD03FCC52F38BAF86E4E8A5E3 /* Pods-Telegraph iOS-TelegraphTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph iOS-TelegraphTests-frameworks.sh"; sourceTree = "<group>"; };
-		28108D35BE8A210C2AA26D98692A0A4A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28108D35BE8A210C2AA26D98692A0A4A /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = "CocoaAsyncSocket-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28639CFA38267A2EF9E691B76B5BABF2 /* HTTPParserC-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "HTTPParserC-macOS-dummy.m"; path = "../HTTPParserC-macOS/HTTPParserC-macOS-dummy.m"; sourceTree = "<group>"; };
 		2F2EDCD68D6EAF5268EF49BC6615CE2F /* CocoaAsyncSocket-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CocoaAsyncSocket-macOS.xcconfig"; path = "../CocoaAsyncSocket-macOS/CocoaAsyncSocket-macOS.xcconfig"; sourceTree = "<group>"; };
 		3219AEC03CFEE65085DC4BBD5FC5EDFF /* HTTPVersion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPVersion.swift; sourceTree = "<group>"; };
@@ -481,14 +481,14 @@
 		3D6EE29AD19C058998BE9197F33D6576 /* Telegraph-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Telegraph-iOS-dummy.m"; sourceTree = "<group>"; };
 		3DA8D2DBDADEC69ACE7FBDBEDBD8DD5F /* Pods-macOS Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS Example-frameworks.sh"; sourceTree = "<group>"; };
 		3E1EAC3F2F5BCBA746AEC1BED4111B39 /* WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
-		3EF438DF9E40D806749B4C31620C4D42 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40976E633A382566B3CC2986B6CD88DC /* Pods-iOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-iOS Example.modulemap"; sourceTree = "<group>"; };
+		3EF438DF9E40D806749B4C31620C4D42 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Telegraph.framework; path = "Telegraph-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40976E633A382566B3CC2986B6CD88DC /* Pods-iOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-iOS Example.modulemap"; sourceTree = "<group>"; };
 		40F48774716DD5487B08DAA10F94FC60 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Telegraph-macOS/Info.plist"; sourceTree = "<group>"; };
 		43160C5210E98EC4A083474FBA984948 /* HTTPParserC-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "HTTPParserC-tvOS-dummy.m"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS-dummy.m"; sourceTree = "<group>"; };
-		46A6520CF1AF2EB04C185F6E9E2CF7CA /* Pods_tvOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46A6520CF1AF2EB04C185F6E9E2CF7CA /* Pods_tvOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tvOS_Example.framework; path = "Pods-tvOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		488015A019DADBF95C90E8C70F77C3C5 /* Telegraph-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Telegraph-tvOS-umbrella.h"; path = "../Telegraph-tvOS/Telegraph-tvOS-umbrella.h"; sourceTree = "<group>"; };
-		488BA23ECDB2D475F6F155CDB9989E48 /* Pods-tvOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-tvOS Example.modulemap"; sourceTree = "<group>"; };
-		48BBF28A8D528456556E5D60F8521117 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		488BA23ECDB2D475F6F155CDB9989E48 /* Pods-tvOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-tvOS Example.modulemap"; sourceTree = "<group>"; };
+		48BBF28A8D528456556E5D60F8521117 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HTTPParserC.framework; path = "HTTPParserC-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		496D2AB931720CF68ED290FB2F51C521 /* Pods-Telegraph iOS-TelegraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph iOS-TelegraphTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D9363FCA92A0A31696A51C48C44D70B /* CertificateIdentity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CertificateIdentity.swift; sourceTree = "<group>"; };
 		4DCAEC05B40058FD3789E1AF24DBCD3B /* HTTPParserC-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "HTTPParserC-macOS-umbrella.h"; path = "../HTTPParserC-macOS/HTTPParserC-macOS-umbrella.h"; sourceTree = "<group>"; };
@@ -501,10 +501,10 @@
 		52D146FC2EA1CE487230318DB9A118A9 /* Pods-iOS Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Example-dummy.m"; sourceTree = "<group>"; };
 		52D87799557BCECCF83773090D5791D2 /* WebSocketParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketParser.swift; sourceTree = "<group>"; };
 		54B355CE0001751003311FB47CA58F89 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		55865998778A2A6C172BD811BA922172 /* Pods-Telegraph iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Telegraph iOS.modulemap"; sourceTree = "<group>"; };
+		55865998778A2A6C172BD811BA922172 /* Pods-Telegraph iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph iOS.modulemap"; sourceTree = "<group>"; };
 		569F2F617741B7470BF3547DCB35CFBF /* Pods-Telegraph iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Telegraph iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		56B9A23405DD63F8C3E94F46B3F7A62A /* HTTPResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
-		58043AB5904D7D86ABEF1F3163665D04 /* Pods-Telegraph tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Telegraph tvOS.modulemap"; sourceTree = "<group>"; };
+		58043AB5904D7D86ABEF1F3163665D04 /* Pods-Telegraph tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph tvOS.modulemap"; sourceTree = "<group>"; };
 		58BB32F9996175C38C80AC5BCFE99ECC /* Streams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Streams.swift; sourceTree = "<group>"; };
 		598E5910E98EAD51A0B0EF444239D790 /* Telegraph-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Telegraph-macOS-umbrella.h"; path = "../Telegraph-macOS/Telegraph-macOS-umbrella.h"; sourceTree = "<group>"; };
 		5C15D4D86971EDAF84CA723FA0C0AC8E /* HTTPRoute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRoute.swift; sourceTree = "<group>"; };
@@ -514,16 +514,16 @@
 		5F0358558B5BB69E929D1B5877FAE694 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GCDAsyncUdpSocket.m; path = Source/GCD/GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		5F4FAD493C3875E79A764604DBAAD499 /* Pods-tvOS Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tvOS Example-frameworks.sh"; sourceTree = "<group>"; };
 		5F84109977B70590DAAFF6CEB2A4E246 /* HTTPParserC-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPParserC-iOS-umbrella.h"; sourceTree = "<group>"; };
-		605FCBE0019F25ACF157147FEC85438B /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		605FCBE0019F25ACF157147FEC85438B /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Example.framework; path = "Pods-iOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60EB123406EF2BA660B3A01A85F07F2D /* CocoaAsyncSocket-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaAsyncSocket-iOS-umbrella.h"; sourceTree = "<group>"; };
 		614E85307363745CA782A3B8EE929069 /* Pods-Telegraph iOS-TelegraphTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Telegraph iOS-TelegraphTests-umbrella.h"; sourceTree = "<group>"; };
-		61A8B593E42E47BF9CBF2D875C3D886D /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61A8B593E42E47BF9CBF2D875C3D886D /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaAsyncSocket.framework; path = "CocoaAsyncSocket-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CFC0470EB5D4E81DE0EDBE8DAC7BF3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Telegraph-tvOS/Info.plist"; sourceTree = "<group>"; };
 		62E5D826335F6F7410E77A9FF5A64B81 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		63901D7D7FF78FB722D14AF0B66C1C53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64049066C1F92971AFD4E1FA7500E440 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		643AECCDB5B3F620D472F0FD01D70936 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6498ED7192102FD681DC0A24E24700B5 /* Pods_Telegraph_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6498ED7192102FD681DC0A24E24700B5 /* Pods_Telegraph_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_tvOS.framework; path = "Pods-Telegraph tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D3A1FE0E43D9C6B248E4312539F52E /* Pods-Telegraph iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		680BC992097E538F9F5A93B3CDFBE29F /* Pods-Telegraph iOS-TelegraphTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph iOS-TelegraphTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		69C34038A8CAFB36C41FEB1DCA047965 /* Pods-iOS Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-resources.sh"; sourceTree = "<group>"; };
@@ -534,15 +534,15 @@
 		6B46A33ACEA5041B80FDB78A2FE7B2F3 /* KeychainError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		6B565BEA153CA57DF05ED5B01845752F /* Telegraph-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Telegraph-iOS.xcconfig"; sourceTree = "<group>"; };
 		6D1115357BD5657EF02D27045D355A28 /* Pods-Telegraph tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph tvOS-resources.sh"; sourceTree = "<group>"; };
-		6E3F7E3D0F21546C0C04ED75F1939B8B /* CocoaAsyncSocket-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "CocoaAsyncSocket-macOS.modulemap"; path = "../CocoaAsyncSocket-macOS/CocoaAsyncSocket-macOS.modulemap"; sourceTree = "<group>"; };
-		6F7F697823FA57188C6E687B6B8AED55 /* HTTPParserC-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "HTTPParserC-iOS.modulemap"; sourceTree = "<group>"; };
+		6E3F7E3D0F21546C0C04ED75F1939B8B /* CocoaAsyncSocket-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CocoaAsyncSocket-macOS.modulemap"; path = "../CocoaAsyncSocket-macOS/CocoaAsyncSocket-macOS.modulemap"; sourceTree = "<group>"; };
+		6F7F697823FA57188C6E687B6B8AED55 /* HTTPParserC-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "HTTPParserC-iOS.modulemap"; sourceTree = "<group>"; };
 		6FD49E17051D350B1667C5CDA66076D7 /* WebSocketConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketConnection.swift; sourceTree = "<group>"; };
 		701A0018CF8AD8212E4CAD4BBE873C07 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752A76D0B0F41A03A2982DE34B54CEA5 /* Pods-iOS Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Example-umbrella.h"; sourceTree = "<group>"; };
 		75A6CAC8C05D97E769E2502472BFAF1B /* HTTPParserC-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "HTTPParserC-iOS.xcconfig"; sourceTree = "<group>"; };
 		75CE751EE1877D85468C7AE6752ECB74 /* UInt+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UInt+Ext.swift"; sourceTree = "<group>"; };
 		79156E469B01BC91C2C2D4C7BFF825EC /* Telegraph-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Telegraph-macOS-dummy.m"; path = "../Telegraph-macOS/Telegraph-macOS-dummy.m"; sourceTree = "<group>"; };
-		7998C63EC7A6BF2B98CB77956DF09192 /* Pods_Telegraph_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7998C63EC7A6BF2B98CB77956DF09192 /* Pods_Telegraph_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_macOS.framework; path = "Pods-Telegraph macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D8BF1BA0BF58207D2DEAA6152E13D16 /* HTTPParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPParser.swift; sourceTree = "<group>"; };
 		80185FA65E3BE749AAC0472CFD9979E3 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCDAsyncSocket.h; path = Source/GCD/GCDAsyncSocket.h; sourceTree = "<group>"; };
 		8108DA20BA1E16C3F40031FE489ECBCA /* HTTPParserC-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "HTTPParserC-macOS.xcconfig"; path = "../HTTPParserC-macOS/HTTPParserC-macOS.xcconfig"; sourceTree = "<group>"; };
@@ -550,16 +550,16 @@
 		81B7393AF0D8C1399BBF76E38D334646 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		84942E1106D7C9E674C1DD6B42C61A5D /* FileManager+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
 		84F6E1E77BA290B8298E73444CBC8584 /* Array+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
-		8C0AE6B9342F6878B9E434583EE18829 /* Pods-macOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-macOS Example.modulemap"; sourceTree = "<group>"; };
-		8D9D4ED3FBA226FDB5696249429F944C /* Pods_Telegraph_iOS_TelegraphTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_iOS_TelegraphTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0AE6B9342F6878B9E434583EE18829 /* Pods-macOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-macOS Example.modulemap"; sourceTree = "<group>"; };
+		8D9D4ED3FBA226FDB5696249429F944C /* Pods_Telegraph_iOS_TelegraphTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_iOS_TelegraphTests.framework; path = "Pods-Telegraph iOS-TelegraphTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE35E88A536EE0623B093E44E6CA142 /* DispatchTimer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
 		8EEDCA51FB890FF3CA79A656F03BA5EE /* HTTPParserC-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HTTPParserC-iOS-dummy.m"; sourceTree = "<group>"; };
 		9178E63BBD2FA45E6FC5836A6F2EEE00 /* Pods-tvOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tvOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		91B5BD4AE79DC31A987B8262A95F3C34 /* Pods-iOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		92AD90551DB02B76FD0E1742EC2C505F /* Telegraph-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Telegraph-tvOS-prefix.pch"; path = "../Telegraph-tvOS/Telegraph-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95539B3DC4CD802167C59AA49C990AAE /* Pods-Telegraph iOS-TelegraphTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Telegraph iOS-TelegraphTests-resources.sh"; sourceTree = "<group>"; };
-		95547E8E266FCEF225020F9090FA6BC6 /* Telegraph-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Telegraph-iOS.modulemap"; sourceTree = "<group>"; };
+		95547E8E266FCEF225020F9090FA6BC6 /* Telegraph-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Telegraph-iOS.modulemap"; sourceTree = "<group>"; };
 		96D25D6F9EFB236517E80AD4746EAFA6 /* HTTPParserC-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HTTPParserC-iOS-prefix.pch"; sourceTree = "<group>"; };
 		97956E5E58ED4EF3245BDB1EF9AC64E5 /* HTTPStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
 		9951CC63BC40CC3F74DF28F8348D99C8 /* Certificate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
@@ -573,10 +573,10 @@
 		A332125092DC6A91624E8A68CAED921B /* HTTPHeader+WebSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "HTTPHeader+WebSocket.swift"; sourceTree = "<group>"; };
 		A3E261146FABC7C8C1A84BFA2EF47F97 /* Pods-tvOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tvOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A5159CF46602776D51836901D6215855 /* HTTPRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		AA2541CD7AB14DCA05F8F79A791227F5 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2541CD7AB14DCA05F8F79A791227F5 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HTTPParserC.framework; path = "HTTPParserC-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADC8EAFCFC1645B9DD4027B69C77CE3 /* Pods-macOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		AB58125AF8898C4998B1AEDBB8CC832A /* Pods-Telegraph tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Telegraph tvOS-umbrella.h"; sourceTree = "<group>"; };
-		AC1D5382475CD101364B667F4A5E1860 /* HTTPParserC-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "HTTPParserC-tvOS.modulemap"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS.modulemap"; sourceTree = "<group>"; };
+		AC1D5382475CD101364B667F4A5E1860 /* HTTPParserC-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "HTTPParserC-tvOS.modulemap"; path = "../HTTPParserC-tvOS/HTTPParserC-tvOS.modulemap"; sourceTree = "<group>"; };
 		AD5674B77C47EB174FD92ADB6009CD0A /* Pods-macOS Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS Example-resources.sh"; sourceTree = "<group>"; };
 		AE206186C279A4EE2497AE98E244B2AE /* NSRegularExpression+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Ext.swift"; sourceTree = "<group>"; };
 		AF9AEA02CFB335C025298DE2C840C5E3 /* Pods-Telegraph iOS-TelegraphTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Telegraph iOS-TelegraphTests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -587,7 +587,7 @@
 		B37301683C3C026ACB57CDF2A48C692A /* TCPSocket.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TCPSocket.swift; sourceTree = "<group>"; };
 		B4070448E31388ADC8B0D3234096081E /* CocoaAsyncSocket-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CocoaAsyncSocket-tvOS.xcconfig"; path = "../CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.xcconfig"; sourceTree = "<group>"; };
 		B51AA06311F7F1D894F832241FF85772 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		B5FED085A66044314622640E57940D3A /* Pods-Telegraph iOS-TelegraphTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Telegraph iOS-TelegraphTests.modulemap"; sourceTree = "<group>"; };
+		B5FED085A66044314622640E57940D3A /* Pods-Telegraph iOS-TelegraphTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Telegraph iOS-TelegraphTests.modulemap"; sourceTree = "<group>"; };
 		B8AEA53D7AA2D6A23468569FEFD146E9 /* Server+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Server+Config.swift"; sourceTree = "<group>"; };
 		BA4DAC925AD533A439CF3E1FA1665623 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BB5B3E546227FB1B9246292D7055029A /* TCPConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TCPConnection.swift; sourceTree = "<group>"; };
@@ -595,8 +595,8 @@
 		BC6780C80E8FE0CC3593F224B319413B /* Pods-Telegraph macOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph macOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BCD699141C374840F4F3845C675D9BB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS10.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BCE6736308EDD2506FA34CBD3CD6C64F /* Pods-Telegraph tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Telegraph tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BD83395598A8479C769471AD8D08536C /* Pods_macOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE056C3D6220476C4660970F3FB7A2B1 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD83395598A8479C769471AD8D08536C /* Pods_macOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_macOS_Example.framework; path = "Pods-macOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE056C3D6220476C4660970F3FB7A2B1 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Telegraph.framework; path = "Telegraph-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF669F5B790B772481D6A334B043C94C /* Telegraph-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Telegraph-iOS-umbrella.h"; sourceTree = "<group>"; };
 		C043577A4AA4C9A5F9DDA9F259A5D72F /* HTTPWebSocketHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPWebSocketHandler.swift; sourceTree = "<group>"; };
 		C09ACA47FD093473C4B85767C7965359 /* Pods-tvOS Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tvOS Example-umbrella.h"; sourceTree = "<group>"; };
@@ -630,7 +630,7 @@
 		E45D33612E99EF3FAC0BC453868F4EE5 /* WebSocketClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 		E5ECA0363907FBE99FA83CAB7EC6D0E2 /* Pods-tvOS Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tvOS Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		E785198C50A6D9F6C6232E1004F30E9F /* Telegraph-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Telegraph-tvOS-dummy.m"; path = "../Telegraph-tvOS/Telegraph-tvOS-dummy.m"; sourceTree = "<group>"; };
-		E83133A6A58499B214A43E4117EE15F5 /* http_parser.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = http_parser.c; path = Sources/http_parser.c; sourceTree = "<group>"; };
+		E83133A6A58499B214A43E4117EE15F5 /* http_parser.c */ = {isa = PBXFileReference; includeInIndex = 1; name = http_parser.c; path = Sources/http_parser.c; sourceTree = "<group>"; };
 		EB4F7C368330EDCB2BECB851274C54AA /* DispatchQueue+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Ext.swift"; sourceTree = "<group>"; };
 		EC5793DF78C03E424FF40E69D1E724C6 /* HTTPFileHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPFileHandler.swift; sourceTree = "<group>"; };
 		ED31910A500B8F492359DC222774FA48 /* http_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = http_parser.h; path = Sources/http_parser.h; sourceTree = "<group>"; };
@@ -645,7 +645,7 @@
 		F68946F538C012B42B0765E1B09B7AC0 /* CocoaAsyncSocket-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaAsyncSocket-macOS-umbrella.h"; path = "../CocoaAsyncSocket-macOS/CocoaAsyncSocket-macOS-umbrella.h"; sourceTree = "<group>"; };
 		F79930999AE9FC4C68A4989BCB0C7E5F /* HTTPError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		F904A005B8E3CA68D8C5907ED88AA026 /* HTTPRequestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPRequestHandler.swift; sourceTree = "<group>"; };
-		F97F64842CE52B9EA816F6EE9311B8CC /* Pods_Telegraph_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F97F64842CE52B9EA816F6EE9311B8CC /* Pods_Telegraph_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Telegraph_iOS.framework; path = "Pods-Telegraph iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0BF1CD075D4913B0A4DEFE75084DD3 /* Client+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Client+Config.swift"; sourceTree = "<group>"; };
 		FC2E60D58E008F4B4E0CFBAE5A5D3B86 /* Pods-macOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-macOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FC323E23279B3DFE6DAE281D75340284 /* Telegraph-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Telegraph-macOS.xcconfig"; path = "../Telegraph-macOS/Telegraph-macOS.xcconfig"; sourceTree = "<group>"; };
@@ -804,6 +804,7 @@
 				ED31910A500B8F492359DC222774FA48 /* http_parser.h */,
 				AA84328B1C379AB3A8CAAFBBA5AE8E90 /* Support Files */,
 			);
+			name = HTTPParserC;
 			path = HTTPParserC;
 			sourceTree = "<group>";
 		};
@@ -816,6 +817,7 @@
 				5F0358558B5BB69E929D1B5877FAE694 /* GCDAsyncUdpSocket.m */,
 				531C3CD872A65225BD01C1FB3606A551 /* Support Files */,
 			);
+			name = CocoaAsyncSocket;
 			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
@@ -905,6 +907,7 @@
 				97956E5E58ED4EF3245BDB1EF9AC64E5 /* HTTPStatus.swift */,
 				3219AEC03CFEE65085DC4BBD5FC5EDFF /* HTTPVersion.swift */,
 			);
+			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -971,6 +974,7 @@
 				36E51A8CEC02ACD62439F094C8A74A0B /* Models */,
 				5F2DF9D9EF4332DEE82E1ED1533D344D /* Routing */,
 			);
+			name = HTTP;
 			path = HTTP;
 			sourceTree = "<group>";
 		};
@@ -1005,6 +1009,7 @@
 				BBBE190165C74141494E9CF1401BF3A6 /* WebSocketMessage+Write.swift */,
 				52D87799557BCECCF83773090D5791D2 /* WebSocketParser.swift */,
 			);
+			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -1067,6 +1072,7 @@
 				12EB35E99DC5BD643233C5A889BBB1FC /* HTTPRouteHandler.swift */,
 				1C4F8486835C5C88B77BE1D4520007FF /* Server+Routing.swift */,
 			);
+			name = Routing;
 			path = Routing;
 			sourceTree = "<group>";
 		};
@@ -1079,6 +1085,7 @@
 				0A784EDCBEEE23F42E2B2B9228807679 /* WebSocketMessageDefaultHandler.swift */,
 				F1493B3AE9D22D0DD456DCC3C207B2B5 /* WebSocketMessageHandler.swift */,
 			);
+			name = Handlers;
 			path = Handlers;
 			sourceTree = "<group>";
 		};
@@ -1126,6 +1133,7 @@
 				614D1D8DDB82DD9355F61AC3B2C1BEF9 /* Handlers */,
 				50A41199B17C7477B9CBA3BD9A10DAA7 /* Models */,
 			);
+			name = WebSockets;
 			path = WebSockets;
 			sourceTree = "<group>";
 		};
@@ -1137,6 +1145,7 @@
 				EC5793DF78C03E424FF40E69D1E724C6 /* HTTPFileHandler.swift */,
 				F904A005B8E3CA68D8C5907ED88AA026 /* HTTPRequestHandler.swift */,
 			);
+			name = Handlers;
 			path = Handlers;
 			sourceTree = "<group>";
 		};
@@ -1753,7 +1762,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2256,7 +2265,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE67106E85548C8284F2F460F035F01C /* Pods-tvOS Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2320,7 +2328,37 @@
 			};
 			name = Release;
 		};
-		14CA56410034CD34F28AF2A5C47F3914 /* Release */ = {
+		12DC6157310E32430915F1D697B3F27F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50B162D4B087D3177AA443A76589BDB2 /* CocoaAsyncSocket-iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS.modulemap";
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		22BC8AC715EA19BA3C99DEEB1DC24C16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F2EDCD68D6EAF5268EF49BC6615CE2F /* CocoaAsyncSocket-macOS.xcconfig */;
 			buildSettings = {
@@ -2345,41 +2383,13 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		169AAE051FE2C8ADBA76867455A2E4E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50B162D4B087D3177AA443A76589BDB2 /* CocoaAsyncSocket-iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS.modulemap";
-				PRODUCT_NAME = CocoaAsyncSocket;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2519B57237AD4A219E4069FED2C15F98 /* Debug */ = {
+		235D0EA315CD0CD40066B19CBEB1DC3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C474B09A562050B48116BE7CA723264E /* HTTPParserC-tvOS.xcconfig */;
 			buildSettings = {
@@ -2401,18 +2411,19 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		2641CF5791257E54681D0AC42BCE614C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AADC8EAFCFC1645B9DD4027B69C77CE3 /* Pods-macOS Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2443,9 +2454,9 @@
 			};
 			name = Release;
 		};
-		2D7716D0E651548FA4FCD25AC06D71A7 /* Debug */ = {
+		27E12218418E2A6B6005C3D29C8ECDBD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F2EDCD68D6EAF5268EF49BC6615CE2F /* CocoaAsyncSocket-macOS.xcconfig */;
+			baseConfigurationReference = 8108DA20BA1E16C3F40031FE489ECBCA /* HTTPParserC-macOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2458,16 +2469,17 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-macOS/CocoaAsyncSocket-macOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-macOS/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-macOS/HTTPParserC-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTTPParserC-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-macOS/CocoaAsyncSocket-macOS.modulemap";
-				PRODUCT_NAME = CocoaAsyncSocket;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/HTTPParserC-macOS/HTTPParserC-macOS.modulemap";
+				PRODUCT_NAME = HTTPParserC;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2505,9 +2517,9 @@
 			};
 			name = Debug;
 		};
-		360E2E381DB3DBED8082AAF121350ACD /* Release */ = {
+		3906260679E0EABCA0471AD7AB68D450 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C474B09A562050B48116BE7CA723264E /* HTTPParserC-tvOS.xcconfig */;
+			baseConfigurationReference = 75A6CAC8C05D97E769E2502472BFAF1B /* HTTPParserC-iOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2518,22 +2530,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-tvOS/HTTPParserC-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HTTPParserC-tvOS/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-iOS/HTTPParserC-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTTPParserC-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HTTPParserC-tvOS/HTTPParserC-tvOS.modulemap";
+				MODULEMAP_FILE = "Target Support Files/HTTPParserC-iOS/HTTPParserC-iOS.modulemap";
 				PRODUCT_NAME = HTTPParserC;
-				SDKROOT = appletvos;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VALIDATE_PRODUCT = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		39540B9EF74B3384B62FB9FACBBFF923 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2598,71 +2610,10 @@
 			};
 			name = Debug;
 		};
-		3D70BFC64E2DF2F73F4360FB1ACA6F80 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75A6CAC8C05D97E769E2502472BFAF1B /* HTTPParserC-iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-iOS/HTTPParserC-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HTTPParserC-iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HTTPParserC-iOS/HTTPParserC-iOS.modulemap";
-				PRODUCT_NAME = HTTPParserC;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		400ED9B4D07F046F1CF6D006A8E25A03 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4070448E31388ADC8B0D3234096081E /* CocoaAsyncSocket-tvOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.modulemap";
-				PRODUCT_NAME = CocoaAsyncSocket;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		4910B30A0BF49027318A16736A33AF9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6A0951CE0DA0BD6CA6DE248714C4AFAD /* Pods-iOS Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2787,6 +2738,130 @@
 			};
 			name = Debug;
 		};
+		6C797F466A85764BBE733CDD2A64CBFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4070448E31388ADC8B0D3234096081E /* CocoaAsyncSocket-tvOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.modulemap";
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		761E96D7E1D2058587E72DBA61B6D814 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75A6CAC8C05D97E769E2502472BFAF1B /* HTTPParserC-iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-iOS/HTTPParserC-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTTPParserC-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HTTPParserC-iOS/HTTPParserC-iOS.modulemap";
+				PRODUCT_NAME = HTTPParserC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7909C7E59371E46CBE523A5C663D8AC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50B162D4B087D3177AA443A76589BDB2 /* CocoaAsyncSocket-iOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS.modulemap";
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		89DEC67AF27DB6C79B0F4A6C74C69011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F2EDCD68D6EAF5268EF49BC6615CE2F /* CocoaAsyncSocket-macOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-macOS/CocoaAsyncSocket-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-macOS/CocoaAsyncSocket-macOS.modulemap";
+				PRODUCT_NAME = CocoaAsyncSocket;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		8C064B0F97EB37CC3450B32BE03C61CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C65DCB87ED217FB353BE02AE37B08B79 /* Telegraph-tvOS.xcconfig */;
@@ -2885,7 +2960,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F30C6DF88AF9FF974006AA257AD53F7C /* Pods-iOS Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2915,66 +2989,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		A1576021ECCAF4FE32B30815751FA130 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8108DA20BA1E16C3F40031FE489ECBCA /* HTTPParserC-macOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-macOS/HTTPParserC-macOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HTTPParserC-macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/HTTPParserC-macOS/HTTPParserC-macOS.modulemap";
-				PRODUCT_NAME = HTTPParserC;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A70297260DE90DDC0D902AE975078815 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8108DA20BA1E16C3F40031FE489ECBCA /* HTTPParserC-macOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-macOS/HTTPParserC-macOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HTTPParserC-macOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/HTTPParserC-macOS/HTTPParserC-macOS.modulemap";
-				PRODUCT_NAME = HTTPParserC;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		A75D0B6B41A0E3B8B1BA0C043A688B03 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3070,35 +3084,6 @@
 			};
 			name = Debug;
 		};
-		B473C580E972397FA8762928DA8361B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4070448E31388ADC8B0D3234096081E /* CocoaAsyncSocket-tvOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-tvOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.modulemap";
-				PRODUCT_NAME = CocoaAsyncSocket;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		B85AD4823224A852D5BB3A3AAE24C9AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1C5F888F0AA0FCCC11AB6688ECBF7499 /* Pods-Telegraph iOS-TelegraphTests.release.xcconfig */;
@@ -3184,15 +3169,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
-		BED3059C1D9EDF8D20A2E8FB23876EA6 /* Debug */ = {
+		C130244C79B9A02068511A32E42FE6B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75A6CAC8C05D97E769E2502472BFAF1B /* HTTPParserC-iOS.xcconfig */;
+			baseConfigurationReference = C474B09A562050B48116BE7CA723264E /* HTTPParserC-tvOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3203,17 +3187,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-iOS/HTTPParserC-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HTTPParserC-iOS/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-tvOS/HTTPParserC-tvOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTTPParserC-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HTTPParserC-iOS/HTTPParserC-iOS.modulemap";
+				MODULEMAP_FILE = "Target Support Files/HTTPParserC-tvOS/HTTPParserC-tvOS.modulemap";
 				PRODUCT_NAME = HTTPParserC;
-				SDKROOT = iphoneos;
+				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3256,7 +3241,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9178E63BBD2FA45E6FC5836A6F2EEE00 /* Pods-tvOS Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3287,9 +3271,40 @@
 			};
 			name = Release;
 		};
-		D9F9AD2C7FA7D12C176A06AF7A423619 /* Release */ = {
+		DBF619B6CAF4A41754E36C2875AF41AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50B162D4B087D3177AA443A76589BDB2 /* CocoaAsyncSocket-iOS.xcconfig */;
+			baseConfigurationReference = 8108DA20BA1E16C3F40031FE489ECBCA /* HTTPParserC-macOS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/HTTPParserC-macOS/HTTPParserC-macOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HTTPParserC-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/HTTPParserC-macOS/HTTPParserC-macOS.modulemap";
+				PRODUCT_NAME = HTTPParserC;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E098B6D1265028D7956DD472F9C82FD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4070448E31388ADC8B0D3234096081E /* CocoaAsyncSocket-tvOS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3300,28 +3315,27 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-iOS/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaAsyncSocket-tvOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-iOS/CocoaAsyncSocket-iOS.modulemap";
+				MODULEMAP_FILE = "Target Support Files/CocoaAsyncSocket-tvOS/CocoaAsyncSocket-tvOS.modulemap";
 				PRODUCT_NAME = CocoaAsyncSocket;
-				SDKROOT = iphoneos;
+				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		F1F2003065BE8E9C8ED7078ADFEA6BE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 14F883A5B61EBAEDF62F2C299B5C49DD /* Pods-macOS Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -3435,8 +3449,8 @@
 		2AB03A9A6526C2318ACE0DEE95DE00EB /* Build configuration list for PBXNativeTarget "HTTPParserC-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BED3059C1D9EDF8D20A2E8FB23876EA6 /* Debug */,
-				3D70BFC64E2DF2F73F4360FB1ACA6F80 /* Release */,
+				3906260679E0EABCA0471AD7AB68D450 /* Debug */,
+				761E96D7E1D2058587E72DBA61B6D814 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3453,8 +3467,8 @@
 		398C3F978049F8D7F135831E08133554 /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D7716D0E651548FA4FCD25AC06D71A7 /* Debug */,
-				14CA56410034CD34F28AF2A5C47F3914 /* Release */,
+				89DEC67AF27DB6C79B0F4A6C74C69011 /* Debug */,
+				22BC8AC715EA19BA3C99DEEB1DC24C16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3480,8 +3494,8 @@
 		563FC6C75E7A6340C6BE45B4260BCB77 /* Build configuration list for PBXNativeTarget "HTTPParserC-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A70297260DE90DDC0D902AE975078815 /* Debug */,
-				A1576021ECCAF4FE32B30815751FA130 /* Release */,
+				27E12218418E2A6B6005C3D29C8ECDBD /* Debug */,
+				DBF619B6CAF4A41754E36C2875AF41AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3498,8 +3512,8 @@
 		93EBD5A8F1032ACFE713F61B10901080 /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B473C580E972397FA8762928DA8361B1 /* Debug */,
-				400ED9B4D07F046F1CF6D006A8E25A03 /* Release */,
+				E098B6D1265028D7956DD472F9C82FD5 /* Debug */,
+				6C797F466A85764BBE733CDD2A64CBFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3516,8 +3530,8 @@
 		B9094F50D67BCB3E664B0FF644A17F60 /* Build configuration list for PBXNativeTarget "CocoaAsyncSocket-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				169AAE051FE2C8ADBA76867455A2E4E1 /* Debug */,
-				D9F9AD2C7FA7D12C176A06AF7A423619 /* Release */,
+				12DC6157310E32430915F1D697B3F27F /* Debug */,
+				7909C7E59371E46CBE523A5C663D8AC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3525,8 +3539,8 @@
 		E570C6FC5499201033BC206FA35D2890 /* Build configuration list for PBXNativeTarget "HTTPParserC-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2519B57237AD4A219E4069FED2C15F98 /* Debug */,
-				360E2E381DB3DBED8082AAF121350ACD /* Release */,
+				C130244C79B9A02068511A32E42FE6B4 /* Debug */,
+				235D0EA315CD0CD40066B19CBEB1DC3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
