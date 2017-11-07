@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.11](https://github.com/Building42/Telegraph/releases/tag/0.11)
+- Fix compability warnings for Xcode 9.1 / Swift 4.0.2
+- Fix WebSocket bitmask crash on Xcode 9.1 / Swift 4.0.2 / iOS 11.1
+
 ## [0.10](https://github.com/Building42/Telegraph/releases/tag/0.10)
 - Convert to Swift 4
 - Allow custom WebSocket protocol and other headers
