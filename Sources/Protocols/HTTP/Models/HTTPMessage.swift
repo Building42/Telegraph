@@ -14,6 +14,7 @@ open class HTTPMessage {
   public var version = HTTPVersion(1, 1)
 
   internal var firstLine: String { return "" }
+  internal var stripBody = false
 
   /// Performs last minute changes to the message, just before writing it to the stream.
   open func prepareForWrite() {
@@ -50,7 +51,9 @@ open class HTTPMessage {
 
   /// Writes the body to the provided stream.
   open func writeBody(to stream: WriteStream, timeout: TimeInterval) {
-    stream.write(data: body, timeout: timeout)
+    if !stripBody {
+      stream.write(data: body, timeout: timeout)
+    }
   }
 }
 

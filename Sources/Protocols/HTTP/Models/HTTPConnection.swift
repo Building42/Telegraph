@@ -96,8 +96,15 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
       return
     }
 
-    // Match the http version and send the response
+    // Match the http version
     response.version = request.version
+
+    // Do not write the body for HEAD requests
+    if request.method == .head {
+      response.stripBody = true
+    }
+
+    // Send the response
     send(response: response)
 
     // Should we upgrade the connection?
@@ -108,6 +115,7 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
         return
       }
 
+      // Invalid upgrade, close the connection
       response.closeAfterWrite = true
     }
 
