@@ -17,9 +17,9 @@ extension Data {
   }
 
   public mutating func mask(with maskBytes: [UInt8]) {
-    self.withUnsafeMutableBytes { (buffer: UnsafeMutablePointer<UInt8>) in
-      let maskSize = maskBytes.count
-      for i in 0..<count { buffer[i] ^= maskBytes[i % maskSize] }
+    let maskSize = maskBytes.count
+    for i in 0..<count {
+      self[i] ^= maskBytes[i % maskSize]
     }
   }
 }
