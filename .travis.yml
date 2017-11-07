@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode9.1
 
 branches:
   only:
@@ -14,7 +14,7 @@ env:
     # Latest devices
     - DESTINATION="platform=iOS Simulator,name=iPhone 8 Plus"           SCHEME="Telegraph iOS"      RUN_TESTS="YES"
     - DESTINATION="platform=iOS Simulator,name=iPad Pro (12.9-inch)"    SCHEME="Telegraph iOS"      RUN_TESTS="NO"
-    - DESTINATION="platform=tvOS Simulator,name=Apple TV 1080p"         SCHEME="Telegraph tvOS"     RUN_TESTS="NO"
+    - DESTINATION="platform=tvOS Simulator,name=Apple TV"               SCHEME="Telegraph tvOS"     RUN_TESTS="NO"
     - DESTINATION="platform=macOS,arch=x86_64"                          SCHEME="Telegraph macOS"    RUN_TESTS="NO"
 
     # Older devices
