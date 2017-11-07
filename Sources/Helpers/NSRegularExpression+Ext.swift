@@ -52,7 +52,7 @@ extension NSRegularExpression {
 
 extension String {
   fileprivate var fullRange: NSRange {
-    return NSRange(location: 0, length: characters.count)
+    return NSRange(location: 0, length: count)
   }
 
   fileprivate func substring(with range: NSRange) -> String? {

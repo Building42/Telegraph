@@ -18,7 +18,7 @@ extension String {
   }
 
   public func truncate(count: Int, ellipses: Bool = true) -> String {
-    if characters.count < count { return self }
-    return String(characters.prefix(count)) + (ellipses ? "..." : "")
+    if self.count < count { return self }
+    return prefix(count) + (ellipses ? "..." : "")
   }
 }

@@ -148,7 +148,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Building42;
 				TargetAttributes = {
 					82EF34341ECD356A002DC910 = {
@@ -383,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E5E5D46CE58DA0D0A2E0012 /* Pods-macOS Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "macOS Example/Info.plist";
@@ -396,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 722CF00929C7546692EE60D7 /* Pods-macOS Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "macOS Example/Info.plist";
