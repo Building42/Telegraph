@@ -72,8 +72,8 @@ extension HTTPRoute {
 // MARK: Route handling
 
 extension HTTPRoute {
-  public func canHandle(methods: Set<HTTPMethod>) -> Bool {
-    return self.methods.isEmpty || methods.isSubset(of: self.methods)
+  public func canHandle(method: HTTPMethod) -> Bool {
+    return methods.contains(method)
   }
 
   public func canHandle(path: String) -> (Bool, HTTPRequest.Params) {

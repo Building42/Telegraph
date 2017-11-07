@@ -56,7 +56,7 @@ extension HTTPMethod: CustomStringConvertible {
 
 extension HTTPMethod: Equatable {
   public static func == (lhs: HTTPMethod, rhs: HTTPMethod) -> Bool {
-    return lhs.rawValue == lhs.rawValue
+    return lhs.rawValue == rhs.rawValue
   }
 }
 

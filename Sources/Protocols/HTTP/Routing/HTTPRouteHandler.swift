@@ -17,7 +17,7 @@ open class HTTPRouteHandler: HTTPRequestHandler {
 
     for route in routes {
       // Skip routes that can't handle our method
-      if !route.canHandle(methods: [request.method]) { continue }
+      if !route.canHandle(method: request.method) { continue }
 
       // Can our route handle the path?
       let (canHandle, params) = route.canHandle(path: request.uri.path)
