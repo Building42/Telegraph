@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.12](https://github.com/Building42/Telegraph/releases/tag/0.12)
+- Add support for implicit HEAD requests on GET routes (see `implicitHeadRequests` in `HTTPRouteHandler`)
+- Fix route HTTP method matching (e.g. a GET route shouldn't respond to PUT)
+
 ## [0.11](https://github.com/Building42/Telegraph/releases/tag/0.11)
 - Fix compability warnings for Xcode 9.1 / Swift 4.0.2
 - Fix WebSocket bitmask crash on Xcode 9.1 / Swift 4.0.2 / iOS 11.1
