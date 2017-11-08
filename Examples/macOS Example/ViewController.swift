@@ -23,4 +23,3 @@ class ViewController: NSViewController {
     self.view.layer?.backgroundColor = NSColor.white.cgColor
   }
 }
-

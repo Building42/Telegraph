@@ -15,10 +15,10 @@ open class Server {
   public var webSocketConfig = WebSocketConfig.serverDefault
   public weak var webSocketDelegate: ServerWebSocketDelegate?
 
-  fileprivate let workQueue = DispatchQueue(label: "Telegraph.Server.work")
-  fileprivate var listener: TCPListener
-  fileprivate var httpConnections = Set<HTTPConnection>()
-  fileprivate var webSocketConnections = Set<WebSocketConnection>()
+  private let workQueue = DispatchQueue(label: "Telegraph.Server.work")
+  private var listener: TCPListener
+  private var httpConnections = Set<HTTPConnection>()
+  private var webSocketConnections = Set<WebSocketConnection>()
 
   /// Initializes a new Server instance.
   public init() {
@@ -53,7 +53,7 @@ open class Server {
   }
 
   /// Handles an incoming HTTP request.
-  fileprivate func handle(request: HTTPRequest, error: Error?) -> HTTPResponse? {
+  private func handle(request: HTTPRequest, error: Error?) -> HTTPResponse? {
     do {
       if let error = error { throw error }
       return try httpConfig.requestChain(request)

@@ -13,12 +13,12 @@ public typealias Regex = NSRegularExpression
 // MARK: Regex default arguments
 
 extension NSRegularExpression {
-  func matches(value: String) -> Bool {
-    return firstMatch(in: value) != nil
-  }
-
   func firstMatch(in value: String, options: Regex.MatchingOptions = []) -> NSTextCheckingResult? {
     return firstMatch(in: value, options: options, range: value.fullRange)
+  }
+
+  func matches(value: String) -> Bool {
+    return firstMatch(in: value) != nil
   }
 
   func matches(in value: String, options: Regex.MatchingOptions = []) -> [NSTextCheckingResult] {
@@ -44,7 +44,7 @@ struct RegexMatch {
 
 extension NSRegularExpression {
   func matchAll(in value: String, options: Regex.MatchingOptions = []) -> [RegexMatch] {
-    return matches(in: value, options:options).map { RegexMatch(input: value, result: $0) }
+    return matches(in: value, options: options).map { RegexMatch(input: value, result: $0) }
   }
 }
 

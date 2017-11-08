@@ -12,7 +12,7 @@ import Foundation
 
 // Operator to rotate a word
 infix operator <<< : BitwiseShiftPrecedence
-fileprivate func <<< (lhs: UInt32, rhs: UInt32) -> UInt32 {
+private func <<< (lhs: UInt32, rhs: UInt32) -> UInt32 {
   return lhs << rhs | lhs >> (32 - rhs)
 }
 

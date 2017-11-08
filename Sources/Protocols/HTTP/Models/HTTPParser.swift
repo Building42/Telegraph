@@ -16,16 +16,16 @@ public protocol HTTPParserDelegate: class {
 
 public class HTTPParser {
   public weak var delegate: HTTPParserDelegate?
-  public fileprivate(set) var message: HTTPMessage?
+  public private(set) var message: HTTPMessage?
 
-  fileprivate var cParser: http_parser
-  fileprivate var cParserSettings: http_parser_settings
+  private var cParser: http_parser
+  private var cParserSettings: http_parser_settings
 
-  fileprivate var uriFragment = ""
-  fileprivate var statusFragment = ""
-  fileprivate var headerKeyFragment = ""
-  fileprivate var headerValueFragment = ""
-  fileprivate var headerLastAction = 0
+  private var uriFragment = ""
+  private var statusFragment = ""
+  private var headerKeyFragment = ""
+  private var headerValueFragment = ""
+  private var headerLastAction = 0
 
   public init() {
     // Create a new instance of the C HTTP parser
@@ -190,13 +190,13 @@ extension HTTPParser {
 
 // MARK: CParser helpers
 
-fileprivate typealias CParserPointer = UnsafeMutablePointer<http_parser>
-fileprivate typealias BytesPointer = UnsafePointer<Int8>
+private typealias CParserPointer = UnsafeMutablePointer<http_parser>
+private typealias BytesPointer = UnsafePointer<Int8>
 
-fileprivate let continueParsing: Int32 = 0
-fileprivate let stopParsing: Int32 = -1
+private let continueParsing: Int32 = 0
+private let stopParsing: Int32 = -1
 
-fileprivate extension Data {
+private extension Data {
   init(bytes: BytesPointer?, count: Int) {
     if let bytes = bytes {
       let unsafeBytes = UnsafeMutablePointer(mutating: bytes)
@@ -207,14 +207,14 @@ fileprivate extension Data {
   }
 }
 
-fileprivate extension String {
+private extension String {
   init(bytes: BytesPointer?, count: Int) {
     let data = Data(bytes: bytes, count: count)
     self.init(data: data, encoding: .utf8)!
   }
 }
 
-fileprivate extension http_parser {
+private extension http_parser {
   var httpKeepAlive: Bool {
     var mySelf = self
     return http_should_keep_alive(&mySelf) != 0
@@ -248,42 +248,42 @@ fileprivate extension http_parser {
 
 // MARK: CParser callbacks
 
-fileprivate func onMessageBegin(cParserPointer: CParserPointer?) -> Int32 {
+private func onMessageBegin(cParserPointer: CParserPointer?) -> Int32 {
   guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
   return parser.messageBegin()
 }
 
-fileprivate func onHeadersComplete(cParserPointer: CParserPointer?) -> Int32 {
+private func onHeadersComplete(cParserPointer: CParserPointer?) -> Int32 {
     guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
   return parser.headersComplete()
 }
 
-fileprivate func onMessageComplete(cParserPointer: CParserPointer?) -> Int32 {
+private func onMessageComplete(cParserPointer: CParserPointer?) -> Int32 {
   guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
   return parser.messageComplete(cParser: cParser)
 }
 
-fileprivate func onParsedURL(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+private func onParsedURL(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
   guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
   return parser.parsedURI(cParser: cParser, fragment: String(bytes: bytes, count: length))
 }
 
-fileprivate func onParsedStatus(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+private func onParsedStatus(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
   guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
   return parser.parsedStatus(cParser: cParser, fragment: String(bytes: bytes, count: length))
 }
 
-fileprivate func onParsedHeaderField(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+private func onParsedHeaderField(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
   guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
   return parser.parsedHeaderKey(fragment: String(bytes: bytes, count: length))
 }
 
-fileprivate func onParsedHeaderValue(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+private func onParsedHeaderValue(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
   guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
   return parser.parsedHeaderValue(fragment: String(bytes: bytes, count: length))
 }
 
-fileprivate func onParsedBody(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
+private func onParsedBody(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
   guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
   return parser.parsedBody(fragment: Data(bytes: bytes, count: length))
 }
@@ -296,7 +296,7 @@ public extension HTTPParserDelegate {
 
 // MARK: HTTPError mapping
 
-fileprivate extension HTTPError {
+private extension HTTPError {
   init(code: http_errno) {
     switch code {
     case HPE_INVALID_EOF_STATE:

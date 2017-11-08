@@ -10,11 +10,11 @@ import Foundation
 
 internal class HTTPClient {
   internal typealias Handler = (HTTPResponse, Error?) -> Void
-  fileprivate typealias Task = (HTTPRequest, Handler)
+  private typealias Task = (HTTPRequest, Handler)
 
-  fileprivate var connection: HTTPConnection?
-  fileprivate var currentTask: Task?
-  fileprivate var tasks = [Task]()
+  private var connection: HTTPConnection?
+  private var currentTask: Task?
+  private var tasks = [Task]()
 
   internal lazy var socket = TCPSocket()
   internal let baseURL: URL
@@ -39,7 +39,7 @@ internal class HTTPClient {
   }
 
   /// Dequeues the next request.
-  fileprivate func processNextTask() {
+  private func processNextTask() {
     // Check that we aren't busy or that the queue is empty
     guard currentTask == nil && !tasks.isEmpty else { return }
     currentTask = tasks.removeFirst()
@@ -55,14 +55,14 @@ internal class HTTPClient {
   }
 
   /// Sends the dequeued request.
-  fileprivate func performCurrentTask() {
+  private func performCurrentTask() {
     if let (request, _) = currentTask {
       connection?.send(request: request)
     }
   }
 
   /// Finishes the current request.
-  fileprivate func finishCurrentTask(response: HTTPResponse?, error: Error?) {
+  private func finishCurrentTask(response: HTTPResponse?, error: Error?) {
     if let (_, handler) = currentTask {
       currentTask = nil
       handler(response ?? HTTPResponse(), error)

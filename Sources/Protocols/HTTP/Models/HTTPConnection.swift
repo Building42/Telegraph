@@ -23,9 +23,9 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
   public weak var delegate: HTTPConnectionDelegate?
 
   internal let socket: TCPSocket
-  fileprivate let config: HTTPConfig
-  fileprivate var parser: HTTPParser
-  fileprivate var upgrading = false
+  private let config: HTTPConfig
+  private var parser: HTTPParser
+  private var upgrading = false
 
   /// Initializes the HTTP connection.
   public required init(socket: TCPSocket, config: HTTPConfig) {
@@ -59,7 +59,7 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
   }
 
   /// Handles incoming data.
-  fileprivate func received(data: Data) {
+  private func received(data: Data) {
     do {
       try parser.parse(data: data)
       if !upgrading { socket.read(timeout: config.readTimeout) }
@@ -69,7 +69,7 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
   }
 
   /// Handles an incoming HTTP message.
-  fileprivate func received(message: HTTPMessage?, error: Error?) {
+  private func received(message: HTTPMessage?, error: Error?) {
     switch message {
     case is HTTPRequest:
       received(request: message as! HTTPRequest, error: error)
@@ -77,12 +77,11 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
       received(response: message as! HTTPResponse, error: error)
     default:
       socket.close()
-      break
     }
   }
 
   /// Handles an incoming request.
-  fileprivate func received(request: HTTPRequest, error: Error?) {
+  private func received(request: HTTPRequest, error: Error?) {
     var messageError = error
 
     // This server only supports HTTP/1.0 and HTTP/1.1
@@ -126,7 +125,7 @@ public class HTTPConnection: TCPConnection, Hashable, Equatable {
   }
 
   /// Handles an incoming response.
-  fileprivate func received(response: HTTPResponse, error: Error?) {
+  private func received(response: HTTPResponse, error: Error?) {
     upgrading = response.isConnectionUpgrade
     delegate?.connection(self, handleIncomingResponse: response, error: error)
   }

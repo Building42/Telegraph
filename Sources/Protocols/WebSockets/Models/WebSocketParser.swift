@@ -39,12 +39,12 @@ public protocol WebSocketParserDelegate: class {
 public class WebSocketParser {
   public let maxPayloadLength: UInt64
   public weak var delegate: WebSocketParserDelegate?
-  public fileprivate(set) lazy var message = WebSocketMessage()
-  public fileprivate(set) lazy var maskingKey = [UInt8](repeating: 0, count: 4)
-  public fileprivate(set) lazy var payload = Data()
-  public fileprivate(set) var nextPart = Part.finAndOpcode
-  public fileprivate(set) var bytesParsed = 0
-  public fileprivate(set) var payloadLength: UInt64 = 0
+  public private(set) lazy var message = WebSocketMessage()
+  public private(set) lazy var maskingKey = [UInt8](repeating: 0, count: 4)
+  public private(set) lazy var payload = Data()
+  public private(set) var nextPart = Part.finAndOpcode
+  public private(set) var bytesParsed = 0
+  public private(set) var payloadLength: UInt64 = 0
 
   /// Describes the different parts to parse.
   public enum Part {
@@ -188,7 +188,7 @@ public class WebSocketParser {
       message.payload = .close(code: 0, reason: "Close payloads are not implemented")
     case .ping, .pong:
       // Ping / pong with optional payload
-      message.payload = payload.count > 0 ? .binary(payload) : .none
+      message.payload = payload.isEmpty ? .none : .binary(payload)
     }
 
     // Keep a reference to the message and reset

@@ -671,6 +671,7 @@
 				825A719E1ECD28710043AC8D /* Frameworks */,
 				825A719F1ECD28710043AC8D /* Headers */,
 				825A71A01ECD28710043AC8D /* Resources */,
+				8246E0601FB26D8C0006A6C5 /* [SwiftLint] Analyze Source */,
 				C3D9E56FBCD3C7CCF0598F5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -691,6 +692,7 @@
 				825A71AB1ECD28CE0043AC8D /* Frameworks */,
 				825A71AC1ECD28CE0043AC8D /* Headers */,
 				825A71AD1ECD28CE0043AC8D /* Resources */,
+				8246E0611FB26DBF0006A6C5 /* [SwiftLint] Analyze Source */,
 				76B905CD962C19653BED68DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -711,6 +713,7 @@
 				825A71B81ECD29020043AC8D /* Frameworks */,
 				825A71B91ECD29020043AC8D /* Headers */,
 				825A71BA1ECD29020043AC8D /* Resources */,
+				8246E0621FB26DD60006A6C5 /* [SwiftLint] Analyze Source */,
 				8A1873C9C57C79A497D91D56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -955,6 +958,48 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph tvOS/Pods-Telegraph tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8246E0601FB26D8C0006A6C5 /* [SwiftLint] Analyze Source */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftLint] Analyze Source";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\nfi";
+		};
+		8246E0611FB26DBF0006A6C5 /* [SwiftLint] Analyze Source */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftLint] Analyze Source";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\nfi";
+		};
+		8246E0621FB26DD60006A6C5 /* [SwiftLint] Analyze Source */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[SwiftLint] Analyze Source";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\nfi";
 		};
 		8A1873C9C57C79A497D91D56 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

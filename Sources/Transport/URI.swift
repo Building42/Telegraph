@@ -9,7 +9,7 @@
 import Foundation
 
 public struct URI {
-  fileprivate var components: URLComponents
+  private var components: URLComponents
 
   public var path: String {
     get { return components.path }

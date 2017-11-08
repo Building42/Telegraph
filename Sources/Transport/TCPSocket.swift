@@ -40,8 +40,8 @@ public final class TCPSocket: NSObject, ReadStream, WriteStream {
   public typealias WriteHandler = () -> Void
 
   private let socketDelegateQueue: DispatchQueue
-  fileprivate let socket: GCDAsyncSocket
-  fileprivate var wasOpen = false
+  private let socket: GCDAsyncSocket
+  private var wasOpen = false
 
   public weak var delegate: TCPSocketDelegate?
   public var tlsPolicy: TLSPolicy?

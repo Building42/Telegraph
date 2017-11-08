@@ -21,9 +21,9 @@ public protocol WebSocketConnectionDelegate: class {
 open class WebSocketConnection: TCPConnection, WebSocket {
   public weak var delegate: WebSocketConnectionDelegate?
 
-  fileprivate let socket: TCPSocket
-  fileprivate let config: WebSocketConfig
-  fileprivate var parser: WebSocketParser
+  private let socket: TCPSocket
+  private let config: WebSocketConfig
+  private var parser: WebSocketParser
 
   private var pingTimer: DispatchTimer?
 
@@ -88,7 +88,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   }
 
   /// Handles incoming data on the socket.
-  fileprivate func received(data: Data) {
+  private func received(data: Data) {
     do {
       try parser.parse(data: data)
       socket.read(timeout: config.readTimeout)
@@ -98,7 +98,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   }
 
   /// Handles an incoming message.
-  fileprivate func received(message: WebSocketMessage) {
+  private func received(message: WebSocketMessage) {
     do {
       // Reset the ping timer
       pingTimer?.start(afterSec: config.pingInterval)

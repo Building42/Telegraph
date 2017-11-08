@@ -36,7 +36,7 @@ public struct HTTPRoute {
 // MARK: Route pattern processing
 
 extension HTTPRoute {
-  fileprivate static func pattern(basedOn uri: String) throws -> String {
+  private static func pattern(basedOn uri: String) throws -> String {
     // Check if the uri is a valid route specification
     var pattern = URI(path: uri).path
     guard try Regex(pattern: "[-.:()\\w\\/]").matches(value: pattern) else { throw HTTPRouteError.invalidURI }
@@ -50,7 +50,7 @@ extension HTTPRoute {
     return pattern
   }
 
-  fileprivate static func process(regex: String?) throws -> (Regex?, [String]) {
+  private static func process(regex: String?) throws -> (Regex?, [String]) {
     // If no regex is specified this route will match all uris
     guard var pattern = regex else { return (nil, []) }
 

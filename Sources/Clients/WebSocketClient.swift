@@ -24,10 +24,10 @@ public protocol WebSocketClientDelegate: class {
 }
 
 open class WebSocketClient: WebSocket {
-  fileprivate let workQueue = DispatchQueue(label: "Telegraph.WebSocketClient.work")
-  fileprivate let delegateQueue = DispatchQueue(label: "Telegraph.WebSocketClient.delegate")
-  fileprivate var httpClient: HTTPClient?
-  fileprivate var connection: WebSocketConnection?
+  private let workQueue = DispatchQueue(label: "Telegraph.WebSocketClient.work")
+  private let delegateQueue = DispatchQueue(label: "Telegraph.WebSocketClient.delegate")
+  private var httpClient: HTTPClient?
+  private var connection: WebSocketConnection?
 
   public let url: URL
   public var headers = HTTPHeaders()
