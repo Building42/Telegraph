@@ -52,6 +52,11 @@ open class Server {
     }
   }
 
+  /// Returns the port on which the listener is accepting connections.
+  open var listeningPort: UInt16 {
+    return listener.listeningPort
+  }
+
   /// Handles an incoming HTTP request.
   private func handle(request: HTTPRequest, error: Error?) -> HTTPResponse? {
     do {
