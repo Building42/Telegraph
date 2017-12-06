@@ -53,7 +53,7 @@ class TelegraphDemo: NSObject {
 
     // Start the server on localhost, we'll skip error handling for the demo
     // Note: if you test in your browser, don't forget to type https://
-    try! server.start(onPort: 0)
+    try! server.start()
     serverLog("Server is running at https://localhost:\(server.port)")
   }
 
