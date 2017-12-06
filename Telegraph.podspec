@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Telegraph'
-  s.version = '0.12'
+  s.version = '0.13'
 
   s.license = { :type => 'MPL2', :file => 'LICENSE' }
   s.summary = 'A Secure Web Server for iOS, tvOS and macOS'

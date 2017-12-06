@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.13](https://github.com/Building42/Telegraph/releases/tag/0.13)
+- Add automatic port selection (thanks [harrisg](https://github.com/harrisg))
+- Update CocoaAsyncSocket to version 7.6.2
+
 ## [0.12](https://github.com/Building42/Telegraph/releases/tag/0.12)
 - Add support for implicit HEAD requests on GET routes (see `implicitHeadRequests` in `HTTPRouteHandler`)
 - Fix route HTTP method matching (e.g. a GET route shouldn't respond to PUT)
