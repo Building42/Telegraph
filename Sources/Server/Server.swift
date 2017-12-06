@@ -53,8 +53,8 @@ open class Server {
   }
 
   /// Returns the port on which the listener is accepting connections.
-  open var listeningPort: UInt16 {
-    return listener.listeningPort
+  open var port: UInt16 {
+    return listener.port
   }
 
   /// Handles an incoming HTTP request.

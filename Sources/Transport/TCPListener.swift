@@ -42,7 +42,7 @@ public final class TCPListener: NSObject {
     socket.disconnect()
   }
 
-  public var listeningPort: UInt16 {
+  public var port: UInt16 {
     return socket.localPort
   }
 }

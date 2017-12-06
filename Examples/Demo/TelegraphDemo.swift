@@ -54,20 +54,20 @@ class TelegraphDemo: NSObject {
     // Start the server on localhost, we'll skip error handling for the demo
     // Note: if you test in your browser, don't forget to type https://
     try! server.start(onPort: 0)
-    serverLog("Server is running at https://localhost:\(server.listeningPort)")
+    serverLog("Server is running at https://localhost:\(server.port)")
   }
 
   func demoClientRequest() {
     // Demonstrate a request on the /hello endpoint with (NS)URLSession
     // Note: we are setting ourself as the delegate to customize the SSL handshake
     let httpClient = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
-    let httpTask = httpClient.dataTask(with: URL(string: "https://localhost:\(server.listeningPort)/hello")!, completionHandler: clientHandleGreeting)
+    let httpTask = httpClient.dataTask(with: URL(string: "https://localhost:\(server.port)/hello")!, completionHandler: clientHandleGreeting)
     httpTask.resume()
   }
 
   func demoWebSocketConnect() {
     // Demonstrate a WebSocket client connection
-    webSocketClient = try! WebSocketClient("wss://localhost:\(server.listeningPort)", certificates: [caCertificate])
+    webSocketClient = try! WebSocketClient("wss://localhost:\(server.port)", certificates: [caCertificate])
     webSocketClient.delegate = self
     webSocketClient.headers.webSocketProtocol = "myProtocol"
     webSocketClient.headers["X-Name"] = "Yvo"
