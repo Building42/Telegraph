@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C2E6217BA9F991C3D66DBBC /* Pods_macOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE6321CEE41FAE07C018B9 /* Pods_macOS_Example.framework */; };
 		8284FF271ECEA4B200303A00 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8284FF261ECEA4B200303A00 /* index.html */; };
+		82DD426D1FD86ADE00136B81 /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD426C1FD86ADE00136B81 /* AppWindow.swift */; };
 		82EF34391ECD356A002DC910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF34381ECD356A002DC910 /* AppDelegate.swift */; };
 		82EF343B1ECD356A002DC910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF343A1ECD356A002DC910 /* ViewController.swift */; };
 		82EF343D1ECD356A002DC910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82EF343C1ECD356A002DC910 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		40EE6321CEE41FAE07C018B9 /* Pods_macOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		722CF00929C7546692EE60D7 /* Pods-macOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-macOS Example/Pods-macOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		8284FF261ECEA4B200303A00 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		82DD426C1FD86ADE00136B81 /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		82EF34351ECD356A002DC910 /* macOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF34381ECD356A002DC910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82EF343A1ECD356A002DC910 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				82EF34381ECD356A002DC910 /* AppDelegate.swift */,
+				82DD426C1FD86ADE00136B81 /* AppWindow.swift */,
 				82EF343A1ECD356A002DC910 /* ViewController.swift */,
 				82EF343C1ECD356A002DC910 /* Assets.xcassets */,
 				82EF343E1ECD356A002DC910 /* Main.storyboard */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82EF343B1ECD356A002DC910 /* ViewController.swift in Sources */,
+				82DD426D1FD86ADE00136B81 /* AppWindow.swift in Sources */,
 				82EF34391ECD356A002DC910 /* AppDelegate.swift in Sources */,
 				82EF34681ECD3C81002DC910 /* TelegraphDemo.swift in Sources */,
 			);
