@@ -41,6 +41,10 @@ public final class TCPListener: NSObject {
   public func disconnect() {
     socket.disconnect()
   }
+
+  public var port: UInt16 {
+    return socket.localPort
+  }
 }
 
 // MARK: TCPListener GCDAsyncSocketDelegate
