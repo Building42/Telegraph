@@ -124,6 +124,10 @@ extension TelegraphDemo: ServerWebSocketDelegate {
   func server(_ server: Server, webSocket: WebSocket, didSendMessage message: WebSocketMessage) {
     serverLog("WebSocket sent message: \(message)")
   }
+  
+  func serverDidDisconnect(_ server: Server) {
+    serverLog("Server disconnected")
+  }
 }
 
 // MARK: - URLSessionDelegate implementation
