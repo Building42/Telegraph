@@ -10,10 +10,11 @@ import Foundation
 import CocoaAsyncSocket
 
 public protocol TCPListenerDelegate: class {
+  /// Called when the listener accepts a new incoming socket
   func listener(_ listener: TCPListener, didAcceptSocket socket: TCPSocket)
-	
-  /// Called when the main socket for a TCPListener has disconnected
-  func listenerSocketDisconnected(_ listener: TCPListener)
+
+  /// Called when the listener socket has disconnected
+  func listenerDisconnected(_ listener: TCPListener)
 }
 
 public final class TCPListener: NSObject {
@@ -63,10 +64,10 @@ extension TCPListener: GCDAsyncSocketDelegate {
 
     delegate?.listener(self, didAcceptSocket: socket)
   }
-  
+
   public func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
     /// We are disconnecting everything so notify the server that we are disconnected
     guard sock == socket else { return }
-    delegate?.listenerSocketDisconnected(self)
+    delegate?.listenerDisconnected(self)
   }
 }

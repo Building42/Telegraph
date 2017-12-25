@@ -106,13 +106,13 @@ extension Server: TCPListenerDelegate {
       httpConnection.open()
     }
   }
-  
-  public func listenerSocketDisconnected(_ listener: TCPListener) {
+
+  public func listenerDisconnected(_ listener: TCPListener) {
     delegateQueue.async(weak: self) { server in
       server.webSocketDelegate?.serverDidDisconnect(self)
     }
   }
-  
+
 }
 
 // MARK: HTTPConnectionDelegate implementation
