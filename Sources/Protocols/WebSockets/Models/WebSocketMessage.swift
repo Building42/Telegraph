@@ -80,12 +80,11 @@ extension WebSocketMessage {
 
 extension WebSocketMessage: CustomStringConvertible {
   open var description: String {
-    var info = ""
-    var msg = self
+    let me = self
+    let typeName = type(of: me)
+    let address = Unmanaged.passUnretained(me).toOpaque()
 
-    withUnsafePointer(to: &msg) {
-      info = "<\(type(of: msg)): \($0), opcode: \(msg.opcode), payload: "
-    }
+    var info = "<\(typeName): \(address) opcode: \(me.opcode), payload: "
 
     switch payload {
     case .binary(let data):

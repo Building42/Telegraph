@@ -45,17 +45,9 @@ extension HTTPRequest {
 
 extension HTTPRequest: CustomStringConvertible {
   open var description: String {
-    var info = ""
-    var msg = self
-
-    withUnsafePointer(to: &msg) {
-      info += "<\(type(of: msg)): \($0)"
-      info += " method: \(msg.method),"
-      info += " uri: \(msg.uri),"
-      info += " headers: \(msg.headers.count),"
-      info += " body: \(msg.body.count)>"
-    }
-
-    return info
+    let me = self
+    let typeName = type(of: me)
+    let address = Unmanaged.passUnretained(me).toOpaque()
+    return "<\(typeName): \(address) method: \(me.method), uri: \(me.uri), headers: \(me.headers.count), body: \(me.body.count)>"
   }
 }

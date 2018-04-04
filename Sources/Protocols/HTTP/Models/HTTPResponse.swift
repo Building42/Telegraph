@@ -65,16 +65,9 @@ extension HTTPResponse {
 
 extension HTTPResponse: CustomStringConvertible {
   open var description: String {
-    var info = ""
-    var msg = self
-
-    withUnsafePointer(to: &msg) {
-      info += "<\(type(of: msg)): \($0)"
-      info += " status: \(msg.status),"
-      info += " headers: \(msg.headers.count),"
-      info += " body: \(msg.body.count)>"
-    }
-
-    return info
+    let me = self
+    let typeName = type(of: me)
+    let address = Unmanaged.passUnretained(me).toOpaque()
+    return "<\(typeName): \(address) status: \(me.status), headers: \(me.headers.count), body: \(me.body.count)>"
   }
 }

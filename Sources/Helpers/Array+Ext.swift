@@ -14,6 +14,6 @@ extension Array {
   }
 
   public func filter<T>(ofType: T.Type) -> [T] {
-    return flatMap { $0 as? T }
+    return compactMap { $0 as? T }
   }
 }

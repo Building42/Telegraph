@@ -28,12 +28,12 @@ extension KeychainManager {
 
     // Import the data
     var importResult: CFArray?
-    let status = SecPKCS12Import(data as NSData, query as CFDictionary, &importResult)
+    let status = withUnsafeMutablePointer(to: &importResult) { SecPKCS12Import(data as NSData, query as CFDictionary, $0) }
     guard status == errSecSuccess else { return nil }
 
     // The result is an array of dictionaries, we are looking for the one that contains the identity
     let importArray = importResult as? [[NSString: AnyObject]]
-    let importIdentity = importArray?.flatMap { dict in dict[kSecImportItemIdentity as NSString] }.first
+    let importIdentity = importArray?.compactMap { dict in dict[kSecImportItemIdentity as NSString] }.first
 
     // Let's double check that we have a result and that it is a SecIdentity
     guard let rawResult = importIdentity, CFGetTypeID(rawResult) == SecIdentityGetTypeID() else { return nil }
@@ -55,7 +55,7 @@ extension KeychainManager {
     query[kSecValueRef] = value
 
     var result: AnyObject?
-    let status = SecItemAdd(query as CFDictionary, &result)
+    let status = withUnsafeMutablePointer(to: &result) { SecItemAdd(query as CFDictionary, $0) }
     guard status == errSecSuccess else { throw KeychainError(code: status) }
   }
 
@@ -67,7 +67,7 @@ extension KeychainManager {
     query[kSecReturnRef] = kCFBooleanTrue
 
     var result: AnyObject?
-    let status = SecItemCopyMatching(query as CFDictionary, &result)
+    let status = withUnsafeMutablePointer(to: &result) { SecItemCopyMatching(query as CFDictionary, $0) }
 
     guard status == errSecSuccess || status == errSecItemNotFound else { throw KeychainError(code: status) }
     guard let item = result else { throw KeychainError.itemNotFound }

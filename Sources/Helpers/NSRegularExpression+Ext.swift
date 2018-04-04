@@ -38,7 +38,7 @@ struct RegexMatch {
 
   init(input: String, result: NSTextCheckingResult) {
     value = input.substring(with: result.range) ?? ""
-    groupValues = (1..<result.numberOfRanges).flatMap { input.substring(with: result.range(at: $0)) }
+    groupValues = (1..<result.numberOfRanges).compactMap { input.substring(with: result.range(at: $0)) }
   }
 }
 
