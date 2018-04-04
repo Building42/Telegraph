@@ -60,7 +60,7 @@ class TelegraphDemo: NSObject {
   func demoClientRequest() {
     // Demonstrate a request on the /hello endpoint with (NS)URLSession
     // Note: we are setting ourself as the delegate to customize the SSL handshake
-    let httpClient = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+    let httpClient = URLSession(configuration: .ephemeral, delegate: self, delegateQueue: nil)
     let httpTask = httpClient.dataTask(with: URL(string: "https://localhost:\(server.port)/hello")!, completionHandler: clientHandleGreeting)
     httpTask.resume()
   }
