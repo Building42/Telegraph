@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.14](https://github.com/Building42/Telegraph/releases/tag/0.14)
+- Convert to Swift 4.1
+- **Breaking:** `DispatchTimer` has been simplified and now defaults to a background queue
+- Update CocoaAsyncSocket to version 7.6.3
+- Update HTTPParserC to version 2.8.1
+- Update CocoaPods to version 1.4.0
+
 ## [0.13](https://github.com/Building42/Telegraph/releases/tag/0.13)
 - Add automatic port selection (thanks [harrisg](https://github.com/harrisg))
 - Update CocoaAsyncSocket to version 7.6.2
