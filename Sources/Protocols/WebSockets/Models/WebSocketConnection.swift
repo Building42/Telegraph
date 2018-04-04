@@ -36,7 +36,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
 
     // Define a ping timer if a ping interval is set
     if config.pingInterval > 0 {
-      pingTimer = DispatchTimer(queue: DispatchQueue.global()) { [weak self] in
+      pingTimer = DispatchTimer(interval: config.pingInterval) { [weak self] in
         self?.send(message: WebSocketMessage(opcode: .ping))
       }
     }
@@ -47,7 +47,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
     socket.delegate = self
 
     // Start the ping timer
-    pingTimer?.start(afterSec: config.pingInterval)
+    pingTimer?.start()
 
     // Start reading
     socket.read(timeout: config.readTimeout)
@@ -56,6 +56,9 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   /// Closes the connection.
   public func close(immediately: Bool) {
     parser.delegate = nil
+
+    // Stop the ping timer
+    pingTimer?.stop()
 
     // We should send a close message if we can
     if immediately {
@@ -101,7 +104,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   private func received(message: WebSocketMessage) {
     do {
       // Reset the ping timer
-      pingTimer?.start(afterSec: config.pingInterval)
+      pingTimer?.start()
 
       // Inform the delegate of the incoming message
       delegate?.connection(self, didReceiveMessage: message)
