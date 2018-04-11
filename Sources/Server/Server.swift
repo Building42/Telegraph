@@ -73,7 +73,7 @@ open class Server {
 extension Server {
   /// Returns a boolean indicating if the server is secure (HTTPS).
   public var isSecure: Bool {
-    return listener.tlsConfig == nil
+    return listener.tlsConfig != nil
   }
 
   /// Returns the number of active HTTP connections.
