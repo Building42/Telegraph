@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.15](https://github.com/Building42/Telegraph/releases/tag/0.15)
+- Fix Server's `isSecure` boolean bug
+- Update demo application, now includes a JSON endpoint example
+- Update CocoaPods to version 1.5.0
+
 ## [0.14](https://github.com/Building42/Telegraph/releases/tag/0.14)
 - Convert to Swift 4.1
 - **Breaking:** `DispatchTimer` has been simplified and now defaults to a background queue

@@ -130,7 +130,6 @@
 				82EF34171ECD33CF002DC910 /* Frameworks */,
 				82EF34181ECD33CF002DC910 /* Resources */,
 				B5DC6E6FA8EE5728C7ED331F /* [CP] Embed Pods Frameworks */,
-				331F8E14853FDB6E3398204C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,21 +192,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		331F8E14853FDB6E3398204C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-tvOS Example/Pods-tvOS Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5848CAF9F4483971590E6120 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -672,7 +672,6 @@
 				825A719F1ECD28710043AC8D /* Headers */,
 				825A71A01ECD28710043AC8D /* Resources */,
 				8246E0601FB26D8C0006A6C5 /* [SwiftLint] Analyze Source */,
-				C3D9E56FBCD3C7CCF0598F5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -693,7 +692,6 @@
 				825A71AC1ECD28CE0043AC8D /* Headers */,
 				825A71AD1ECD28CE0043AC8D /* Resources */,
 				8246E0611FB26DBF0006A6C5 /* [SwiftLint] Analyze Source */,
-				76B905CD962C19653BED68DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -714,7 +712,6 @@
 				825A71B91ECD29020043AC8D /* Headers */,
 				825A71BA1ECD29020043AC8D /* Resources */,
 				8246E0621FB26DD60006A6C5 /* [SwiftLint] Analyze Source */,
-				8A1873C9C57C79A497D91D56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -734,7 +731,6 @@
 				D9899DD01DF4A092008766B5 /* Frameworks */,
 				D9899DD11DF4A092008766B5 /* Resources */,
 				539123F7689D30834C73C053 /* [CP] Embed Pods Frameworks */,
-				5FB3978D29966D64206D8AA2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -911,21 +907,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph iOS-TelegraphTests/Pods-Telegraph iOS-TelegraphTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5FB3978D29966D64206D8AA2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph iOS-TelegraphTests/Pods-Telegraph iOS-TelegraphTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		682B80ADB5D42B36E4766EBC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -942,21 +923,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		76B905CD962C19653BED68DE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph tvOS/Pods-Telegraph tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8246E0601FB26D8C0006A6C5 /* [SwiftLint] Analyze Source */ = {
@@ -1000,36 +966,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\nfi";
-		};
-		8A1873C9C57C79A497D91D56 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph macOS/Pods-Telegraph macOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C3D9E56FBCD3C7CCF0598F5C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		EE1475836CBCC1D1E8AC842E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1486,9 +1422,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.14;
+				CURRENT_PROJECT_VERSION = 0.15;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DYLIB_CURRENT_VERSION = 0.14;
+				DYLIB_CURRENT_VERSION = 0.15;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1551,9 +1487,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 0.14;
+				CURRENT_PROJECT_VERSION = 0.15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_CURRENT_VERSION = 0.14;
+				DYLIB_CURRENT_VERSION = 0.15;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

@@ -133,7 +133,6 @@
 				82EF34321ECD356A002DC910 /* Frameworks */,
 				82EF34331ECD356A002DC910 /* Resources */,
 				545B4BB72E1E6EA2F80DD315 /* [CP] Embed Pods Frameworks */,
-				8CCC1361CA5D957929BFFC75 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,21 +233,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-macOS Example/Pods-macOS Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8CCC1361CA5D957929BFFC75 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-macOS Example/Pods-macOS Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
