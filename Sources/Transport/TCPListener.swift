@@ -22,10 +22,13 @@ public final class TCPListener: NSObject {
   private let socketDelegateQueue: DispatchQueue
 
   public let tlsConfig: TLSConfig?
+  public private(set) var isAccepting: Bool
+
   public weak var delegate: TCPListenerDelegate?
 
   public init(tlsConfig: TLSConfig? = nil) {
     self.tlsConfig = tlsConfig
+    self.isAccepting = false
 
     socket = GCDAsyncSocket()
     socketDelegateQueue = DispatchQueue(label: "Telegraph.TCPListener.delegate")
@@ -36,13 +39,16 @@ public final class TCPListener: NSObject {
 
   public func accept(onPort port: UInt16) throws {
     try socket.accept(onPort: port)
+    isAccepting = true
   }
 
   public func accept(onInterface interface: String?, port: UInt16) throws {
     try socket.accept(onInterface: interface, port: port)
+    isAccepting = true
   }
 
   public func disconnect() {
+    isAccepting = false
     socket.disconnect()
   }
 

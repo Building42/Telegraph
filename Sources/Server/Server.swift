@@ -71,6 +71,11 @@ open class Server {
 // MARK: Server properties
 
 extension Server {
+  /// Returns a boolean indicating if the server is running.
+  public var isRunning: Bool {
+    return listener.isAccepting
+  }
+
   /// Returns a boolean indicating if the server is secure (HTTPS).
   public var isSecure: Bool {
     return listener.tlsConfig != nil
