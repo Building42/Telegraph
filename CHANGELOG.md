@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.16](https://github.com/Building42/Telegraph/releases/tag/0.16)
+- Add `isRunning` boolean to the Server
+- Update CocoaPods to version 1.5.3
+
 ## [0.15](https://github.com/Building42/Telegraph/releases/tag/0.15)
 - Fix Server's `isSecure` boolean bug
 - Update demo application, now includes a JSON endpoint example
