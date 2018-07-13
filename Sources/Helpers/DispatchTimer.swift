@@ -16,7 +16,7 @@ public class DispatchTimer {
   private var timer: DispatchSourceTimer?
 
   /// Initializes a DispatchTimer.
-  public init(interval: TimeInterval = 0, queue: DispatchQueue = .global(qos: .background), execute block: @escaping () -> Void) {
+  public init(interval: TimeInterval = 0, queue: DispatchQueue, execute block: @escaping () -> Void) {
     self.interval = interval
     self.queue = queue
     self.block = block
@@ -60,21 +60,21 @@ public class DispatchTimer {
 
 extension DispatchTimer {
   /// Creates and starts a timer that runs multiple times with a specific interval.
-  public static func run(interval: TimeInterval, queue: DispatchQueue = .global(qos: .background), execute block: @escaping () -> Void) -> DispatchTimer {
+  public static func run(interval: TimeInterval, queue: DispatchQueue, execute block: @escaping () -> Void) -> DispatchTimer {
     let timer = DispatchTimer(interval: interval, queue: queue, execute: block)
     timer.start()
     return timer
   }
 
   /// Creates and starts a timer that runs at a specfic data, optionally repeating with a specific interval.
-  public static func run(at: Date, interval: TimeInterval = 0, queue: DispatchQueue = .global(qos: .background), execute block: @escaping () -> Void) -> DispatchTimer {
+  public static func run(at: Date, interval: TimeInterval = 0, queue: DispatchQueue, execute block: @escaping () -> Void) -> DispatchTimer {
     let timer = DispatchTimer(interval: interval, queue: queue, execute: block)
     timer.start(at: at)
     return timer
   }
 
   /// Creates and starts a timer that runs after a while, optionally repeating with a specific interval.
-  public static func run(after: TimeInterval, interval: TimeInterval = 0, queue: DispatchQueue = .global(qos: .background), execute block: @escaping () -> Void) -> DispatchTimer {
+  public static func run(after: TimeInterval, interval: TimeInterval = 0, queue: DispatchQueue, execute block: @escaping () -> Void) -> DispatchTimer {
     let timer = DispatchTimer(interval: interval, queue: queue, execute: block)
     timer.start(after: after)
     return timer

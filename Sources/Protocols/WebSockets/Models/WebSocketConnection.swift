@@ -36,7 +36,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
 
     // Define a ping timer if a ping interval is set
     if config.pingInterval > 0 {
-      pingTimer = DispatchTimer(interval: config.pingInterval) { [weak self] in
+      pingTimer = DispatchTimer(interval: config.pingInterval, queue: .global(qos: .background)) { [weak self] in
         self?.send(message: WebSocketMessage(opcode: .ping))
       }
     }
