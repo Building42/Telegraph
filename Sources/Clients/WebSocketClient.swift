@@ -47,9 +47,9 @@ open class WebSocketClient: WebSocket {
 
   /// Performs the handshake with the host, forming the websocket connection.
   public func connect(timeout: TimeInterval = 10) {
-    workQueue.async(weak: self) { me in
-      guard me.httpClient == nil && me.connection == nil else { return }
-      me.performHandshake(timeout: timeout)
+    workQueue.async { [weak self] in
+      guard let strongSelf = self, strongSelf.httpClient == nil, strongSelf.connection == nil else { return }
+      strongSelf.performHandshake(timeout: timeout)
     }
   }
 
@@ -60,15 +60,15 @@ open class WebSocketClient: WebSocket {
 
   /// Closes the connection to the host.
   public func close(immediately: Bool) {
-    workQueue.async(weak: self) { me in
-      me.connection?.close(immediately: immediately)
+    workQueue.async { [weak self] in
+      self?.connection?.close(immediately: immediately)
     }
   }
 
   /// Sends a raw websocket message.
   public func send(message: WebSocketMessage) {
-    workQueue.async(weak: self) { me in
-      me.connection?.send(message: message)
+    workQueue.async { [weak self] in
+      self?.connection?.send(message: message)
     }
   }
 
@@ -95,7 +95,9 @@ open class WebSocketClient: WebSocket {
 
     // Perform the handshake request
     httpClient!.request(handshakeRequest) { [weak self] response, error in
-      self?.workQueue.async { self?.handleHandshake(response: response, error: error) }
+      self?.workQueue.async { [weak self] in
+        self?.handleHandshake(response: response, error: error)
+      }
     }
   }
 
@@ -112,11 +114,19 @@ open class WebSocketClient: WebSocket {
       connection!.open()
 
       // Inform the delegate that we are connected
-      delegateQueue.async(weak: self) { me in me.delegate?.webSocketClient(me, didConnectToHost: me.url.host!) }
+      delegateQueue.async { [weak self] in
+        guard let strongSelf = self else { return }
+        strongSelf.delegate?.webSocketClient(strongSelf, didConnectToHost: strongSelf.url.host!)
+      }
     } else {
-      // Inform the delegate of the handshake error
+      // Pass the error or create a handshake failed error
       let handshakeError = error ?? WebSocketClientError.handshakeFailed(response: response)
-      delegateQueue.async(weak: self) { me in me.delegate?.webSocketClient(me, didDisconnectWithError: handshakeError) }
+
+      // Inform the delegate of the handshake error
+      delegateQueue.async { [weak self] in
+        guard let strongSelf = self else { return }
+        strongSelf.delegate?.webSocketClient(strongSelf, didDisconnectWithError: handshakeError)
+      }
     }
   }
 }
@@ -147,13 +157,16 @@ extension WebSocketClient {
 
 extension WebSocketClient: WebSocketConnectionDelegate {
   public func connection(_ webSocketConnection: WebSocketConnection, didCloseWithError error: Error?) {
-    workQueue.async(weak: self) { me in
-      guard me.connection == webSocketConnection else { return }
-      me.connection?.delegate = nil
-      me.connection = nil
+    workQueue.async { [weak self, weak webSocketConnection] in
+      guard let strongSelf = self, strongSelf.connection == webSocketConnection else { return }
+      strongSelf.connection?.delegate = nil
+      strongSelf.connection = nil
     }
 
-    delegateQueue.async(weak: self) { me in me.delegate?.webSocketClient(me, didDisconnectWithError: error) }
+    delegateQueue.async { [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.delegate?.webSocketClient(strongSelf, didDisconnectWithError: error)
+    }
   }
 
   public func connection(_ webSocketConnection: WebSocketConnection, didReceiveMessage message: WebSocketMessage) {
@@ -161,10 +174,13 @@ extension WebSocketClient: WebSocketConnectionDelegate {
     guard message.opcode == .binaryFrame || message.opcode == .textFrame else { return }
 
     // Inform the delegate
-    switch message.payload {
-    case let .binary(data): delegateQueue.async(weak: self) { me in me.delegate?.webSocketClient(me, didReceiveData: data) }
-    case let .text(text): delegateQueue.async(weak: self) { me in me.delegate?.webSocketClient(me, didReceiveText: text) }
-    default: break
+    delegateQueue.async { [weak self] in
+      guard let strongSelf = self else { return }
+      switch message.payload {
+      case let .binary(data): strongSelf.delegate?.webSocketClient(strongSelf, didReceiveData: data)
+      case let .text(text): strongSelf.delegate?.webSocketClient(strongSelf, didReceiveText: text)
+      default: break
+      }
     }
   }
 

@@ -10,6 +10,9 @@
 		01A07E3024DD434FF87FAAFA /* Pods_Telegraph_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D91D1D5B633103A4F20D7E /* Pods_Telegraph_iOS.framework */; };
 		0A6DE8DF00EB04419935C02A /* Pods_Telegraph_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1EBA626920B43CDFC2225C /* Pods_Telegraph_tvOS.framework */; };
 		41B820D984339E597282E8D5 /* Pods_Telegraph_iOS_TelegraphTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AC61A392ED7FDD033A674F /* Pods_Telegraph_iOS_TelegraphTests.framework */; };
+		820EA1DA20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
+		820EA1DB20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
+		820EA1DC20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
 		825A718A1ECD230E0043AC8D /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71811ECD22F60043AC8D /* HelperTests.swift */; };
 		825A718B1ECD23100043AC8D /* SecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71831ECD22F60043AC8D /* SecurityTests.swift */; };
 		825A718C1ECD23140043AC8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71851ECD22F60043AC8D /* AppDelegate.swift */; };
@@ -36,9 +39,6 @@
 		825A721E1ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
 		825A721F1ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
 		825A72201ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
-		825A72241ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */; };
-		825A72251ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */; };
-		825A72261ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */; };
 		825A72271ECD2E890043AC8D /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */; };
 		825A72281ECD2E890043AC8D /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */; };
 		825A72291ECD2E890043AC8D /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */; };
@@ -223,6 +223,7 @@
 		4112FC07E979E87BA47A52A8 /* Pods-Telegraph iOS-TelegraphTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS-TelegraphTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS-TelegraphTests/Pods-Telegraph iOS-TelegraphTests.release.xcconfig"; sourceTree = "<group>"; };
 		784733C1ED480A2CADA48DC8 /* Pods-Telegraph macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph macOS/Pods-Telegraph macOS.release.xcconfig"; sourceTree = "<group>"; };
 		8162101B93B0562B1168E2A6 /* Pods-Telegraph iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedSet.swift; sourceTree = "<group>"; };
 		8253CA141E498EBA0078D520 /* TelegraphTestsHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegraphTestsHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		825A71811ECD22F60043AC8D /* HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
 		825A71821ECD22F60043AC8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -242,7 +243,6 @@
 		825A71CA1ECD2E890043AC8D /* Array+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		825A71CB1ECD2E890043AC8D /* Data+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
 		825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
-		825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Ext.swift"; sourceTree = "<group>"; };
 		825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
 		825A71D01ECD2E890043AC8D /* NSRegularExpression+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Ext.swift"; sourceTree = "<group>"; };
 		825A71D11ECD2E890043AC8D /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -423,11 +423,11 @@
 				825A71CA1ECD2E890043AC8D /* Array+Ext.swift */,
 				825A71CB1ECD2E890043AC8D /* Data+Ext.swift */,
 				825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */,
-				825A71CE1ECD2E890043AC8D /* DispatchQueue+Ext.swift */,
 				825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */,
 				8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */,
 				825A71D01ECD2E890043AC8D /* NSRegularExpression+Ext.swift */,
 				825A71D11ECD2E890043AC8D /* String+Ext.swift */,
+				820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */,
 				825A71D21ECD2E890043AC8D /* UInt+Ext.swift */,
 				825A71D31ECD2E890043AC8D /* URL+Ext.swift */,
 			);
@@ -1013,7 +1013,6 @@
 				825A726C1ECD2E890043AC8D /* Server+Routing.swift in Sources */,
 				825A721B1ECD2E890043AC8D /* Data+Ext.swift in Sources */,
 				825A727E1ECD2E890043AC8D /* HTTPHeader+WebSocket.swift in Sources */,
-				825A72241ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */,
 				825A72C31ECD2E890043AC8D /* URI.swift in Sources */,
 				825A72271ECD2E890043AC8D /* DispatchTimer.swift in Sources */,
 				825A72C01ECD2E890043AC8D /* TCPSocket.swift in Sources */,
@@ -1028,6 +1027,7 @@
 				825A72571ECD2E890043AC8D /* HTTPRequest+Host.swift in Sources */,
 				825A72721ECD2E890043AC8D /* WebSocketErrorDefaultHandler.swift in Sources */,
 				825A724E1ECD2E890043AC8D /* HTTPMessage.swift in Sources */,
+				820EA1DA20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */,
 				825A72181ECD2E890043AC8D /* Array+Ext.swift in Sources */,
 				825A720F1ECD2E890043AC8D /* Client+Config.swift in Sources */,
 				825A72A81ECD2E890043AC8D /* TLSPolicy.swift in Sources */,
@@ -1081,7 +1081,6 @@
 				825A726D1ECD2E890043AC8D /* Server+Routing.swift in Sources */,
 				825A721C1ECD2E890043AC8D /* Data+Ext.swift in Sources */,
 				825A727F1ECD2E890043AC8D /* HTTPHeader+WebSocket.swift in Sources */,
-				825A72251ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */,
 				825A72C41ECD2E890043AC8D /* URI.swift in Sources */,
 				825A72281ECD2E890043AC8D /* DispatchTimer.swift in Sources */,
 				825A72C11ECD2E890043AC8D /* TCPSocket.swift in Sources */,
@@ -1096,6 +1095,7 @@
 				825A72581ECD2E890043AC8D /* HTTPRequest+Host.swift in Sources */,
 				825A72731ECD2E890043AC8D /* WebSocketErrorDefaultHandler.swift in Sources */,
 				825A724F1ECD2E890043AC8D /* HTTPMessage.swift in Sources */,
+				820EA1DB20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */,
 				825A72191ECD2E890043AC8D /* Array+Ext.swift in Sources */,
 				825A72101ECD2E890043AC8D /* Client+Config.swift in Sources */,
 				825A72A91ECD2E890043AC8D /* TLSPolicy.swift in Sources */,
@@ -1149,7 +1149,6 @@
 				825A726E1ECD2E890043AC8D /* Server+Routing.swift in Sources */,
 				825A721D1ECD2E890043AC8D /* Data+Ext.swift in Sources */,
 				825A72801ECD2E890043AC8D /* HTTPHeader+WebSocket.swift in Sources */,
-				825A72261ECD2E890043AC8D /* DispatchQueue+Ext.swift in Sources */,
 				825A72C51ECD2E890043AC8D /* URI.swift in Sources */,
 				825A72291ECD2E890043AC8D /* DispatchTimer.swift in Sources */,
 				825A72C21ECD2E890043AC8D /* TCPSocket.swift in Sources */,
@@ -1164,6 +1163,7 @@
 				825A72591ECD2E890043AC8D /* HTTPRequest+Host.swift in Sources */,
 				825A72741ECD2E890043AC8D /* WebSocketErrorDefaultHandler.swift in Sources */,
 				825A72501ECD2E890043AC8D /* HTTPMessage.swift in Sources */,
+				820EA1DC20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */,
 				825A721A1ECD2E890043AC8D /* Array+Ext.swift in Sources */,
 				825A72111ECD2E890043AC8D /* Client+Config.swift in Sources */,
 				825A72AA1ECD2E890043AC8D /* TLSPolicy.swift in Sources */,
