@@ -30,7 +30,7 @@ extension WebSocketMessage {
       header.append(secondByte | UInt8(payloadLength))
 
     // Medium payload: [126][L][L]
-    case 126...Int(Int16.max):
+    case 126...Int(UInt16.max):
       let sizeBytes = UInt16(payloadLength).bytes
       header.append(secondByte | 126)
       header.append(sizeBytes[0])
