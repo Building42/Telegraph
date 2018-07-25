@@ -145,12 +145,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket-macOS/CocoaAsyncSocket.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HTTPParserC-macOS/HTTPParserC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Telegraph-macOS/Telegraph.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket-macOS/CocoaAsyncSocket.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HTTPParserC-macOS/HTTPParserC.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Telegraph-macOS/Telegraph.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

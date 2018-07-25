@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.source = { :git => 'https://github.com/Building42/Telegraph.git', :tag => s.version }
   s.source_files = 'Source/**/*.swift'
-  s.xcconfig = { 'SWIFT_VERSION' => '4.1' }
+  s.swift_version = '4.1'
 
   s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'

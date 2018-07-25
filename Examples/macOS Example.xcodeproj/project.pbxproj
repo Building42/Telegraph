@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824A52DD2108140200AA307D /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A52DC2108140200AA307D /* Telegraph.framework */; };
 		8284FF271ECEA4B200303A00 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8284FF261ECEA4B200303A00 /* index.html */; };
 		82DD426D1FD86ADE00136B81 /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DD426C1FD86ADE00136B81 /* AppWindow.swift */; };
 		82EF34391ECD356A002DC910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF34381ECD356A002DC910 /* AppDelegate.swift */; };
@@ -17,7 +18,7 @@
 		82EF346F1ECD3C8B002DC910 /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = 82EF346A1ECD3C8B002DC910 /* ca.der */; };
 		82EF34711ECD3C8B002DC910 /* localhost.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 82EF346C1ECD3C8B002DC910 /* localhost.p12 */; };
 		82EF34721ECD3C8B002DC910 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EF346D1ECD3C8B002DC910 /* logo.png */; };
-		BF3C322DC3EF4C5EE61DC6E3 /* Pods_macOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EE6321CEE41FAE07C018B9 /* Pods_macOS_Example.framework */; };
+		834BC9D0456CB50E215B2836 /* Pods_macOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC2F1A62C761A36039864D4 /* Pods_macOS_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +26,8 @@
 		156BCA9B41917E5713C08343 /* Pods-Examples-macOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-macOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Examples-macOS Example/Pods-Examples-macOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		1B9AB127FF4235EADB9ADFC8 /* Pods-Examples-macOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-macOS Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Examples-macOS Example/Pods-Examples-macOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		20951C0D02648954CBE97AEC /* Pods-Examples-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-macOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Examples-macOS/Pods-Examples-macOS.release.xcconfig"; sourceTree = "<group>"; };
-		40EE6321CEE41FAE07C018B9 /* Pods_macOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		722CF00929C7546692EE60D7 /* Pods-macOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-macOS Example/Pods-macOS Example.release.xcconfig"; sourceTree = "<group>"; };
+		824A52DC2108140200AA307D /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8284FF261ECEA4B200303A00 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		82DD426C1FD86ADE00136B81 /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		82EF34351ECD356A002DC910 /* macOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +42,7 @@
 		82EF346D1ECD3C8B002DC910 /* logo.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = logo.png; sourceTree = "<group>"; };
 		8BDEB7CBD8682134C951788A /* Pods-Examples-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-macOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Examples-macOS/Pods-Examples-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8E5E5D46CE58DA0D0A2E0012 /* Pods-macOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macOS Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-macOS Example/Pods-macOS Example.debug.xcconfig"; sourceTree = "<group>"; };
+		ACC2F1A62C761A36039864D4 /* Pods_macOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD788EAC759299E8C6E8162E /* Pods_Examples_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Examples_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -49,7 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF3C322DC3EF4C5EE61DC6E3 /* Pods_macOS_Example.framework in Frameworks */,
+				824A52DD2108140200AA307D /* Telegraph.framework in Frameworks */,
+				834BC9D0456CB50E215B2836 /* Pods_macOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,9 +129,10 @@
 		ED78A2D0236679E4CE6C4163 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				40EE6321CEE41FAE07C018B9 /* Pods_macOS_Example.framework */,
+				824A52DC2108140200AA307D /* Telegraph.framework */,
 				11BA916CC547076F45E8B72B /* Pods_Examples_macOS_Example.framework */,
 				AD788EAC759299E8C6E8162E /* Pods_Examples_macOS.framework */,
+				ACC2F1A62C761A36039864D4 /* Pods_macOS_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,7 +148,7 @@
 				82EF34311ECD356A002DC910 /* Sources */,
 				82EF34321ECD356A002DC910 /* Frameworks */,
 				82EF34331ECD356A002DC910 /* Resources */,
-				545B4BB72E1E6EA2F80DD315 /* [CP] Embed Pods Frameworks */,
+				EF529F3AA32A16980AA15927 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,7 +229,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		545B4BB72E1E6EA2F80DD315 /* [CP] Embed Pods Frameworks */ = {
+		EF529F3AA32A16980AA15927 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -234,13 +238,11 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-macOS Example/Pods-macOS Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket-macOS/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/HTTPParserC-macOS/HTTPParserC.framework",
-				"${BUILT_PRODUCTS_DIR}/Telegraph-macOS/Telegraph.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTTPParserC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Telegraph.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -393,6 +395,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-macOS.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -406,6 +409,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-macOS.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

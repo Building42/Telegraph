@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		673A32376036047567AE3FC7 /* Pods_tvOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D215157A3CDE984D6549450 /* Pods_tvOS_Example.framework */; };
+		824A52DB210813F600AA307D /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A52DA210813F600AA307D /* Telegraph.framework */; };
 		8284FF251ECEA49900303A00 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8284FF241ECEA49900303A00 /* index.html */; };
 		82EF341E1ECD33CF002DC910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF341D1ECD33CF002DC910 /* AppDelegate.swift */; };
 		82EF34201ECD33CF002DC910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF341F1ECD33CF002DC910 /* ViewController.swift */; };
@@ -17,13 +17,15 @@
 		82EF34611ECD3C52002DC910 /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = 82EF345C1ECD3C52002DC910 /* ca.der */; };
 		82EF34631ECD3C52002DC910 /* localhost.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 82EF345E1ECD3C52002DC910 /* localhost.p12 */; };
 		82EF34641ECD3C52002DC910 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EF345F1ECD3C52002DC910 /* logo.png */; };
+		F301FCF3A7317A04540899D9 /* Pods_tvOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A674688A84185751A900225 /* Pods_tvOS_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39FF61C11E1534D267C73730 /* Pods_Examples_tvOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Examples_tvOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D215157A3CDE984D6549450 /* Pods_tvOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A03F62542E65E16069BD76 /* Pods-Examples-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-tvOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Examples-tvOS/Pods-Examples-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6D31415C5808924AE682F7E9 /* Pods-Examples-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-tvOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Examples-tvOS/Pods-Examples-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		7A674688A84185751A900225 /* Pods_tvOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		824A52DA210813F600AA307D /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8284FF241ECEA49900303A00 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		82EF341A1ECD33CF002DC910 /* tvOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF341D1ECD33CF002DC910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				673A32376036047567AE3FC7 /* Pods_tvOS_Example.framework in Frameworks */,
+				824A52DB210813F600AA307D /* Telegraph.framework in Frameworks */,
+				F301FCF3A7317A04540899D9 /* Pods_tvOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +60,10 @@
 		7A76BC6732A40F727598219C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D215157A3CDE984D6549450 /* Pods_tvOS_Example.framework */,
+				824A52DA210813F600AA307D /* Telegraph.framework */,
 				39FF61C11E1534D267C73730 /* Pods_Examples_tvOS_Example.framework */,
 				DDC46E149D0B538703C76635 /* Pods_Examples_tvOS.framework */,
+				7A674688A84185751A900225 /* Pods_tvOS_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,7 +145,7 @@
 				82EF34161ECD33CF002DC910 /* Sources */,
 				82EF34171ECD33CF002DC910 /* Frameworks */,
 				82EF34181ECD33CF002DC910 /* Resources */,
-				B5DC6E6FA8EE5728C7ED331F /* [CP] Embed Pods Frameworks */,
+				BA17C8525433510DD72F9552 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,7 +226,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B5DC6E6FA8EE5728C7ED331F /* [CP] Embed Pods Frameworks */ = {
+		BA17C8525433510DD72F9552 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -231,13 +235,11 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-tvOS Example/Pods-tvOS Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket-tvOS/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/HTTPParserC-tvOS/HTTPParserC.framework",
-				"${BUILT_PRODUCTS_DIR}/Telegraph-tvOS/Telegraph.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTTPParserC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Telegraph.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -390,6 +392,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-tvOS.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -403,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-tvOS.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

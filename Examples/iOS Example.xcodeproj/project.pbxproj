@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C8B8F081F0317AFD062C3C6 /* Pods_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234407767F1874AC21FDB244 /* Pods_iOS_Example.framework */; };
+		824A52D9210813C400AA307D /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824A52D8210813C400AA307D /* Telegraph.framework */; };
 		8284FF211ECEA0BB00303A00 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8284FF201ECEA0BB00303A00 /* index.html */; };
 		82EF33F41ECD330C002DC910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF33F31ECD330C002DC910 /* AppDelegate.swift */; };
 		82EF33F61ECD330C002DC910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF33F51ECD330C002DC910 /* ViewController.swift */; };
@@ -18,12 +18,14 @@
 		82EF34561ECD3C19002DC910 /* ca.der in Resources */ = {isa = PBXBuildFile; fileRef = 82EF34511ECD3C19002DC910 /* ca.der */; };
 		82EF34581ECD3C19002DC910 /* localhost.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 82EF34531ECD3C19002DC910 /* localhost.p12 */; };
 		82EF34591ECD3C19002DC910 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EF34541ECD3C19002DC910 /* logo.png */; };
+		9809F6F30EC641AE75BCB4EF /* Pods_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658A0457F631A018B34F6C6F /* Pods_iOS_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		233DDA5401627CAA4EE99766 /* Pods-Examples-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Examples-iOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Examples-iOS Example/Pods-Examples-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
-		234407767F1874AC21FDB244 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45012B20641F7A3E629E72DA /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
+		658A0457F631A018B34F6C6F /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		824A52D8210813C400AA307D /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8284FF201ECEA0BB00303A00 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		82EF33F01ECD330C002DC910 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF33F31ECD330C002DC910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C8B8F081F0317AFD062C3C6 /* Pods_iOS_Example.framework in Frameworks */,
+				824A52D9210813C400AA307D /* Telegraph.framework in Frameworks */,
+				9809F6F30EC641AE75BCB4EF /* Pods_iOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,9 +129,10 @@
 		D4C1ED80EA03A2C0B2A71305 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				234407767F1874AC21FDB244 /* Pods_iOS_Example.framework */,
+				824A52D8210813C400AA307D /* Telegraph.framework */,
 				A4EE5FE2A8AA9B172467FB37 /* Pods_Examples_iOS_Example.framework */,
 				A65556B1EC3AFC15AC9AAD96 /* Pods_Examples_iOS.framework */,
+				658A0457F631A018B34F6C6F /* Pods_iOS_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,7 +148,7 @@
 				82EF33EC1ECD330C002DC910 /* Sources */,
 				82EF33ED1ECD330C002DC910 /* Frameworks */,
 				82EF33EE1ECD330C002DC910 /* Resources */,
-				494559E31E3E9432C7EB719A /* [CP] Embed Pods Frameworks */,
+				1AF9C322510F66362927A704 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,7 +212,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		494559E31E3E9432C7EB719A /* [CP] Embed Pods Frameworks */ = {
+		1AF9C322510F66362927A704 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,13 +221,11 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket-iOS/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/HTTPParserC-iOS/HTTPParserC.framework",
-				"${BUILT_PRODUCTS_DIR}/Telegraph-iOS/Telegraph.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTTPParserC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Telegraph.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -338,6 +340,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -389,6 +392,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
