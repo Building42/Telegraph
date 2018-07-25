@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Telegraph_iOS_TelegraphTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Telegraph_iOS_TelegraphTestsVersionString[];
+FOUNDATION_EXPORT double Pods_Telegraph_iOS_Telegraph_TestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Telegraph_iOS_Telegraph_TestsVersionString[];
 

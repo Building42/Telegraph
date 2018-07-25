@@ -1,6 +1,6 @@
 //
 //  HelperTests.swift
-//  Telegraph
+//  TelegraphTests
 //
 //  Created by Yvo van Beek on 2/16/17.
 //  Copyright © 2017 Building42. All rights reserved.

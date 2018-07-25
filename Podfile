@@ -1,33 +1,28 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 inhibit_all_warnings!
 use_frameworks!
 
 workspace 'Telegraph'
 
-# Frameworks
+# Dependencies
+
+pod 'CocoaAsyncSocket'
+pod 'HTTPParserC'
+
+# Telegraph
 
 target 'Telegraph iOS' do
   platform :ios, '9.0'
-  project 'Telegraph'
-  target 'TelegraphTests'
-
-  pod 'CocoaAsyncSocket'
-  pod 'HTTPParserC'
+  target 'Telegraph Tests'
 end
 
 target 'Telegraph tvOS' do
   platform :tvos, '9.0'
-  project 'Telegraph'
-
-  pod 'CocoaAsyncSocket'
-  pod 'HTTPParserC'
 end
 
 target 'Telegraph macOS' do
   platform :osx, '10.10'
-  project 'Telegraph'
-
-  pod 'CocoaAsyncSocket'
-  pod 'HTTPParserC'
 end
 
 # Examples

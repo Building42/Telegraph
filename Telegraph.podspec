@@ -2,17 +2,17 @@ Pod::Spec.new do |s|
   s.name = 'Telegraph'
   s.version = '0.16'
 
-  s.license = { :type => 'MPL2', :file => 'LICENSE' }
   s.summary = 'A Secure Web Server for iOS, tvOS and macOS'
   s.description = <<-DESC
-      Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
-    DESC
+    Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
+  DESC
 
+  s.license = { :type => 'MPL2', :file => 'LICENSE' }
   s.homepage = 'https://github.com/Building42/Telegraph'
   s.author = 'Building42'
 
   s.source = { :git => 'https://github.com/Building42/Telegraph.git', :tag => s.version }
-  s.source_files = 'Sources/**/*.swift'
+  s.source_files = 'Source/**/*.swift'
   s.xcconfig = { 'SWIFT_VERSION' => '4.1' }
 
   s.ios.deployment_target = '8.0'

@@ -1,19 +1,19 @@
 {
   "name": "Telegraph",
   "version": "0.16",
+  "summary": "A Secure Web Server for iOS, tvOS and macOS",
+  "description": "Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.",
   "license": {
     "type": "MPL2",
     "file": "LICENSE"
   },
-  "summary": "A Secure Web Server for iOS, tvOS and macOS",
-  "description": "Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.",
   "homepage": "https://github.com/Building42/Telegraph",
   "authors": "Building42",
   "source": {
     "git": "https://github.com/Building42/Telegraph.git",
     "tag": "0.16"
   },
-  "source_files": "Sources/**/*.swift",
+  "source_files": "Source/**/*.swift",
   "xcconfig": {
     "SWIFT_VERSION": "4.1"
   },

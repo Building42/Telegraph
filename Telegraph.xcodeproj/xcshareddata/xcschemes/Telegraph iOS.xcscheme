@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9899DD21DF4A092008766B5"
-               BuildableName = "TelegraphTests.xctest"
-               BlueprintName = "TelegraphTests"
+               BuildableName = "Telegraph Tests.xctest"
+               BlueprintName = "Telegraph Tests"
                ReferencedContainer = "container:Telegraph.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,10 +42,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9899DF11DF4A53C008766B5"
-            BuildableName = "iOS Example.app"
-            BlueprintName = "iOS Example"
-            ReferencedContainer = "container:iOS Example.xcodeproj">
+            BlueprintIdentifier = "825A71A11ECD28710043AC8D"
+            BuildableName = "Telegraph.framework"
+            BlueprintName = "Telegraph iOS"
+            ReferencedContainer = "container:Telegraph.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -61,16 +61,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D9899DF11DF4A53C008766B5"
-            BuildableName = "iOS Example.app"
-            BlueprintName = "iOS Example"
-            ReferencedContainer = "container:iOS Example.xcodeproj">
+            BlueprintIdentifier = "825A71A11ECD28710043AC8D"
+            BuildableName = "Telegraph.framework"
+            BlueprintName = "Telegraph iOS"
+            ReferencedContainer = "container:Telegraph.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

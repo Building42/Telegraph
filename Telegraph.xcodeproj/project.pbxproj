@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01A07E3024DD434FF87FAAFA /* Pods_Telegraph_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D91D1D5B633103A4F20D7E /* Pods_Telegraph_iOS.framework */; };
-		0A6DE8DF00EB04419935C02A /* Pods_Telegraph_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C1EBA626920B43CDFC2225C /* Pods_Telegraph_tvOS.framework */; };
-		41B820D984339E597282E8D5 /* Pods_Telegraph_iOS_TelegraphTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AC61A392ED7FDD033A674F /* Pods_Telegraph_iOS_TelegraphTests.framework */; };
+		3FA9D1FAFE896FB4F5C73ACC /* Pods_Telegraph_iOS_Telegraph_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913201568BB61C3869664C84 /* Pods_Telegraph_iOS_Telegraph_Tests.framework */; };
 		820EA1DA20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
 		820EA1DB20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
 		820EA1DC20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
@@ -204,7 +202,9 @@
 		8284FF1D1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
 		8284FF1E1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
 		8284FF1F1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
-		86C74C85E35BB03C3BFCDE53 /* Pods_Telegraph_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2EF39D1E765E3BF1C49151 /* Pods_Telegraph_macOS.framework */; };
+		8EBDEF72E2C4099BDB0B439D /* Pods_Telegraph_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B5E8759015CE43B2DD70FC /* Pods_Telegraph_macOS.framework */; };
+		BDC77387624FDDBABCB9ED9A /* Pods_Telegraph_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A279791B662D6D27F86C1386 /* Pods_Telegraph_iOS.framework */; };
+		E9D2AB4E9C89047B3154D196 /* Pods_Telegraph_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2548A518351D55B731F445 /* Pods_Telegraph_tvOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,15 +218,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C1EBA626920B43CDFC2225C /* Pods_Telegraph_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		15AC61A392ED7FDD033A674F /* Pods_Telegraph_iOS_TelegraphTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_iOS_TelegraphTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4112FC07E979E87BA47A52A8 /* Pods-Telegraph iOS-TelegraphTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS-TelegraphTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS-TelegraphTests/Pods-Telegraph iOS-TelegraphTests.release.xcconfig"; sourceTree = "<group>"; };
-		784733C1ED480A2CADA48DC8 /* Pods-Telegraph macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph macOS/Pods-Telegraph macOS.release.xcconfig"; sourceTree = "<group>"; };
-		8162101B93B0562B1168E2A6 /* Pods-Telegraph iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		3B404270E9FE679D76096D1A /* Pods-Telegraph macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph macOS/Pods-Telegraph macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		50AC3CEEBEAD9BFBC8CC5536 /* Pods-Telegraph iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS.release.xcconfig"; sourceTree = "<group>"; };
+		50E44F01281882B7DD7EEBD0 /* Pods-Telegraph macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph macOS/Pods-Telegraph macOS.release.xcconfig"; sourceTree = "<group>"; };
+		72B5E8759015CE43B2DD70FC /* Pods_Telegraph_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedSet.swift; sourceTree = "<group>"; };
-		8253CA141E498EBA0078D520 /* TelegraphTestsHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelegraphTestsHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8253CA141E498EBA0078D520 /* Telegraph TestsHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Telegraph TestsHost.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		825A71811ECD22F60043AC8D /* HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
-		825A71821ECD22F60043AC8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		825A71831ECD22F60043AC8D /* SecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityTests.swift; sourceTree = "<group>"; };
 		825A71851ECD22F60043AC8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		825A71871ECD22F60043AC8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -299,14 +297,15 @@
 		827E6D841F01F40B00B39D8B /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
 		8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPFileHandler.swift; sourceTree = "<group>"; };
-		85DDF80A3A8C22A66A8DB2E5 /* Pods-Telegraph iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS.release.xcconfig"; sourceTree = "<group>"; };
-		8CC69BEDDD25DDAD51D9539A /* Pods-Telegraph tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph tvOS/Pods-Telegraph tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		94D91D1D5B633103A4F20D7E /* Pods_Telegraph_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E626F062320D2F5C24323B1 /* Pods-Telegraph macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph macOS/Pods-Telegraph macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		B3263CAE36A3EB0341AB8A14 /* Pods-Telegraph tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph tvOS/Pods-Telegraph tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		CB2EF39D1E765E3BF1C49151 /* Pods_Telegraph_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9899DD31DF4A092008766B5 /* TelegraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelegraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECA1AC31D68398E2A1528E4B /* Pods-Telegraph iOS-TelegraphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS-TelegraphTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS-TelegraphTests/Pods-Telegraph iOS-TelegraphTests.debug.xcconfig"; sourceTree = "<group>"; };
+		913201568BB61C3869664C84 /* Pods_Telegraph_iOS_Telegraph_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_iOS_Telegraph_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9219203292A46F93BB397742 /* Pods-Telegraph tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph tvOS/Pods-Telegraph tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		9233AEF29F1B800CC7DD9668 /* Pods-Telegraph tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph tvOS/Pods-Telegraph tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9B2548A518351D55B731F445 /* Pods_Telegraph_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A279791B662D6D27F86C1386 /* Pods_Telegraph_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B096A7CCE8F957662049050A /* Pods-Telegraph iOS-Telegraph Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS-Telegraph Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS-Telegraph Tests/Pods-Telegraph iOS-Telegraph Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4356C4644579954F4A63B61 /* Pods-Telegraph iOS-Telegraph Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS-Telegraph Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS-Telegraph Tests/Pods-Telegraph iOS-Telegraph Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D9899DD31DF4A092008766B5 /* Telegraph Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telegraph Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC52C9D3383084EF013540CE /* Pods-Telegraph iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,7 +320,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01A07E3024DD434FF87FAAFA /* Pods_Telegraph_iOS.framework in Frameworks */,
+				BDC77387624FDDBABCB9ED9A /* Pods_Telegraph_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +328,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A6DE8DF00EB04419935C02A /* Pods_Telegraph_tvOS.framework in Frameworks */,
+				E9D2AB4E9C89047B3154D196 /* Pods_Telegraph_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +336,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86C74C85E35BB03C3BFCDE53 /* Pods_Telegraph_macOS.framework in Frameworks */,
+				8EBDEF72E2C4099BDB0B439D /* Pods_Telegraph_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +344,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41B820D984339E597282E8D5 /* Pods_Telegraph_iOS_TelegraphTests.framework in Frameworks */,
+				3FA9D1FAFE896FB4F5C73ACC /* Pods_Telegraph_iOS_Telegraph_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,24 +354,15 @@
 		825A717F1ECD22F60043AC8D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				825A71801ECD22F60043AC8D /* TelegraphTests */,
-				825A71841ECD22F60043AC8D /* TelegraphTestsHost */,
+				825A71841ECD22F60043AC8D /* Host */,
 				825A71901ECD25C10043AC8D /* Resources */,
+				825A71811ECD22F60043AC8D /* HelperTests.swift */,
+				825A71831ECD22F60043AC8D /* SecurityTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		825A71801ECD22F60043AC8D /* TelegraphTests */ = {
-			isa = PBXGroup;
-			children = (
-				825A71811ECD22F60043AC8D /* HelperTests.swift */,
-				825A71831ECD22F60043AC8D /* SecurityTests.swift */,
-				825A71821ECD22F60043AC8D /* Info.plist */,
-			);
-			path = TelegraphTests;
-			sourceTree = "<group>";
-		};
-		825A71841ECD22F60043AC8D /* TelegraphTestsHost */ = {
+		825A71841ECD22F60043AC8D /* Host */ = {
 			isa = PBXGroup;
 			children = (
 				825A71851ECD22F60043AC8D /* AppDelegate.swift */,
@@ -380,7 +370,7 @@
 				825A71881ECD22F60043AC8D /* Info.plist */,
 				825A71891ECD22F60043AC8D /* TelegraphTestsHost.entitlements */,
 			);
-			path = TelegraphTestsHost;
+			path = Host;
 			sourceTree = "<group>";
 		};
 		825A71901ECD25C10043AC8D /* Resources */ = {
@@ -392,7 +382,7 @@
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
 		};
-		825A71C41ECD2E890043AC8D /* Sources */ = {
+		825A71C41ECD2E890043AC8D /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				825A72041ECD2E890043AC8D /* Server */,
@@ -400,11 +390,11 @@
 				825A71D51ECD2E890043AC8D /* Protocols */,
 				825A71FD1ECD2E890043AC8D /* Security */,
 				825A72091ECD2E890043AC8D /* Transport */,
-				825A71C91ECD2E890043AC8D /* Helpers */,
+				82CD0D212107E18100629698 /* Helpers */,
 				825A71D41ECD2E890043AC8D /* Info.plist */,
 				825A72081ECD2E890043AC8D /* Telegraph.h */,
 			);
-			path = Sources;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		825A71C51ECD2E890043AC8D /* Clients */ = {
@@ -417,21 +407,19 @@
 			path = Clients;
 			sourceTree = "<group>";
 		};
-		825A71C91ECD2E890043AC8D /* Helpers */ = {
+		825A71C91ECD2E890043AC8D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				825A71CA1ECD2E890043AC8D /* Array+Ext.swift */,
 				825A71CB1ECD2E890043AC8D /* Data+Ext.swift */,
 				825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */,
-				825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */,
 				8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */,
 				825A71D01ECD2E890043AC8D /* NSRegularExpression+Ext.swift */,
 				825A71D11ECD2E890043AC8D /* String+Ext.swift */,
-				820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */,
 				825A71D21ECD2E890043AC8D /* UInt+Ext.swift */,
 				825A71D31ECD2E890043AC8D /* URL+Ext.swift */,
 			);
-			path = Helpers;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		825A71D51ECD2E890043AC8D /* Protocols */ = {
@@ -566,53 +554,63 @@
 			path = Transport;
 			sourceTree = "<group>";
 		};
-		AF724F46053F20AB9F53275F /* Pods */ = {
+		82CD0D212107E18100629698 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8162101B93B0562B1168E2A6 /* Pods-Telegraph iOS.debug.xcconfig */,
-				85DDF80A3A8C22A66A8DB2E5 /* Pods-Telegraph iOS.release.xcconfig */,
-				ECA1AC31D68398E2A1528E4B /* Pods-Telegraph iOS-TelegraphTests.debug.xcconfig */,
-				4112FC07E979E87BA47A52A8 /* Pods-Telegraph iOS-TelegraphTests.release.xcconfig */,
-				9E626F062320D2F5C24323B1 /* Pods-Telegraph macOS.debug.xcconfig */,
-				784733C1ED480A2CADA48DC8 /* Pods-Telegraph macOS.release.xcconfig */,
-				8CC69BEDDD25DDAD51D9539A /* Pods-Telegraph tvOS.debug.xcconfig */,
-				B3263CAE36A3EB0341AB8A14 /* Pods-Telegraph tvOS.release.xcconfig */,
+				825A71C91ECD2E890043AC8D /* Extensions */,
+				825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */,
+				820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C958864F993B29196365EE7D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				94D91D1D5B633103A4F20D7E /* Pods_Telegraph_iOS.framework */,
-				15AC61A392ED7FDD033A674F /* Pods_Telegraph_iOS_TelegraphTests.framework */,
-				CB2EF39D1E765E3BF1C49151 /* Pods_Telegraph_macOS.framework */,
-				0C1EBA626920B43CDFC2225C /* Pods_Telegraph_tvOS.framework */,
-			);
-			name = Frameworks;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D9899DC01DF4A091008766B5 = {
 			isa = PBXGroup;
 			children = (
-				825A71C41ECD2E890043AC8D /* Sources */,
+				825A71C41ECD2E890043AC8D /* Source */,
 				825A717F1ECD22F60043AC8D /* Tests */,
 				D9899DCB1DF4A092008766B5 /* Products */,
-				AF724F46053F20AB9F53275F /* Pods */,
-				C958864F993B29196365EE7D /* Frameworks */,
+				FAC62AF17D8CE0F7A5F4D89E /* Pods */,
+				DAB30A113466D3479D1C973F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		D9899DCB1DF4A092008766B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D9899DD31DF4A092008766B5 /* TelegraphTests.xctest */,
-				8253CA141E498EBA0078D520 /* TelegraphTestsHost.app */,
+				D9899DD31DF4A092008766B5 /* Telegraph Tests.xctest */,
+				8253CA141E498EBA0078D520 /* Telegraph TestsHost.app */,
 				825A71A21ECD28710043AC8D /* Telegraph.framework */,
 				825A71AF1ECD28CE0043AC8D /* Telegraph.framework */,
 				825A71BC1ECD29020043AC8D /* Telegraph.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DAB30A113466D3479D1C973F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A279791B662D6D27F86C1386 /* Pods_Telegraph_iOS.framework */,
+				913201568BB61C3869664C84 /* Pods_Telegraph_iOS_Telegraph_Tests.framework */,
+				72B5E8759015CE43B2DD70FC /* Pods_Telegraph_macOS.framework */,
+				9B2548A518351D55B731F445 /* Pods_Telegraph_tvOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAC62AF17D8CE0F7A5F4D89E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC52C9D3383084EF013540CE /* Pods-Telegraph iOS.debug.xcconfig */,
+				50AC3CEEBEAD9BFBC8CC5536 /* Pods-Telegraph iOS.release.xcconfig */,
+				B096A7CCE8F957662049050A /* Pods-Telegraph iOS-Telegraph Tests.debug.xcconfig */,
+				C4356C4644579954F4A63B61 /* Pods-Telegraph iOS-Telegraph Tests.release.xcconfig */,
+				3B404270E9FE679D76096D1A /* Pods-Telegraph macOS.debug.xcconfig */,
+				50E44F01281882B7DD7EEBD0 /* Pods-Telegraph macOS.release.xcconfig */,
+				9233AEF29F1B800CC7DD9668 /* Pods-Telegraph tvOS.debug.xcconfig */,
+				9219203292A46F93BB397742 /* Pods-Telegraph tvOS.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -645,9 +643,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8253CA131E498EBA0078D520 /* TelegraphTestsHost */ = {
+		8253CA131E498EBA0078D520 /* Telegraph TestsHost */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8253CA231E498EBA0078D520 /* Build configuration list for PBXNativeTarget "TelegraphTestsHost" */;
+			buildConfigurationList = 8253CA231E498EBA0078D520 /* Build configuration list for PBXNativeTarget "Telegraph TestsHost" */;
 			buildPhases = (
 				8253CA101E498EBA0078D520 /* Sources */,
 				8253CA111E498EBA0078D520 /* Frameworks */,
@@ -657,16 +655,16 @@
 			);
 			dependencies = (
 			);
-			name = TelegraphTestsHost;
+			name = "Telegraph TestsHost";
 			productName = TelegraphTestsHost;
-			productReference = 8253CA141E498EBA0078D520 /* TelegraphTestsHost.app */;
+			productReference = 8253CA141E498EBA0078D520 /* Telegraph TestsHost.app */;
 			productType = "com.apple.product-type.application";
 		};
 		825A71A11ECD28710043AC8D /* Telegraph iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 825A71A71ECD28710043AC8D /* Build configuration list for PBXNativeTarget "Telegraph iOS" */;
 			buildPhases = (
-				3E7E0948787E27666C8B8A84 /* [CP] Check Pods Manifest.lock */,
+				63FCF12F020B4B75F1652C24 /* [CP] Check Pods Manifest.lock */,
 				825A719D1ECD28710043AC8D /* Sources */,
 				825A719E1ECD28710043AC8D /* Frameworks */,
 				825A719F1ECD28710043AC8D /* Headers */,
@@ -686,7 +684,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 825A71B41ECD28CE0043AC8D /* Build configuration list for PBXNativeTarget "Telegraph tvOS" */;
 			buildPhases = (
-				EE1475836CBCC1D1E8AC842E /* [CP] Check Pods Manifest.lock */,
+				64F1D6618B8B90B2C32F6F11 /* [CP] Check Pods Manifest.lock */,
 				825A71AA1ECD28CE0043AC8D /* Sources */,
 				825A71AB1ECD28CE0043AC8D /* Frameworks */,
 				825A71AC1ECD28CE0043AC8D /* Headers */,
@@ -706,7 +704,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 825A71C11ECD29020043AC8D /* Build configuration list for PBXNativeTarget "Telegraph macOS" */;
 			buildPhases = (
-				682B80ADB5D42B36E4766EBC /* [CP] Check Pods Manifest.lock */,
+				A383A74680E2B86D2AC8D389 /* [CP] Check Pods Manifest.lock */,
 				825A71B71ECD29020043AC8D /* Sources */,
 				825A71B81ECD29020043AC8D /* Frameworks */,
 				825A71B91ECD29020043AC8D /* Headers */,
@@ -722,24 +720,24 @@
 			productReference = 825A71BC1ECD29020043AC8D /* Telegraph.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D9899DD21DF4A092008766B5 /* TelegraphTests */ = {
+		D9899DD21DF4A092008766B5 /* Telegraph Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9899DE11DF4A093008766B5 /* Build configuration list for PBXNativeTarget "TelegraphTests" */;
+			buildConfigurationList = D9899DE11DF4A093008766B5 /* Build configuration list for PBXNativeTarget "Telegraph Tests" */;
 			buildPhases = (
-				14B0B1AC93A38773F98492A3 /* [CP] Check Pods Manifest.lock */,
+				3B71612B1EF51A982D5CDE1C /* [CP] Check Pods Manifest.lock */,
 				D9899DCF1DF4A092008766B5 /* Sources */,
 				D9899DD01DF4A092008766B5 /* Frameworks */,
 				D9899DD11DF4A092008766B5 /* Resources */,
-				539123F7689D30834C73C053 /* [CP] Embed Pods Frameworks */,
+				EA0FAFB7E8A0492B69F1587E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				8253CA281E498EDC0078D520 /* PBXTargetDependency */,
 			);
-			name = TelegraphTests;
+			name = "Telegraph Tests";
 			productName = TelegraphTests;
-			productReference = D9899DD31DF4A092008766B5 /* TelegraphTests.xctest */;
+			productReference = D9899DD31DF4A092008766B5 /* Telegraph Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -801,8 +799,8 @@
 				825A71A11ECD28710043AC8D /* Telegraph iOS */,
 				825A71AE1ECD28CE0043AC8D /* Telegraph tvOS */,
 				825A71BB1ECD29020043AC8D /* Telegraph macOS */,
-				D9899DD21DF4A092008766B5 /* TelegraphTests */,
-				8253CA131E498EBA0078D520 /* TelegraphTestsHost */,
+				D9899DD21DF4A092008766B5 /* Telegraph Tests */,
+				8253CA131E498EBA0078D520 /* Telegraph TestsHost */,
 			);
 		};
 /* End PBXProject section */
@@ -851,7 +849,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		14B0B1AC93A38773F98492A3 /* [CP] Check Pods Manifest.lock */ = {
+		3B71612B1EF51A982D5CDE1C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -862,14 +860,14 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Telegraph iOS-TelegraphTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Telegraph iOS-Telegraph Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3E7E0948787E27666C8B8A84 /* [CP] Check Pods Manifest.lock */ = {
+		63FCF12F020B4B75F1652C24 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -887,27 +885,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		539123F7689D30834C73C053 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph iOS-TelegraphTests/Pods-Telegraph iOS-TelegraphTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket-iOS/CocoaAsyncSocket.framework",
-				"${BUILT_PRODUCTS_DIR}/HTTPParserC-iOS/HTTPParserC.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTTPParserC.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph iOS-TelegraphTests/Pods-Telegraph iOS-TelegraphTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		682B80ADB5D42B36E4766EBC /* [CP] Check Pods Manifest.lock */ = {
+		64F1D6618B8B90B2C32F6F11 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -918,7 +896,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Telegraph macOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Telegraph tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -967,7 +945,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\nfi";
 		};
-		EE1475836CBCC1D1E8AC842E /* [CP] Check Pods Manifest.lock */ = {
+		A383A74680E2B86D2AC8D389 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -978,11 +956,31 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Telegraph tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Telegraph macOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA0FAFB7E8A0492B69F1587E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph iOS-Telegraph Tests/Pods-Telegraph iOS-Telegraph Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket-iOS/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/HTTPParserC-iOS/HTTPParserC.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTTPParserC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph iOS-Telegraph Tests/Pods-Telegraph iOS-Telegraph Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1214,7 +1212,7 @@
 /* Begin PBXTargetDependency section */
 		8253CA281E498EDC0078D520 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8253CA131E498EBA0078D520 /* TelegraphTestsHost */;
+			target = 8253CA131E498EBA0078D520 /* Telegraph TestsHost */;
 			targetProxy = 8253CA271E498EDC0078D520 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1234,12 +1232,12 @@
 		8253CA241E498EBA0078D520 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Tests/TelegraphTestsHost/TelegraphTestsHost.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tests/Host/TelegraphTestsHost.entitlements;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/TelegraphTestsHost/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Host/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Building42.TelegraphTestsHost;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-TestsHost";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -1248,12 +1246,12 @@
 		8253CA251E498EBA0078D520 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Tests/TelegraphTestsHost/TelegraphTestsHost.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tests/Host/TelegraphTestsHost.entitlements;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/TelegraphTestsHost/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Host/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Building42.TelegraphTestsHost;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-TestsHost";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -1261,14 +1259,14 @@
 		};
 		825A71A81ECD28710043AC8D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8162101B93B0562B1168E2A6 /* Pods-Telegraph iOS.debug.xcconfig */;
+			baseConfigurationReference = DC52C9D3383084EF013540CE /* Pods-Telegraph iOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1281,14 +1279,14 @@
 		};
 		825A71A91ECD28710043AC8D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85DDF80A3A8C22A66A8DB2E5 /* Pods-Telegraph iOS.release.xcconfig */;
+			baseConfigurationReference = 50AC3CEEBEAD9BFBC8CC5536 /* Pods-Telegraph iOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1301,14 +1299,14 @@
 		};
 		825A71B51ECD28CE0043AC8D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CC69BEDDD25DDAD51D9539A /* Pods-Telegraph tvOS.debug.xcconfig */;
+			baseConfigurationReference = 9233AEF29F1B800CC7DD9668 /* Pods-Telegraph tvOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-tvOS";
@@ -1323,14 +1321,14 @@
 		};
 		825A71B61ECD28CE0043AC8D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3263CAE36A3EB0341AB8A14 /* Pods-Telegraph tvOS.release.xcconfig */;
+			baseConfigurationReference = 9219203292A46F93BB397742 /* Pods-Telegraph tvOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-tvOS";
@@ -1345,7 +1343,7 @@
 		};
 		825A71C21ECD29020043AC8D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E626F062320D2F5C24323B1 /* Pods-Telegraph macOS.debug.xcconfig */;
+			baseConfigurationReference = 3B404270E9FE679D76096D1A /* Pods-Telegraph macOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "-";
@@ -1354,7 +1352,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1368,7 +1366,7 @@
 		};
 		825A71C31ECD29020043AC8D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 784733C1ED480A2CADA48DC8 /* Pods-Telegraph macOS.release.xcconfig */;
+			baseConfigurationReference = 50E44F01281882B7DD7EEBD0 /* Pods-Telegraph macOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "-";
@@ -1377,7 +1375,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1442,6 +1440,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1501,6 +1500,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1514,26 +1514,24 @@
 		};
 		D9899DE21DF4A093008766B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECA1AC31D68398E2A1528E4B /* Pods-Telegraph iOS-TelegraphTests.debug.xcconfig */;
+			baseConfigurationReference = B096A7CCE8F957662049050A /* Pods-Telegraph iOS-Telegraph Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Tests/TelegraphTests/Info.plist;
+				INFOPLIST_FILE = Tests/Host/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Building42.TelegraphTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelegraphTestsHost.app/TelegraphTestsHost";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Telegraph TestsHost.app/Telegraph TestsHost";
 			};
 			name = Debug;
 		};
 		D9899DE31DF4A093008766B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4112FC07E979E87BA47A52A8 /* Pods-Telegraph iOS-TelegraphTests.release.xcconfig */;
+			baseConfigurationReference = C4356C4644579954F4A63B61 /* Pods-Telegraph iOS-Telegraph Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/TelegraphTests/Info.plist;
@@ -1541,14 +1539,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Building42.TelegraphTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelegraphTestsHost.app/TelegraphTestsHost";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Telegraph TestsHost.app/Telegraph TestsHost";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8253CA231E498EBA0078D520 /* Build configuration list for PBXNativeTarget "TelegraphTestsHost" */ = {
+		8253CA231E498EBA0078D520 /* Build configuration list for PBXNativeTarget "Telegraph TestsHost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8253CA241E498EBA0078D520 /* Debug */,
@@ -1593,7 +1591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9899DE11DF4A093008766B5 /* Build configuration list for PBXNativeTarget "TelegraphTests" */ = {
+		D9899DE11DF4A093008766B5 /* Build configuration list for PBXNativeTarget "Telegraph Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9899DE21DF4A093008766B5 /* Debug */,
