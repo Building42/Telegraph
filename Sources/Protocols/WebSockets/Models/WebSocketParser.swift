@@ -64,12 +64,9 @@ public class WebSocketParser {
 
   /// Parses the incoming data into a websocket message.
   public func parse(data: Data) throws {
-    bytesParsed = 0
+    let stream = DataStream(data: data)
 
-    while bytesParsed < data.count {
-      let byte = data[bytesParsed]
-      bytesParsed += 1
-
+    while let byte = stream.read() {
       switch nextPart {
 
       case .finAndOpcode:
@@ -96,7 +93,7 @@ public class WebSocketParser {
         case 1..<126: nextPart = message.maskBit ? .maskingKey(byteNo: 1) : .payload
         case 126: nextPart = .extendedPayloadLength16(byteNo: 1)
         case 127: nextPart = .extendedPayloadLength64(byteNo: 1)
-        default: break
+        default: throw WebSocketError.invalidPayloadLength
         }
 
       case .extendedPayloadLength16(let byteNo):
@@ -123,7 +120,6 @@ public class WebSocketParser {
         case 8:
           payloadLength = payloadLength << 8 + UInt64(byte)
           guard payloadLength <= maxPayloadLength else { throw WebSocketError.payloadTooLarge }
-
           nextPart = message.maskBit ? .maskingKey(byteNo: 1) : .payload
         default: break
         }
@@ -141,14 +137,31 @@ public class WebSocketParser {
         }
 
       case .payload:
+        // For now we can only support payloads that can fit into a Data object,
+        // if the payload is any bigger we should probably offload it to a temporary file
+        let payloadSafeLength = payloadLength > Int.max ? Int.max : Int(payloadLength)
+
+        // Is this the first payload byte?
+        if payload.isEmpty {
+          payload.reserveCapacity(payloadSafeLength)
+        }
+
+        // Append the byte we already read
         payload.append(byte)
 
-        // Was that the last byte of payload data?
-        if UInt64(payload.count) == payloadLength {
+        // Append any payload bytes available in the stream
+        let payloadBytesToRead = payloadSafeLength - payload.count
+        payload.append(stream.read(count: payloadBytesToRead))
+
+        // Is the payload complete?
+        if payload.count == payloadSafeLength {
           nextPart = .endOfMessage
         }
 
-      case .endOfMessage: break
+      case .endOfMessage:
+        // This case should never be reached, because finishMessage resets
+        // the part that is being processed to the .finAndOpcode
+        break
       }
 
       // Are we done with the message?

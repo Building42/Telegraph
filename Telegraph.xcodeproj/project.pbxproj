@@ -204,6 +204,9 @@
 		8284FF1D1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
 		8284FF1E1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
 		8284FF1F1ECE8C8E00303A00 /* HTTPFileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */; };
+		82D2AF04210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
+		82D2AF05210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
+		82D2AF06210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		D12F3BB6AF5EE0C9B3C951BF /* Pods_Telegraph_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA56070F5AFFEB9C18C5331A /* Pods_Telegraph_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -302,6 +305,7 @@
 		827E6D841F01F40B00B39D8B /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
 		8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Ext.swift"; sourceTree = "<group>"; };
 		8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPFileHandler.swift; sourceTree = "<group>"; };
+		82D2AF03210D354600BF5BBA /* DataStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStream.swift; sourceTree = "<group>"; };
 		B32FA6BF71AD1D462791FD81 /* Pods-Telegraph tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph tvOS/Pods-Telegraph tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D9899DD31DF4A092008766B5 /* Telegraph Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telegraph Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF68D4A6C2E3AC357F1CA39 /* Pods_Telegraph_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Telegraph_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -571,6 +575,7 @@
 		825A72091ECD2E890043AC8D /* Transport */ = {
 			isa = PBXGroup;
 			children = (
+				82D2AF03210D354600BF5BBA /* DataStream.swift */,
 				825A720A1ECD2E890043AC8D /* Streams.swift */,
 				825A720B1ECD2E890043AC8D /* TCPConnection.swift */,
 				825A720C1ECD2E890043AC8D /* TCPListener.swift */,
@@ -999,6 +1004,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				825A72BD1ECD2E890043AC8D /* TCPListener.swift in Sources */,
+				82D2AF04210D354600BF5BBA /* DataStream.swift in Sources */,
 				825A72121ECD2E890043AC8D /* HTTPClient.swift in Sources */,
 				825A72AB1ECD2E890043AC8D /* Server+Config.swift in Sources */,
 				825A728D1ECD2E890043AC8D /* WebSocketError.swift in Sources */,
@@ -1067,6 +1073,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				825A72BE1ECD2E890043AC8D /* TCPListener.swift in Sources */,
+				82D2AF05210D354600BF5BBA /* DataStream.swift in Sources */,
 				825A72131ECD2E890043AC8D /* HTTPClient.swift in Sources */,
 				825A72AC1ECD2E890043AC8D /* Server+Config.swift in Sources */,
 				825A728E1ECD2E890043AC8D /* WebSocketError.swift in Sources */,
@@ -1135,6 +1142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				825A72BF1ECD2E890043AC8D /* TCPListener.swift in Sources */,
+				82D2AF06210D354600BF5BBA /* DataStream.swift in Sources */,
 				825A72141ECD2E890043AC8D /* HTTPClient.swift in Sources */,
 				825A72AD1ECD2E890043AC8D /* Server+Config.swift in Sources */,
 				825A728F1ECD2E890043AC8D /* WebSocketError.swift in Sources */,
