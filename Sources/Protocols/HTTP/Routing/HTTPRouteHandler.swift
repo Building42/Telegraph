@@ -5,9 +5,6 @@
 //  Created by Yvo van Beek on 2/4/17.
 //  Copyright © 2017 Building42. All rights reserved.
 //
-//  TODO: we should join all route regexes into one big regex
-//  TODO: routes should first be matched on route and properly handle the case of 405 - method not allowed
-//
 
 open class HTTPRouteHandler: HTTPRequestHandler {
   public var routes = [HTTPRoute]()

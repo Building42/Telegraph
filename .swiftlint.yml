@@ -2,10 +2,7 @@ disabled_rules:
   - cyclomatic_complexity
   - force_cast
   - force_try
-  - large_tuple
   - line_length
-  - statement_position
-  - todo
   - valid_docs
   - variable_name
 opt_in_rules:

@@ -197,7 +197,6 @@ public class WebSocketParser {
       message.payload = .text(text)
     case .connectionClose:
       // Close payload
-      // TODO: properly handle WebSocket close codes
       message.payload = .close(code: 0, reason: "Close payloads are not implemented")
     case .ping, .pong:
       // Ping / pong with optional payload
