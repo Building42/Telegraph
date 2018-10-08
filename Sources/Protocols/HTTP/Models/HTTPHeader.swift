@@ -8,11 +8,10 @@
 
 import Foundation
 
-public typealias HTTPHeaders = [HTTPHeader: String]
+public typealias HTTPHeaders = [HTTPHeaderName: String]
 
-public struct HTTPHeader: Hashable {
-  public let name: String
-  public var isCustom: Bool { return name.hasPrefix("x-") }
+public struct HTTPHeaderName: Hashable {
+  private let name: String
 
   init(_ name: String) {
     // According to RFC 7230 header names are case insensitive
@@ -20,27 +19,22 @@ public struct HTTPHeader: Hashable {
   }
 }
 
-// MARK: Dictionary implicit key conversion
+// MARK: Convenience methods
 
-public protocol CustomKeyIndexable {
-  associatedtype Key
-  associatedtype Value
+public extension Dictionary where Key == HTTPHeaderName, Value == String {
+  static var empty: HTTPHeaders {
+    return self.init(minimumCapacity: 3)
+  }
 
-  subscript(key: Key) -> Value? { get set }
-}
-
-extension CustomKeyIndexable where Key == HTTPHeader, Value == String {
   subscript(key: String) -> String? {
-    get { return self[HTTPHeader(key)] }
-    set { self[HTTPHeader(key)] = newValue }
+    get { return self[HTTPHeaderName(key)] }
+    set { self[HTTPHeaderName(key)] = newValue }
   }
 }
 
-extension Dictionary: CustomKeyIndexable {}
-
 // MARK: CustomStringConvertible implementation
 
-extension HTTPHeader: CustomStringConvertible {
+extension HTTPHeaderName: CustomStringConvertible {
   public var description: String {
     return name
   }
@@ -48,110 +42,136 @@ extension HTTPHeader: CustomStringConvertible {
 
 // MARK: ExpressibleByStringLiteral implementation
 
-extension HTTPHeader: ExpressibleByStringLiteral {
+extension HTTPHeaderName: ExpressibleByStringLiteral {
   public init(stringLiteral string: String) {
-    self.init(string)
-  }
-
-  public init(extendedGraphemeClusterLiteral string: String) {
-    self.init(string)
-  }
-
-  public init(unicodeScalarLiteral string: String) {
     self.init(string)
   }
 }
 
 // MARK: Common headers
 
-extension CustomKeyIndexable where Key == HTTPHeader, Value == String {
+extension HTTPHeaderName {
+  static let accept = HTTPHeaderName("accept")
+  static let authorization = HTTPHeaderName("authorization")
+  static let cacheControl = HTTPHeaderName("cache-Control")
+  static let connection = HTTPHeaderName("connection")
+  static let cookie = HTTPHeaderName("cookie")
+  static let contentDisposition = HTTPHeaderName("content-disposition")
+  static let contentEncoding = HTTPHeaderName("content-encoding")
+  static let contentLength = HTTPHeaderName("content-length")
+  static let contentType = HTTPHeaderName("content-type")
+  static let date = HTTPHeaderName("date")
+  static let referer = HTTPHeaderName("referer")
+  static let host = HTTPHeaderName("host")
+  static let lastModified = HTTPHeaderName("last-modified")
+  static let server = HTTPHeaderName("server")
+  static let setCookie = HTTPHeaderName("set-cookie")
+  static let transferEncoding = HTTPHeaderName("transfer-encoding")
+  static let userAgent = HTTPHeaderName("user-agent")
+  static let upgrade = HTTPHeaderName("upgrade")
+}
+
+extension Dictionary where Key == HTTPHeaderName, Value == String {
   public var accept: String? {
-    get { return self["Accept"] }
-    set { self["Accept"] = newValue }
+    get { return self[.accept] }
+    set { self[.accept] = newValue }
   }
 
   public var authorization: String? {
-    get { return self["Authorization"] }
-    set { self["Authorization"] = newValue }
+    get { return self[.authorization] }
+    set { self[.authorization] = newValue }
   }
 
   public var cacheControl: String? {
-    get { return self["Cache-Control"] }
-    set { self["Cache-Control"] = newValue }
+    get { return self[.cacheControl] }
+    set { self[.cacheControl] = newValue }
   }
 
   public var connection: String? {
-    get { return self["Connection"] }
-    set { self["Connection"] = newValue }
+    get { return self[.connection] }
+    set { self[.connection] = newValue }
   }
 
   public var cookie: String? {
-    get { return self["Cookie"] }
-    set { self["Cookie"] = newValue }
+    get { return self[.cookie] }
+    set { self[.cookie] = newValue }
   }
 
   public var contentDisposition: String? {
-    get { return self["Content-Disposition"] }
-    set { self["Content-Disposition"] = newValue }
+    get { return self[.contentDisposition] }
+    set { self[.contentDisposition] = newValue }
   }
 
   public var contentEncoding: String? {
-    get { return self["Content-Encoding"] }
-    set { self["Content-Enconding"] = newValue }
+    get { return self[.contentEncoding] }
+    set { self[.contentEncoding] = newValue }
   }
 
   public var contentLength: Int? {
-    get { return Int(self["Content-Length"] ?? "") }
-    set { self["Content-Length"] = newValue == nil ? nil : "\(newValue!)" }
+    get { return Int(self[.contentLength] ?? "") }
+    set { self[.contentLength] = newValue == nil ? nil : "\(newValue!)" }
   }
 
   public var contentType: String? {
-    get { return self["Content-Type"] }
-    set { self["Content-Type"] = newValue }
+    get { return self[.contentType] }
+    set { self[.contentType] = newValue }
   }
 
   public var date: String? {
-    get { return self["Date"] }
-    set { self["Date"] = newValue }
+    get { return self[.date] }
+    set { self[.date] = newValue }
   }
 
   public var referer: String? {
-    get { return self["Referer"] }
-    set { self["Referer"] = newValue }
+    get { return self[.referer] }
+    set { self[.referer] = newValue }
   }
 
   public var host: String? {
-    get { return self["Host"] }
-    set { self["Host"] = newValue }
+    get { return self[.host] }
+    set { self[.host] = newValue }
   }
 
   public var lastModified: String? {
-    get { return self["Last-Modified"] }
-    set { self["Last-Modified"] = newValue }
+    get { return self[.lastModified] }
+    set { self[.lastModified] = newValue }
   }
 
   public var server: String? {
-    get { return self["Server"] }
-    set { self["Server"] = newValue }
+    get { return self[.server] }
+    set { self[.server] = newValue }
   }
 
   public var setCookie: String? {
-    get { return self["Set-Cookie"] }
-    set { self["Set-Cookie"] = newValue }
+    get { return self[.setCookie] }
+    set { self[.setCookie] = newValue }
   }
 
   public var transferEncoding: String? {
-    get { return self["Transfer-Encoding"] }
-    set { self["Transfer-Encoding"] = newValue }
+    get { return self[.transferEncoding] }
+    set { self[.transferEncoding] = newValue }
   }
 
   public var userAgent: String? {
-    get { return self["User-Agent"] }
-    set { self["User-Agent"] = newValue }
+    get { return self[.userAgent] }
+    set { self[.userAgent] = newValue }
   }
 
   public var upgrade: String? {
-    get { return self["Upgrade"] }
-    set { self["Upgrade"] = newValue }
+    get { return self[.upgrade] }
+    set { self[.upgrade] = newValue }
   }
+}
+
+// MARK: Deprecated
+
+@available(*, deprecated, message: "use HTTPHeaderName")
+typealias HTTPHeader = HTTPHeaderName
+
+@available(*, deprecated, message: "use Dictionary")
+typealias CustomKeyIndexable = Dictionary
+
+public extension HTTPHeaderName {
+  @available(*, deprecated, message: "no longer available, test manually that name starts with x-")
+  public var isCustom: Bool { return name.hasPrefix("x-") }
 }

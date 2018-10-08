@@ -9,7 +9,7 @@
 import Foundation
 
 open class HTTPMessage {
-  public var headers = HTTPHeaders()
+  public var headers = HTTPHeaders.empty
   public var body = Data()
   public var version = HTTPVersion(1, 1)
 

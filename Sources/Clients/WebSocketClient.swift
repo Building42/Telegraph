@@ -30,7 +30,7 @@ open class WebSocketClient: WebSocket {
   private var connection: WebSocketConnection?
 
   public let url: URL
-  public var headers = HTTPHeaders()
+  public var headers = HTTPHeaders.empty
   public var config: WebSocketConfig = WebSocketConfig.clientDefault
   public var tlsPolicy: TLSPolicy?
   public weak var delegate: WebSocketClientDelegate?
