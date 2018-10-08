@@ -22,7 +22,7 @@ open class HTTPResponse: HTTPMessage {
 
   /// Writes the first line of the response, e.g. HTTP/1.1 200 OK
   override internal var firstLine: String {
-    return "\(version) \(status.code) \(status.phrase)"
+    return "\(version) \(status)"
   }
 
   /// Prepares the response to be written tot the stream

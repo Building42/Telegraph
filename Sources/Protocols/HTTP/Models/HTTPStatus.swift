@@ -1,5 +1,5 @@
 //
-//  HTTPStatusCode.swift
+//  HTTPStatus.swift
 //  Telegraph
 //
 //  Created by Yvo van Beek on 1/30/17.
@@ -26,6 +26,7 @@ public enum HTTPStatusCode: Int {
   case unprocessableEntity = 422
   case tooManyRequests = 429
   case requestHeaderFieldsTooLarge = 431
+  case noResponse = 444
   case internalServerError = 500
   case notImplemented = 501
   case badGateway = 502
@@ -38,6 +39,7 @@ public struct HTTPStatus {
   public let code: Int
   public let phrase: String
 
+  /// Creates a new HTTP status based on a HTTP status code.
   public init(code: HTTPStatusCode) {
     self.code = code.rawValue
 
@@ -61,6 +63,7 @@ public struct HTTPStatus {
     case .unprocessableEntity: phrase = "Unprocessable Entity"
     case .tooManyRequests: phrase = "Too Many Requests"
     case .requestHeaderFieldsTooLarge: phrase = "Request Header Fields Too Large"
+    case .noResponse: phrase = "No Response"
     case .internalServerError: phrase = "Internal Server Error"
     case .notImplemented: phrase = "Not Implemented"
     case .badGateway: phrase = "Bad Gateway"
@@ -70,25 +73,60 @@ public struct HTTPStatus {
     }
   }
 
+  /// Creates a new HTTP status based on a code and a phrase.
   public init(code: Int, phrase: String = "") {
     self.code = code
     self.phrase = phrase
   }
 }
 
+// MARK: Initializers
+
+public extension HTTPStatus {
+  static let switchingProtocols = HTTPStatus(code: .switchingProtocols)
+  static let ok = HTTPStatus(code: .ok)
+  static let created = HTTPStatus(code: .created)
+  static let noContent = HTTPStatus(code: .noContent)
+  static let movedPermanently = HTTPStatus(code: .movedPermanently)
+  static let notModified = HTTPStatus(code: .notModified)
+  static let temporaryRedirect = HTTPStatus(code: .temporaryRedirect)
+  static let permanentRedirect = HTTPStatus(code: .permanentRedirect)
+  static let badRequest = HTTPStatus(code: .badRequest)
+  static let unauthorized = HTTPStatus(code: .unauthorized)
+  static let forbidden = HTTPStatus(code: .forbidden)
+  static let notFound = HTTPStatus(code: .notFound)
+  static let methodNotAllowed = HTTPStatus(code: .methodNotAllowed)
+  static let lengthRequired = HTTPStatus(code: .lengthRequired)
+  static let payloadTooLarge = HTTPStatus(code: .payloadTooLarge)
+  static let uriTooLong = HTTPStatus(code: .uriTooLong)
+  static let unprocessableEntity = HTTPStatus(code: .unprocessableEntity)
+  static let tooManyRequests = HTTPStatus(code: .tooManyRequests)
+  static let requestHeaderFieldsTooLarge = HTTPStatus(code: .requestHeaderFieldsTooLarge)
+  static let noResponse = HTTPStatus(code: .noResponse)
+  static let internalServerError = HTTPStatus(code: .internalServerError)
+  static let notImplemented = HTTPStatus(code: .notImplemented)
+  static let badGateway = HTTPStatus(code: .badGateway)
+  static let serviceUnavailable = HTTPStatus(code: .serviceUnavailable)
+  static let gatewayTimeout = HTTPStatus(code: .gatewayTimeout)
+  static let httpVersionNotSupported = HTTPStatus(code: .httpVersionNotSupported)
+}
+
 // MARK: Helpers
 
-extension HTTPStatus {
-  public var isInformational: Bool {
+public extension HTTPStatus {
+  /// Returns a boolean indicating if the status is used for informational purposes (< 200).
+  var isInformational: Bool {
     return code < 200
   }
 
-  public var isSuccess: Bool {
+  /// Returns a boolean inidicating if the status describes a succesful operation.
+  var isSuccess: Bool {
     return code >= 200 && code < 300
   }
 
-  public var supportsBody: Bool {
-    return !(isInformational || self == HTTPStatusCode.noContent || self == HTTPStatusCode.notModified)
+  /// Returns a boolean indicating if the the message should have a body when this status is used.
+  var supportsBody: Bool {
+    return !isInformational && self != HTTPStatusCode.noContent && self != HTTPStatusCode.notModified
   }
 }
 
@@ -96,18 +134,26 @@ extension HTTPStatus {
 
 extension HTTPStatus: CustomStringConvertible {
   public var description: String {
-    return "\(code) - \(phrase)"
+    return "\(code) \(phrase)"
   }
 }
 
-// MARK: Equatable implementation
+// MARK: Equatable between HTTPStatus and HTTPStatusCode
 
-extension HTTPStatus: Equatable {
-  public static func == (lhs: HTTPStatus, rhs: HTTPStatus) -> Bool {
-    return lhs.code == rhs.code
-  }
-
+extension HTTPStatus {
   public static func == (lhs: HTTPStatus, rhs: HTTPStatusCode) -> Bool {
     return lhs.code == rhs.rawValue
+  }
+
+  public static func != (lhs: HTTPStatus, rhs: HTTPStatusCode) -> Bool {
+    return lhs.code != rhs.rawValue
+  }
+
+  public static func == (lhs: HTTPStatusCode, rhs: HTTPStatus) -> Bool {
+    return lhs.rawValue == rhs.code
+  }
+
+  public static func != (lhs: HTTPStatusCode, rhs: HTTPStatus) -> Bool {
+    return lhs.rawValue != rhs.code
   }
 }
