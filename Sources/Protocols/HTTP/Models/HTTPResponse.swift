@@ -15,7 +15,7 @@ open class HTTPResponse: HTTPMessage {
   public var closeAfterWrite = false
 
   /// Initializes a new HTTPResponse
-  public init(_ status: HTTPStatus = .ok, version: HTTPVersion = HTTPVersion(1, 1),
+  public init(_ status: HTTPStatus = .ok, version: HTTPVersion = .default,
               headers: HTTPHeaders = .empty, body: Data = Data()) {
     self.status = status
     super.init(version: version, headers: headers, body: body)

@@ -12,16 +12,27 @@ public struct HTTPVersion {
   public let major: UInt
   public let minor: UInt
 
-  public init(_ major: UInt, _ minor: UInt) {
+  public init(major: UInt, minor: UInt) {
     self.major = major
     self.minor = minor
   }
 }
 
-// MARK: CustomStringConvertible
+extension HTTPVersion {
+  public static let `default` = HTTPVersion(major: 1, minor: 1)
+}
 
 extension HTTPVersion: CustomStringConvertible {
   public var description: String {
     return "HTTP/\(major).\(minor)"
+  }
+}
+
+// MARK: Deprecated
+
+public extension HTTPVersion {
+  @available(*, deprecated, message: "use HTTPVersion(major:, minor:)")
+  public init(_ major: UInt, _ minor: UInt) {
+    self.init(major: major, minor: minor)
   }
 }

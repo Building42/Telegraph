@@ -230,7 +230,7 @@ private extension http_parser {
   }
 
   var httpVersion: HTTPVersion {
-    return HTTPVersion(UInt(http_major), UInt(http_minor))
+    return HTTPVersion(major: UInt(http_major), minor: UInt(http_minor))
   }
 
   var isStatusComplete: Bool {

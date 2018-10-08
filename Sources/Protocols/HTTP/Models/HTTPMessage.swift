@@ -17,7 +17,7 @@ open class HTTPMessage {
   internal var stripBody = false
 
   /// Creates a new HTTPMessage.
-  public init(version: HTTPVersion = HTTPVersion(1, 1), headers: HTTPHeaders = .empty, body: Data = Data()) {
+  public init(version: HTTPVersion = .default, headers: HTTPHeaders = .empty, body: Data = Data()) {
     self.version = version
     self.headers = headers
     self.body = body
