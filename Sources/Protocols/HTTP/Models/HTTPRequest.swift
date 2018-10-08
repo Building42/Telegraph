@@ -13,10 +13,12 @@ open class HTTPRequest: HTTPMessage {
   public var uri: URI
   public var params: Params = Params()
 
-  public init(_ method: HTTPMethod = .GET, uri: URI = URI()) {
+  /// Creates a new HTTPRequest.
+  public init(_ method: HTTPMethod = .GET, uri: URI = URI(), version: HTTPVersion = HTTPVersion(1, 1),
+              headers: HTTPHeaders = .empty, body: Data = Data()) {
     self.method = method
     self.uri = uri
-    super.init()
+    super.init(version: version, headers: headers, body: body)
   }
 
   override internal var firstLine: String {
@@ -32,22 +34,11 @@ open class HTTPRequest: HTTPMessage {
   }
 }
 
-// MARK: Convenience initializers
-
-extension HTTPRequest {
-  public convenience init(_ method: HTTPMethod, uri: URI, headers: HTTPHeaders = [:]) {
-    self.init(method, uri: uri)
-    self.headers = headers
-  }
-}
-
 // MARK: CustomStringConvertible implementation
 
 extension HTTPRequest: CustomStringConvertible {
   open var description: String {
-    let me = self
-    let typeName = type(of: me)
-    let address = Unmanaged.passUnretained(me).toOpaque()
-    return "<\(typeName): \(address) method: \(me.method), uri: \(me.uri), headers: \(me.headers.count), body: \(me.body.count)>"
+    let typeName = type(of: self)
+    return "<\(typeName): \(method) \(uri) \(version), headers: \(headers.count), body: \(body.count)>"
   }
 }

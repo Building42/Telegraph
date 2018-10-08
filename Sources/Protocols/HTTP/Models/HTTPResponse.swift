@@ -15,9 +15,10 @@ open class HTTPResponse: HTTPMessage {
   public var closeAfterWrite = false
 
   /// Initializes a new HTTPResponse
-  public init(_ statusCode: HTTPStatusCode = .ok) {
-    self.status = HTTPStatus(code: statusCode)
-    super.init()
+  public init(_ status: HTTPStatus = .ok, version: HTTPVersion = HTTPVersion(1, 1),
+              headers: HTTPHeaders = .empty, body: Data = Data()) {
+    self.status = status
+    super.init(version: version, headers: headers, body: body)
   }
 
   /// Writes the first line of the response, e.g. HTTP/1.1 200 OK
@@ -37,7 +38,7 @@ open class HTTPResponse: HTTPMessage {
       headers.contentLength = body.count
     } else {
       headers.contentLength = nil
-      body = Data()
+      body.count = 0
     }
   }
 }
@@ -45,18 +46,14 @@ open class HTTPResponse: HTTPMessage {
 // MARK: Convenience initializers
 
 extension HTTPResponse {
-  public convenience init(_ statusCode: HTTPStatusCode = .ok, data: Data) {
-    self.init(statusCode)
-    body = data
+  /// Creates an HTTP response to send textual content.
+  public convenience init(_ status: HTTPStatus = .ok, headers: HTTPHeaders = .empty, content: String) {
+    self.init(status, headers: headers, body: content.utf8Data)
   }
 
-  public convenience init(_ statusCode: HTTPStatusCode = .ok, content: String) {
-    self.init(statusCode, data: content.utf8Data)
-  }
-
-  public convenience init(_ statusCode: HTTPStatusCode = .internalServerError, error: Error) {
-    self.init(statusCode, content: "\(error)")
-    self.closeAfterWrite = true
+  /// Creates an HTTP response to send an error.
+  public convenience init(_ status: HTTPStatus = .internalServerError, headers: HTTPHeaders = .empty, error: Error) {
+    self.init(status, headers: headers, body: error.localizedDescription.utf8Data)
   }
 }
 
@@ -64,10 +61,8 @@ extension HTTPResponse {
 
 extension HTTPResponse: CustomStringConvertible {
   open var description: String {
-    let me = self
-    let typeName = type(of: me)
-    let address = Unmanaged.passUnretained(me).toOpaque()
-    return "<\(typeName): \(address) status: \(me.status), headers: \(me.headers.count), body: \(me.body.count)>"
+    let typeName = type(of: self)
+    return "<\(typeName): \(version) \(status), headers: \(headers.count), body: \(body.count)>"
   }
 }
 
@@ -76,4 +71,9 @@ extension HTTPResponse: CustomStringConvertible {
 extension HTTPResponse {
   @available(*, deprecated, message: "use DateFormatter.rfc1123 or Date's rfc1123 variable")
   public static let dateFormatter = DateFormatter.rfc1123
+
+  @available(*, deprecated, message: "data: has been renamed to body:")
+  public convenience init(_ status: HTTPStatus = .ok, data: Data) {
+    self.init(status, body: data)
+  }
 }

@@ -71,15 +71,15 @@ extension Server {
   }
 
   /// Adds a route that responds to *method* on *uri* that responds with a *statusCode*.
-  public func route(_ method: HTTPMethod, _ uri: String, statusCode: @escaping () -> HTTPStatusCode) {
-    route(method, uri, { _ in HTTPResponse(statusCode()) })
+  public func route(_ method: HTTPMethod, _ uri: String, status: @escaping () -> HTTPStatus) {
+    route(method, uri, { _ in HTTPResponse(status()) })
   }
 
   /// Adds a route that responds to *method* on *uri* that responds with *statusCode* and text content.
-  public func route(_ method: HTTPMethod, _ uri: String, content: @escaping () -> (HTTPStatusCode, String)) {
+  public func route(_ method: HTTPMethod, _ uri: String, content: @escaping () -> (HTTPStatus, String)) {
     route(method, uri, { _ in
-      let result = content()
-      return HTTPResponse(result.0, content: result.1)
+      let (status, string) = content()
+      return HTTPResponse(status, content: string)
     })
   }
 }

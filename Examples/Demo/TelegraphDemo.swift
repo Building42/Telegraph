@@ -135,7 +135,7 @@ extension TelegraphDemo {
     // Send a JSON response containing the name of our visitor
     let responseDict = ["welcome": name]
     let jsonData = try! JSONEncoder().encode(responseDict)
-    return HTTPResponse(data: jsonData)
+    return HTTPResponse(body: jsonData)
   }
 }
 

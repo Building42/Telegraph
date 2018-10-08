@@ -9,12 +9,19 @@
 import Foundation
 
 open class HTTPMessage {
-  public var headers = HTTPHeaders.empty
-  public var body = Data()
-  public var version = HTTPVersion(1, 1)
+  public var version: HTTPVersion
+  public var headers: HTTPHeaders
+  public var body: Data
 
   internal var firstLine: String { return "" }
   internal var stripBody = false
+
+  /// Creates a new HTTPMessage.
+  public init(version: HTTPVersion = HTTPVersion(1, 1), headers: HTTPHeaders = .empty, body: Data = Data()) {
+    self.version = version
+    self.headers = headers
+    self.body = body
+  }
 
   /// Performs last minute changes to the message, just before writing it to the stream.
   open func prepareForWrite() {
