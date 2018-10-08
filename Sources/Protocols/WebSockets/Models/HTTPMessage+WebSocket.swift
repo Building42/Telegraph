@@ -41,31 +41,23 @@ extension HTTPRequest {
   }
 }
 
-extension HTTPResponse {
+public extension HTTPResponse {
   /// Creates a websocket handshake response.
   static func webSocketHandshake(key: String) -> HTTPResponse {
-    let response = HTTPResponse()
-    response.webSocketHandshake(key: key)
+    // Take the incoming key, append the static GUID and return a base64 encoded SHA-1 hash
+    let webSocketKey = key.appending(HTTPMessage.webSocketMagicGUID)
+    let webSocketAccept = SHA1.hash(webSocketKey).base64EncodedString()
+
+    let response = HTTPResponse(.switchingProtocols)
+    response.isConnectionUpgrade = true
+    response.isWebSocketUpgrade = true
+    response.headers.webSocketAccept = webSocketAccept
     return response
   }
 
-  /// Decorates a response with websocket handshake headers.
-  func webSocketHandshake(key: String) {
-    status = HTTPStatus(code: .switchingProtocols)
-
-    isConnectionUpgrade = true
-    isWebSocketUpgrade = true
-
-    // Take the incoming key, append the static GUID and return a base64 encoded SHA-1 hash
-    let sha1 = SHA1(string: key.appending(HTTPMessage.webSocketMagicGUID))
-    headers.webSocketAccept = sha1.data.base64EncodedString()
-  }
-
-  // Indicates if the response contains a supported websocket handshake
+  // Returns a boolean indicating if the response is a websocket handshake.
   var isWebSocketHandshake: Bool {
-    return
-      isWebSocketUpgrade &&
-      status == .switchingProtocols &&
+    return status == .switchingProtocols && isWebSocketUpgrade &&
       headers.webSocketAccept?.isEmpty == false
   }
 }
