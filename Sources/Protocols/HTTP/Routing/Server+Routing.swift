@@ -58,7 +58,7 @@ extension Server {
 
     // Wrap the file handler into a route
     let handler = HTTPFileHandler(directoryURL: url, baseURI: baseURI, index: index)
-    route(.get, routeURI) { request in try handler.respond(to: request, nextHandler: { _ in HTTPResponse(.notFound) }) }
+    route(.GET, routeURI) { request in try handler.respond(to: request, nextHandler: { _ in HTTPResponse(.notFound) }) }
   }
 }
 

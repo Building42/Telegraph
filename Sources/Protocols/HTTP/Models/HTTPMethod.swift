@@ -6,50 +6,24 @@
 //  Copyright © 2017 Building42. All rights reserved.
 //
 
-public enum HTTPMethod: Hashable {
-  case delete
-  case get
-  case head
-  case options
-  case post
-  case put
-  case method(String)
+public struct HTTPMethod: Hashable {
+  public var name: String
 }
 
-extension HTTPMethod: RawRepresentable {
-  public init(rawValue: String) {
-    // According RFC 7231 methods are in uppercase by convention
-    let method = rawValue.uppercased()
-
-    switch method {
-    case "DELETE": self = .delete
-    case "GET": self = .get
-    case "HEAD": self = .head
-    case "OPTIONS": self = .options
-    case "POST": self = .post
-    case "PUT": self = .put
-    default: self = .method(method)
-    }
-  }
-
-  public var rawValue: String {
-    switch self {
-    case .delete: return "DELETE"
-    case .get: return "GET"
-    case .head: return "HEAD"
-    case .options: return "OPTIONS"
-    case .post: return "POST"
-    case .put: return "PUT"
-    case .method(let method): return method.uppercased()
-    }
-  }
+public extension HTTPMethod {
+  static var GET = HTTPMethod(name: "GET")
+  static var HEAD = HTTPMethod(name: "HEAD")
+  static var DELETE = HTTPMethod(name: "DELETE")
+  static var POST = HTTPMethod(name: "POST")
+  static var PUT = HTTPMethod(name: "PUT")
+  static var OPTIONS = HTTPMethod(name: "OPTIONS")
+  static var CONNECT = HTTPMethod(name: "CONNECT")
+  static var TRACE = HTTPMethod(name: "TRACE")
 }
-
-// MARK: CustomStringConvertible implementation
 
 extension HTTPMethod: CustomStringConvertible {
   public var description: String {
-    return rawValue
+    return name
   }
 }
 
@@ -57,14 +31,38 @@ extension HTTPMethod: CustomStringConvertible {
 
 extension HTTPMethod: ExpressibleByStringLiteral {
   public init(stringLiteral string: String) {
-    self.init(rawValue: string)
+    self.init(name: string)
+  }
+}
+
+// MARK: Deprecated
+
+public extension HTTPMethod {
+  @available(*, deprecated, message: "use HTTPMethod.GET")
+  static var get = HTTPMethod.GET
+
+  @available(*, deprecated, message: "use HTTPMethod.HEAD")
+  static var head = HTTPMethod.HEAD
+
+  @available(*, deprecated, message: "use HTTPMethod.DELETE")
+  static var delete = HTTPMethod.DELETE
+
+  @available(*, deprecated, message: "use HTTPMethod.OPTIONS")
+  static var options = HTTPMethod.OPTIONS
+
+  @available(*, deprecated, message: "use HTTPMethod.POST")
+  static var post = HTTPMethod.POST
+
+  @available(*, deprecated, message: "use HTTPMethod.PUT")
+  static var put = HTTPMethod.PUT
+
+  @available(*, deprecated, message: "use HTTPMethod(name:)")
+  init(rawValue: String) {
+    self.init(name: rawValue.uppercased())
   }
 
-  public init(extendedGraphemeClusterLiteral string: String) {
-    self.init(rawValue: string)
-  }
-
-  public init(unicodeScalarLiteral string: String) {
-    self.init(rawValue: string)
+  @available(*, deprecated, message: "use HTTPMethod(name:)")
+  static func method(_ name: String) -> HTTPMethod {
+    return HTTPMethod(name: name)
   }
 }

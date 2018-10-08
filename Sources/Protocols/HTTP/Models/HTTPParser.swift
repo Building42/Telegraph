@@ -171,7 +171,7 @@ extension HTTPParser {
   fileprivate func messageComplete(cParser: http_parser) -> Int32 {
     // Set the http version and method
     message?.version = cParser.httpVersion
-    request?.method = HTTPMethod(rawValue: cParser.httpMethodName)
+    request?.method = HTTPMethod(name: cParser.httpMethodName)
 
     // Does the parser instruct us to not keep alive?
     if !cParser.httpKeepAlive {

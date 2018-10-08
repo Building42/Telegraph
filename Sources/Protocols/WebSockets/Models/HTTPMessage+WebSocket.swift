@@ -29,7 +29,7 @@ extension HTTPRequest {
 
   /// Decorates a request with websocket handshake headers.
   func webSocketHandshake(host: String, port: Int = 80) {
-    method = .get
+    method = .GET
     setHostHeader(host: host, port: port)
 
     isConnectionUpgrade = true

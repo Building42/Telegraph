@@ -99,7 +99,7 @@ public class HTTPConnection: TCPConnection {
     response.version = request.version
 
     // Do not write the body for HEAD requests
-    if request.method == .head {
+    if request.method == .HEAD {
       response.stripBody = true
     }
 

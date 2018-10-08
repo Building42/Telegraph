@@ -16,7 +16,7 @@ open class HTTPWebSocketHandler: HTTPRequestHandler {
     }
 
     // Validate the handshake
-    guard request.method == .get else { throw HTTPError.invalidMethod }
+    guard request.method == .GET else { throw HTTPError.invalidMethod }
     guard request.version.minor == 1 else { throw HTTPError.invalidVersion }
 
     // We must have a websocket key

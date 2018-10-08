@@ -26,7 +26,7 @@ internal class HTTPClient {
   }
 
   /// Creates a request and enqueues it.
-  internal func request(method: HTTPMethod = .get, uri: URI, handler: @escaping Handler) {
+  internal func request(method: HTTPMethod = .GET, uri: URI, handler: @escaping Handler) {
     let request = HTTPRequest(method, uri: uri)
     tasks.append((request, handler))
     processNextTask()

@@ -14,14 +14,14 @@ open class HTTPRouteHandler: HTTPRequestHandler {
     var matchingRoute: HTTPRoute?
 
     // Do we want to allow HEAD requests on GET routes?
-    let tryGetForHead = implicitHeadRequests && (request.method == .head)
+    let tryGetForHead = implicitHeadRequests && (request.method == .HEAD)
 
     for route in routes {
       // Skip routes that can't handle our method
       if !route.canHandle(method: request.method) {
 
         // Is this a HEAD request and do we want to serve this as a GET request?
-        if !tryGetForHead || !route.canHandle(method: .get) {
+        if !tryGetForHead || !route.canHandle(method: .GET) {
           continue
         }
       }

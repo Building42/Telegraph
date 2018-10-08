@@ -22,7 +22,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
 
   open func respond(to request: HTTPRequest, nextHandler: HTTPRequest.Handler) throws -> HTTPResponse? {
     // Only respond to GET requests
-    guard request.method == .get, let relativePath = request.uri.relativePath(from: baseURI.path) else {
+    guard request.method == .GET, let relativePath = request.uri.relativePath(from: baseURI.path) else {
       return try nextHandler(request)
     }
 

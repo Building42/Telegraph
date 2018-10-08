@@ -65,12 +65,12 @@ extension TelegraphDemo {
 
     // Define the demo routes
     // Note: we're ignoring possible strong retain cycles in the demo
-    server.route(.get, "hello/:name", serverHandleHello)
-    server.route(.get, "hello(/)", serverHandleHello)
-    server.route(.get, "secret/*") { .forbidden }
-    server.route(.get, "status") { (.ok, "Server is running") }
+    server.route(.GET, "hello/:name", serverHandleHello)
+    server.route(.GET, "hello(/)", serverHandleHello)
+    server.route(.GET, "secret/*") { .forbidden }
+    server.route(.GET, "status") { (.ok, "Server is running") }
 
-    server.route(.post, "data", serverHandleData)
+    server.route(.POST, "data", serverHandleData)
 
     server.serveBundle(.main, "/")
 

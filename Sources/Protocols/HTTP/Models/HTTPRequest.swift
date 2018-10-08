@@ -13,7 +13,7 @@ open class HTTPRequest: HTTPMessage {
   public var uri: URI
   public var params: Params = Params()
 
-  public init(_ method: HTTPMethod = .get, uri: URI = URI()) {
+  public init(_ method: HTTPMethod = .GET, uri: URI = URI()) {
     self.method = method
     self.uri = uri
     super.init()
