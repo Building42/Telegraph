@@ -62,7 +62,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
 
     // Set the last modified date
     if let lastModified = fileAttributes[.modificationDate] as? Date {
-      response.headers.lastModified = HTTPResponse.dateFormatter.string(from: lastModified)
+      response.headers.lastModified = lastModified.rfc1123
     }
 
     return response

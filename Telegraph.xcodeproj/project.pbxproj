@@ -13,6 +13,9 @@
 		820EA1DA20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
 		820EA1DB20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
 		820EA1DC20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
+		821FD9F1216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
+		821FD9F2216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
+		821FD9F3216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
 		825A718A1ECD230E0043AC8D /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71811ECD22F60043AC8D /* HelperTests.swift */; };
 		825A718B1ECD23100043AC8D /* SecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71831ECD22F60043AC8D /* SecurityTests.swift */; };
 		825A718C1ECD23140043AC8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71851ECD22F60043AC8D /* AppDelegate.swift */; };
@@ -36,9 +39,6 @@
 		825A721B1ECD2E890043AC8D /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CB1ECD2E890043AC8D /* Data+Ext.swift */; };
 		825A721C1ECD2E890043AC8D /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CB1ECD2E890043AC8D /* Data+Ext.swift */; };
 		825A721D1ECD2E890043AC8D /* Data+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CB1ECD2E890043AC8D /* Data+Ext.swift */; };
-		825A721E1ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
-		825A721F1ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
-		825A72201ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */; };
 		825A72271ECD2E890043AC8D /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */; };
 		825A72281ECD2E890043AC8D /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */; };
 		825A72291ECD2E890043AC8D /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */; };
@@ -231,6 +231,7 @@
 		68B530AA6E4C3B2CD56B0F0B /* Pods-Telegraph iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		81A342E7B802D9136578302C /* Pods-Telegraph iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph iOS/Pods-Telegraph iOS.release.xcconfig"; sourceTree = "<group>"; };
 		820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedSet.swift; sourceTree = "<group>"; };
+		821FD9F0216BE58E00D0F486 /* RFC1123.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFC1123.swift; sourceTree = "<group>"; };
 		8253CA141E498EBA0078D520 /* Telegraph TestsHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Telegraph TestsHost.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		825A71811ECD22F60043AC8D /* HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
 		825A71831ECD22F60043AC8D /* SecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityTests.swift; sourceTree = "<group>"; };
@@ -248,7 +249,6 @@
 		825A71C81ECD2E890043AC8D /* WebSocketClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 		825A71CA1ECD2E890043AC8D /* Array+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		825A71CB1ECD2E890043AC8D /* Data+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Ext.swift"; sourceTree = "<group>"; };
-		825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Ext.swift"; sourceTree = "<group>"; };
 		825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
 		825A71D01ECD2E890043AC8D /* NSRegularExpression+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Ext.swift"; sourceTree = "<group>"; };
 		825A71D11ECD2E890043AC8D /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -442,7 +442,6 @@
 			children = (
 				825A71CA1ECD2E890043AC8D /* Array+Ext.swift */,
 				825A71CB1ECD2E890043AC8D /* Data+Ext.swift */,
-				825A71CC1ECD2E890043AC8D /* DateFormatter+Ext.swift */,
 				8284FF151ECE89BF00303A00 /* FileManager+Ext.swift */,
 				825A71D01ECD2E890043AC8D /* NSRegularExpression+Ext.swift */,
 				825A71D11ECD2E890043AC8D /* String+Ext.swift */,
@@ -590,6 +589,7 @@
 			children = (
 				825A71C91ECD2E890043AC8D /* Extensions */,
 				825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */,
+				821FD9F0216BE58E00D0F486 /* RFC1123.swift */,
 				820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */,
 			);
 			path = Helpers;
@@ -1023,7 +1023,6 @@
 				825A72541ECD2E890043AC8D /* HTTPParser.swift in Sources */,
 				825A72391ECD2E890043AC8D /* HTTPErrorDefaultHandler.swift in Sources */,
 				825A72A51ECD2E890043AC8D /* TLSConfig.swift in Sources */,
-				825A721E1ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */,
 				825A72901ECD2E890043AC8D /* WebSocketMessage+Write.swift in Sources */,
 				825A72481ECD2E890043AC8D /* HTTPError.swift in Sources */,
 				825A72451ECD2E890043AC8D /* HTTPConnection.swift in Sources */,
@@ -1040,6 +1039,7 @@
 				825A72871ECD2E890043AC8D /* WebSocketConfig.swift in Sources */,
 				825A72691ECD2E890043AC8D /* HTTPRouteHandler.swift in Sources */,
 				825A72841ECD2E890043AC8D /* WebSocket.swift in Sources */,
+				821FD9F1216BE58E00D0F486 /* RFC1123.swift in Sources */,
 				825A72661ECD2E890043AC8D /* HTTPRoute.swift in Sources */,
 				825A724B1ECD2E890043AC8D /* HTTPHeader.swift in Sources */,
 				825A72931ECD2E890043AC8D /* WebSocketMessage.swift in Sources */,
@@ -1092,7 +1092,6 @@
 				825A72551ECD2E890043AC8D /* HTTPParser.swift in Sources */,
 				825A723A1ECD2E890043AC8D /* HTTPErrorDefaultHandler.swift in Sources */,
 				825A72A61ECD2E890043AC8D /* TLSConfig.swift in Sources */,
-				825A721F1ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */,
 				825A72911ECD2E890043AC8D /* WebSocketMessage+Write.swift in Sources */,
 				825A72491ECD2E890043AC8D /* HTTPError.swift in Sources */,
 				825A72461ECD2E890043AC8D /* HTTPConnection.swift in Sources */,
@@ -1109,6 +1108,7 @@
 				825A72881ECD2E890043AC8D /* WebSocketConfig.swift in Sources */,
 				825A726A1ECD2E890043AC8D /* HTTPRouteHandler.swift in Sources */,
 				825A72851ECD2E890043AC8D /* WebSocket.swift in Sources */,
+				821FD9F2216BE58E00D0F486 /* RFC1123.swift in Sources */,
 				825A72671ECD2E890043AC8D /* HTTPRoute.swift in Sources */,
 				825A724C1ECD2E890043AC8D /* HTTPHeader.swift in Sources */,
 				825A72941ECD2E890043AC8D /* WebSocketMessage.swift in Sources */,
@@ -1161,7 +1161,6 @@
 				825A72561ECD2E890043AC8D /* HTTPParser.swift in Sources */,
 				825A723B1ECD2E890043AC8D /* HTTPErrorDefaultHandler.swift in Sources */,
 				825A72A71ECD2E890043AC8D /* TLSConfig.swift in Sources */,
-				825A72201ECD2E890043AC8D /* DateFormatter+Ext.swift in Sources */,
 				825A72921ECD2E890043AC8D /* WebSocketMessage+Write.swift in Sources */,
 				825A724A1ECD2E890043AC8D /* HTTPError.swift in Sources */,
 				825A72471ECD2E890043AC8D /* HTTPConnection.swift in Sources */,
@@ -1178,6 +1177,7 @@
 				825A72891ECD2E890043AC8D /* WebSocketConfig.swift in Sources */,
 				825A726B1ECD2E890043AC8D /* HTTPRouteHandler.swift in Sources */,
 				825A72861ECD2E890043AC8D /* WebSocket.swift in Sources */,
+				821FD9F3216BE58E00D0F486 /* RFC1123.swift in Sources */,
 				825A72681ECD2E890043AC8D /* HTTPRoute.swift in Sources */,
 				825A724D1ECD2E890043AC8D /* HTTPHeader.swift in Sources */,
 				825A72951ECD2E890043AC8D /* WebSocketMessage.swift in Sources */,

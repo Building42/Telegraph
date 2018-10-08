@@ -10,7 +10,6 @@ import Foundation
 
 open class HTTPResponse: HTTPMessage {
   public typealias Handler = (HTTPResponse, Error) -> Void
-  public static let dateFormatter = DateFormatter.rfc7231
 
   public var status: HTTPStatus
   public var closeAfterWrite = false
@@ -31,7 +30,7 @@ open class HTTPResponse: HTTPMessage {
     super.prepareForWrite()
 
     // Set the date header
-    headers.date = HTTPResponse.dateFormatter.string(from: Date())
+    headers.date = Date().rfc1123
 
     // If a body is allowed set the content length (even when 0)
     if status.supportsBody {
@@ -70,4 +69,11 @@ extension HTTPResponse: CustomStringConvertible {
     let address = Unmanaged.passUnretained(me).toOpaque()
     return "<\(typeName): \(address) status: \(me.status), headers: \(me.headers.count), body: \(me.body.count)>"
   }
+}
+
+// MARK: Deprecated
+
+extension HTTPResponse {
+  @available(*, deprecated, message: "use DateFormatter.rfc1123 or Date's rfc1123 variable")
+  public static let dateFormatter = DateFormatter.rfc1123
 }
