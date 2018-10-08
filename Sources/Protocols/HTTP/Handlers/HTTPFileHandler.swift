@@ -14,7 +14,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
   public private(set) var baseURI: URI
   public private(set) var index: String?
 
-  public init(directoryURL: URL, baseURI: URI = URI(), index: String? = "index.html") {
+  public init(directoryURL: URL, baseURI: URI = .root, index: String? = "index.html") {
     self.directoryURL = directoryURL
     self.baseURI = baseURI
     self.index = index

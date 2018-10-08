@@ -14,7 +14,7 @@ open class HTTPRequest: HTTPMessage {
   public var params: Params = Params()
 
   /// Creates a new HTTPRequest.
-  public init(_ method: HTTPMethod = .GET, uri: URI = URI(), version: HTTPVersion = .default,
+  public init(_ method: HTTPMethod = .GET, uri: URI = .root, version: HTTPVersion = .default,
               headers: HTTPHeaders = .empty, body: Data = Data()) {
     self.method = method
     self.uri = uri

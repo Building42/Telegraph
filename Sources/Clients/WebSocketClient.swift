@@ -84,9 +84,7 @@ open class WebSocketClient: WebSocket {
     }
 
     // Set the URI on the request
-    if let uri = URI(url: url) {
-      handshakeRequest.uri = uri
-    }
+    handshakeRequest.uri = URI(path: url.path, query: url.query)
 
     // Create the HTTP client
     httpClient = HTTPClient(baseURL: url)
