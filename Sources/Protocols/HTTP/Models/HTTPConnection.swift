@@ -19,7 +19,7 @@ public protocol HTTPConnectionDelegate: class {
 
 // MARK: HTTPConnection
 
-public class HTTPConnection: TCPConnection, Hashable, Equatable {
+public class HTTPConnection: TCPConnection {
   public weak var delegate: HTTPConnectionDelegate?
 
   internal let socket: TCPSocket

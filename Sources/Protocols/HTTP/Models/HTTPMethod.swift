@@ -6,7 +6,7 @@
 //  Copyright © 2017 Building42. All rights reserved.
 //
 
-public enum HTTPMethod {
+public enum HTTPMethod: Hashable {
   case delete
   case get
   case head
@@ -18,6 +18,7 @@ public enum HTTPMethod {
 
 extension HTTPMethod: RawRepresentable {
   public init(rawValue: String) {
+    // According RFC 7231 methods are in uppercase by convention
     let method = rawValue.uppercased()
 
     switch method {
@@ -49,22 +50,6 @@ extension HTTPMethod: RawRepresentable {
 extension HTTPMethod: CustomStringConvertible {
   public var description: String {
     return rawValue
-  }
-}
-
-// MARK: Equatable implementation
-
-extension HTTPMethod: Equatable {
-  public static func == (lhs: HTTPMethod, rhs: HTTPMethod) -> Bool {
-    return lhs.rawValue == rhs.rawValue
-  }
-}
-
-// MARK: Hashable implementation
-
-extension HTTPMethod: Hashable {
-  public var hashValue: Int {
-    return rawValue.hashValue
   }
 }
 

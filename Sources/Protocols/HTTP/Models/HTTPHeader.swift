@@ -10,12 +10,13 @@ import Foundation
 
 public typealias HTTPHeaders = [HTTPHeader: String]
 
-public struct HTTPHeader {
+public struct HTTPHeader: Hashable {
   public let name: String
-  public var isCustom: Bool { return name.hasPrefix("X-") }
+  public var isCustom: Bool { return name.hasPrefix("x-") }
 
   init(_ name: String) {
-    self.name = name
+    // According to RFC 7230 header names are case insensitive
+    self.name = name.lowercased()
   }
 }
 
@@ -40,22 +41,8 @@ extension Dictionary: CustomKeyIndexable {}
 // MARK: CustomStringConvertible implementation
 
 extension HTTPHeader: CustomStringConvertible {
-  public var description: String { return name }
-}
-
-// MARK: Equatable implementation
-
-extension HTTPHeader: Equatable {
-  public static func == (lhs: HTTPHeader, rhs: HTTPHeader) -> Bool {
-    return lhs.name.lowercased() == rhs.name.lowercased()
-  }
-}
-
-// MARK: Hashable implementation
-
-extension HTTPHeader: Hashable {
-  public var hashValue: Int {
-    return name.lowercased().hashValue
+  public var description: String {
+    return name
   }
 }
 
