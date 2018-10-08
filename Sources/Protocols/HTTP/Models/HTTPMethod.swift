@@ -7,19 +7,21 @@
 //
 
 public struct HTTPMethod: Hashable {
-  public var name: String
+  public let name: String
 }
 
 public extension HTTPMethod {
-  static var GET = HTTPMethod(name: "GET")
-  static var HEAD = HTTPMethod(name: "HEAD")
-  static var DELETE = HTTPMethod(name: "DELETE")
-  static var POST = HTTPMethod(name: "POST")
-  static var PUT = HTTPMethod(name: "PUT")
-  static var OPTIONS = HTTPMethod(name: "OPTIONS")
-  static var CONNECT = HTTPMethod(name: "CONNECT")
-  static var TRACE = HTTPMethod(name: "TRACE")
+  static let GET = HTTPMethod(name: "GET")
+  static let HEAD = HTTPMethod(name: "HEAD")
+  static let DELETE = HTTPMethod(name: "DELETE")
+  static let POST = HTTPMethod(name: "POST")
+  static let PUT = HTTPMethod(name: "PUT")
+  static let OPTIONS = HTTPMethod(name: "OPTIONS")
+  static let CONNECT = HTTPMethod(name: "CONNECT")
+  static let TRACE = HTTPMethod(name: "TRACE")
 }
+
+// MARK: CustomStringConvertible implementation
 
 extension HTTPMethod: CustomStringConvertible {
   public var description: String {
