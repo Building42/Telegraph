@@ -540,8 +540,8 @@
 				825A71F71ECD2E890043AC8D /* WebSocketConfig.swift */,
 				825A71F81ECD2E890043AC8D /* WebSocketConnection.swift */,
 				825A71F91ECD2E890043AC8D /* WebSocketError.swift */,
-				825A71FA1ECD2E890043AC8D /* WebSocketMessage+Write.swift */,
 				825A71FB1ECD2E890043AC8D /* WebSocketMessage.swift */,
+				825A71FA1ECD2E890043AC8D /* WebSocketMessage+Write.swift */,
 				825A71FC1ECD2E890043AC8D /* WebSocketParser.swift */,
 			);
 			path = Models;

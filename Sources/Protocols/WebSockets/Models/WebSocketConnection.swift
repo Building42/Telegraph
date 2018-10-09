@@ -55,18 +55,22 @@ open class WebSocketConnection: TCPConnection, WebSocket {
 
   /// Closes the connection.
   public func close(immediately: Bool) {
-    parser.delegate = nil
+    // Send a friendly close message if possible
+    if !immediately {
+      send(message: WebSocketMessage(opcode: .connectionClose))
+    }
 
+    // Continue closing the connection
+    closeWithoutMessage(immediately: immediately)
+  }
+
+  /// Closes the connection.
+  public func closeWithoutMessage(immediately: Bool) {
     // Stop the ping timer
     pingTimer?.stop()
 
-    // We should send a close message if we can
-    if immediately {
-      socket.close(when: .immediately)
-    } else {
-      send(message: WebSocketMessage(opcode: .connectionClose))
-      socket.close(when: .afterWriting)
-    }
+    // Close the socket
+    socket.close(when: immediately ? .immediately : .afterWriting)
   }
 
   /// Sends a websocket message
@@ -81,7 +85,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
 
       // Close the connection if the opcode instructs so
       if message.opcode == .connectionClose {
-        socket.close(when: .afterWriting)
+        closeWithoutMessage(immediately: false)
       }
 
       delegate?.connection(self, didSendMessage: message)
