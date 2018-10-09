@@ -12,9 +12,9 @@ import Foundation
 
 public protocol HTTPConnectionDelegate: class {
   func connection(_ httpConnection: HTTPConnection, didCloseWithError error: Error?)
-  func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?) -> HTTPResponse?
+  func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?)
   func connection(_ httpConnection: HTTPConnection, handleIncomingResponse response: HTTPResponse, error: Error?)
-  func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest) -> Bool
+  func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest)
 }
 
 // MARK: HTTPConnection
@@ -53,9 +53,41 @@ public class HTTPConnection: TCPConnection {
   }
 
   /// Sends the response by writing it to the stream.
-  public func send(response: HTTPResponse) {
+  public func send(response: HTTPResponse, toRequest request: HTTPRequest) {
+    // No response? Close the connection
+    if response.status == .noResponse {
+      close(immediately: true)
+      return
+    }
+
+    // Do not write the body for HEAD requests
+    if request.method == .HEAD {
+      response.stripBody = true
+    }
+
+    // Do not keep-alive if the request doesn't want keep-alive
+    if request.keepAlive == false {
+      response.keepAlive = false
+    }
+
+    // Prepare and send the response
     response.prepareForWrite()
     response.write(to: socket, headerTimeout: config.writeHeaderTimeout, bodyTimeout: config.writeBodyTimeout)
+
+    // Does the response request a connection upgrade?
+    if response.isConnectionUpgrade {
+      upgrading = true
+
+      // Ask our delegate to handle the connection upgrade or
+      let protocolName = response.headers.upgrade!.lowercased()
+      delegate?.connection(self, handleUpgradeTo: protocolName, initiatedBy: request)
+      return
+    }
+
+    // Close the connection after writing if not keep-alive
+    if !response.keepAlive {
+      close(immediately: false)
+    }
   }
 
   /// Handles incoming data.
@@ -71,12 +103,12 @@ public class HTTPConnection: TCPConnection {
   /// Handles an incoming HTTP message.
   private func received(message: HTTPMessage?, error: Error?) {
     switch message {
-    case is HTTPRequest:
-      received(request: message as! HTTPRequest, error: error)
-    case is HTTPResponse:
-      received(response: message as! HTTPResponse, error: error)
+    case let message as HTTPRequest:
+      received(request: message, error: error)
+    case let message as HTTPResponse:
+      received(response: message, error: error)
     default:
-      socket.close()
+      close(immediately: true)
     }
   }
 
@@ -84,44 +116,13 @@ public class HTTPConnection: TCPConnection {
   private func received(request: HTTPRequest, error: Error?) {
     var messageError = error
 
-    // This server only supports HTTP/1.0 and HTTP/1.1
+    // This connection only supports HTTP/1.0 and HTTP/1.1
     if request.version.major != 1 && request.version.minor > 1 {
       messageError = messageError ?? HTTPError.invalidVersion
     }
 
-    // Ask the delegate to handle the incoming request
-    guard let response = delegate?.connection(self, handleIncomingRequest: request, error: error) else {
-      socket.close()
-      return
-    }
-
-    // Match the http version
-    response.version = request.version
-
-    // Do not write the body for HEAD requests
-    if request.method == .HEAD {
-      response.stripBody = true
-    }
-
-    // Send the response
-    send(response: response)
-
-    // Should we upgrade the connection?
-    if response.isConnectionUpgrade {
-      let protocolName = response.headers.upgrade!.lowercased()
-      if delegate?.connection(self, handleUpgradeTo: protocolName, initiatedBy: request) == true {
-        upgrading = true
-        return
-      }
-
-      // Invalid upgrade, close the connection
-      response.closeAfterWrite = true
-    }
-
-    // Close the connection?
-    if !request.keepAlive || response.closeAfterWrite {
-      socket.close(when: .afterWriting)
-    }
+    // Let our delegate handle the request
+    delegate?.connection(self, handleIncomingRequest: request, error: error)
   }
 
   /// Handles an incoming response.
@@ -150,12 +151,4 @@ extension HTTPConnection: HTTPParserDelegate {
   public func parser(_ parser: HTTPParser, didCompleteMessage message: HTTPMessage) {
     received(message: message, error: nil)
   }
-}
-
-// MARK: HTTPConnectionDelegate default implementation
-
-extension HTTPConnectionDelegate {
-  public func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?) -> HTTPResponse? { return nil }
-  public func connection(_ httpConnection: HTTPConnection, handleIncomingResponse response: HTTPResponse, error: Error?) {}
-  public func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest) -> Bool { return false }
 }

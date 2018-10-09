@@ -12,7 +12,6 @@ open class HTTPResponse: HTTPMessage {
   public typealias Handler = (HTTPResponse, Error) -> Void
 
   public var status: HTTPStatus
-  public var closeAfterWrite = false
 
   /// Initializes a new HTTPResponse
   public init(_ status: HTTPStatus = .ok, version: HTTPVersion = .default,
@@ -75,5 +74,11 @@ extension HTTPResponse {
   @available(*, deprecated, message: "data: has been renamed to body:")
   public convenience init(_ status: HTTPStatus = .ok, data: Data) {
     self.init(status, body: data)
+  }
+
+  @available(*, deprecated, message: "use keepAlive instead")
+  public var closeAfterWrite: Bool {
+    get { return !keepAlive }
+    set { keepAlive = !newValue }
   }
 }

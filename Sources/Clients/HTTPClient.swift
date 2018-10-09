@@ -113,4 +113,14 @@ extension HTTPClient: HTTPConnectionDelegate {
   public func connection(_ httpConnection: HTTPConnection, handleIncomingResponse response: HTTPResponse, error: Error?) {
     finishCurrentTask(response: response, error: error)
   }
+
+  public func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?) {
+    // The client-side doesn't handle requests
+    httpConnection.close(immediately: true)
+  }
+
+  public func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest) {
+    // The client-side doesn't handle upgrades
+    httpConnection.close(immediately: true)
+  }
 }

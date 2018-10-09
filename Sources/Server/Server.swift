@@ -9,7 +9,7 @@
 import Foundation
 
 open class Server {
-  public var delegateQueue: DispatchQueue = DispatchQueue(label: "Telegraph.Server.delegate")
+  public var delegateQueue = DispatchQueue(label: "Telegraph.Server.delegate")
 
   public var httpConfig = HTTPConfig.serverDefault
   public var webSocketConfig = WebSocketConfig.serverDefault
@@ -112,21 +112,38 @@ extension Server: TCPListenerDelegate {
 
 extension Server: HTTPConnectionDelegate {
   /// Raised when a HTTP connection receives an incoming request.
-  public func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?) -> HTTPResponse? {
+  public func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?) {
+    var chainResponse: HTTPResponse?
+
     do {
       // Let the HTTP chain handle the request
       if let error = error { throw error }
-      return try httpConfig.requestChain(request)
+      chainResponse = try httpConfig.requestChain(request)
     } catch {
       // Or pass it to the error handler if something is wrong
-      return httpConfig.errorHandler.respond(to: error)
+      chainResponse = httpConfig.errorHandler.respond(to: error)
+    }
+
+    // Send the response or close the connection
+    if let response = chainResponse {
+      httpConnection.send(response: response, toRequest: request)
+    } else {
+      httpConnection.close(immediately: true)
     }
   }
 
+  /// Raised when a HTTP connection receives an incoming response.
+  public func connection(_ httpConnection: HTTPConnection, handleIncomingResponse response: HTTPResponse, error: Error?) {
+    httpConnection.close(immediately: true)
+  }
+
   /// Raised when a HTTP connection requests an connection upgrade.
-  public func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest) -> Bool {
+  public func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest) {
     // We can only handle the WebSocket protocol
-    guard protocolName == HTTPMessage.webSocketProtocol else { return false }
+    guard protocolName == HTTPMessage.webSocketProtocol else {
+      httpConnection.close(immediately: true)
+      return
+    }
 
     // Remove the http connection
     httpConnections.remove(httpConnection)
@@ -144,8 +161,6 @@ extension Server: HTTPConnectionDelegate {
       guard let strongSelf = self, let webSocketConnection = webSocketConnection else { return }
       strongSelf.webSocketDelegate?.server(strongSelf, webSocketDidConnect: webSocketConnection, handshake: request)
     }
-
-    return true
   }
 
   /// Raised when a HTTP connection closed, optionally with an error.
