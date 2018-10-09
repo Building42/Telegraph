@@ -102,8 +102,8 @@ extension Server: TCPListenerDelegate {
   /// Raised when the server's listener disconnected.
   public func listenerDisconnected(_ listener: TCPListener) {
     delegateQueue.async { [weak self] in
-      guard let strongSelf = self else { return }
-      strongSelf.webSocketDelegate?.serverDidDisconnect(strongSelf)
+      guard let self = self else { return }
+      self.webSocketDelegate?.serverDidDisconnect(self)
     }
   }
 }
@@ -158,8 +158,8 @@ extension Server: HTTPConnectionDelegate {
 
     // Call the delegate
     delegateQueue.async { [weak self, weak webSocketConnection] in
-      guard let strongSelf = self, let webSocketConnection = webSocketConnection else { return }
-      strongSelf.webSocketDelegate?.server(strongSelf, webSocketDidConnect: webSocketConnection, handshake: request)
+      guard let self = self, let webSocketConnection = webSocketConnection else { return }
+      self.webSocketDelegate?.server(self, webSocketDidConnect: webSocketConnection, handshake: request)
     }
   }
 
@@ -175,16 +175,16 @@ extension Server: WebSocketConnectionDelegate {
   public func connection(_ webSocketConnection: WebSocketConnection, didReceiveMessage message: WebSocketMessage) {
     // Call the delegate
     delegateQueue.async { [weak self, weak webSocketConnection] in
-      guard let strongSelf = self, let webSocketConnection = webSocketConnection else { return }
-      strongSelf.webSocketDelegate?.server(strongSelf, webSocket: webSocketConnection, didReceiveMessage: message)
+      guard let self = self, let webSocketConnection = webSocketConnection else { return }
+      self.webSocketDelegate?.server(self, webSocket: webSocketConnection, didReceiveMessage: message)
     }
   }
 
   public func connection(_ webSocketConnection: WebSocketConnection, didSendMessage message: WebSocketMessage) {
     // Call the delegate
     delegateQueue.async { [weak self, weak webSocketConnection] in
-      guard let strongSelf = self, let webSocketConnection = webSocketConnection else { return }
-      strongSelf.webSocketDelegate?.server(strongSelf, webSocket: webSocketConnection, didSendMessage: message)
+      guard let self = self, let webSocketConnection = webSocketConnection else { return }
+      self.webSocketDelegate?.server(self, webSocket: webSocketConnection, didSendMessage: message)
     }
   }
 
@@ -194,8 +194,8 @@ extension Server: WebSocketConnectionDelegate {
 
     // Call the delegate
     delegateQueue.async { [weak self, weak webSocketConnection] in
-      guard let strongSelf = self, let webSocketConnection = webSocketConnection else { return }
-      strongSelf.webSocketDelegate?.server(strongSelf, webSocketDidDisconnect: webSocketConnection, error: error)
+      guard let self = self, let webSocketConnection = webSocketConnection else { return }
+      self.webSocketDelegate?.server(self, webSocketDidDisconnect: webSocketConnection, error: error)
     }
   }
 }
