@@ -9,283 +9,353 @@
 import Foundation
 import HTTPParserC
 
+// MARK: Constants / Types
+
+private let continueParsing: Int32 = 0
+private let stopParsing: Int32 = -1
+
+private typealias RawParser = http_parser
+private typealias RawParserErrorCode = http_errno
+private typealias RawParserSettings = http_parser_settings
+private typealias RawParserPointer = UnsafeMutablePointer<RawParser>
+private typealias RawChunkPointer = UnsafePointer<Int8>
+
+// MARK: HTTPParserDelegate
+
 public protocol HTTPParserDelegate: class {
   func parser(_ parser: HTTPParser, didParseHeadersOfMessage message: HTTPMessage)
   func parser(_ parser: HTTPParser, didCompleteMessage message: HTTPMessage)
 }
 
-public class HTTPParser {
+// MARK: HTTPParser
+
+public final class HTTPParser {
   public weak var delegate: HTTPParserDelegate?
+
   public private(set) var message: HTTPMessage?
+  private var request: HTTPRequest? { return message as? HTTPRequest }
+  private var response: HTTPResponse? { return message as? HTTPResponse }
 
-  private var cParser: http_parser
-  private var cParserSettings: http_parser_settings
+  private var rawParser: RawParser
+  private var rawParserSettings: RawParserSettings
 
-  private var uriFragment = ""
-  private var statusFragment = ""
-  private var headerKeyFragment = ""
-  private var headerValueFragment = ""
-  private var headerLastAction = 0
+  private var urlData = Data()
+  private var statusData = Data()
+  private var headerKeyData = Data()
+  private var headerValueData = Data()
+  private var headerChunkWasValue = false
 
+  /// Creates an HTTP parser.
   public init() {
-    // Create a new instance of the C HTTP parser
-    cParser = http_parser()
-    http_parser_init(&cParser, HTTP_BOTH)
+    // Prepares the raw parser and settings
+    rawParser = RawParser.create()
+    rawParserSettings = RawParser.createSettings()
 
-    // Provide the C HTTP parser with callbacks for the message parts
-    cParserSettings = http_parser_settings()
-    http_parser_settings_init(&cParserSettings)
-
-    cParserSettings.on_message_begin = onMessageBegin
-    cParserSettings.on_url = onParsedURL
-    cParserSettings.on_status = onParsedStatus
-    cParserSettings.on_header_field = onParsedHeaderField
-    cParserSettings.on_header_value = onParsedHeaderValue
-    cParserSettings.on_headers_complete = onHeadersComplete
-    cParserSettings.on_body = onParsedBody
-    cParserSettings.on_message_complete = onMessageComplete
-
-    // Give the parser a reference to this instance for the callbacks
-    // We can't reference self unless we defer this call after initialization has finished
-    cParser.data = Unmanaged.passUnretained(self).toOpaque()
-  }
-
-  @discardableResult public func parse(data: Data) throws -> Int {
-    // Parse the incoming data, return how many bytes were parsed
-    let bytesParsed = data.withUnsafeBytes {
-      http_parser_execute(&cParser, &cParserSettings, $0, data.count)
+    /// Provide the callback for when the parser is starting a new message.
+    rawParserSettings.on_message_begin = { rawParserPointer in
+      guard let rawParser = rawParserPointer?.pointee else { return stopParsing }
+      return rawParser.parser.messageBegin(rawParser: rawParser)
     }
 
-    // Was there a parser error?
-    let error = cParser.http_errno
-    if error != 0 {
-      throw HTTPError(code: http_errno(error))
+    // Provide the callback for when the parser is parsing chunks of the URL.
+    rawParserSettings.on_url = { rawParserPointer, chunk, count in
+      guard let rawParser = rawParserPointer?.pointee else { return stopParsing }
+      return rawParser.parser.parsedURL(rawParser: rawParser, chunk: chunk, count: count)
+    }
+
+    // Provide the callback for when the parser is parsing chunks of the HTTP status.
+    rawParserSettings.on_status = { rawParserPointer, chunk, count in
+      guard let rawParser = rawParserPointer?.pointee else { return stopParsing }
+      return rawParser.parser.parsedStatus(rawParser: rawParser, chunk: chunk, count: count)
+    }
+
+    // Provide the callback for when the parser is parsing chunks of the header key.
+    rawParserSettings.on_header_field = { rawParserPointer, chunk, count in
+      guard let rawParser = rawParserPointer?.pointee else { return stopParsing }
+      return rawParser.parser.parsedHeaderKey(chunk: chunk, count: count)
+    }
+
+    // Provide the callback for when the parser is parsing chunks of the header key.
+    rawParserSettings.on_header_value = { rawParserPointer, chunk, count in
+      guard let rawParser = rawParserPointer?.pointee else { return stopParsing }
+      return rawParser.parser.parsedHeaderValue(chunk: chunk, count: count)
+    }
+
+    // Provide the callback for when the parser is done parsing the headers.
+    rawParserSettings.on_headers_complete = { rawParserPointer in
+      guard let rawParser = rawParserPointer?.pointee else { return stopParsing }
+      return rawParser.parser.headersComplete(rawParser: rawParser)
+    }
+
+    // Provide the callback for when the parser is parsing chunks of the body.
+    rawParserSettings.on_body = { rawParserPointer, chunk, count in
+      guard let rawParser = rawParserPointer?.pointee else { return stopParsing }
+      return rawParser.parser.parsedBody(chunk: chunk, count: count)
+    }
+
+    /// Provide the callback for when the parser is done parsing a whole message.
+    rawParserSettings.on_message_complete = { rawParserPointer in
+      guard let rawParser = rawParserPointer?.pointee else { return stopParsing }
+      return rawParser.parser.messageComplete(rawParser: rawParser)
+    }
+
+    // Assign ourself as target for the callbacks
+    rawParser.parser = self
+  }
+
+  /// Parses the incoming data and returns how many bytes were parsed.
+  @discardableResult public func parse(data: Data) throws -> Int {
+    // Check if the parser is ready, it might need a reset because of previous errors
+    if !rawParser.isReady {
+      rawParser.reset()
+    }
+
+    // Parse the provided data
+    let bytesParsed = data.withUnsafeBytes {
+      http_parser_execute(&rawParser, &rawParserSettings, $0, data.count)
+    }
+
+    // Was there an error?
+    if let error = rawParser.httpError {
+      cleanup()
+      throw error
     }
 
     return bytesParsed
   }
 
-  private func unsafePointer() -> UnsafeMutableRawPointer {
-    return Unmanaged.passUnretained(self).toOpaque()
+  /// Clears the helper variables.
+  private func cleanup() {
+    urlData.count = 0
+    statusData.count = 0
+
+    headerKeyData.count = 0
+    headerValueData.count = 0
+    headerChunkWasValue = false
+
+    message = nil
   }
 }
 
 // MARK: HTTPParser callbacks
 
-extension HTTPParser {
-  private var request: HTTPRequest? { return message as? HTTPRequest }
-  private var response: HTTPResponse? { return message as? HTTPResponse }
-
-  private func reset() {
-    message = nil
-    uriFragment = ""
-    statusFragment = ""
-    headerKeyFragment = ""
-    headerValueFragment = ""
-    headerLastAction = 0
-  }
-
-  fileprivate func messageBegin() -> Int32 {
+private extension HTTPParser {
+  /// Raised when the parser starts a new message.
+  func messageBegin(rawParser: RawParser) -> Int32 {
+    message = rawParser.isParsingRequest ? HTTPRequest() : HTTPResponse()
     return continueParsing
   }
 
-  fileprivate func parsedURI(cParser: http_parser, fragment: String) -> Int32 {
-    // Start a new request if this is the first fragment
-    if request == nil { message = HTTPRequest() }
+  /// Raised when the parser parsed part of the URL.
+  func parsedURL(rawParser: RawParser, chunk: RawChunkPointer?, count: Int) -> Int32 {
+    urlData.append(chunk, count: count)
 
-    // Store the uri fragment
-    uriFragment += fragment
+    // Not done parsing the URI? Continue
+    guard rawParser.isURLComplete else { return continueParsing }
 
-    // Done parsing the uri? And is it valid?
-    guard cParser.isURIComplete else { return continueParsing }
-    guard let components = URLComponents(string: uriFragment) else { return stopParsing }
+    // Check that the URI is valid
+    guard let uriString = String(data: urlData, encoding: .utf8),
+      let uriComponents = URLComponents(string: uriString) else { return stopParsing }
 
-    // Set the uri and the host header
-    request?.uri = URI(components: components)
-    request?.setHostHeader(host: components.host, port: components.port)
+    // Set the URI, method and the host header
+    request?.uri = URI(components: uriComponents)
+    request?.method = rawParser.httpMethod
+    request?.setHostHeader(host: uriComponents.host, port: uriComponents.port)
 
     return continueParsing
   }
 
-  fileprivate func parsedStatus(cParser: http_parser, fragment: String) -> Int32 {
-    // Start a new response if this is the first fragment
-    if response == nil { message = HTTPResponse() }
+  /// Raised when the parser parsed part of the status.
+  func parsedStatus(rawParser: RawParser, chunk: RawChunkPointer?, count: Int) -> Int32 {
+    statusData.append(chunk, count: count)
 
-    // Store the status fragment
-    statusFragment += fragment
+    // Not done parsing the status? Continue
+    guard rawParser.isStatusComplete else { return continueParsing }
 
-    // Done parsing the status?
-    if cParser.isStatusComplete {
-      response?.status = HTTPStatus(code: cParser.httpStatusCode, phrase: statusFragment)
+    // Check that the status is valid
+    guard let phrase = String(data: statusData, encoding: .utf8) else { return stopParsing }
+
+    // Set the status
+    response?.status = HTTPStatus(code: rawParser.httpStatusCode, phrase: phrase)
+
+    return continueParsing
+  }
+
+  /// Raised when the parser parsed part of a header key.
+  func parsedHeaderKey(chunk: RawChunkPointer?, count: Int) -> Int32 {
+    // For each header we first get key chunks and then value chunks,
+    // when we get to a key chunk after a value chunk it means a single header is done
+    if headerChunkWasValue {
+      guard headerComplete() else { return stopParsing }
     }
 
+    headerKeyData.append(chunk, count: count)
     return continueParsing
   }
 
-  fileprivate func parsedHeaderKey(fragment: String) -> Int32 {
-    // Ready for the next header?
-    if headerLastAction != 1 {
-      headerLastAction = 1
-      headerKeyFragment = ""
-      headerValueFragment = ""
+  /// Raised when the parser parsed part of a header value.
+  func parsedHeaderValue(chunk: RawChunkPointer?, count: Int) -> Int32 {
+    headerChunkWasValue = true
+
+    headerValueData.append(chunk, count: count)
+    return continueParsing
+  }
+
+  /// Raised when a single header key and value is complete.
+  func headerComplete() -> Bool {
+    // Reset after we processed them
+    defer {
+      headerKeyData.count = 0
+      headerValueData.count = 0
+      headerChunkWasValue = false
     }
 
-    // Combine the header key fragments, we'll store it when we encounter a value
-    headerKeyFragment += fragment
+    // Make sure that the header data consists of valid String content
+    guard let headerKey = String(bytes: headerKeyData, encoding: .utf8) else { return false }
+    guard let headerValue = String(bytes: headerValueData, encoding: .utf8) else { return false }
 
-    return continueParsing
-  }
-
-  fileprivate func parsedHeaderValue(fragment: String) -> Int32 {
-    // Is this the start of a new header value?
-    if headerLastAction != 2 {
-      headerLastAction = 2
-
-      // Did we see this header before? Comma separate the header values
-      if let existingValue = message?.headers[headerKeyFragment] {
-        headerValueFragment = existingValue + ","
-      }
+    // If the header already exists add it comma separated
+    if let existingValue = message?.headers[headerKey] {
+      message?.headers[headerKey] = "\(existingValue),\(headerValue)"
+    } else {
+      message?.headers[headerKey] = headerValue
     }
 
-    // Store the header value fragment
-    headerValueFragment += fragment
-    message?.headers[headerKeyFragment] = headerValueFragment
-
-    return continueParsing
+    return true
   }
 
-  fileprivate func headersComplete() -> Int32 {
-    // We're done with the headers
-    delegate?.parser(self, didParseHeadersOfMessage: message!)
+  /// Raised when the parser parsed the headers.
+  func headersComplete(rawParser: RawParser) -> Int32 {
+    guard let message = message else { return stopParsing }
 
-    return continueParsing
-  }
+    // Set the HTTP version
+    message.version = rawParser.httpVersion
 
-  fileprivate func parsedBody(fragment: Data) -> Int32 {
-    // Store the body fragment
-    message?.body.append(fragment)
-
-    return continueParsing
-  }
-
-  fileprivate func messageComplete(cParser: http_parser) -> Int32 {
-    // Set the http version and method
-    message?.version = cParser.httpVersion
-    request?.method = HTTPMethod(name: cParser.httpMethodName)
-
-    // Does the parser instruct us to not keep alive?
-    if !cParser.httpKeepAlive {
-      message?.keepAlive = false
+    // Reserve capacity for the body
+    if let contentLength = message.headers.contentLength {
+      message.body.reserveCapacity(contentLength)
     }
 
-    // We're done with the message
-    delegate?.parser(self, didCompleteMessage: message!)
+    // Complete the last header
+    if headerChunkWasValue {
+      guard headerComplete() else { return stopParsing }
+    }
 
-    // Reset for the next message
-    reset()
+    // Call the delegate
+    delegate?.parser(self, didParseHeadersOfMessage: message)
+
+    return continueParsing
+  }
+
+  /// Raised when the parser parsed part of the body.
+  func parsedBody(chunk: RawChunkPointer?, count: Int) -> Int32 {
+    message?.body.append(chunk, count: count)
+    return continueParsing
+  }
+
+  /// Raised when the parser parsed the whole message.
+  func messageComplete(rawParser: RawParser) -> Int32 {
+    guard let message = message else { return stopParsing }
+
+    // Inform our delegate and cleanup
+    delegate?.parser(self, didCompleteMessage: message)
+    cleanup()
 
     return continueParsing
   }
 }
 
-// MARK: CParser helpers
-
-private typealias CParserPointer = UnsafeMutablePointer<http_parser>
-private typealias BytesPointer = UnsafePointer<Int8>
-
-private let continueParsing: Int32 = 0
-private let stopParsing: Int32 = -1
+// MARK: Data extensions
 
 private extension Data {
-  init(bytes: BytesPointer?, count: Int) {
-    if let bytes = bytes {
-      let unsafeBytes = UnsafeMutablePointer(mutating: bytes)
-      self.init(bytesNoCopy: unsafeBytes, count: count, deallocator: .none)
-    } else {
-      self.init()
-    }
+  /// Appends the bytes to the data object.
+  mutating func append(_ chunk: RawChunkPointer?, count: Int) {
+    guard let chunk = chunk else { return }
+    self.append(UnsafeRawPointer(chunk).assumingMemoryBound(to: UInt8.self), count: count)
   }
 }
 
-private extension String {
-  init(bytes: BytesPointer?, count: Int) {
-    let data = Data(bytes: bytes, count: count)
-    self.init(data: data, encoding: .utf8)!
-  }
-}
+// MARK: RawParser extensions
 
-private extension http_parser {
-  var httpKeepAlive: Bool {
-    var mySelf = self
-    return http_should_keep_alive(&mySelf) != 0
+private extension RawParser {
+  /// Returns the content length header.
+  var contentLength: Int {
+    return content_length > Int.max ? 0 : Int(content_length)
   }
 
-  var httpMethodName: String {
+  /// Returns a boolean indicating if the parser is ready to parse.
+  var isReady: Bool {
+    return http_errno == HPE_OK.rawValue
+  }
+
+  /// Returns the error that occurred during parsing.
+  var httpError: HTTPError? {
+    if http_errno == HPE_OK.rawValue { return nil }
+    return HTTPError(code: RawParserErrorCode(http_errno))
+  }
+
+  /// Returns the HTTP method.
+  var httpMethod: HTTPMethod {
     let methodCode = http_method(method)
-    return String(cString: http_method_str(methodCode))
+    let methodName = String(cString: http_method_str(methodCode))
+    return HTTPMethod(name: methodName)
   }
 
+  /// Returns the HTTP status.
   var httpStatusCode: Int {
     return Int(status_code)
   }
 
+  /// Returns the HTTP version.
   var httpVersion: HTTPVersion {
     return HTTPVersion(major: UInt(http_major), minor: UInt(http_minor))
   }
 
+  /// Returns a boolean indicating if the parser is parsing a HTTP request.
+  var isParsingRequest: Bool {
+    return type == HTTP_REQUEST.rawValue
+  }
+
+  /// Returns a boolean indicating if the parser is parsing a HTTP request.
+  var isParsingResponse: Bool {
+    return type == HTTP_RESPONSE.rawValue
+  }
+
+  /// Returns a boolean indicating if the status has been fully parsed.
   var isStatusComplete: Bool {
     return state >= 16
   }
 
-  var isURIComplete: Bool {
+  /// Returns a boolean indicating if the URL has been fully parsed.
+  var isURLComplete: Bool {
     return state >= 31
   }
 
-  var parser: HTTPParser? {
-    return Unmanaged<HTTPParser>.fromOpaque(data).takeUnretainedValue()
+  /// Returns the parser that is linked to the raw parser.
+  var parser: HTTPParser {
+    get { return Unmanaged<HTTPParser>.fromOpaque(data).takeUnretainedValue() }
+    set { data = Unmanaged.passUnretained(newValue).toOpaque() }
   }
-}
 
-// MARK: CParser callbacks
+  /// Creates a new RawParser instance.
+  static func create() -> RawParser {
+    var parser = RawParser()
+    http_parser_init(&parser, HTTP_BOTH)
+    return parser
+  }
 
-private func onMessageBegin(cParserPointer: CParserPointer?) -> Int32 {
-  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
-  return parser.messageBegin()
-}
+  /// Creates a new RawParserSettings instance.
+  static func createSettings() -> RawParserSettings {
+    var settings = RawParserSettings()
+    http_parser_settings_init(&settings)
+    return settings
+  }
 
-private func onHeadersComplete(cParserPointer: CParserPointer?) -> Int32 {
-    guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
-  return parser.headersComplete()
-}
-
-private func onMessageComplete(cParserPointer: CParserPointer?) -> Int32 {
-  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
-  return parser.messageComplete(cParser: cParser)
-}
-
-private func onParsedURL(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
-  return parser.parsedURI(cParser: cParser, fragment: String(bytes: bytes, count: length))
-}
-
-private func onParsedStatus(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
-  return parser.parsedStatus(cParser: cParser, fragment: String(bytes: bytes, count: length))
-}
-
-private func onParsedHeaderField(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
-  return parser.parsedHeaderKey(fragment: String(bytes: bytes, count: length))
-}
-
-private func onParsedHeaderValue(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
-  return parser.parsedHeaderValue(fragment: String(bytes: bytes, count: length))
-}
-
-private func onParsedBody(cParserPointer: CParserPointer?, bytes: BytesPointer?, length: Int) -> Int32 {
-  guard let cParser = cParserPointer?.pointee, let parser = cParser.parser else { return stopParsing }
-  return parser.parsedBody(fragment: Data(bytes: bytes, count: length))
+  /// Resets the parser.
+  func reset() {
+    var me = self
+    http_parser_init(&me, HTTP_BOTH)
+  }
 }
 
 // MARK: HTTPParserDelegate defaults
@@ -294,10 +364,10 @@ public extension HTTPParserDelegate {
   func parser(_ parser: HTTPParser, didParseHeadersOfMessage message: HTTPMessage) {}
 }
 
-// MARK: HTTPError mapping
+// MARK: RawParserErrorCode to HTTPError mapping
 
 private extension HTTPError {
-  init(code: http_errno) {
+  init(code: RawParserErrorCode) {
     switch code {
     case HPE_INVALID_EOF_STATE:
       self = .unexpectedStreamEnd
