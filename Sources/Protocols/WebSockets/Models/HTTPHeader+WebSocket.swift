@@ -9,10 +9,10 @@
 import Foundation
 
 extension HTTPHeaderName {
-  static let webSocketAccept = HTTPHeaderName("sec-websocket-accept")
-  static let webSocketKey = HTTPHeaderName("sec-websocket-key")
-  static let webSocketProtocol = HTTPHeaderName("sec-websocket-protocol")
-  static let webSocketVersion = HTTPHeaderName("sec-websocket-version")
+  static let webSocketAccept = HTTPHeaderName("Sec-WebSocket-Accept")
+  static let webSocketKey = HTTPHeaderName("Sec-WebSocket-Key")
+  static let webSocketProtocol = HTTPHeaderName("Sec-WebSocket-Protocol")
+  static let webSocketVersion = HTTPHeaderName("Sec-WebSocket-Version")
 }
 
 extension Dictionary where Key == HTTPHeaderName, Value == String {

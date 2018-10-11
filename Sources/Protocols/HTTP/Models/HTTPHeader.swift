@@ -11,24 +11,25 @@ import Foundation
 public typealias HTTPHeaders = [HTTPHeaderName: String]
 
 public struct HTTPHeaderName: Hashable {
+  /// Keeps the header keys as is or convert them all to lowercased.
+  public static var forceLowerCased = false
+
+  public let hashValue: Int
   private let name: String
 
+  /// Creates a HTTPHeader name. Names are handled case insensitive according to RFC7230.
   init(_ name: String) {
-    // According to RFC 7230 header names are case insensitive
-    self.name = name.lowercased()
+    let lowerName = name.lowercased()
+    self.name = HTTPHeaderName.forceLowerCased ? lowerName : name
+    self.hashValue = lowerName.hashValue
   }
 }
 
-// MARK: Convenience methods
+// MARK: Equatable implementation
 
-public extension Dictionary where Key == HTTPHeaderName, Value == String {
-  static var empty: HTTPHeaders {
-    return self.init(minimumCapacity: 3)
-  }
-
-  subscript(key: String) -> String? {
-    get { return self[HTTPHeaderName(key)] }
-    set { self[HTTPHeaderName(key)] = newValue }
+extension HTTPHeaderName {
+  public static func == (lhs: HTTPHeaderName, rhs: HTTPHeaderName) -> Bool {
+    return lhs.name.caseInsensitiveCompare(rhs.name) == .orderedSame
   }
 }
 
@@ -48,27 +49,40 @@ extension HTTPHeaderName: ExpressibleByStringLiteral {
   }
 }
 
+// MARK: Convenience methods
+
+public extension Dictionary where Key == HTTPHeaderName, Value == String {
+  static var empty: HTTPHeaders {
+    return self.init(minimumCapacity: 3)
+  }
+
+  subscript(key: String) -> String? {
+    get { return self[HTTPHeaderName(key)] }
+    set { self[HTTPHeaderName(key)] = newValue }
+  }
+}
+
 // MARK: Common headers
 
 extension HTTPHeaderName {
-  static let accept = HTTPHeaderName("accept")
-  static let authorization = HTTPHeaderName("authorization")
-  static let cacheControl = HTTPHeaderName("cache-Control")
-  static let connection = HTTPHeaderName("connection")
-  static let cookie = HTTPHeaderName("cookie")
-  static let contentDisposition = HTTPHeaderName("content-disposition")
-  static let contentEncoding = HTTPHeaderName("content-encoding")
-  static let contentLength = HTTPHeaderName("content-length")
-  static let contentType = HTTPHeaderName("content-type")
-  static let date = HTTPHeaderName("date")
-  static let referer = HTTPHeaderName("referer")
-  static let host = HTTPHeaderName("host")
-  static let lastModified = HTTPHeaderName("last-modified")
-  static let server = HTTPHeaderName("server")
-  static let setCookie = HTTPHeaderName("set-cookie")
-  static let transferEncoding = HTTPHeaderName("transfer-encoding")
-  static let userAgent = HTTPHeaderName("user-agent")
-  static let upgrade = HTTPHeaderName("upgrade")
+  static let accept = HTTPHeaderName("Accept")
+  static let authorization = HTTPHeaderName("Authorization")
+  static let cacheControl = HTTPHeaderName("Cache-Control")
+  static let connection = HTTPHeaderName("Connection")
+  static let cookie = HTTPHeaderName("Cookie")
+  static let contentDisposition = HTTPHeaderName("Content-Disposition")
+  static let contentEncoding = HTTPHeaderName("Content-Encoding")
+  static let contentLength = HTTPHeaderName("Content-Length")
+  static let contentType = HTTPHeaderName("Content-Type")
+  static let date = HTTPHeaderName("Date")
+  static let referer = HTTPHeaderName("Referer")
+  static let host = HTTPHeaderName("Host")
+  static let lastModified = HTTPHeaderName("Last-Modified")
+  static let server = HTTPHeaderName("Server")
+  static let setCookie = HTTPHeaderName("Set-Cookie")
+  static let transferEncoding = HTTPHeaderName("Transfer-Encoding")
+  static let userAgent = HTTPHeaderName("User-Agent")
+  static let upgrade = HTTPHeaderName("Upgrade")
 }
 
 extension Dictionary where Key == HTTPHeaderName, Value == String {
