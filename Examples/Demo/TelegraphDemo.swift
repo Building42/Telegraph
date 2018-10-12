@@ -236,7 +236,8 @@ extension TelegraphDemo {
     // Create the request task, we'll centralize the request errors
     let httpTask = httpClient.dataTask(with: request) { data, response, error in
       if let error = error {
-        print("[CLIENT]", "Request failed - error:", error)
+        let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
+        print("[CLIENT]", "Request failed - status:", statusCode, "- error:", error.localizedDescription)
       } else {
         completionHandler(data, response!)
       }
