@@ -39,3 +39,9 @@ extension WebSocketError: CustomStringConvertible {
     }
   }
 }
+
+extension WebSocketError: LocalizedError {
+  public var errorDescription: String? {
+    return description
+  }
+}

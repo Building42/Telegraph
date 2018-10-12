@@ -45,3 +45,9 @@ extension HTTPError: CustomStringConvertible {
     }
   }
 }
+
+extension HTTPError: LocalizedError {
+  public var errorDescription: String? {
+    return description
+  }
+}

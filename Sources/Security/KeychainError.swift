@@ -40,3 +40,9 @@ extension KeychainError: CustomStringConvertible {
     }
   }
 }
+
+extension KeychainError: LocalizedError {
+  public var errorDescription: String? {
+    return description
+  }
+}
