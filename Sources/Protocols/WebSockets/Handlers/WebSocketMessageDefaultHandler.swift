@@ -14,7 +14,7 @@ public class WebSocketMessageDefaultHandler: WebSocketMessageHandler {
 
     case .connectionClose:
       // The remote wants to close the connection
-      webSocket.close(immediately: true)
+      webSocket.close(immediately: false)
 
     case .ping:
       // The remote sent a ping message, we should respond with a pong with the same payload

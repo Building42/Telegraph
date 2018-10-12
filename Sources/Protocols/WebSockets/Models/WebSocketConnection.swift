@@ -26,6 +26,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   private var parser: WebSocketParser
 
   private var pingTimer: DispatchTimer?
+  private var closing = false
 
   /// Initializes a new websocket connection.
   public required init(socket: TCPSocket, config: WebSocketConfig) {
@@ -55,17 +56,12 @@ open class WebSocketConnection: TCPConnection, WebSocket {
 
   /// Closes the connection.
   public func close(immediately: Bool) {
-    // Send a friendly close message if possible
-    if !immediately {
-      send(message: WebSocketMessage(opcode: .connectionClose))
+    // Normal close routine is to send a close message and wait for a close reply
+    if !immediately && !closing {
+      send(message: WebSocketMessage(closeCode: 1001))
+      return
     }
 
-    // Continue closing the connection
-    closeWithoutMessage(immediately: immediately)
-  }
-
-  /// Closes the connection.
-  public func closeWithoutMessage(immediately: Bool) {
     // Stop the ping timer
     pingTimer?.stop()
 
@@ -76,17 +72,17 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   /// Sends a websocket message
   open func send(message: WebSocketMessage) {
     do {
+      // Is this a close handshake? Mark the connection as closing
+      if message.opcode == .connectionClose {
+        closing = true
+      }
+
       // Pass the message through the handler
       try config.messageHandler.outgoing(message: message, to: self)
 
       // Send the message
       message.maskBit = config.maskMessages
       message.write(to: socket, headerTimeout: config.writeHeaderTimeout, payloadTimeout: config.writePayloadTimeout)
-
-      // Close the connection if the opcode instructs so
-      if message.opcode == .connectionClose {
-        closeWithoutMessage(immediately: false)
-      }
 
       delegate?.connection(self, didSendMessage: message)
     } catch {

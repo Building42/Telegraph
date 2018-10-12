@@ -197,7 +197,10 @@ public class WebSocketParser {
       message.payload = .text(text)
     case .connectionClose:
       // Close payload
-      message.payload = .close(code: 0, reason: "Close payloads are not implemented")
+      let buffer = DataStream(data: payload)
+      let code = UInt16(buffer.read() ?? 0) << 8 | UInt16(buffer.read() ?? 0)
+      let reason = String(data: buffer.readToEnd(), encoding: .utf8) ?? ""
+      message.payload = .close(code: code, reason: reason)
     case .ping, .pong:
       // Ping / pong with optional payload
       message.payload = payload.isEmpty ? .none : .binary(payload)

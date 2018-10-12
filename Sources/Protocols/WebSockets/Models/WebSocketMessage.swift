@@ -88,8 +88,8 @@ extension WebSocketMessage: CustomStringConvertible {
       info += "\(data.count) bytes>"
     case .text(let text):
       info += "'\(text.truncate(count: 50, ellipses: true))'>"
-    case .close(let code):
-      info += "close \(code))>"
+    case .close(let code, _):
+      info += "close \(code)>"
     case .none:
       info += "none>"
     }
