@@ -26,10 +26,8 @@ open class HTTPMessage {
   /// Performs last minute changes to the message, just before writing it to the stream.
   open func prepareForWrite() {
     // Set the keep alive connection header
-    if version.minor == 0 {
-      keepAlive = false
-    } else if headers.connection == nil {
-      keepAlive = true
+    if headers.connection == nil {
+      headers.connection = (version.minor == 0) ? "close" : "keep-alive"
     }
   }
 
@@ -67,13 +65,13 @@ open class HTTPMessage {
 // MARK: Helper methods
 
 extension HTTPMessage {
+  /// Returns a boolean indicating if the connection should be kept open.
   var keepAlive: Bool {
-    get { return headers.connection?.lowercased() != "close" }
-    set { headers.connection = newValue ? "keep-alive" : "close" }
+    return headers.connection?.caseInsensitiveCompare("close") != .orderedSame
   }
 
+  /// Returns a boolean indicating if this message carries an instruction to upgrade.
   var isConnectionUpgrade: Bool {
-    get { return headers.connection?.lowercased() == "upgrade" }
-    set { headers.connection = newValue ? "upgrade" : nil }
+    return headers.connection?.caseInsensitiveCompare("upgrade") == .orderedSame
   }
 }

@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum WebSocketClientError: Error {
-  case invalidURL
-  case invalidScheme
-  case invalidHost
-  case handshakeFailed(response: HTTPResponse)
-}
-
 public protocol WebSocketClientDelegate: class {
   func webSocketClient(_ client: WebSocketClient, didConnectToHost host: String)
   func webSocketClient(_ client: WebSocketClient, didDisconnectWithError error: Error?)

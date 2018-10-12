@@ -119,7 +119,7 @@ extension HTTPClient: HTTPConnectionDelegate {
     httpConnection.close(immediately: true)
   }
 
-  public func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest) {
+  public func connection(_ httpConnection: HTTPConnection, handleUpgradeByRequest request: HTTPRequest) {
     // The client-side doesn't handle upgrades
     httpConnection.close(immediately: true)
   }

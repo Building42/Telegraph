@@ -17,7 +17,7 @@ public class HTTPErrorDefaultHandler: HTTPErrorHandler {
 
     // Protocol errors
     case HTTPError.protocolNotSupported:
-      return HTTPResponse(.notImplemented, error: error)
+      return HTTPResponse(.notImplemented, content: "Protocol is not supported")
 
     // Request errors
     case HTTPError.invalidMethod:

@@ -119,6 +119,11 @@ extension Server: HTTPConnectionDelegate {
       // Let the HTTP chain handle the request
       if let error = error { throw error }
       chainResponse = try httpConfig.requestChain(request)
+
+      // Check that a possible connection upgrade was handled properly
+      if request.isConnectionUpgrade, let response = chainResponse, response.status != .switchingProtocols {
+        throw HTTPError.protocolNotSupported
+      }
     } catch {
       // Or pass it to the error handler if something is wrong
       chainResponse = httpConfig.errorHandler.respond(to: error)
@@ -138,9 +143,9 @@ extension Server: HTTPConnectionDelegate {
   }
 
   /// Raised when a HTTP connection requests an connection upgrade.
-  public func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest) {
+  public func connection(_ httpConnection: HTTPConnection, handleUpgradeByRequest request: HTTPRequest) {
     // We can only handle the WebSocket protocol
-    guard protocolName == HTTPMessage.webSocketProtocol else {
+    guard request.isWebSocketUpgrade else {
       httpConnection.close(immediately: true)
       return
     }

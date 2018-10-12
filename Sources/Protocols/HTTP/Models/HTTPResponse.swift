@@ -76,9 +76,9 @@ extension HTTPResponse {
     self.init(status, body: data)
   }
 
-  @available(*, deprecated, message: "use keepAlive instead")
+  @available(*, deprecated, message: "use keepAlive instead, this setter only handles true properly")
   public var closeAfterWrite: Bool {
     get { return !keepAlive }
-    set { keepAlive = !newValue }
+    set { if newValue { headers.connection = "close" } }
   }
 }

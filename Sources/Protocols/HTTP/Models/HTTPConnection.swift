@@ -14,7 +14,7 @@ public protocol HTTPConnectionDelegate: class {
   func connection(_ httpConnection: HTTPConnection, didCloseWithError error: Error?)
   func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?)
   func connection(_ httpConnection: HTTPConnection, handleIncomingResponse response: HTTPResponse, error: Error?)
-  func connection(_ httpConnection: HTTPConnection, handleUpgradeTo protocolName: String, initiatedBy request: HTTPRequest)
+  func connection(_ httpConnection: HTTPConnection, handleUpgradeByRequest request: HTTPRequest)
 }
 
 // MARK: HTTPConnection
@@ -67,7 +67,7 @@ public class HTTPConnection: TCPConnection {
 
     // Do not keep-alive if the request doesn't want keep-alive
     if request.keepAlive == false {
-      response.keepAlive = false
+      response.headers.connection = "close"
     }
 
     // Prepare and send the response
@@ -77,10 +77,7 @@ public class HTTPConnection: TCPConnection {
     // Does the response request a connection upgrade?
     if response.isConnectionUpgrade {
       upgrading = true
-
-      // Ask our delegate to handle the connection upgrade or
-      let protocolName = response.headers.upgrade!.lowercased()
-      delegate?.connection(self, handleUpgradeTo: protocolName, initiatedBy: request)
+      delegate?.connection(self, handleUpgradeByRequest: request)
       return
     }
 
@@ -127,7 +124,7 @@ public class HTTPConnection: TCPConnection {
 
   /// Handles an incoming response.
   private func received(response: HTTPResponse, error: Error?) {
-    upgrading = response.isConnectionUpgrade
+    if response.isConnectionUpgrade { upgrading = true }
     delegate?.connection(self, handleIncomingResponse: response, error: error)
   }
 }
