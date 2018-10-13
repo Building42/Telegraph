@@ -24,7 +24,6 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   private let socket: TCPSocket
   private let config: WebSocketConfig
   private var parser: WebSocketParser
-
   private var pingTimer: DispatchTimer?
   private var closing = false
 
@@ -37,7 +36,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
 
     // Define a ping timer if a ping interval is set
     if config.pingInterval > 0 {
-      pingTimer = DispatchTimer(interval: config.pingInterval, queue: .global(qos: .background)) { [weak self] in
+      pingTimer = DispatchTimer(interval: config.pingInterval, queue: .global()) { [weak self] in
         self?.send(message: WebSocketMessage(opcode: .ping))
       }
     }
@@ -45,13 +44,22 @@ open class WebSocketConnection: TCPConnection, WebSocket {
 
   /// Opens the connection.
   public func open() {
+    open(data: nil)
+  }
+
+  /// Opens the connection with an existing chunk of data.
+  public func open(data: Data?) {
     socket.delegate = self
 
     // Start the ping timer
     pingTimer?.start()
 
-    // Start reading
-    socket.read(timeout: config.readTimeout)
+    // Is the data relevant?
+    if let data = data, !data.isEmpty {
+      received(data: data)
+    } else {
+      socket.read(timeout: config.readTimeout)
+    }
   }
 
   /// Closes the connection.

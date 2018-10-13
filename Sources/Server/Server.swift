@@ -153,13 +153,16 @@ extension Server: HTTPConnectionDelegate {
     // Remove the http connection
     httpConnections.remove(httpConnection)
 
+    // Extract the socket and any WebSocket data already read
+    let (socket, webSocketData) = httpConnection.upgrade()
+
     // Add the websocket connection
-    let webSocketConnection = WebSocketConnection(socket: httpConnection.socket, config: webSocketConfig)
+    let webSocketConnection = WebSocketConnection(socket: socket, config: webSocketConfig)
     webSocketConnections.insert(webSocketConnection)
 
     // Open the websocket connection
     webSocketConnection.delegate = self
-    webSocketConnection.open()
+    webSocketConnection.open(data: webSocketData)
 
     // Call the delegate
     delegateQueue.async { [weak self] in

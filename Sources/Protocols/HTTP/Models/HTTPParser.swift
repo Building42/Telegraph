@@ -13,19 +13,13 @@ import Foundation
 private let continueParsing: Int32 = 0
 private let stopParsing: Int32 = -1
 
-// MARK: HTTPParserDelegate
-
-public protocol HTTPParserDelegate: class {
-  func parser(_ parser: HTTPParser, didParseHeadersOfMessage message: HTTPMessage)
-  func parser(_ parser: HTTPParser, didCompleteMessage message: HTTPMessage)
-}
-
 // MARK: HTTPParser
 
 public final class HTTPParser {
-  public weak var delegate: HTTPParserDelegate?
-
   public private(set) var message: HTTPMessage?
+  public private(set) var isMessageComplete = false
+  public var isUpgradeDetected: Bool { return rawParser.isUpgradeDetected }
+
   private var request: HTTPRequest? { return message as? HTTPRequest }
   private var response: HTTPResponse? { return message as? HTTPResponse }
 
@@ -106,6 +100,12 @@ public final class HTTPParser {
     return bytesParsed
   }
 
+  /// Resets the parser.
+  public func reset() {
+    isMessageComplete = false
+    message = nil
+  }
+
   /// Clears the helper variables.
   private func cleanup() {
     urlData.count = 0
@@ -114,8 +114,6 @@ public final class HTTPParser {
     headerKeyData.count = 0
     headerValueData.count = 0
     headerChunkWasValue = false
-
-    message = nil
   }
 }
 
@@ -124,6 +122,7 @@ public final class HTTPParser {
 extension HTTPParser {
   /// Raised when the raw parser starts a new message.
   func parserDidBeginMessage(_ rawParser: HTTPRawParser) -> Int32 {
+    isMessageComplete = false
     message = rawParser.isParsingRequest ? HTTPRequest() : HTTPResponse()
     return continueParsing
   }
@@ -185,7 +184,7 @@ extension HTTPParser {
 
   /// Raised when a single header key and value is complete.
   private func headerComplete() -> Bool {
-    // Reset after we processed them
+    // Reset variables after we added the header
     defer {
       headerKeyData.count = 0
       headerValueData.count = 0
@@ -223,9 +222,6 @@ extension HTTPParser {
       guard headerComplete() else { return stopParsing }
     }
 
-    // Call the delegate
-    delegate?.parser(self, didParseHeadersOfMessage: message)
-
     return continueParsing
   }
 
@@ -237,10 +233,7 @@ extension HTTPParser {
 
   /// Raised when the parser parsed the whole message.
   func parserDidCompleteMessage(_ rawParser: HTTPRawParser) -> Int32 {
-    guard let message = message else { return stopParsing }
-
-    // Inform our delegate and cleanup
-    delegate?.parser(self, didCompleteMessage: message)
+    isMessageComplete = true
     cleanup()
 
     return continueParsing
@@ -263,10 +256,4 @@ private extension Data {
     guard let chunk = chunk else { return }
     self.append(UnsafeRawPointer(chunk).assumingMemoryBound(to: UInt8.self), count: count)
   }
-}
-
-// MARK: HTTPParserDelegate defaults
-
-public extension HTTPParserDelegate {
-  func parser(_ parser: HTTPParser, didParseHeadersOfMessage message: HTTPMessage) {}
 }

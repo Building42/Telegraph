@@ -54,11 +54,6 @@ extension HTTPRawParser {
     return content_length > Int.max ? 0 : Int(content_length)
   }
 
-  /// Returns a boolean indicating if the parser is ready to parse.
-  var isReady: Bool {
-    return http_errno == HPE_OK.rawValue
-  }
-
   /// Returns the error that occurred during parsing.
   var httpError: HTTPError? {
     if http_errno == HPE_OK.rawValue { return nil }
@@ -92,9 +87,19 @@ extension HTTPRawParser {
     return type == HTTP_RESPONSE.rawValue
   }
 
+  /// Returns a boolean indicating if the parser is ready to parse.
+  var isReady: Bool {
+    return http_errno == HPE_OK.rawValue
+  }
+
   /// Returns a boolean indicating if the status has been fully parsed.
   var isStatusComplete: Bool {
     return state >= 16
+  }
+
+  /// Returns a boolean indicating if the parser detected a connection upgrade.
+  var isUpgradeDetected: Bool {
+    return upgrade == 1
   }
 
   /// Returns a boolean indicating if the URL has been fully parsed.

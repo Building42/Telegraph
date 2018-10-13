@@ -22,17 +22,17 @@ public protocol HTTPConnectionDelegate: class {
 public class HTTPConnection: TCPConnection {
   public weak var delegate: HTTPConnectionDelegate?
 
-  internal let socket: TCPSocket
+  private let socket: TCPSocket
   private let config: HTTPConfig
   private var parser: HTTPParser
   private var upgrading = false
+  private var upgradeData: Data?
 
   /// Initializes the HTTP connection.
   public required init(socket: TCPSocket, config: HTTPConfig) {
     self.socket = socket
     self.config = config
     self.parser = HTTPParser()
-    self.parser.delegate = self
   }
 
   /// Opens the connection.
@@ -44,6 +44,11 @@ public class HTTPConnection: TCPConnection {
   /// Closes the connection.
   public func close(immediately: Bool) {
     socket.close(when: immediately ? .immediately : .afterWriting)
+  }
+
+  /// Upgrades the connection.
+  public func upgrade() -> (TCPSocket, Data?) {
+    return (socket, upgradeData)
   }
 
   /// Sends the request by writing it to the stream.
@@ -90,9 +95,30 @@ public class HTTPConnection: TCPConnection {
   /// Handles incoming data.
   private func received(data: Data) {
     do {
-      try parser.parse(data: data)
-      if !upgrading { socket.read(timeout: config.readTimeout) }
+      let bytesParsed = try parser.parse(data: data)
+
+      // Do we detect a connection upgrade?
+      if parser.isUpgradeDetected {
+        upgrading = true
+
+        // The data might have contained data of the new protocol
+        if bytesParsed < data.count {
+          upgradeData = data.subdata(in: bytesParsed..<data.count)
+        }
+      }
+
+      // Do we have a complete message?
+      if parser.isMessageComplete {
+        received(message: parser.message, error: nil)
+        parser.reset()
+      }
+
+      // Continue reading
+      if !upgrading {
+        socket.read(timeout: config.readTimeout)
+      }
     } catch {
+      // If we encounter a parser error, try to handle it gracefully
       received(message: parser.message, error: error)
     }
   }
@@ -101,31 +127,12 @@ public class HTTPConnection: TCPConnection {
   private func received(message: HTTPMessage?, error: Error?) {
     switch message {
     case let message as HTTPRequest:
-      received(request: message, error: error)
+      delegate?.connection(self, handleIncomingRequest: message, error: error)
     case let message as HTTPResponse:
-      received(response: message, error: error)
+      delegate?.connection(self, handleIncomingResponse: message, error: error)
     default:
       close(immediately: true)
     }
-  }
-
-  /// Handles an incoming request.
-  private func received(request: HTTPRequest, error: Error?) {
-    var messageError = error
-
-    // This connection only supports HTTP/1.0 and HTTP/1.1
-    if request.version.major != 1 && request.version.minor > 1 {
-      messageError = messageError ?? HTTPError.invalidVersion
-    }
-
-    // Let our delegate handle the request
-    delegate?.connection(self, handleIncomingRequest: request, error: error)
-  }
-
-  /// Handles an incoming response.
-  private func received(response: HTTPResponse, error: Error?) {
-    if response.isConnectionUpgrade { upgrading = true }
-    delegate?.connection(self, handleIncomingResponse: response, error: error)
   }
 }
 
@@ -137,15 +144,6 @@ extension HTTPConnection: TCPSocketDelegate {
   }
 
   public func socketDidClose(_ socket: TCPSocket, wasOpen: Bool, error: Error?) {
-    parser.delegate = nil
     delegate?.connection(self, didCloseWithError: error)
-  }
-}
-
-// MARK: HTTPParserDelegate implementation
-
-extension HTTPConnection: HTTPParserDelegate {
-  public func parser(_ parser: HTTPParser, didCompleteMessage message: HTTPMessage) {
-    received(message: message, error: nil)
   }
 }
