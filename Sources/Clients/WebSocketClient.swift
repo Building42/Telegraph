@@ -17,22 +17,31 @@ public protocol WebSocketClientDelegate: class {
 }
 
 open class WebSocketClient: WebSocket {
-  private let workQueue = DispatchQueue(label: "Telegraph.WebSocketClient.work")
-  private let delegateQueue = DispatchQueue(label: "Telegraph.WebSocketClient.delegate")
-  private var httpClient: HTTPClient?
-  private var connection: WebSocketConnection?
-
   public let url: URL
-  public var headers = HTTPHeaders.empty
-  public var config: WebSocketConfig = WebSocketConfig.clientDefault
+  public let host: String
+  public let port: Int
+  public var headers: HTTPHeaders
+
+  public var config = WebSocketConfig.clientDefault
   public var tlsPolicy: TLSPolicy?
   public weak var delegate: WebSocketClientDelegate?
 
+  private let workQueue = DispatchQueue(label: "Telegraph.WebSocketClient.work")
+  private let delegateQueue = DispatchQueue(label: "Telegraph.WebSocketClient.delegate")
+
+  private var httpConnection: HTTPConnection?
+  private var webSocketConnection: WebSocketConnection?
+
   /// Initializes a new WebSocketClient with an url
-  public init(url: URL) throws {
+  public init(url: URL, headers: HTTPHeaders = .empty) throws {
     guard url.hasWebSocketScheme else { throw WebSocketClientError.invalidScheme }
-    guard url.host != nil else { throw WebSocketClientError.invalidHost }
+    guard let host = url.host else { throw WebSocketClientError.invalidHost }
+
+    // Store the connection information
     self.url = url
+    self.host = host
+    self.port = url.port ?? url.portBasedOnScheme
+    self.headers = headers
 
     // Only mask unsecure connections
     config.maskMessages = !url.isSchemeSecure
@@ -41,8 +50,22 @@ open class WebSocketClient: WebSocket {
   /// Performs the handshake with the host, forming the websocket connection.
   public func connect(timeout: TimeInterval = 10) {
     workQueue.async { [weak self] in
-      guard let self = self, self.httpClient == nil, self.connection == nil else { return }
-      self.performHandshake(timeout: timeout)
+      guard let self = self else { return }
+
+      // Release old WebSocket connection if necessary
+      self.webSocketConnection = nil
+
+      // Create the socket
+      let socket = TCPSocket()
+      socket.delegate = self
+      socket.tlsPolicy = self.tlsPolicy
+
+      // Create the HTTP connection (retains the socket)
+      self.httpConnection = HTTPConnection(socket: socket, config: HTTPConfig.clientDefault)
+      self.httpConnection!.delegate = self
+
+      /// Open the socket
+      socket.open(toHost: self.host, port: self.port, timeout: timeout)
     }
   }
 
@@ -54,104 +77,79 @@ open class WebSocketClient: WebSocket {
   /// Closes the connection to the host.
   public func close(immediately: Bool) {
     workQueue.async { [weak self] in
-      self?.connection?.close(immediately: immediately)
+      self?.httpConnection?.close(immediately: immediately)
+      self?.webSocketConnection?.close(immediately: immediately)
     }
   }
 
   /// Sends a raw websocket message.
   public func send(message: WebSocketMessage) {
     workQueue.async { [weak self] in
-      self?.connection?.send(message: message)
+      self?.webSocketConnection?.send(message: message)
     }
   }
 
   /// Performs a handshake to initiate the websocket connection.
-  private func performHandshake(timeout: TimeInterval) {
+  private func performHandshake() {
+    guard let httpConnection = self.httpConnection else { return }
+
+    // Open the HTTP connection, gives it control over the socket
+    httpConnection.open()
+
     // Create the handshake request
-    let handshakeRequest = HTTPRequest()
-    handshakeRequest.webSocketHandshake(host: url.host!, port: url.port ?? url.portBasedOnScheme)
-
-    // Apply the custom headers
-    for header in headers {
-      handshakeRequest.headers[header.key] = header.value
-    }
-
-    // Set the URI on the request
-    handshakeRequest.uri = URI(path: url.path, query: url.query)
-
-    // Create the HTTP client
-    httpClient = HTTPClient(baseURL: url)
-    httpClient!.connectTimeout = timeout
-    httpClient!.tlsPolicy = tlsPolicy
+    let requestURI = URI(path: url.path, query: url.query)
+    let handshakeRequest = HTTPRequest(uri: requestURI, headers: headers)
+    handshakeRequest.webSocketHandshake(host: host, port: port)
 
     // Perform the handshake request
-    httpClient!.request(handshakeRequest) { [weak self] response, error in
-      self?.workQueue.async { [weak self] in
-        self?.handleHandshake(response: response, error: error)
-      }
-    }
+    httpConnection.send(request: handshakeRequest)
   }
 
   /// Processes the handshake response.
-  private func handleHandshake(response: HTTPResponse, error: Error?) {
-    // Clean up http client to allow another connect after the connection closes
-    let socket = httpClient!.socket
-    httpClient = nil
+  private func handleHandshake(response: HTTPResponse) {
+    // Validate the handshake response
+    guard response.isWebSocketHandshake else {
+      let handShakeError = WebSocketClientError.handshakeFailed(response: response)
+      handleHandshakeError(handShakeError)
+      return
+    }
 
-    if error == nil && response.isWebSocketHandshake {
-      // Upgrade the connection to a websocket connection
-      connection = WebSocketConnection(socket: socket, config: config)
-      connection!.delegate = self
-      connection!.open()
+    // Extract the information from the HTTP connection
+    guard let (socket, webSocketData) = self.httpConnection?.upgrade() else { return }
 
-      // Inform the delegate that we are connected
-      delegateQueue.async { [weak self] in
-        guard let self = self else { return }
-        self.delegate?.webSocketClient(self, didConnectToHost: self.url.host!)
-      }
-    } else {
-      // Pass the error or create a handshake failed error
-      let handshakeError = error ?? WebSocketClientError.handshakeFailed(response: response)
+    // Release the HTTP connection
+    httpConnection = nil
 
-      // Inform the delegate of the handshake error
-      delegateQueue.async { [weak self] in
-        guard let self = self else { return }
-        self.delegate?.webSocketClient(self, didDisconnectWithError: handshakeError)
-      }
+    // Upgrade the connection to a WebSocket connection
+    webSocketConnection = WebSocketConnection(socket: socket, config: config)
+    webSocketConnection!.delegate = self
+    webSocketConnection!.open(data: webSocketData)
+
+    // Inform the delegate that we are connected
+    delegateQueue.async { [weak self] in
+      guard let self = self else { return }
+      self.delegate?.webSocketClient(self, didConnectToHost: self.host)
     }
   }
-}
 
-// MARK: Convenience initializers
+  /// Handles a connection close.
+  private func handleHandshakeError(_ error: Error?) {
+    // Prevent any connection delegate calls, we want to provide our own error
+    workQueue.async { [weak self] in
+      self?.httpConnection?.delegate = nil
+      self?.webSocketConnection?.delegate = nil
+    }
 
-extension WebSocketClient {
-  /// Initializes a new WebSocketClient with an url in string form.
-  public convenience init(_ string: String) throws {
-    guard let url = URL(string: string) else { throw WebSocketClientError.invalidURL }
-    try self.init(url: url)
+    // Manually close and report the error
+    close(immediately: true)
+    handleConnectionClose(error: error)
   }
 
-  /// Initializes a new WebSocketClient with an url in string form and certificates to trust.
-  public convenience init(_ string: String, certificates: [Certificate]) throws {
-    try self.init(string)
-    self.tlsPolicy = TLSPolicy(certificates: certificates)
-  }
-
-  /// Initializes a new WebSocketClient with an url and certificates to trust.
-  public convenience init(url: URL, certificates: [Certificate]) throws {
-    try self.init(url: url)
-    self.tlsPolicy = TLSPolicy(certificates: certificates)
-  }
-}
-
-// MARK: WebSocketConnectionDelegate implementation
-
-extension WebSocketClient: WebSocketConnectionDelegate {
-  public func connection(_ webSocketConnection: WebSocketConnection, didCloseWithError error: Error?) {
-    workQueue.async { [weak self, weak webSocketConnection] in
-      guard let self = self, self.connection == webSocketConnection else { return }
-      self.connection?.delegate = nil
-      self.connection = nil
+  /// Handles a connection close.
+  private func handleConnectionClose(error: Error?) {
+    workQueue.async { [weak self] in
+      self?.httpConnection = nil
+      self?.webSocketConnection = nil
     }
 
     delegateQueue.async { [weak self] in
@@ -159,7 +157,91 @@ extension WebSocketClient: WebSocketConnectionDelegate {
       self.delegate?.webSocketClient(self, didDisconnectWithError: error)
     }
   }
+}
 
+// MARK: Convenience initializers
+
+extension WebSocketClient {
+  /// Creates a new WebSocketClient with an url in string form.
+  public convenience init(_ string: String) throws {
+    guard let url = URL(string: string) else { throw WebSocketClientError.invalidURL }
+    try self.init(url: url)
+  }
+
+  /// Creates a new WebSocketClient with an url in string form and certificates to trust.
+  public convenience init(_ string: String, certificates: [Certificate]) throws {
+    try self.init(string)
+    self.tlsPolicy = TLSPolicy(certificates: certificates)
+  }
+
+  /// Creates a new WebSocketClient with an url and certificates to trust.
+  public convenience init(url: URL, certificates: [Certificate]) throws {
+    try self.init(url: url)
+    self.tlsPolicy = TLSPolicy(certificates: certificates)
+  }
+}
+
+// MARK: TCPSocketDelegate implementation
+
+extension WebSocketClient: TCPSocketDelegate {
+  /// Raised when the socket has connected.
+  public func socketDidOpen(_ socket: TCPSocket) {
+    // Start TLS for secure hosts
+    if url.isSchemeSecure {
+      socket.startTLS()
+    }
+
+    // Send the handshake request
+    workQueue.async { [weak self] in self?.performHandshake() }
+  }
+
+  /// Raised when the socket disconnected.
+  public func socketDidClose(_ socket: TCPSocket, wasOpen: Bool, error: Error?) {
+    handleConnectionClose(error: error)
+  }
+}
+
+// MARK: TCPSocketDelegate implementation
+
+extension WebSocketClient: HTTPConnectionDelegate {
+  /// Raised when the HTTPConnecion was closed.
+  public func connection(_ httpConnection: HTTPConnection, didCloseWithError error: Error?) {
+    handleConnectionClose(error: error)
+  }
+
+  /// Raised when the HTTPConnecion received a response.
+  public func connection(_ httpConnection: HTTPConnection, handleIncomingResponse response: HTTPResponse, error: Error?) {
+    if let error = error {
+      handleHandshakeError(error)
+      return
+    }
+
+    // Process the response on the handshake request
+    workQueue.async { [weak self] in
+      self?.handleHandshake(response: response)
+    }
+  }
+
+  /// Raised when the HTTPConnecion received a request (client doesn't support requests -> close).
+  public func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?) {
+    httpConnection.close(immediately: true)
+  }
+
+  /// Raised when the HTTPConnecion received a request (client doesn't support request upgrades -> close).
+  public func connection(_ httpConnection: HTTPConnection, handleUpgradeByRequest request: HTTPRequest) {
+    httpConnection.close(immediately: true)
+  }
+}
+
+// MARK: WebSocketConnectionDelegate implementation
+
+extension WebSocketClient: WebSocketConnectionDelegate {
+  /// Raised when the WebSocketConnection disconnected.
+  public func connection(_ webSocketConnection: WebSocketConnection, didCloseWithError error: Error?) {
+    handleConnectionClose(error: error)
+  }
+
+  /// Raised when the WebSocketConnection receives a message.
   public func connection(_ webSocketConnection: WebSocketConnection, didReceiveMessage message: WebSocketMessage) {
     // We are only interested in binary and text messages
     guard message.opcode == .binaryFrame || message.opcode == .textFrame else { return }
@@ -175,5 +257,6 @@ extension WebSocketClient: WebSocketConnectionDelegate {
     }
   }
 
+  /// Raised when the WebSocketConnection sent a message (ignore).
   public func connection(_ webSocketConnection: WebSocketConnection, didSendMessage message: WebSocketMessage) {}
 }
