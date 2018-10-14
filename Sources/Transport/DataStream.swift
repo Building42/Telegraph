@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class DataStream {
+public final class DataStream {
   private let data: Data
   public private (set) var position: Int
 
