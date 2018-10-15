@@ -27,7 +27,7 @@ open class HTTPMessage {
   open func prepareForWrite() {
     // Set the keep alive connection header
     if headers.connection == nil {
-      headers.connection = (version.minor == 0) ? "close" : "keep-alive"
+      headers.connection = keepAlive ? "keep-alive" : "close"
     }
   }
 
@@ -67,7 +67,8 @@ open class HTTPMessage {
 extension HTTPMessage {
   /// Returns a boolean indicating if the connection should be kept open.
   var keepAlive: Bool {
-    return headers.connection?.caseInsensitiveCompare("close") != .orderedSame
+    guard let connection = headers.connection else { return version.minor != 0 }
+    return connection.caseInsensitiveCompare("close") != .orderedSame
   }
 
   /// Returns a boolean indicating if this message carries an instruction to upgrade.
