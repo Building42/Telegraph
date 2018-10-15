@@ -40,18 +40,23 @@ open class HTTPMessage {
 
   /// Writes the first line and headers to the provided stream.
   open func writeHeader(to stream: WriteStream, timeout: TimeInterval) {
+    var head = Data()
+    head.reserveCapacity(100)
+
     // Write the first line
-    stream.write(data: firstLine.utf8Data, timeout: timeout)
-    stream.write(data: .crlf, timeout: timeout)
+    head.append(firstLine.utf8Data)
+    head.append(.crlf)
 
     // Write the headers
     headers.forEach { key, value in
-      stream.write(data: "\(key): \(value)".utf8Data, timeout: timeout)
-      stream.write(data: .crlf, timeout: timeout)
+      head.append("\(key): \(value)".utf8Data)
+      head.append(.crlf)
     }
 
     // Signal the end of the headers with another crlf
-    stream.write(data: .crlf, timeout: timeout)
+    head.append(.crlf)
+
+    stream.write(data: head, timeout: timeout)
   }
 
   /// Writes the body to the provided stream.
