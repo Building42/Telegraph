@@ -176,6 +176,9 @@ extension TelegraphDemo: ServerWebSocketDelegate {
   public func server(_ server: Server, webSocketDidConnect webSocket: WebSocket, handshake: HTTPRequest) {
     let name = handshake.headers["X-Name"] ?? "stranger"
     print("[SERVER]", "WebSocket connected - name:", name)
+
+    webSocket.send(text: "Welcome client \(name)")
+    webSocket.send(data: Data(bytes: [0x00, 0x01, 0x02, 0x03, 0x04, 0x05]))
   }
 
   /// Raised when a web socket client disconnects from the server.
@@ -211,9 +214,6 @@ extension TelegraphDemo: WebSocketClientDelegate {
   /// Raised when the web socket client has connected to the server.
   public func webSocketClient(_ client: WebSocketClient, didConnectToHost host: String) {
     print("[CLIENT]", "WebSocket connected - host:", host)
-
-    server.webSockets.forEach { $0.send(text: "This is a text message") }
-    server.webSockets.forEach { $0.send(data: Data(bytes: [0x00, 0x01, 0x02, 0x03, 0x04, 0x05])) }
   }
 
   /// Raised when the web socket client received data.
