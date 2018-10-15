@@ -150,7 +150,9 @@ extension Server: TCPListenerDelegate {
 extension Server: HTTPConnectionDelegate {
   /// Raised when a HTTP connection receives an incoming request.
   public func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?) {
-    workerQueue.addOperation {
+    workerQueue.addOperation { [weak self, weak httpConnection] in
+      guard let self = self, let httpConnection = httpConnection else { return }
+
       // Get a response for the request
       let response = self.workerProcess(request: request, error: error)
 
