@@ -31,13 +31,13 @@ open class HTTPFileHandler: HTTPRequestHandler {
     var fileURL = directoryURL.appendingPathComponent(relativePath)
 
     // Check if the requested path exists
-    var isDirectory: ObjCBool = false
-    guard fileManager.fileExists(atPath: fileURL.path, isDirectory: &isDirectory) else {
+    guard let fileAttributes = try? fileManager.attributesOfItem(atPath: fileURL.path) else {
       return HTTPResponse(.notFound)
     }
 
+    let isDirectory = (fileAttributes[.type] as? String) == FileAttributeType.typeDirectory.rawValue
     // Is a directory requested?
-    if isDirectory.boolValue {
+    if isDirectory {
       if let index = index {
         fileURL = fileURL.appendingPathComponent(index)
 
@@ -52,7 +52,6 @@ open class HTTPFileHandler: HTTPRequestHandler {
     }
 
     // Get the file information
-    let fileAttributes = try fileManager.attributesOfItem(atPath: fileURL.path)
     let contentType = fileManager.mimeType(of: fileURL)
 
     // Construct a response
