@@ -14,56 +14,56 @@ open class HTTPFileHandler: HTTPRequestHandler {
   public private(set) var baseURI: URI
   public private(set) var index: String?
 
+  /// Creates a HTTPFileHandler to serve the provided directory at the provided URI.
   public init(directoryURL: URL, baseURI: URI = .root, index: String? = "index.html") {
     self.directoryURL = directoryURL
     self.baseURI = baseURI
     self.index = index
   }
 
+  /// Creates a response to the provided request or passes it to the next handler.
   open func respond(to request: HTTPRequest, nextHandler: HTTPRequest.Handler) throws -> HTTPResponse? {
-    // Only respond to GET requests
+    // Only respond to GET requests targetted at our path
     guard request.method == .GET, let relativePath = request.uri.relativePath(from: baseURI.path) else {
       return try nextHandler(request)
     }
 
-    // Determine the file to serve
+    // Serve the requested URL
+    let fileURL = directoryURL.appendingPathComponent(relativePath)
+    return try responseForURL(fileURL)
+  }
+
+  /// Creates a response that serves the provided URL.
+  private func responseForURL(_ url: URL) throws -> HTTPResponse {
     let fileManager = FileManager.default
-    var fileURL = directoryURL.appendingPathComponent(relativePath)
 
     // Check if the requested path exists
-    var isDirectory: ObjCBool = false
-    guard fileManager.fileExists(atPath: fileURL.path, isDirectory: &isDirectory) else {
+    guard let attributes = try? fileManager.attributesOfItem(atPath: url.path) as NSDictionary else {
       return HTTPResponse(.notFound)
     }
 
-    // Is a directory requested?
-    if isDirectory.boolValue {
-      if let index = index {
-        fileURL = fileURL.appendingPathComponent(index)
+    // Determine the type of the requested resource
+    guard let rawResourceType = attributes.fileType() else { return HTTPResponse(.forbidden) }
+    let resourceType = FileAttributeType(rawValue: rawResourceType)
 
-        // Make sure the index exists
-        guard fileManager.fileExists(atPath: fileURL.path) else {
-          return HTTPResponse(.notFound)
-        }
-      } else {
-        // No index? Forbidden
-        return HTTPResponse(.forbidden)
-      }
+    // Allow directories
+    if resourceType == .typeDirectory {
+      guard let index = index else { return HTTPResponse(.forbidden) }
+
+      // Create a response based on the index file in the directory
+      let indexURL = url.appendingPathComponent(index, isDirectory: false)
+      return try responseForURL(indexURL)
     }
 
-    // Get the file information
-    let fileAttributes = try fileManager.attributesOfItem(atPath: fileURL.path)
-    let contentType = fileManager.mimeType(of: fileURL)
+    // Only provide the data of files and symbolic links
+    guard resourceType == .typeRegular || resourceType == .typeSymbolicLink else {
+      return HTTPResponse(.forbidden)
+    }
 
     // Construct a response
-    let response = HTTPResponse(.ok)
-    response.headers.contentType = contentType
-    response.body = try Data(contentsOf: fileURL)
-
-    // Set the last modified date
-    if let lastModified = fileAttributes[.modificationDate] as? Date {
-      response.headers.lastModified = lastModified.rfc1123
-    }
+    let response = HTTPResponse(.ok, body: try Data(contentsOf: url))
+    response.headers.contentType = fileManager.mimeType(of: url)
+    response.headers.lastModified = attributes.fileModificationDate()?.rfc1123
 
     return response
   }
