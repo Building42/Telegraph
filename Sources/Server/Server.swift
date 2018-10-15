@@ -9,64 +9,97 @@
 import Foundation
 
 open class Server {
+  public weak var delegate: ServerDelegate?
   public var delegateQueue = DispatchQueue(label: "Telegraph.Server.delegate")
 
   public var httpConfig = HTTPConfig.serverDefault
   public var webSocketConfig = WebSocketConfig.serverDefault
   public weak var webSocketDelegate: ServerWebSocketDelegate?
 
-  private var listener: TCPListener
+  private var listener: TCPListener?
+  private var tlsConfig: TLSConfig?
   private var httpConnections = SynchronizedSet<HTTPConnection>()
   private var webSocketConnections = SynchronizedSet<WebSocketConnection>()
 
+  private let listenerQueue = DispatchQueue(label: "Telegraph.Server.listener")
+  private let connectionsQueue = DispatchQueue(label: "Telegraph.Server.connections")
+  private let workerQueue = OperationQueue()
+
   /// Initializes a unsecure Server instance.
-  public init() {
-    listener = TCPListener(tlsConfig: nil)
-    listener.delegate = self
-  }
+  public init() {}
 
   /// Initializes a secure Server instance.
   public init(identity: CertificateIdentity, caCertificates: [Certificate]) {
-    listener = TCPListener(tlsConfig: TLSConfig(serverIdentity: identity, caCertificates: caCertificates))
-    listener.delegate = self
+    tlsConfig = TLSConfig(serverIdentity: identity, caCertificates: caCertificates)
   }
 
-  /// Starts the server on the specified port.
-  open func start(onPort port: UInt16 = 0) throws {
-    try listener.accept(onPort: port)
-  }
+  /// Starts the server on the specified port or 0 for automatic port assignment.
+  open func start(port: Endpoint.Port = 0, interface: String? = nil) throws {
+    listener = TCPListener(port: port, interface: interface, tlsConfig: tlsConfig)
+    listener!.delegate = self
 
-  /// Starts the server on the specified network interface and port.
-  open func start(onInterface interface: String?, port: UInt16 = 0) throws {
-    try listener.accept(onInterface: interface, port: port)
+    try listener!.start(queue: listenerQueue)
   }
 
   /// Stops the server, optionally we wait for requests to finish.
   open func stop(immediately: Bool = false) {
-    listener.disconnect()
+    listener?.stop()
 
     // Close the connections
     httpConnections.forEach { $0.close(immediately: immediately) }
     webSocketConnections.forEach { $0.close(immediately: immediately) }
   }
 
-  /// Returns the port on which the listener is accepting connections.
-  open var port: UInt16 {
-    return listener.port
+  /// Handles an incoming HTTP request. If an error occurs, it will call handleIncoming(error:).
+  open func handleIncoming(request: HTTPRequest) throws -> HTTPResponse? {
+    let response = try httpConfig.requestChain(request)
+
+    // Check that a possible connection upgrade was handled properly
+    if let response = response, response.status != .switchingProtocols, request.isConnectionUpgrade {
+      throw HTTPError.protocolNotSupported
+    }
+
+    return response
+  }
+
+  /// Handles any errors while processing incoming requests.
+  open func handleIncoming(error: Error) -> HTTPResponse? {
+    return httpConfig.errorHandler.respond(to: error)
+  }
+
+  /// This function is called on the worker and handles the request and possible errors.
+  private func workerProcess(request: HTTPRequest, error: Error?) -> HTTPResponse? {
+    do {
+      if let error = error { throw error }
+      return try handleIncoming(request: request)
+    } catch {
+      return handleIncoming(error: error)
+    }
   }
 }
 
 // MARK: Server properties
 
 extension Server {
+  /// Returns the number of concurrent requests that can be handled.
+  var concurrency: Int {
+    get { return workerQueue.maxConcurrentOperationCount }
+    set { workerQueue.maxConcurrentOperationCount = newValue }
+  }
+
+  /// Returns the port on which the listener is accepting connections.
+  public var port: Endpoint.Port {
+    return listener?.port ?? 0
+  }
+
   /// Returns a boolean indicating if the server is running.
   public var isRunning: Bool {
-    return listener.isAccepting
+    return listener?.isListening ?? false
   }
 
   /// Returns a boolean indicating if the server is secure (HTTPS).
   public var isSecure: Bool {
-    return listener.tlsConfig != nil
+    return tlsConfig != nil
   }
 
   /// Returns the number of active HTTP connections.
@@ -90,6 +123,9 @@ extension Server {
 extension Server: TCPListenerDelegate {
   /// Raised when the server's listener accepts an incoming socket connection.
   public func listener(_ listener: TCPListener, didAcceptSocket socket: TCPSocket) {
+    // Configure the socket
+    socket.setDelegateQueue(connectionsQueue)
+
     // Wrap the socket in a HTTP connection
     let httpConnection = HTTPConnection(socket: socket, config: httpConfig)
     httpConnections.insert(httpConnection)
@@ -100,9 +136,10 @@ extension Server: TCPListenerDelegate {
   }
 
   /// Raised when the server's listener disconnected.
-  public func listenerDisconnected(_ listener: TCPListener) {
+  public func listenerDisconnected(_ listener: TCPListener, error: Error?) {
     delegateQueue.async { [weak self] in
       guard let self = self else { return }
+      self.delegate?.serverDidStop(self, error: error)
       self.webSocketDelegate?.serverDidDisconnect(self)
     }
   }
@@ -113,27 +150,18 @@ extension Server: TCPListenerDelegate {
 extension Server: HTTPConnectionDelegate {
   /// Raised when a HTTP connection receives an incoming request.
   public func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?) {
-    var chainResponse: HTTPResponse?
+    workerQueue.addOperation {
+      // Get a response for the request
+      let response = self.workerProcess(request: request, error: error)
 
-    do {
-      // Let the HTTP chain handle the request
-      if let error = error { throw error }
-      chainResponse = try httpConfig.requestChain(request)
-
-      // Check that a possible connection upgrade was handled properly
-      if request.isConnectionUpgrade, let response = chainResponse, response.status != .switchingProtocols {
-        throw HTTPError.protocolNotSupported
+      // Send the response or close the connection
+      self.connectionsQueue.async {
+        if let response = response {
+          httpConnection.send(response: response, toRequest: request)
+        } else {
+          httpConnection.close(immediately: true)
+        }
       }
-    } catch {
-      // Or pass it to the error handler if something is wrong
-      chainResponse = httpConfig.errorHandler.respond(to: error)
-    }
-
-    // Send the response or close the connection
-    if let response = chainResponse {
-      httpConnection.send(response: response, toRequest: request)
-    } else {
-      httpConnection.close(immediately: true)
     }
   }
 
@@ -205,5 +233,19 @@ extension Server: WebSocketConnectionDelegate {
       guard let self = self else { return }
       self.webSocketDelegate?.server(self, webSocketDidDisconnect: webSocketConnection, error: error)
     }
+  }
+}
+
+// MARK: Deprecated
+
+extension Server {
+  @available(*, deprecated, message: "use start(port:)")
+  open func start(onPort port: UInt16 = 0) throws {
+    try start(port: Int(port))
+  }
+
+  @available(*, deprecated, message: "use start(port:)")
+  open func start(onInterface interface: String?, port: UInt16 = 0) throws {
+    try start(port: Int(port), interface: interface)
   }
 }

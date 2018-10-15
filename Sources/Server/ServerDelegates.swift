@@ -1,5 +1,5 @@
 //
-//  ServerWebSocketDelegate.swift
+//  ServerDelegates.swift
 //  Telegraph
 //
 //  Created by Yvo van Beek on 4/5/17.
@@ -7,6 +7,11 @@
 //
 
 import Foundation
+
+public protocol ServerDelegate: class {
+  /// Called when the server has stopped
+  func serverDidStop(_ server: Server, error: Error?)
+}
 
 public protocol ServerWebSocketDelegate: class {
   /// Called when a web socket connected
@@ -21,13 +26,13 @@ public protocol ServerWebSocketDelegate: class {
   /// Called when a message was sent to a web socket
   func server(_ server: Server, webSocket: WebSocket, didSendMessage message: WebSocketMessage)
 
-  /// Called when the server's listener has disconnected, this should result in the server completely disconnecting
+  /// Deprecated: use ServerDelegate - serverDidStop
   func serverDidDisconnect(_ server: Server)
 }
 
 // MARK: Default implementation
 
-extension ServerWebSocketDelegate {
-  func server(_ server: Server, webSocket: WebSocket, didReceiveMessage message: WebSocketMessage) {}
+public extension ServerWebSocketDelegate {
   func server(_ server: Server, webSocket: WebSocket, didSendMessage message: WebSocketMessage) {}
+  func serverDidDisconnect(_ server: Server) {}
 }

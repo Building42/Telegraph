@@ -18,8 +18,6 @@ public protocol WebSocketClientDelegate: class {
 
 open class WebSocketClient: WebSocket {
   public let url: URL
-  public let host: String
-  public let port: Int
   public var headers: HTTPHeaders
 
   public var config = WebSocketConfig.clientDefault
@@ -29,18 +27,18 @@ open class WebSocketClient: WebSocket {
   private let workQueue = DispatchQueue(label: "Telegraph.WebSocketClient.work")
   private let delegateQueue = DispatchQueue(label: "Telegraph.WebSocketClient.delegate")
 
+  private let endpoint: Endpoint
   private var httpConnection: HTTPConnection?
   private var webSocketConnection: WebSocketConnection?
 
   /// Initializes a new WebSocketClient with an url
   public init(url: URL, headers: HTTPHeaders = .empty) throws {
     guard url.hasWebSocketScheme else { throw WebSocketClientError.invalidScheme }
-    guard let host = url.host else { throw WebSocketClientError.invalidHost }
+    guard let endpoint = Endpoint(url: url) else { throw WebSocketClientError.invalidHost }
 
     // Store the connection information
     self.url = url
-    self.host = host
-    self.port = url.port ?? url.portBasedOnScheme
+    self.endpoint = endpoint
     self.headers = headers
 
     // Only mask unsecure connections
@@ -56,25 +54,24 @@ open class WebSocketClient: WebSocket {
       self.webSocketConnection = nil
 
       // Create the socket
-      let socket = TCPSocket()
-      socket.delegate = self
-      socket.tlsPolicy = self.tlsPolicy
+      let socket = TCPSocket(endpoint: self.endpoint, tlsPolicy: self.tlsPolicy)
+      socket.setDelegate(self, queue: self.workQueue)
 
       // Create the HTTP connection (retains the socket)
       self.httpConnection = HTTPConnection(socket: socket, config: HTTPConfig.clientDefault)
       self.httpConnection!.delegate = self
 
-      /// Open the socket
-      socket.open(toHost: self.host, port: self.port, timeout: timeout)
+      // Open the socket
+      socket.connect(timeout: timeout)
     }
   }
 
-  /// Disconnects the client. Same as calling close with immediately: true.
+  /// Disconnects the client. Same as calling close with immediately: false.
   public func disconnect() {
-    close(immediately: true)
+    close(immediately: false)
   }
 
-  /// Closes the connection to the host.
+  /// Disconnects the client.
   public func close(immediately: Bool) {
     workQueue.async { [weak self] in
       self?.httpConnection?.close(immediately: immediately)
@@ -99,7 +96,7 @@ open class WebSocketClient: WebSocket {
     // Create the handshake request
     let requestURI = URI(path: url.path, query: url.query)
     let handshakeRequest = HTTPRequest(uri: requestURI, headers: headers)
-    handshakeRequest.webSocketHandshake(host: host, port: port)
+    handshakeRequest.webSocketHandshake(host: endpoint.host, port: endpoint.port)
 
     // Perform the handshake request
     httpConnection.send(request: handshakeRequest)
@@ -128,17 +125,15 @@ open class WebSocketClient: WebSocket {
     // Inform the delegate that we are connected
     delegateQueue.async { [weak self] in
       guard let self = self else { return }
-      self.delegate?.webSocketClient(self, didConnectToHost: self.host)
+      self.delegate?.webSocketClient(self, didConnectToHost: self.endpoint.host)
     }
   }
 
-  /// Handles a connection close.
+  /// Handles a bad response on the websocket handshake.
   private func handleHandshakeError(_ error: Error?) {
     // Prevent any connection delegate calls, we want to provide our own error
-    workQueue.async { [weak self] in
-      self?.httpConnection?.delegate = nil
-      self?.webSocketConnection?.delegate = nil
-    }
+    httpConnection?.delegate = nil
+    webSocketConnection?.delegate = nil
 
     // Manually close and report the error
     close(immediately: true)
@@ -147,10 +142,8 @@ open class WebSocketClient: WebSocket {
 
   /// Handles a connection close.
   private func handleConnectionClose(error: Error?) {
-    workQueue.async { [weak self] in
-      self?.httpConnection = nil
-      self?.webSocketConnection = nil
-    }
+    httpConnection = nil
+    webSocketConnection = nil
 
     delegateQueue.async { [weak self] in
       guard let self = self else { return }
@@ -196,9 +189,15 @@ extension WebSocketClient: TCPSocketDelegate {
   }
 
   /// Raised when the socket disconnected.
-  public func socketDidClose(_ socket: TCPSocket, wasOpen: Bool, error: Error?) {
+  public func socketDidClose(_ socket: TCPSocket, error: Error?) {
     handleConnectionClose(error: error)
   }
+
+  /// Raised when the socket reads (ignore, the connections will handle this).
+  public func socketDidRead(_ socket: TCPSocket, data: Data, tag: Int) {}
+
+  /// Raised when the socket writes (ignore).
+  public func socketDidWrite(_ socket: TCPSocket, tag: Int) {}
 }
 
 // MARK: TCPSocketDelegate implementation
@@ -213,12 +212,8 @@ extension WebSocketClient: HTTPConnectionDelegate {
   public func connection(_ httpConnection: HTTPConnection, handleIncomingResponse response: HTTPResponse, error: Error?) {
     if let error = error {
       handleHandshakeError(error)
-      return
-    }
-
-    // Process the response on the handshake request
-    workQueue.async { [weak self] in
-      self?.handleHandshake(response: response)
+    } else {
+      handleHandshake(response: response)
     }
   }
 

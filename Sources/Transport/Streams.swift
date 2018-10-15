@@ -16,9 +16,3 @@ public protocol WriteStream {
   func flush()
   func write(data: Data, timeout: TimeInterval)
 }
-
-// MARK: Default implementations
-
-extension WriteStream {
-  public func flush() {}
-}

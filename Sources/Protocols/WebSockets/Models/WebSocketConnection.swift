@@ -128,13 +128,21 @@ open class WebSocketConnection: TCPConnection, WebSocket {
 // MARK: TCPSocketConnectionDelegate implementation
 
 extension WebSocketConnection: TCPSocketDelegate {
-  public func socketDidRead(_ socket: TCPSocket, data: Data) {
+  /// Raised when the socket is connected (ignore, socket is already connected).
+  public func socketDidOpen(_ socket: TCPSocket) {}
+
+  /// Raised when the socket is disconnected.
+  public func socketDidClose(_ socket: TCPSocket, error: Error?) {
+    delegate?.connection(self, didCloseWithError: error)
+  }
+
+  /// Raised when the socket received data.
+  public func socketDidRead(_ socket: TCPSocket, data: Data, tag: Int) {
     received(data: data)
   }
 
-  public func socketDidClose(_ socket: TCPSocket, wasOpen: Bool, error: Error?) {
-    delegate?.connection(self, didCloseWithError: error)
-  }
+  /// Raised when the socket sent data (ignore).
+  public func socketDidWrite(_ socket: TCPSocket, tag: Int) {}
 }
 
 // MARK: WebSocketParserDelegate implementation

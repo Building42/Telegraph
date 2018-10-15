@@ -14,52 +14,64 @@ public protocol TCPListenerDelegate: class {
   func listener(_ listener: TCPListener, didAcceptSocket socket: TCPSocket)
 
   /// Called when the listener socket has disconnected
-  func listenerDisconnected(_ listener: TCPListener)
+  func listenerDisconnected(_ listener: TCPListener, error: Error?)
 }
 
 public final class TCPListener: NSObject {
-  private let socket: GCDAsyncSocket
-  private let socketDelegateQueue: DispatchQueue
-
-  public let tlsConfig: TLSConfig?
-  public private(set) var isAccepting: Bool
-
+  /// The delegate to handle listener events.
   public weak var delegate: TCPListenerDelegate?
 
-  public init(tlsConfig: TLSConfig? = nil) {
+  /// The interface the listener listens on.
+  public let interface: String?
+
+  /// The TLS configuration for secure connections.
+  public let tlsConfig: TLSConfig?
+
+  private let listenerPort: UInt16
+  private var listenerSocket: GCDAsyncSocket
+
+  /// Creates a listener that listens on the provided port and interface.
+  public init(port: Endpoint.Port, interface: String? = nil, tlsConfig: TLSConfig? = nil) {
+    self.listenerPort = UInt16(port)
+    self.listenerSocket = GCDAsyncSocket()
+    self.interface = interface
     self.tlsConfig = tlsConfig
-    self.isAccepting = false
 
-    socket = GCDAsyncSocket()
-    socketDelegateQueue = DispatchQueue(label: "Telegraph.TCPListener.delegate")
     super.init()
-
-    socket.setDelegate(self, delegateQueue: socketDelegateQueue)
   }
 
-  public func accept(onPort port: UInt16) throws {
-    try socket.accept(onPort: port)
-    isAccepting = true
+  /// Indicates if the listener is active.
+  public var isListening: Bool {
+    return listenerSocket.localPort > 0
   }
 
-  public func accept(onInterface interface: String?, port: UInt16) throws {
-    try socket.accept(onInterface: interface, port: port)
-    isAccepting = true
+  /// The port the listener listens on.
+  public var port: Endpoint.Port {
+    let port = isListening ? listenerSocket.localPort : listenerPort
+    return Endpoint.Port(port)
   }
 
-  public func disconnect() {
-    isAccepting = false
-    socket.disconnect()
+  /// The queue for delegate calls.
+  public var queue: DispatchQueue? {
+    return listenerSocket.delegateQueue
   }
 
-  public var port: UInt16 {
-    return socket.localPort
+  /// Starts the listener with a queue to perform the delegate calls on.
+  public func start(queue: DispatchQueue) throws {
+    listenerSocket.setDelegate(self, delegateQueue: queue)
+    try listenerSocket.accept(onPort: listenerPort)
+  }
+
+  /// Stops the listener.
+  public func stop() {
+    listenerSocket.disconnect()
   }
 }
 
-// MARK: TCPListener GCDAsyncSocketDelegate
+// MARK: GCDAsyncSocketDelegate implementation
 
 extension TCPListener: GCDAsyncSocketDelegate {
+  /// Raised when the socket accepts a new incoming client socket.
   public func socket(_ sock: GCDAsyncSocket, didAcceptNewSocket newSocket: GCDAsyncSocket) {
     let socket = TCPSocket(wrapping: newSocket)
 
@@ -71,9 +83,8 @@ extension TCPListener: GCDAsyncSocketDelegate {
     delegate?.listener(self, didAcceptSocket: socket)
   }
 
+  /// Raised when the socket disconnects.
   public func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
-    /// We are disconnecting everything so notify the server that we are disconnected
-    guard sock == socket else { return }
-    delegate?.listenerDisconnected(self)
+    delegate?.listenerDisconnected(self, error: err)
   }
 }

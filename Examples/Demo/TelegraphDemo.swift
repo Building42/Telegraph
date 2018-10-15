@@ -59,6 +59,9 @@ extension TelegraphDemo {
       server = Server()
     }
 
+    // Set the delegate
+    server.delegate = self
+
     // Set a low web socket ping interval to demonstrate ping-pong
     server.webSocketConfig.pingInterval = 10
     server.webSocketDelegate = self
@@ -76,7 +79,7 @@ extension TelegraphDemo {
 
     // Start the server on localhost
     // Note: we'll skip error handling in the demo
-    try! server.start(onPort: 9000)
+    try! server.start(port: 9000)
 
     // Log the url for easy access
     print("[SERVER]", "Server is running - url:", serverURL())
@@ -157,6 +160,15 @@ extension TelegraphDemo {
   }
 }
 
+// MARK: - ServerDelegate implementation
+
+extension TelegraphDemo: ServerDelegate {
+  // Raised when the server gets disconnected.
+  public func serverDidStop(_ server: Server, error: Error?) {
+    print("[SERVER]", "Server stopped:", error?.localizedDescription ?? "no details")
+  }
+}
+
 // MARK: - ServerWebSocketDelegate implementation
 
 extension TelegraphDemo: ServerWebSocketDelegate {
@@ -179,11 +191,6 @@ extension TelegraphDemo: ServerWebSocketDelegate {
   /// Raised when the server sends a web socket message.
   public func server(_ server: Server, webSocket: WebSocket, didSendMessage message: WebSocketMessage) {
     print("[SERVER]", "WebSocket message sent:", message)
-  }
-
-  // Raised when the server gets disconnected.
-  public func serverDidDisconnect(_ server: Server) {
-    print("[SERVER]", "Server disconnected")
   }
 }
 
