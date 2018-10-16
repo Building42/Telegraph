@@ -48,6 +48,7 @@ public class HTTPConnection: TCPConnection {
 
   /// Upgrades the connection.
   public func upgrade() -> (TCPSocket, Data?) {
+    upgrading = true
     return (socket, upgradeData)
   }
 
@@ -81,7 +82,6 @@ public class HTTPConnection: TCPConnection {
 
     // Does the response request a connection upgrade?
     if response.isConnectionUpgrade {
-      upgrading = true
       delegate?.connection(self, handleUpgradeByRequest: request)
       return
     }
@@ -105,6 +105,10 @@ public class HTTPConnection: TCPConnection {
         if bytesParsed < data.count {
           upgradeData = data.subdata(in: bytesParsed..<data.count)
         }
+
+        // Handle the message, no need to reset, this connection will end
+        received(message: parser.message, error: nil)
+        return
       }
 
       // Do we have a complete message?
