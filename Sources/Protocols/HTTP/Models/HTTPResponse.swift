@@ -52,7 +52,10 @@ extension HTTPResponse {
 
   /// Creates an HTTP response to send an error.
   public convenience init(_ status: HTTPStatus = .internalServerError, headers: HTTPHeaders = .empty, error: Error) {
-    self.init(status, headers: headers, body: error.localizedDescription.utf8Data)
+    var errorHeaders = headers
+    errorHeaders.connection = "close"
+
+    self.init(status, headers: errorHeaders, body: error.localizedDescription.utf8Data)
   }
 }
 
