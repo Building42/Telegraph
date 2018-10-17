@@ -111,7 +111,7 @@ public final class TCPSocket: NSObject {
 
   /// Writes data with a timeout and tag.
   public func write(data: Data, timeout: TimeInterval = -1, tag: Int = 0) {
-    socket.write(data, withTimeout: timeout, tag: 0)
+    socket.write(data, withTimeout: timeout, tag: tag)
   }
 
   /// Starts the TLS handshake for secure connections.
