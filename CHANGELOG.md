@@ -1,7 +1,39 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
+
+## [0.18](https://github.com/Building42/Telegraph/releases/tag/0.18)
+
+### Breaking
+
+- Convert to Swift 4.2
+- `HTTPHeader` is now called `HTTPHeaderName`
+- `HTTPMethod` is now a struct and uses uppercase notation
+- `HTTPResponse` initializer uses `HTTPStatus` instead of `HTTPStatusCode`
+- `HTTPVersion` initializer uses `major:` and `minor:` labels
+- `Server` now has a `delegate` and a `webSocketDelegate`
+- `Server` start method has different labels and is easier to overload
+
+### HTTP changes
+
+- Fix keep-alive connections, gracefully handle both HTTP/1.0 and HTTP/1.1
+- Any protocol data already read by the `HTTPParser` is now correctly passed on connection upgrade
+- Add worker queue to control the concurrency of requests (see `Server.concurrency`)
+- Add symbolic link support to the `HTTPFileHandler` (thanks [lj-dickey](https://github.com/lj-dickey))
+- Performance improvements in the `HTTPParser` and smarter HTTP header serialization
+
+### WebSockets changes
+
+- `WebSocketClient` is now more reliable, with better error and upgrade handling
+- WebSocket connections perform a proper close handshake according to spec
+- WebSocket close codes are now handled by the parser
+
+### Other changes
+
+- Date formatting is now centralized in the `RFC1123` helper
+- `SHA1` has been replaced with Apple's CommonCrypto
+- Update demo based on the recent changes and improvements
 
 ## [0.17](https://github.com/Building42/Telegraph/releases/tag/0.17)
 
