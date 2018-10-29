@@ -73,11 +73,13 @@ extension HTTPHeaderName {
   static let contentDisposition = HTTPHeaderName("Content-Disposition")
   static let contentEncoding = HTTPHeaderName("Content-Encoding")
   static let contentLength = HTTPHeaderName("Content-Length")
+  static let contentRange = HTTPHeaderName("Content-Range")
   static let contentType = HTTPHeaderName("Content-Type")
   static let date = HTTPHeaderName("Date")
-  static let referer = HTTPHeaderName("Referer")
   static let host = HTTPHeaderName("Host")
   static let lastModified = HTTPHeaderName("Last-Modified")
+  static let range = HTTPHeaderName("Range")
+  static let referer = HTTPHeaderName("Referer")
   static let server = HTTPHeaderName("Server")
   static let setCookie = HTTPHeaderName("Set-Cookie")
   static let transferEncoding = HTTPHeaderName("Transfer-Encoding")
@@ -126,6 +128,11 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
     set { self[.contentLength] = newValue == nil ? nil : "\(newValue!)" }
   }
 
+  public var contentRange: String? {
+    get { return self[.contentRange] }
+    set { self[.contentRange] = newValue }
+  }
+
   public var contentType: String? {
     get { return self[.contentType] }
     set { self[.contentType] = newValue }
@@ -136,11 +143,6 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
     set { self[.date] = newValue }
   }
 
-  public var referer: String? {
-    get { return self[.referer] }
-    set { self[.referer] = newValue }
-  }
-
   public var host: String? {
     get { return self[.host] }
     set { self[.host] = newValue }
@@ -149,6 +151,16 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
   public var lastModified: String? {
     get { return self[.lastModified] }
     set { self[.lastModified] = newValue }
+  }
+
+  public var range: String? {
+    get { return self[.range] }
+    set { self[.range] = newValue }
+  }
+
+  public var referer: String? {
+    get { return self[.referer] }
+    set { self[.referer] = newValue }
   }
 
   public var server: String? {

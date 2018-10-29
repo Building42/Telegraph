@@ -11,6 +11,7 @@ public enum HTTPStatusCode: Int {
   case ok = 200
   case created = 201
   case noContent = 204
+  case partialContent = 206
   case movedPermanently = 301
   case notModified = 304
   case temporaryRedirect = 307
@@ -23,6 +24,7 @@ public enum HTTPStatusCode: Int {
   case lengthRequired = 411
   case payloadTooLarge = 413
   case uriTooLong = 414
+  case rangeNotSatisfiable = 416
   case unprocessableEntity = 422
   case tooManyRequests = 429
   case requestHeaderFieldsTooLarge = 431
@@ -48,6 +50,7 @@ public struct HTTPStatus {
     case .ok: phrase = "OK"
     case .created: phrase = "Created"
     case .noContent: phrase = "No Content"
+    case .partialContent: phrase = "Partial Content"
     case .movedPermanently: phrase = "Moved Permanently"
     case .notModified: phrase = "Not Modified"
     case .temporaryRedirect: phrase = "Temporary Redirect"
@@ -60,6 +63,7 @@ public struct HTTPStatus {
     case .lengthRequired: phrase = "Length Required"
     case .payloadTooLarge: phrase = "Payload Too Large"
     case .uriTooLong: phrase = "URI Too Long"
+    case .rangeNotSatisfiable: phrase = "Range Not Satisfiable"
     case .unprocessableEntity: phrase = "Unprocessable Entity"
     case .tooManyRequests: phrase = "Too Many Requests"
     case .requestHeaderFieldsTooLarge: phrase = "Request Header Fields Too Large"
@@ -87,6 +91,7 @@ public extension HTTPStatus {
   static let ok = HTTPStatus(code: .ok)
   static let created = HTTPStatus(code: .created)
   static let noContent = HTTPStatus(code: .noContent)
+  static let partialContent = HTTPStatus(code: .partialContent)
   static let movedPermanently = HTTPStatus(code: .movedPermanently)
   static let notModified = HTTPStatus(code: .notModified)
   static let temporaryRedirect = HTTPStatus(code: .temporaryRedirect)
@@ -99,6 +104,7 @@ public extension HTTPStatus {
   static let lengthRequired = HTTPStatus(code: .lengthRequired)
   static let payloadTooLarge = HTTPStatus(code: .payloadTooLarge)
   static let uriTooLong = HTTPStatus(code: .uriTooLong)
+  static let rangeNotSatisfiable = HTTPStatus(code: .rangeNotSatisfiable)
   static let unprocessableEntity = HTTPStatus(code: .unprocessableEntity)
   static let tooManyRequests = HTTPStatus(code: .tooManyRequests)
   static let requestHeaderFieldsTooLarge = HTTPStatus(code: .requestHeaderFieldsTooLarge)
