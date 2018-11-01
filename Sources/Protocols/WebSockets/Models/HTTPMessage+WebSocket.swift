@@ -21,35 +21,39 @@ extension HTTPMessage {
 
 extension HTTPRequest {
   /// Creates a websocket handshake request.
-  static func webSocketHandshake(host: String, port: Int = 80, protocolName: String = "") -> HTTPRequest {
+  static func webSocketHandshake(host: String, port: Int = 80, protocolName: String? = nil) -> HTTPRequest {
     let request = HTTPRequest()
     request.webSocketHandshake(host: host, port: port, protocolName: protocolName)
     return request
   }
 
   /// Decorates a request with websocket handshake headers.
-  func webSocketHandshake(host: String, port: Int = 80, protocolName: String = "") {
+  func webSocketHandshake(host: String, port: Int = 80, protocolName: String? = nil) {
     method = .GET
     setHostHeader(host: host, port: port)
 
     headers.connection = "Upgrade"
     headers.upgrade = HTTPMessage.webSocketProtocol
     headers.webSocketKey = Data(randomNumberOfBytes: 16).base64EncodedString()
-    headers.webSocketProtocol = protocolName
     headers.webSocketVersion = HTTPMessage.webSocketVersion
+
+    // Only send the 'Sec-WebSocket-Protocol' if it has a value (according to spec)
+    if let protocolName = protocolName, !protocolName.isEmpty {
+      headers.webSocketProtocol = protocolName
+    }
   }
 }
 
 public extension HTTPResponse {
-  /// Creates a websocket handshake request.
-  static func webSocketHandshake(key: String, protocolName: String = "") -> HTTPResponse {
+  /// Creates a websocket handshake response.
+  static func webSocketHandshake(key: String, protocolName: String? = nil) -> HTTPResponse {
     let response = HTTPResponse()
     response.webSocketHandshake(key: key, protocolName: protocolName)
     return response
   }
 
   /// Decorates a response with websocket handshake headers.
-  func webSocketHandshake(key: String, protocolName: String = "") {
+  func webSocketHandshake(key: String, protocolName: String? = nil) {
     // Take the incoming key, append the static GUID and return a base64 encoded SHA-1 hash
     let webSocketKey = key.appending(HTTPMessage.webSocketMagicGUID)
     let webSocketAccept = SHA1.hash(webSocketKey).base64EncodedString()
@@ -58,7 +62,11 @@ public extension HTTPResponse {
     headers.connection = "Upgrade"
     headers.upgrade = HTTPMessage.webSocketProtocol
     headers.webSocketAccept = webSocketAccept
-    headers.webSocketProtocol = protocolName
+
+    // Only send the 'Sec-WebSocket-Protocol' if it has a value (according to spec)
+    if let protocolName = protocolName, !protocolName.isEmpty {
+      headers.webSocketProtocol = protocolName
+    }
   }
 
   // Returns a boolean indicating if the response is a websocket handshake.
