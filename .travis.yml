@@ -10,6 +10,12 @@ cache:
     - $HOME/Library/Caches/org.carthage.CarthageKit/dependencies
     - Carthage
 
+addons:
+  homebrew:
+    update: true
+    packages:
+    - carthage
+
 env:
   global:
     - LANG=en_US.UTF-8
@@ -24,21 +30,19 @@ env:
     - DESTINATION="platform=macOS,arch=x86_64"                            SCHEME="Telegraph macOS"    RUN_TESTS="NO"
 
     # Older devices
-    - DESTINATION="platform=iOS Simulator,name=iPad 2,OS=8.1"             SCHEME="Telegraph iOS"      RUN_TESTS="YES"
+    - DESTINATION="platform=iOS Simulator,name=iPad 2,OS=8.1"             SCHEME="Telegraph iOS"      RUN_TESTS="NO"
     - DESTINATION="platform=iOS Simulator,name=iPhone 5s,OS=8.4"          SCHEME="Telegraph iOS"      RUN_TESTS="NO"
     - DESTINATION="platform=iOS Simulator,name=iPhone 6,OS=9.3"           SCHEME="Telegraph iOS"      RUN_TESTS="NO"
     - DESTINATION="platform=iOS Simulator,name=iPhone 7 Plus,OS=10.3.1"   SCHEME="Telegraph iOS"      RUN_TESTS="NO"
     - DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.4"          SCHEME="Telegraph iOS"      RUN_TESTS="NO"
 
 before_install:
-  # Install Carthage and XCPretty
-  - brew update
-  - brew outdated carthage || brew upgrade carthage
+  # Install XCPretty
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 before_script:
   # Build the dependencies
-  - carthage bootstrap --cache-builds --no-use-binaries
+  - carthage bootstrap --cache-builds
 
 script:
   # Produce a failure return code if any command errors
