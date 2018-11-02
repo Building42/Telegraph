@@ -392,7 +392,4 @@ Thank you to our contributors, your pull requests are most welcome and appreciat
 
 ## License
 
-Telegraph is available under the Mozilla Public License, version 2.0.
-You are welcome to use Telegraph in your commercial or open-source apps.
-
-See the LICENSE file for more info.
+Telegraph is released under the MIT license. See [LICENSE](https://github.com/Building42/Telegraph/blob/master/LICENSE) for details.
