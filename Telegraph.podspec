@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version = '0.19'
   s.license = 'MIT'
 
-  s.summary = 'A Secure Web Server for iOS, tvOS and macOS'
+  s.summary = 'Secure Web Server for iOS, tvOS and macOS'
   s.description = <<-DESC
     Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
   DESC
