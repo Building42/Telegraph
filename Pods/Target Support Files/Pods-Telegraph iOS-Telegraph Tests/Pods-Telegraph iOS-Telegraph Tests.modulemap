@@ -1,6 +1,0 @@
-framework module Pods_Telegraph_iOS_Telegraph_Tests {
-  umbrella header "Pods-Telegraph iOS-Telegraph Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

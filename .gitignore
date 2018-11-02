@@ -16,10 +16,8 @@ xcuserdata
 *.pbxuser
 *.perspectivev3
 
-# OCLint
-compile_commands.json
-oclint.html
-xcodebuild.log
+# Carthage
+Carthage/
 
 # Third party tools
 .idea/

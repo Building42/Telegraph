@@ -12,6 +12,7 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 - [Platforms](#platforms)
 - [Versions](#versions)
 - [Installation](#installation)
+- [Build](#build)
 - [Usage](#usage)
 - [TODOs](#todos)
 - [FAQ](#faq)
@@ -42,45 +43,39 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 
 ## Installation
 
-### CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
-
-```bash
-$ gem install cocoapods
-```
-
-To integrate Telegraph into your Xcode project using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-use_frameworks!
-pod 'Telegraph'
-```
-
-Then, run the following command:
-
-```bash
-$ pod install
-```
-
 ### Carthage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate Telegraph into your Xcode project using Carthage, specify it in your `Cartfile`:
+Carthage is a decentralized dependency manager that builds your dependencies into binary frameworks.
 
 ```ogdl
 github "Building42/Telegraph"
 ```
 
-Run `carthage update` to build the framework and drag the `CocoaAsyncSocket`, `HTTPParserC` and `Telegraph` frameworks into your Xcode project.
+See [Carthage - Quick Start](https://github.com/Carthage/Carthage/#quick-start) for more information.
+
+### CocoaPods
+
+CocoaPods is a dependency manager for Cocoa projects that makes dependencies a part of your workspace.
+
+```ruby
+target '<Your Target Name>'
+use_frameworks!
+
+pod 'Telegraph'
+```
+
+See [CocoaPods - Getting Started](https://guides.cocoapods.org/using/getting-started.html) for more information.
+
+## Build
+
+You can build the Telegraph framework and the examples with these steps:
+
+1. install [Carthage](https://github.com/Carthage/Carthage) using Homebrew
+2. clone the repository
+3. run `carthage bootstrap`
+4. open Telegraph.xcworkspace, select a scheme and build
+
+This is only necessary if you want to make changes to the framework or try out the examples.
 
 ## Usage
 

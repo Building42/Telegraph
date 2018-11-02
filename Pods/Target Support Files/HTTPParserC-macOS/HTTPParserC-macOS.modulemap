@@ -1,6 +1,0 @@
-framework module HTTPParserC {
-  umbrella header "HTTPParserC-macOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
