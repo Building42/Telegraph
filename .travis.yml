@@ -10,12 +10,6 @@ cache:
     - $HOME/Library/Caches/org.carthage.CarthageKit/dependencies
     - Carthage
 
-addons:
-  homebrew:
-    update: true
-    packages:
-    - carthage
-
 env:
   global:
     - LANG=en_US.UTF-8
@@ -37,7 +31,8 @@ env:
     - DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.4"          SCHEME="Telegraph iOS"      RUN_TESTS="NO"
 
 before_install:
-  # Install XCPretty
+  # Install Carthage and XCPretty
+  - brew outdated carthage || brew upgrade carthage
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 before_script:
