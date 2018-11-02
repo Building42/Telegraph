@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 Telegraph adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.19](https://github.com/Building42/Telegraph/releases/tag/0.19)
+
+- Support range requests for files, fixes streaming video on iOS
+- Verify the `Sec-WebSocket-Protocol` header during the WebSocket handshake
+
 ## [0.18](https://github.com/Building42/Telegraph/releases/tag/0.18)
 
 ### Breaking

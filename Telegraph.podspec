@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Telegraph'
-  s.version = '0.18'
+  s.version = '0.19'
 
   s.summary = 'A Secure Web Server for iOS, tvOS and macOS'
   s.description = <<-DESC
