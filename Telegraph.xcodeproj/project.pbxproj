@@ -219,6 +219,9 @@
 		82D2AF04210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		82D2AF05210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		82D2AF06210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
+		82FB49BE2195BBFB00C4E574 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB49BD2195BBFB00C4E574 /* Deprecations.swift */; };
+		82FB49BF2195BBFB00C4E574 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB49BD2195BBFB00C4E574 /* Deprecations.swift */; };
+		82FB49C02195BBFB00C4E574 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB49BD2195BBFB00C4E574 /* Deprecations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +319,7 @@
 		8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPFileHandler.swift; sourceTree = "<group>"; };
 		82897602217402B60089D662 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		82D2AF03210D354600BF5BBA /* DataStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStream.swift; sourceTree = "<group>"; };
+		82FB49BD2195BBFB00C4E574 /* Deprecations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecations.swift; sourceTree = "<group>"; };
 		D9899DD31DF4A092008766B5 /* Telegraph Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telegraph Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -613,6 +617,7 @@
 			isa = PBXGroup;
 			children = (
 				825A71C91ECD2E890043AC8D /* Extensions */,
+				82FB49BD2195BBFB00C4E574 /* Deprecations.swift */,
 				825A71CF1ECD2E890043AC8D /* DispatchTimer.swift */,
 				821FD9F0216BE58E00D0F486 /* RFC1123.swift */,
 				820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */,
@@ -990,6 +995,7 @@
 				825A72841ECD2E890043AC8D /* WebSocket.swift in Sources */,
 				821FD9F1216BE58E00D0F486 /* RFC1123.swift in Sources */,
 				825A72661ECD2E890043AC8D /* HTTPRoute.swift in Sources */,
+				82FB49BE2195BBFB00C4E574 /* Deprecations.swift in Sources */,
 				825A724B1ECD2E890043AC8D /* HTTPHeader.swift in Sources */,
 				825A72931ECD2E890043AC8D /* WebSocketMessage.swift in Sources */,
 				8280B07B2170383400BE42C3 /* WebSocketClientError.swift in Sources */,
@@ -1061,6 +1067,7 @@
 				825A72851ECD2E890043AC8D /* WebSocket.swift in Sources */,
 				821FD9F2216BE58E00D0F486 /* RFC1123.swift in Sources */,
 				825A72671ECD2E890043AC8D /* HTTPRoute.swift in Sources */,
+				82FB49BF2195BBFB00C4E574 /* Deprecations.swift in Sources */,
 				825A724C1ECD2E890043AC8D /* HTTPHeader.swift in Sources */,
 				825A72941ECD2E890043AC8D /* WebSocketMessage.swift in Sources */,
 				8280B07C2170383400BE42C3 /* WebSocketClientError.swift in Sources */,
@@ -1132,6 +1139,7 @@
 				825A72861ECD2E890043AC8D /* WebSocket.swift in Sources */,
 				821FD9F3216BE58E00D0F486 /* RFC1123.swift in Sources */,
 				825A72681ECD2E890043AC8D /* HTTPRoute.swift in Sources */,
+				82FB49C02195BBFB00C4E574 /* Deprecations.swift in Sources */,
 				825A724D1ECD2E890043AC8D /* HTTPHeader.swift in Sources */,
 				825A72951ECD2E890043AC8D /* WebSocketMessage.swift in Sources */,
 				8280B07D2170383400BE42C3 /* WebSocketClientError.swift in Sources */,

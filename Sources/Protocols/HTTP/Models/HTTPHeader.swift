@@ -188,16 +188,3 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
     set { self[.upgrade] = newValue }
   }
 }
-
-// MARK: Deprecated
-
-@available(*, deprecated, message: "use HTTPHeaderName")
-typealias HTTPHeader = HTTPHeaderName
-
-@available(*, deprecated, message: "use Dictionary")
-typealias CustomKeyIndexable = Dictionary
-
-public extension HTTPHeaderName {
-  @available(*, deprecated, message: "no longer available, test manually that name starts with x-")
-  public var isCustom: Bool { return name.hasPrefix("x-") }
-}

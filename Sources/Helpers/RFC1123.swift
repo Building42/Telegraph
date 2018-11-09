@@ -30,12 +30,3 @@ public extension Date {
     return RFC1123.formatter.string(from: self)
   }
 }
-
-// MARK: Deprecated
-
-public extension DateFormatter {
-  @available(*, deprecated, message: "use DateFormatter.rfc1123 or Date's rfc1123 variable")
-  public var rfc7231: DateFormatter {
-    return .rfc1123
-  }
-}

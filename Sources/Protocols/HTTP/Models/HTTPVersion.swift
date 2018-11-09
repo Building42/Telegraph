@@ -27,12 +27,3 @@ extension HTTPVersion: CustomStringConvertible {
     return "HTTP/\(major).\(minor)"
   }
 }
-
-// MARK: Deprecated
-
-public extension HTTPVersion {
-  @available(*, deprecated, message: "use HTTPVersion(major:, minor:)")
-  public init(_ major: UInt, _ minor: UInt) {
-    self.init(major: major, minor: minor)
-  }
-}

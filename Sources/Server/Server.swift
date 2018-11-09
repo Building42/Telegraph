@@ -237,17 +237,3 @@ extension Server: WebSocketConnectionDelegate {
     }
   }
 }
-
-// MARK: Deprecated
-
-extension Server {
-  @available(*, deprecated, message: "use start(port:)")
-  open func start(onPort port: UInt16) throws {
-    try start(port: Int(port))
-  }
-
-  @available(*, deprecated, message: "use start(port:interface:)")
-  open func start(onInterface interface: String?, port: UInt16 = 0) throws {
-    try start(port: Int(port), interface: interface)
-  }
-}

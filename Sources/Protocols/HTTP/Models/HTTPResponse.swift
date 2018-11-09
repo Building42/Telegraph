@@ -67,21 +67,3 @@ extension HTTPResponse: CustomStringConvertible {
     return "<\(typeName): \(version) \(status), headers: \(headers.count), body: \(body.count)>"
   }
 }
-
-// MARK: Deprecated
-
-extension HTTPResponse {
-  @available(*, deprecated, message: "use DateFormatter.rfc1123 or Date's rfc1123 variable")
-  public static let dateFormatter = DateFormatter.rfc1123
-
-  @available(*, deprecated, message: "data: has been renamed to body:")
-  public convenience init(_ status: HTTPStatus = .ok, data: Data) {
-    self.init(status, body: data)
-  }
-
-  @available(*, deprecated, message: "use keepAlive instead, this setter only handles true properly")
-  public var closeAfterWrite: Bool {
-    get { return !keepAlive }
-    set { if newValue { headers.connection = "close" } }
-  }
-}

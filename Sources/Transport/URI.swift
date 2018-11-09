@@ -81,13 +81,3 @@ extension URI: CustomStringConvertible {
     return components.description
   }
 }
-
-// MARK: Deprecated
-
-extension URI {
-  @available(*, deprecated, message: "fragment should not be used, it is only relevant for URLs")
-  public var fragment: String? {
-    get { return components.fragment }
-    set { components.fragment = newValue }
-  }
-}

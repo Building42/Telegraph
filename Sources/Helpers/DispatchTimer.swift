@@ -82,21 +82,3 @@ private extension DispatchWallTime {
     self.init(timespec: wallTime)
   }
 }
-
-// MARK: Deprecated
-
-public extension DispatchTimer {
-  /// Creates and starts a timer that runs after a while, optionally repeating with a specific interval.
-  @available(*, deprecated, message: "no longer supported, use start(at:) to run the timer at a later time")
-  static func run(after: TimeInterval, interval: TimeInterval = 0, queue: DispatchQueue, execute block: @escaping () -> Void) -> DispatchTimer {
-    let timer = DispatchTimer(interval: interval, queue: queue, execute: block)
-    timer.start(at: Date() + after)
-    return timer
-  }
-
-  /// (Re)starts the timer, next run will be after the specified interval.
-  @available(*, deprecated, message: "no longer supported, use start(at:) to run the timer at a later time")
-  public func start(after: TimeInterval) {
-    start(at: Date() + after)
-  }
-}
