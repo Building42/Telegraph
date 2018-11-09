@@ -12,7 +12,7 @@ import Foundation
 
 public extension DateFormatter {
   @available(*, deprecated, message: "use DateFormatter.rfc1123 or Date's rfc1123 variable")
-  public var rfc7231: DateFormatter {
+  var rfc7231: DateFormatter {
     return .rfc1123
   }
 }
@@ -30,7 +30,7 @@ public extension DispatchTimer {
 
   /// (Re)starts the timer, next run will be after the specified interval.
   @available(*, deprecated, message: "no longer supported, use start(at:) to run the timer at a later time")
-  public func start(after: TimeInterval) {
+  func start(after: TimeInterval) {
     start(at: Date() + after)
   }
 }
@@ -77,17 +77,17 @@ public extension HTTPMethod {
 
 // MARK: - HTTPReponse
 
-extension HTTPResponse {
+public extension HTTPResponse {
   @available(*, deprecated, message: "use DateFormatter.rfc1123 or Date's rfc1123 variable")
-  public static let dateFormatter = DateFormatter.rfc1123
+  static let dateFormatter = DateFormatter.rfc1123
 
   @available(*, deprecated, message: "data: has been renamed to body:")
-  public convenience init(_ status: HTTPStatus = .ok, data: Data) {
+  convenience init(_ status: HTTPStatus = .ok, data: Data) {
     self.init(status, body: data)
   }
 
   @available(*, deprecated, message: "use keepAlive instead, this setter only handles true properly")
-  public var closeAfterWrite: Bool {
+  var closeAfterWrite: Bool {
     get { return !keepAlive }
     set { if newValue { headers.connection = "close" } }
   }
@@ -97,30 +97,30 @@ extension HTTPResponse {
 
 public extension HTTPVersion {
   @available(*, deprecated, message: "use HTTPVersion(major:, minor:)")
-  public init(_ major: UInt, _ minor: UInt) {
+  init(_ major: UInt, _ minor: UInt) {
     self.init(major: major, minor: minor)
   }
 }
 
 // MARK: - Server
 
-extension Server {
+public extension Server {
   @available(*, deprecated, message: "use start(port:)")
-  open func start(onPort port: UInt16) throws {
+  func start(onPort port: UInt16) throws {
     try start(port: Int(port))
   }
 
   @available(*, deprecated, message: "use start(port:interface:)")
-  open func start(onInterface interface: String?, port: UInt16 = 0) throws {
+  func start(onInterface interface: String?, port: UInt16 = 0) throws {
     try start(port: Int(port), interface: interface)
   }
 }
 
 // MARK: - URI
 
-extension URI {
+public extension URI {
   @available(*, deprecated, message: "fragment should not be used, it is only relevant for URLs")
-  public var fragment: String? {
+  var fragment: String? {
     get { return nil }
     set { }
   }
