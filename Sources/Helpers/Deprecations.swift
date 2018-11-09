@@ -75,6 +75,13 @@ public extension HTTPMethod {
   }
 }
 
+// MARK: - HTTPStatus
+
+public extension HTTPStatus {
+  @available(*, deprecated, message: "return nil from your handler (this status is used by Nginx, not part of the spec)")
+  static let noResponse = HTTPStatus(code: 444, phrase: "No Response")
+}
+
 // MARK: - HTTPReponse
 
 public extension HTTPResponse {

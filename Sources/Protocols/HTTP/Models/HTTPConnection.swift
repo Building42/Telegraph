@@ -60,12 +60,6 @@ public class HTTPConnection: TCPConnection {
 
   /// Sends the response by writing it to the stream.
   public func send(response: HTTPResponse, toRequest request: HTTPRequest) {
-    // No response? Close the connection
-    if response.status == .noResponse {
-      close(immediately: true)
-      return
-    }
-
     // Do not write the body for HEAD requests
     if request.method == .HEAD {
       response.stripBody = true
