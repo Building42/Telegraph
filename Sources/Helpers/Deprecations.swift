@@ -82,6 +82,11 @@ public extension HTTPStatus {
   static let noResponse = HTTPStatus(code: 444, phrase: "No Response")
 }
 
+// MARK: - HTTPStatusCode
+
+@available(*, deprecated, message: "use HTTPStatus, for example .ok or .notFound")
+public typealias HTTPStatusCode = HTTPStatus
+
 // MARK: - HTTPReponse
 
 public extension HTTPResponse {

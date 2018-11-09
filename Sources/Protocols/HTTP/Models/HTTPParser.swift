@@ -153,10 +153,8 @@ extension HTTPParser {
     // Not done parsing the status? Continue
     guard rawParser.isStatusComplete else { return continueParsing }
 
-    // Check that the status is valid
+    // Validate and set the status
     guard let phrase = String(data: statusData, encoding: .utf8) else { return stopParsing }
-
-    // Set the status
     response?.status = HTTPStatus(code: rawParser.httpStatusCode, phrase: phrase)
 
     return continueParsing
