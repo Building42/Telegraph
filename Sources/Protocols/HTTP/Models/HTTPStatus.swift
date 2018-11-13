@@ -72,7 +72,7 @@ extension HTTPStatus: CustomStringConvertible {
   }
 }
 
-// MARK: Status - Informational
+// MARK: - Status: Informational
 
 public extension HTTPStatus {
   /// 100 Continue: the server has received the request headers and the client should proceed to send the request body.
@@ -85,7 +85,7 @@ public extension HTTPStatus {
   static let processing = HTTPStatus(code: 102, phrase: "Processing")
 }
 
-// MARK: Status - Success
+// MARK: - Status: Success
 
 public extension HTTPStatus {
   /// 200 OK: standard response for successful HTTP requests.
@@ -123,7 +123,7 @@ public extension HTTPStatus {
   static let imUsed = HTTPStatus(code: 226, phrase: "IM Used")
 }
 
-/// Mark: Status - Redirection
+// MARK: - Status: Redirection
 
 public extension HTTPStatus {
   /// 300 Multiple Choices: indicates multiple options for the resource from which the client may
@@ -155,7 +155,7 @@ public extension HTTPStatus {
   static let permanentRedirect = HTTPStatus(code: 308, phrase: "Permanent Redirect")
 }
 
-/// Mark: Status - Client Errors
+// MARK: - Status: Client Errors
 
 public extension HTTPStatus {
   /// 400 Bad Request: server cannot or will not process the request due to an apparent client error.
@@ -253,7 +253,7 @@ public extension HTTPStatus {
   static let unavailableForLegalReasons = HTTPStatus(code: 451, phrase: "Unavailable For Legal Reasons")
 }
 
-/// Mark: Status - Server Errors
+// MARK: - Status: Server Errors
 
 public extension HTTPStatus {
   /// 500 Internal Server Error: generic error message, given when an unexpected condition was encountered
@@ -295,12 +295,12 @@ public extension HTTPStatus {
   static let networkAuthenticationRequired = HTTPStatus(code: 511, phrase: "Network Authentication Required")
 }
 
-/// MARK: Custom Status
+// MARK: - Status: Custom
 
 extension HTTPStatus {
   /// Provides a way to create custom HTTPStatus values. The use of this function is discouraged, it is
-  /// recommended to use one of the static predfined status variables (for example: .ok or .notFound).
-  static func status(code: Int, phrase: String) -> HTTPStatus {
+  /// recommended to use one of the static predefined status variables (for example: .ok or .notFound).
+  static func custom(code: Int, phrase: String) -> HTTPStatus {
     return HTTPStatus(code: code, phrase: phrase)
   }
 }
