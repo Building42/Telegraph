@@ -70,6 +70,7 @@ extension TelegraphDemo {
     // Note: we're ignoring possible strong retain cycles in the demo
     server.route(.GET, "hello/:name", serverHandleHello)
     server.route(.GET, "hello(/)", serverHandleHello)
+    server.route(.GET, "redirect", serverHandleRedirect)
     server.route(.GET, "secret/*") { .forbidden }
     server.route(.GET, "status") { (.ok, "Server is running") }
 
@@ -123,13 +124,20 @@ extension TelegraphDemo {
 // MARK: - Server route handlers
 
 extension TelegraphDemo {
-  /// Raised when the /hello enpoint is called
+  /// Raised when the /hello endpoint is called.
   private func serverHandleHello(request: HTTPRequest) -> HTTPResponse {
     let name = request.params["name"] ?? "stranger"
     return HTTPResponse(content: "Hello \(name.capitalized)")
   }
 
-  /// Raised when the /data enpoint is called
+  /// Raised when the /redirect endpoint is called.
+  private func serverHandleRedirect(request: HTTPRequest) -> HTTPResponse {
+    let response = HTTPResponse(.temporaryRedirect)
+    response.headers.location = "https://www.google.com"
+    return response
+  }
+
+  /// Raised when the /data endpoint is called.
   private func serverHandleData(request: HTTPRequest) -> HTTPResponse {
     // Decode the request body using the JSON decoder, fallback to "stranger" if the data is invalid
     let requestDict = try? JSONDecoder().decode([String: String].self, from: request.body)
@@ -145,14 +153,14 @@ extension TelegraphDemo {
 // MARK: - Client request handlers
 
 extension TelegraphDemo {
-  /// Raised when the client processes the /hello endpoint response
+  /// Raised when the client processes the /hello endpoint response.
   private func clientHandleHello(data: Data?, response: URLResponse) {
     if let textData = data, let text = String(data: textData, encoding: .utf8) {
       print("[CLIENT]", "Request on /hello succeeded - text:", text)
     }
   }
 
-  /// Raised when the client processes the /data endpoint response
+  /// Raised when the client processes the /data endpoint response.
   private func clientHandleData(data: Data?, response: URLResponse) {
     if let jsonData = data, let json = try? JSONDecoder().decode([String: String].self, from: jsonData) {
       print("[CLIENT]", "Request on /data succeded - json:", json)
