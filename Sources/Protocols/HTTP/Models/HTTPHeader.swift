@@ -27,8 +27,8 @@ public struct HTTPHeaderName: Hashable {
 
 // MARK: Equatable implementation
 
-extension HTTPHeaderName {
-  public static func == (lhs: HTTPHeaderName, rhs: HTTPHeaderName) -> Bool {
+public extension HTTPHeaderName {
+  static func == (lhs: HTTPHeaderName, rhs: HTTPHeaderName) -> Bool {
     return lhs.name.caseInsensitiveCompare(rhs.name) == .orderedSame
   }
 }
@@ -64,7 +64,7 @@ public extension Dictionary where Key == HTTPHeaderName, Value == String {
 
 // MARK: Common headers
 
-extension HTTPHeaderName {
+public extension HTTPHeaderName {
   static let accept = HTTPHeaderName("Accept")
   static let acceptCharset = HTTPHeaderName("Accept-Charset")
   static let acceptEncoding = HTTPHeaderName("Accept-Encoding")
@@ -103,183 +103,183 @@ extension HTTPHeaderName {
   static let upgrade = HTTPHeaderName("Upgrade")
 }
 
-extension Dictionary where Key == HTTPHeaderName, Value == String {
-  public var accept: String? {
+public extension Dictionary where Key == HTTPHeaderName, Value == String {
+  var accept: String? {
     get { return self[.accept] }
     set { self[.accept] = newValue }
   }
 
-  public var acceptCharset: String? {
+  var acceptCharset: String? {
     get { return self[.acceptCharset] }
     set { self[.acceptCharset] = newValue }
   }
 
-  public var acceptEncoding: String? {
+  var acceptEncoding: String? {
     get { return self[.acceptEncoding] }
     set { self[.acceptEncoding] = newValue }
   }
 
-  public var acceptLanguage: String? {
+  var acceptLanguage: String? {
     get { return self[.acceptLanguage] }
     set { self[.acceptLanguage] = newValue }
   }
 
-  public var acceptRanges: String? {
+  var acceptRanges: String? {
     get { return self[.acceptRanges] }
     set { self[.acceptRanges] = newValue }
   }
 
-  public var age: String? {
+  var age: String? {
     get { return self[.age] }
     set { self[.age] = newValue }
   }
 
-  public var allow: String? {
+  var allow: String? {
     get { return self[.allow] }
     set { self[.allow] = newValue }
   }
 
-  public var authorization: String? {
+  var authorization: String? {
     get { return self[.authorization] }
     set { self[.authorization] = newValue }
   }
 
-  public var cacheControl: String? {
+  var cacheControl: String? {
     get { return self[.cacheControl] }
     set { self[.cacheControl] = newValue }
   }
 
-  public var connection: String? {
+  var connection: String? {
     get { return self[.connection] }
     set { self[.connection] = newValue }
   }
 
-  public var cookie: String? {
+  var cookie: String? {
     get { return self[.cookie] }
     set { self[.cookie] = newValue }
   }
 
-  public var contentDisposition: String? {
+  var contentDisposition: String? {
     get { return self[.contentDisposition] }
     set { self[.contentDisposition] = newValue }
   }
 
-  public var contentEncoding: String? {
+  var contentEncoding: String? {
     get { return self[.contentEncoding] }
     set { self[.contentEncoding] = newValue }
   }
 
-  public var contentLanguage: String? {
+  var contentLanguage: String? {
     get { return self[.contentLanguage] }
     set { self[.contentLanguage] = newValue }
   }
 
-  public var contentLength: Int? {
+  var contentLength: Int? {
     get { return Int(self[.contentLength] ?? "") }
     set { self[.contentLength] = newValue == nil ? nil : "\(newValue!)" }
   }
 
-  public var contentRange: String? {
+  var contentRange: String? {
     get { return self[.contentRange] }
     set { self[.contentRange] = newValue }
   }
 
-  public var contentType: String? {
+  var contentType: String? {
     get { return self[.contentType] }
     set { self[.contentType] = newValue }
   }
 
-  public var date: String? {
+  var date: String? {
     get { return self[.date] }
     set { self[.date] = newValue }
   }
 
-  public var eTag: String? {
+  var eTag: String? {
     get { return self[.eTag] }
     set { self[.eTag] = newValue }
   }
 
-  public var expect: String? {
+  var expect: String? {
     get { return self[.expect] }
     set { self[.expect] = newValue }
   }
 
-  public var expires: String? {
+  var expires: String? {
     get { return self[.expires] }
     set { self[.expires] = newValue }
   }
 
-  public var forwarded: String? {
+  var forwarded: String? {
     get { return self[.forwarded] }
     set { self[.forwarded] = newValue }
   }
 
-  public var host: String? {
+  var host: String? {
     get { return self[.host] }
     set { self[.host] = newValue }
   }
 
-  public var lastModified: String? {
+  var lastModified: String? {
     get { return self[.lastModified] }
     set { self[.lastModified] = newValue }
   }
 
-  public var location: String? {
+  var location: String? {
     get { return self[.location] }
     set { self[.location] = newValue }
   }
 
-  public var origin: String? {
+  var origin: String? {
     get { return self[.origin] }
     set { self[.origin] = newValue }
   }
 
-  public var pragma: String? {
+  var pragma: String? {
     get { return self[.pragma] }
     set { self[.pragma] = newValue }
   }
 
-  public var range: String? {
+  var range: String? {
     get { return self[.range] }
     set { self[.range] = newValue }
   }
 
-  public var referer: String? {
+  var referer: String? {
     get { return self[.referer] }
     set { self[.referer] = newValue }
   }
 
-  public var refresh: String? {
+  var refresh: String? {
     get { return self[.refresh] }
     set { self[.refresh] = newValue }
   }
 
-  public var server: String? {
+  var server: String? {
     get { return self[.server] }
     set { self[.server] = newValue }
   }
 
-  public var setCookie: String? {
+  var setCookie: String? {
     get { return self[.setCookie] }
     set { self[.setCookie] = newValue }
   }
 
-  public var strictTransportSecurity: String? {
+  var strictTransportSecurity: String? {
     get { return self[.strictTransportSecurity] }
     set { self[.strictTransportSecurity] = newValue }
   }
 
-  public var transferEncoding: String? {
+  var transferEncoding: String? {
     get { return self[.transferEncoding] }
     set { self[.transferEncoding] = newValue }
   }
 
-  public var userAgent: String? {
+  var userAgent: String? {
     get { return self[.userAgent] }
     set { self[.userAgent] = newValue }
   }
 
-  public var upgrade: String? {
+  var upgrade: String? {
     get { return self[.upgrade] }
     set { self[.upgrade] = newValue }
   }
