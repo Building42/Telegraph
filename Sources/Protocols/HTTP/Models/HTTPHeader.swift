@@ -66,22 +66,38 @@ public extension Dictionary where Key == HTTPHeaderName, Value == String {
 
 extension HTTPHeaderName {
   static let accept = HTTPHeaderName("Accept")
+  static let acceptCharset = HTTPHeaderName("Accept-Charset")
+  static let acceptEncoding = HTTPHeaderName("Accept-Encoding")
+  static let acceptLanguage = HTTPHeaderName("Accept-Language")
+  static let acceptRanges = HTTPHeaderName("Accept-Ranges")
+  static let age = HTTPHeaderName("Age")
+  static let allow = HTTPHeaderName("Allow")
   static let authorization = HTTPHeaderName("Authorization")
   static let cacheControl = HTTPHeaderName("Cache-Control")
   static let connection = HTTPHeaderName("Connection")
   static let cookie = HTTPHeaderName("Cookie")
   static let contentDisposition = HTTPHeaderName("Content-Disposition")
   static let contentEncoding = HTTPHeaderName("Content-Encoding")
+  static let contentLanguage = HTTPHeaderName("Content-Language")
   static let contentLength = HTTPHeaderName("Content-Length")
   static let contentRange = HTTPHeaderName("Content-Range")
   static let contentType = HTTPHeaderName("Content-Type")
   static let date = HTTPHeaderName("Date")
+  static let eTag = HTTPHeaderName("ETag")
+  static let expect = HTTPHeaderName("Expect")
+  static let expires = HTTPHeaderName("Expires")
+  static let forwarded = HTTPHeaderName("Forwarded")
   static let host = HTTPHeaderName("Host")
   static let lastModified = HTTPHeaderName("Last-Modified")
+  static let location = HTTPHeaderName("Location")
+  static let origin = HTTPHeaderName("Origin")
+  static let pragma = HTTPHeaderName("Pragma")
   static let range = HTTPHeaderName("Range")
   static let referer = HTTPHeaderName("Referer")
+  static let refresh = HTTPHeaderName("Refresh")
   static let server = HTTPHeaderName("Server")
   static let setCookie = HTTPHeaderName("Set-Cookie")
+  static let strictTransportSecurity = HTTPHeaderName("Strict-Transport-Security")
   static let transferEncoding = HTTPHeaderName("Transfer-Encoding")
   static let userAgent = HTTPHeaderName("User-Agent")
   static let upgrade = HTTPHeaderName("Upgrade")
@@ -91,6 +107,36 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
   public var accept: String? {
     get { return self[.accept] }
     set { self[.accept] = newValue }
+  }
+
+  public var acceptCharset: String? {
+    get { return self[.acceptCharset] }
+    set { self[.acceptCharset] = newValue }
+  }
+
+  public var acceptEncoding: String? {
+    get { return self[.acceptEncoding] }
+    set { self[.acceptEncoding] = newValue }
+  }
+
+  public var acceptLanguage: String? {
+    get { return self[.acceptLanguage] }
+    set { self[.acceptLanguage] = newValue }
+  }
+
+  public var acceptRanges: String? {
+    get { return self[.acceptRanges] }
+    set { self[.acceptRanges] = newValue }
+  }
+
+  public var age: String? {
+    get { return self[.age] }
+    set { self[.age] = newValue }
+  }
+
+  public var allow: String? {
+    get { return self[.allow] }
+    set { self[.allow] = newValue }
   }
 
   public var authorization: String? {
@@ -123,6 +169,11 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
     set { self[.contentEncoding] = newValue }
   }
 
+  public var contentLanguage: String? {
+    get { return self[.contentLanguage] }
+    set { self[.contentLanguage] = newValue }
+  }
+
   public var contentLength: Int? {
     get { return Int(self[.contentLength] ?? "") }
     set { self[.contentLength] = newValue == nil ? nil : "\(newValue!)" }
@@ -143,6 +194,26 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
     set { self[.date] = newValue }
   }
 
+  public var eTag: String? {
+    get { return self[.eTag] }
+    set { self[.eTag] = newValue }
+  }
+
+  public var expect: String? {
+    get { return self[.expect] }
+    set { self[.expect] = newValue }
+  }
+
+  public var expires: String? {
+    get { return self[.expires] }
+    set { self[.expires] = newValue }
+  }
+
+  public var forwarded: String? {
+    get { return self[.forwarded] }
+    set { self[.forwarded] = newValue }
+  }
+
   public var host: String? {
     get { return self[.host] }
     set { self[.host] = newValue }
@@ -151,6 +222,21 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
   public var lastModified: String? {
     get { return self[.lastModified] }
     set { self[.lastModified] = newValue }
+  }
+
+  public var location: String? {
+    get { return self[.location] }
+    set { self[.location] = newValue }
+  }
+
+  public var origin: String? {
+    get { return self[.origin] }
+    set { self[.origin] = newValue }
+  }
+
+  public var pragma: String? {
+    get { return self[.pragma] }
+    set { self[.pragma] = newValue }
   }
 
   public var range: String? {
@@ -163,6 +249,11 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
     set { self[.referer] = newValue }
   }
 
+  public var refresh: String? {
+    get { return self[.refresh] }
+    set { self[.refresh] = newValue }
+  }
+
   public var server: String? {
     get { return self[.server] }
     set { self[.server] = newValue }
@@ -171,6 +262,11 @@ extension Dictionary where Key == HTTPHeaderName, Value == String {
   public var setCookie: String? {
     get { return self[.setCookie] }
     set { self[.setCookie] = newValue }
+  }
+
+  public var strictTransportSecurity: String? {
+    get { return self[.strictTransportSecurity] }
+    set { self[.strictTransportSecurity] = newValue }
   }
 
   public var transferEncoding: String? {
