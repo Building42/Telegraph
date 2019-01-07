@@ -59,12 +59,10 @@ extension TelegraphDemo {
       server = Server()
     }
 
-    // Set the delegate
+    // Set the delegates and a low web socket ping interval to demonstrate ping-pong
     server.delegate = self
-
-    // Set a low web socket ping interval to demonstrate ping-pong
-    server.webSocketConfig.pingInterval = 10
     server.webSocketDelegate = self
+    server.webSocketConfig.pingInterval = 10
 
     // Define the demo routes
     // Note: we're ignoring possible strong retain cycles in the demo
@@ -73,10 +71,12 @@ extension TelegraphDemo {
     server.route(.GET, "redirect", serverHandleRedirect)
     server.route(.GET, "secret/*") { .forbidden }
     server.route(.GET, "status") { (.ok, "Server is running") }
-
     server.route(.POST, "data", serverHandleData)
 
     server.serveBundle(.main, "/")
+
+    // Handle up to 4 requests simultaneously
+    server.concurrency = 4
 
     // Start the server on localhost
     // Note: we'll skip error handling in the demo
