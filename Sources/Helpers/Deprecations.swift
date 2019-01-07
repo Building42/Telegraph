@@ -43,6 +43,13 @@ typealias HTTPHeader = HTTPHeaderName
 @available(*, deprecated, message: "use Dictionary")
 typealias CustomKeyIndexable = Dictionary
 
+// MARK: - HTTPHeaderName
+
+public extension HTTPHeaderName {
+  @available(*, deprecated, message: "construct lower cased names manually")
+  static var forceLowerCased = false
+}
+
 // MARK: - HTTPMethod
 
 public extension HTTPMethod {

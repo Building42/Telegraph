@@ -11,25 +11,23 @@ import Foundation
 public typealias HTTPHeaders = [HTTPHeaderName: String]
 
 public struct HTTPHeaderName: Hashable {
-  /// Keeps the header keys as is or convert them all to lowercased.
-  public static var forceLowerCased = false
-
-  public let hashValue: Int
   private let name: String
+  private let nameInLowercase: String
 
-  /// Creates a HTTPHeader name. Names are handled case insensitive according to RFC7230.
+  /// Creates a HTTPHeader name. Header names are case insensitive according to RFC7230.
   init(_ name: String) {
-    let lowerName = name.lowercased()
-    self.name = HTTPHeaderName.forceLowerCased ? lowerName : name
-    self.hashValue = lowerName.hashValue
+    self.name = name
+    self.nameInLowercase = name.lowercased()
   }
-}
 
-// MARK: Equatable implementation
+  /// Returns a Boolean value indicating whether two names are equal.
+  public static func == (lhs: HTTPHeaderName, rhs: HTTPHeaderName) -> Bool {
+    return lhs.nameInLowercase == rhs.nameInLowercase
+  }
 
-public extension HTTPHeaderName {
-  static func == (lhs: HTTPHeaderName, rhs: HTTPHeaderName) -> Bool {
-    return lhs.name.caseInsensitiveCompare(rhs.name) == .orderedSame
+  /// Hashes the name by feeding it into the given hasher.
+  public func hash(into hasher: inout Hasher) {
+    nameInLowercase.hash(into: &hasher)
   }
 }
 
