@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Telegraph'
-  s.version = '0.22'
+  s.version = '0.23'
   s.license = 'MIT'
 
   s.summary = 'Secure Web Server for iOS, tvOS and macOS'
