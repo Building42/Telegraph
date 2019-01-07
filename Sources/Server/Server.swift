@@ -80,7 +80,7 @@ open class Server {
 
 // MARK: Server properties
 
-extension Server {
+public extension Server {
   /// Returns the number of concurrent requests that can be handled.
   var concurrency: Int {
     get { return workerQueue.maxConcurrentOperationCount }
@@ -88,32 +88,32 @@ extension Server {
   }
 
   /// Returns the port on which the listener is accepting connections.
-  public var port: Endpoint.Port {
+  var port: Endpoint.Port {
     return listener?.port ?? 0
   }
 
   /// Returns a boolean indicating if the server is running.
-  public var isRunning: Bool {
+  var isRunning: Bool {
     return listener?.isListening ?? false
   }
 
   /// Returns a boolean indicating if the server is secure (HTTPS).
-  public var isSecure: Bool {
+  var isSecure: Bool {
     return tlsConfig != nil
   }
 
   /// Returns the number of active HTTP connections.
-  public var httpConnectionCount: Int {
+  var httpConnectionCount: Int {
     return httpConnections.count
   }
 
   /// Returns the number of active WebSocket connections.
-  public var webSocketCount: Int {
+  var webSocketCount: Int {
     return webSocketConnections.count
   }
 
   /// Returns the connected
-  public var webSockets: [WebSocket] {
+  var webSockets: [WebSocket] {
     return webSocketConnections.toArray()
   }
 }
