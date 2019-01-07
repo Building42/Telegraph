@@ -8,30 +8,30 @@
 
 import Foundation
 
-extension HTTPHeaderName {
+public extension HTTPHeaderName {
   static let webSocketAccept = HTTPHeaderName("Sec-WebSocket-Accept")
   static let webSocketKey = HTTPHeaderName("Sec-WebSocket-Key")
   static let webSocketProtocol = HTTPHeaderName("Sec-WebSocket-Protocol")
   static let webSocketVersion = HTTPHeaderName("Sec-WebSocket-Version")
 }
 
-extension Dictionary where Key == HTTPHeaderName, Value == String {
-  public var webSocketAccept: String? {
+public extension Dictionary where Key == HTTPHeaderName, Value == String {
+  var webSocketAccept: String? {
     get { return self[.webSocketAccept] }
     set { self[.webSocketAccept] = newValue }
   }
 
-  public var webSocketKey: String? {
+  var webSocketKey: String? {
     get { return self[.webSocketKey] }
     set { self[.webSocketKey] = newValue }
   }
 
-  public var webSocketProtocol: String? {
+  var webSocketProtocol: String? {
     get { return self[.webSocketProtocol] }
     set { self[.webSocketProtocol] = newValue }
   }
 
-  public var webSocketVersion: String? {
+  var webSocketVersion: String? {
     get { return self[.webSocketVersion] }
     set { self[.webSocketVersion] = newValue }
   }
