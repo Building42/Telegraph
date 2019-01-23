@@ -6,7 +6,7 @@
 //  Copyright © 2018 Building42. All rights reserved.
 //
 
-public struct Endpoint {
+public struct Endpoint: Hashable {
   public typealias Host = String
   public typealias Port = Int
 
