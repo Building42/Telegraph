@@ -9,6 +9,9 @@
 import Foundation
 
 public protocol TCPConnection: class, Hashable {
+  var localEndpoint: Endpoint? { get }
+  var remoteEndpoint: Endpoint? { get }
+
   func open()
   func close(immediately: Bool)
 }

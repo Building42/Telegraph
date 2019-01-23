@@ -30,7 +30,7 @@ public protocol TCPSocketDelegate: class {
 // MARK: TCPSocket
 
 public final class TCPSocket: NSObject {
-  /// The endpoint information.
+  /// The endpoint to connect to.
   public let endpoint: Endpoint
 
   /// The delegate to handle socket events.
@@ -51,7 +51,7 @@ public final class TCPSocket: NSObject {
 
   /// Creates a socket by wrapping an existing GCDAsyncSocket.
   internal init(wrapping socket: GCDAsyncSocket) {
-    self.endpoint = socket.localEndpoint
+    self.endpoint = Endpoint(host: socket.localHost ?? "", port: socket.localPort)
     self.tlsPolicy = nil
     self.socket = socket
 
@@ -59,9 +59,21 @@ public final class TCPSocket: NSObject {
     super.init()
   }
 
-  /// Returns a boolean indicating if the socket is connected.
+  /// Indicates if the socket is connected.
   public var isConnected: Bool {
     return socket.isConnected
+  }
+
+  /// The local endpoint information, only available when connected.
+  public var localEndpoint: Endpoint? {
+    guard let host = socket.localHost else { return nil }
+    return Endpoint(host: host, port: socket.localPort)
+  }
+
+  /// The remote endpoint information, only available when connected.
+  public var remoteEndpoint: Endpoint? {
+    guard let host = socket.connectedHost else { return nil }
+    return Endpoint(host: host, port: socket.connectedPort)
   }
 
   /// The queue for delegate calls.
@@ -142,20 +154,6 @@ extension TCPSocket: ReadStream, WriteStream {
 
   /// Flushes any open writes.
   public func flush() {}
-}
-
-// MARK: Helpers
-
-extension GCDAsyncSocket {
-  /// Gets the local endpoint information.
-  var localEndpoint: Endpoint {
-    return Endpoint(host: localHost ?? "", port: localPort)
-  }
-
-  /// Gets the remote endpoint information.
-  var connectedEndpoint: Endpoint {
-    return Endpoint(host: connectedHost ?? "", port: connectedPort)
-  }
 }
 
 // MARK: GCDAsyncSocketDelegate implementation

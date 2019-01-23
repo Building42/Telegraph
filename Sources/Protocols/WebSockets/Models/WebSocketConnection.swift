@@ -125,6 +125,18 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   }
 }
 
+public extension WebSocketConnection {
+  /// The local endpoint information of the connection.
+  var localEndpoint: Endpoint? {
+    return socket.localEndpoint
+  }
+
+  /// The remote endpoint information of the connection.
+  var remoteEndpoint: Endpoint? {
+    return socket.remoteEndpoint
+  }
+}
+
 // MARK: TCPSocketConnectionDelegate implementation
 
 extension WebSocketConnection: TCPSocketDelegate {

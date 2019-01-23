@@ -134,6 +134,18 @@ public class HTTPConnection: TCPConnection {
   }
 }
 
+public extension HTTPConnection {
+  /// The local endpoint information of the connection.
+  var localEndpoint: Endpoint? {
+    return socket.localEndpoint
+  }
+
+  /// The remote endpoint information of the connection.
+  var remoteEndpoint: Endpoint? {
+    return socket.remoteEndpoint
+  }
+}
+
 // MARK: TCPSocketDelegate implementation
 
 extension HTTPConnection: TCPSocketDelegate {

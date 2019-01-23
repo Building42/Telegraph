@@ -149,6 +149,20 @@ open class WebSocketClient: WebSocket {
   }
 }
 
+// MARK: WebSocket conformance
+
+public extension WebSocketClient {
+  /// The local endpoint information, only available when connected.
+  var localEndpoint: Endpoint? {
+    return socket?.localEndpoint
+  }
+
+  /// The remote endpoint information, only available when connected.
+  var remoteEndpoint: Endpoint? {
+    return socket?.remoteEndpoint
+  }
+}
+
 // MARK: Convenience initializers
 
 extension WebSocketClient {

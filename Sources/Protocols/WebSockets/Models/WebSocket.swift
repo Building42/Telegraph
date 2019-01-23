@@ -9,6 +9,9 @@
 import Foundation
 
 public protocol WebSocket: class {
+  var localEndpoint: Endpoint? { get }
+  var remoteEndpoint: Endpoint? { get }
+
   func close(immediately: Bool)
   func send(data: Data)
   func send(text: String)
@@ -17,12 +20,12 @@ public protocol WebSocket: class {
 
 // MARK: Default implementation
 
-extension WebSocket {
-  public func send(data: Data) {
+public extension WebSocket {
+  func send(data: Data) {
     send(message: WebSocketMessage(data: data))
   }
 
-  public func send(text: String) {
+  func send(text: String) {
     send(message: WebSocketMessage(text: text))
   }
 }
