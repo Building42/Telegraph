@@ -134,13 +134,3 @@ public extension Server {
     try start(port: Int(port), interface: interface)
   }
 }
-
-// MARK: - URI
-
-public extension URI {
-  @available(*, deprecated, message: "fragment should not be used, it is only relevant for URLs")
-  var fragment: String? {
-    get { return nil }
-    set { }
-  }
-}
