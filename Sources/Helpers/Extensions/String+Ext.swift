@@ -8,17 +8,20 @@
 
 import Foundation
 
-extension String {
-  public var base64: String {
+public extension String {
+  /// Generates a base64 encoded string of this String's contents.
+  var base64: String {
     return utf8Data.base64EncodedString()
   }
 
-  public var utf8Data: Data {
+  /// The character bytes in UTF8 encoding.
+  var utf8Data: Data {
     return data(using: .utf8)!
   }
 
-  public func truncate(count: Int, ellipses: Bool = true) -> String {
-    if self.count < count { return self }
+  /// Truncates a string and optionally adds ellipses.
+  func truncate(count: Int, ellipses: Bool = true) -> String {
+    if self.count <= count { return self }
     return prefix(count) + (ellipses ? "..." : "")
   }
 }

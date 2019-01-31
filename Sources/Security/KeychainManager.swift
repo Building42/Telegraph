@@ -20,9 +20,9 @@ public class KeychainManager {
 
 // MARK: PKCS12 methods
 
-extension KeychainManager {
+public extension KeychainManager {
   /// Imports the PKCS12 data into the keychain.
-  public func importPKCS12(data: Data, passphrase: String, options: KeychainQuery = KeychainQuery()) -> SecIdentity? {
+  func importPKCS12(data: Data, passphrase: String, options: KeychainQuery = KeychainQuery()) -> SecIdentity? {
     var query = options
     query[kSecImportExportPassphrase] = passphrase as NSString
 
@@ -45,9 +45,9 @@ extension KeychainManager {
 
 // MARK: Query methods
 
-extension KeychainManager {
+public extension KeychainManager {
   /// Adds a value to the keychain.
-  public func add(value: KeychainValue, label: String, options: KeychainQuery = KeychainQuery()) throws {
+  func add(value: KeychainValue, label: String, options: KeychainQuery = KeychainQuery()) throws {
     // Don't specify kSecClass otherwise SecItemCopyMatching won't be able to find identities
     var query = options
     query[kSecAttrLabel] = label as NSString
@@ -60,7 +60,7 @@ extension KeychainManager {
   }
 
   /// Finds an item in the keychain.
-  public func find<T>(_ kClass: KeychainClass, label: String, options: KeychainQuery = KeychainQuery()) throws -> T {
+  func find<T>(_ kClass: KeychainClass, label: String, options: KeychainQuery = KeychainQuery()) throws -> T {
     var query = options
     query[kSecClass] = kClass
     query[kSecAttrLabel] = label as NSString
@@ -77,7 +77,7 @@ extension KeychainManager {
   }
 
   /// Removes an item from the keychain.
-  public func remove(_ kClass: KeychainClass, label: String, options: KeychainQuery = KeychainQuery()) throws {
+  func remove(_ kClass: KeychainClass, label: String, options: KeychainQuery = KeychainQuery()) throws {
     var query = options
     query[kSecClass] = kClass
     query[kSecAttrLabel] = label as NSString

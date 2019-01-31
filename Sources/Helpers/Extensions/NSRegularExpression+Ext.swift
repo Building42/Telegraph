@@ -50,12 +50,12 @@ extension NSRegularExpression {
 
 // MARK: String helpers
 
-extension String {
-  fileprivate var fullRange: NSRange {
+private extension String {
+  var fullRange: NSRange {
     return NSRange(location: 0, length: count)
   }
 
-  fileprivate func substring(with range: NSRange) -> String? {
+  func substring(with range: NSRange) -> String? {
     guard let range = Range(range) else { return nil }
     let from = index(startIndex, offsetBy: range.lowerBound)
     let to = index(startIndex, offsetBy: range.upperBound)

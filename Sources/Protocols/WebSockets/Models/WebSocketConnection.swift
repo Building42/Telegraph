@@ -78,7 +78,7 @@ open class WebSocketConnection: TCPConnection, WebSocket {
   }
 
   /// Sends a websocket message
-  open func send(message: WebSocketMessage) {
+  public func send(message: WebSocketMessage) {
     do {
       // Is this a close handshake? Mark the connection as closing
       if message.opcode == .connectionClose {

@@ -29,24 +29,24 @@ open class Certificate: RawRepresentable {
 
 // MARK: Certificate information
 
-extension Certificate {
-  open var commonName: String? {
+public extension Certificate {
+  var commonName: String? {
     return SecCertificateCopySubjectSummary(rawValue) as String?
   }
 }
 
 // MARK: Keychain helpers
 
-extension Certificate {
-  public convenience init(fromKeychain label: String) throws {
+public extension Certificate {
+  convenience init(fromKeychain label: String) throws {
     self.init(rawValue: try KeychainManager.shared.find(kSecClassCertificate, label: label))
   }
 
-  public func addToKeychain(label: String) throws {
+  func addToKeychain(label: String) throws {
     try KeychainManager.shared.add(value: rawValue, label: label)
   }
 
-  public static func removeFromKeychain(label: String) throws {
+  static func removeFromKeychain(label: String) throws {
     try KeychainManager.shared.remove(kSecClassCertificate, label: label)
   }
 }

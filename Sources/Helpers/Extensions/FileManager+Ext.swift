@@ -12,9 +12,9 @@ import Foundation
   import MobileCoreServices
 #endif
 
-extension FileManager {
+public extension FileManager {
   /// Returns the mime type of a file.
-  public func mimeType(of url: URL) -> String {
+  func mimeType(of url: URL) -> String {
     let fallback = "application/octet-stream"
     let fileExt = url.pathExtension as CFString
 

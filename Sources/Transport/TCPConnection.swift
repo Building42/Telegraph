@@ -18,12 +18,12 @@ public protocol TCPConnection: class, Hashable {
 
 // MARK: Hashable implementation
 
-extension TCPConnection {
-  public static func == (lhs: Self, rhs: Self) -> Bool {
+public extension TCPConnection {
+  static func == (lhs: Self, rhs: Self) -> Bool {
     return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
   }
 
-  public func hash(into hasher: inout Hasher) {
+  func hash(into hasher: inout Hasher) {
     ObjectIdentifier(self).hash(into: &hasher)
   }
 }

@@ -8,16 +8,18 @@
 
 import Foundation
 
-extension UInt8 {
-  public static var random: UInt8 {
+public extension UInt8 {
+  /// Generates a random UInt8 byte.
+  static var random: UInt8 {
     var number: UInt8 = 0
     _ = SecRandomCopyBytes(kSecRandomDefault, 1, &number)
     return number
   }
 }
 
-extension UInt16 {
-  public var bytes: [UInt8] {
+public extension UInt16 {
+  /// The two UInt8 bytes that make up the UInt16.
+  var bytes: [UInt8] {
     return [
       UInt8(truncatingIfNeeded: self >> 8),
       UInt8(truncatingIfNeeded: self)
@@ -25,8 +27,9 @@ extension UInt16 {
   }
 }
 
-extension UInt32 {
-  public var bytes: [UInt8] {
+public extension UInt32 {
+  /// The four UInt8 bytes that make up the UInt32.
+  var bytes: [UInt8] {
     return [
       UInt8(truncatingIfNeeded: self >> 24),
       UInt8(truncatingIfNeeded: self >> 16),
@@ -36,8 +39,9 @@ extension UInt32 {
   }
 }
 
-extension UInt64 {
-  public var bytes: [UInt8] {
+public extension UInt64 {
+  /// The eight UInt8 bytes that make up the UInt64.
+  var bytes: [UInt8] {
     return [
       UInt8(truncatingIfNeeded: self >> 56),
       UInt8(truncatingIfNeeded: self >> 48),

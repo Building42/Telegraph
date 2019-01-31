@@ -2,23 +2,53 @@ disabled_rules:
   - cyclomatic_complexity
   - force_cast
   - force_try
-  - large_tuple
   - line_length
-  - valid_docs
-  - variable_name
+  - statement_position
 opt_in_rules:
+  - array_init
+  - closure_body_length
   - closure_end_indentation
   - closure_spacing
+  - collection_alignment
+  - contains_over_first_not_nil
+  - discouraged_optional_boolean
   - empty_count
+  - empty_string
   - explicit_init
+  - extension_access_modifier
+  - fatal_error_message
   - first_where
+  - identical_operands
+  - joined_default_parameter
+  - last_where
+  - legacy_random
+  - literal_expression_end_indentation
+  - lower_acl_than_parent
+  - modifier_order
   - nimble_operator
   - object_literal
   - operator_usage_whitespace
   - overridden_super_call
+  - override_in_extension
+  - private_action
   - private_outlet
   - prohibited_super_call
   - redundant_nil_coalescing
+  - redundant_type_annotation
+  - required_enum_case
+  - sorted_first_last
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+  - unused_import
+  - unused_private_declaration
+  - yoda_condition
+identifier_name:
+  excluded:
+  - x
+  - y
+  - at
+  - ok
+  - to
 excluded:
   - Carthage
   - Pods

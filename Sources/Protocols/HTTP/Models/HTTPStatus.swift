@@ -58,8 +58,8 @@ public extension HTTPStatus {
 
 // MARK: Equatable implementation
 
-extension HTTPStatus {
-  public static func == (lhs: HTTPStatus, rhs: HTTPStatus) -> Bool {
+public extension HTTPStatus {
+  static func == (lhs: HTTPStatus, rhs: HTTPStatus) -> Bool {
     return lhs.code == rhs.code && lhs.phrase == rhs.phrase
   }
 }

@@ -9,9 +9,9 @@
 import Foundation
 
 extension HTTPMessage {
+  public static let webSocketMagicGUID = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
   public static let webSocketProtocol = "websocket"
   public static let webSocketVersion = "13"
-  fileprivate static let webSocketMagicGUID = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
 
   /// Is this an upgrade to the WebSocket protocol?
   var isWebSocketUpgrade: Bool {

@@ -165,21 +165,21 @@ public extension WebSocketClient {
 
 // MARK: Convenience initializers
 
-extension WebSocketClient {
+public extension WebSocketClient {
   /// Creates a new WebSocketClient with an url in string form.
-  public convenience init(_ string: String) throws {
+  convenience init(_ string: String) throws {
     guard let url = URL(string: string) else { throw WebSocketClientError.invalidURL }
     try self.init(url: url)
   }
 
   /// Creates a new WebSocketClient with an url in string form and certificates to trust.
-  public convenience init(_ string: String, certificates: [Certificate]) throws {
+  convenience init(_ string: String, certificates: [Certificate]) throws {
     try self.init(string)
     self.tlsPolicy = TLSPolicy(certificates: certificates)
   }
 
   /// Creates a new WebSocketClient with an url and certificates to trust.
-  public convenience init(url: URL, certificates: [Certificate]) throws {
+  convenience init(url: URL, certificates: [Certificate]) throws {
     try self.init(url: url)
     self.tlsPolicy = TLSPolicy(certificates: certificates)
   }

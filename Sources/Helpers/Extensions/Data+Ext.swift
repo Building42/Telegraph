@@ -36,8 +36,8 @@ public extension Data {
   /// Masks the contents of the data with the provided mask bytes.
   mutating func mask(with maskBytes: [UInt8]) {
     let maskSize = maskBytes.count
-    for i in 0..<count {
-      self[i] ^= maskBytes[i % maskSize]
+    for index in 0..<count {
+      self[index] ^= maskBytes[index % maskSize]
     }
   }
 }

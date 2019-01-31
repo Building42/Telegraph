@@ -31,16 +31,16 @@ open class CertificateIdentity: RawRepresentable {
 
 // MARK: Keychain helpers
 
-extension CertificateIdentity {
-  public convenience init(fromKeychain label: String) throws {
+public extension CertificateIdentity {
+  convenience init(fromKeychain label: String) throws {
     self.init(rawValue: try KeychainManager.shared.find(kSecClassIdentity, label: label))
   }
 
-  public func addToKeychain(label: String) throws {
+  func addToKeychain(label: String) throws {
     try KeychainManager.shared.add(value: rawValue, label: label)
   }
 
-  public static func removeFromKeychain(label: String) throws {
+  static func removeFromKeychain(label: String) throws {
     try KeychainManager.shared.remove(kSecClassIdentity, label: label)
   }
 }
@@ -49,14 +49,14 @@ extension CertificateIdentity {
 
 #if os(iOS) || os(watchOS) || os(tvOS)
 
-  extension CertificateIdentity {
+  public extension CertificateIdentity {
     /// Creates a CertificateIdentity by importing PCKS12 data, without passphrase.
-    public convenience init?(p12Data: Data) {
+    convenience init?(p12Data: Data) {
       self.init(p12Data: p12Data, passphrase: "")
     }
 
     /// Creates a CertificateIdentity by importing PCKS12 data from the provided url, without passphrase.
-    public convenience init?(p12URL: URL) {
+    convenience init?(p12URL: URL) {
       self.init(p12URL: p12URL, passphrase: "")
     }
   }

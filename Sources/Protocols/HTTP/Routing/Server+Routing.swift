@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension Server {
+public extension Server {
   /// Adds a route handler consisting of a HTTP method, uri and handler closure.
-  public func route(_ method: HTTPMethod, _ uri: String, _ handler: @escaping HTTPRequest.Handler) {
+  func route(_ method: HTTPMethod, _ uri: String, _ handler: @escaping HTTPRequest.Handler) {
     guard let httpRoute = try? HTTPRoute(methods: [method], uri: uri, handler: handler) else {
       fatalError("Could not add route - invalid uri: \(uri)")
     }
@@ -19,7 +19,7 @@ extension Server {
   }
 
   /// Adds a route handler consisting of a HTTP method, uri regex and handler closure.
-  public func route(_ method: HTTPMethod, regex: String, _ handler: @escaping HTTPRequest.Handler) {
+  func route(_ method: HTTPMethod, regex: String, _ handler: @escaping HTTPRequest.Handler) {
     guard let httpRoute = try? HTTPRoute(methods: [method], regex: regex, handler: handler) else {
       fatalError("Could not add route - invalid regex: \(regex)")
     }
@@ -28,7 +28,7 @@ extension Server {
   }
 
   /// Adds a route.
-  public func route(_ httpRoute: HTTPRoute) {
+  func route(_ httpRoute: HTTPRoute) {
     guard let routeHandler = httpConfig.requestHandlers.first(ofType: HTTPRouteHandler.self) else {
       fatalError("Could not add route - the server doesn't have a route handler")
     }
@@ -39,14 +39,14 @@ extension Server {
 
 // MARK: Serve static content methods
 
-extension Server {
+public extension Server {
   /// Adds a route that serves files from a bundle.
-  public func serveBundle(_ bundle: Bundle, _ uri: String = "/", index: String? = "index.html") {
+  func serveBundle(_ bundle: Bundle, _ uri: String = "/", index: String? = "index.html") {
     serveDirectory(bundle.resourceURL!, uri, index: index)
   }
 
   /// Adds a route that serves files from a directory.
-  public func serveDirectory(_ url: URL, _ uri: String = "/", index: String? = "index.html") {
+  func serveDirectory(_ url: URL, _ uri: String = "/", index: String? = "index.html") {
     var baseURI = URI(path: uri)
 
     // Construct the uri, do not match exactly to support subdirectories
@@ -58,28 +58,30 @@ extension Server {
 
     // Wrap the file handler into a route
     let handler = HTTPFileHandler(directoryURL: url, baseURI: baseURI, index: index)
-    route(.GET, routeURI) { request in try handler.respond(to: request, nextHandler: { _ in HTTPResponse(.notFound) }) }
+    route(.GET, routeURI) { request in
+      try handler.respond(to: request) { _ in HTTPResponse(.notFound) }
+    }
   }
 }
 
 // MARK: Response helper methods
 
-extension Server {
+public extension Server {
   /// Adds a route that responds to *method* on *uri* that responds with a *response*.
-  public func route(_ method: HTTPMethod, _ uri: String, response: @escaping () -> HTTPResponse) {
-    route(method, uri, { _ in response() })
+  func route(_ method: HTTPMethod, _ uri: String, response: @escaping () -> HTTPResponse) {
+    route(method, uri) { _ in response() }
   }
 
   /// Adds a route that responds to *method* on *uri* that responds with a *statusCode*.
-  public func route(_ method: HTTPMethod, _ uri: String, status: @escaping () -> HTTPStatus) {
-    route(method, uri, { _ in HTTPResponse(status()) })
+  func route(_ method: HTTPMethod, _ uri: String, status: @escaping () -> HTTPStatus) {
+    route(method, uri) { _ in HTTPResponse(status()) }
   }
 
   /// Adds a route that responds to *method* on *uri* that responds with *statusCode* and text content.
-  public func route(_ method: HTTPMethod, _ uri: String, content: @escaping () -> (HTTPStatus, String)) {
-    route(method, uri, { _ in
+  func route(_ method: HTTPMethod, _ uri: String, content: @escaping () -> (HTTPStatus, String)) {
+    route(method, uri) { _ in
       let (status, string) = content()
       return HTTPResponse(status, content: string)
-    })
+    }
   }
 }

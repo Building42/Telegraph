@@ -17,8 +17,8 @@ public class TelegraphDemo: NSObject {
   var webSocketClient: WebSocketClient!
 }
 
-extension TelegraphDemo {
-  public func start() {
+public extension TelegraphDemo {
+  func start() {
     // Comment out this line if you want HTTP instead of HTTPS
     loadCertificates()
 

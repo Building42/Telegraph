@@ -69,7 +69,7 @@ open class HTTPMessage {
 
 // MARK: Helper methods
 
-extension HTTPMessage {
+public extension HTTPMessage {
   /// Returns a boolean indicating if the connection should be kept open.
   var keepAlive: Bool {
     guard let connection = headers.connection else { return version.minor != 0 }

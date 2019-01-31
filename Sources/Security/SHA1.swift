@@ -22,14 +22,14 @@ public struct SHA1 {
   }
 }
 
-extension SHA1 {
+public extension SHA1 {
   /// Hashes the provided data using the SHA1 algorithm and returns the digest.
-  public static func hash(_ data: Data) -> Data {
+  static func hash(_ data: Data) -> Data {
     return SHA1(data: data).digest
   }
 
   /// Hashes the provided string using the SHA1 algorithm and returns the digest.
-  public static func hash(_ string: String) -> Data {
+  static func hash(_ string: String) -> Data {
     return SHA1(data: string.utf8Data).digest
   }
 }

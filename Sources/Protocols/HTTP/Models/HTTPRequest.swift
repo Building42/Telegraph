@@ -11,7 +11,7 @@ open class HTTPRequest: HTTPMessage {
 
   public var method: HTTPMethod
   public var uri: URI
-  public var params: Params = Params()
+  public var params = Params()
 
   /// Creates a new HTTPRequest.
   public init(_ method: HTTPMethod = .GET, uri: URI = .root, version: HTTPVersion = .default,
@@ -37,7 +37,7 @@ open class HTTPRequest: HTTPMessage {
 // MARK: CustomStringConvertible implementation
 
 extension HTTPRequest: CustomStringConvertible {
-  open var description: String {
+  public var description: String {
     let typeName = type(of: self)
     return "<\(typeName): \(method) \(uri) \(version), headers: \(headers.count), body: \(body.count)>"
   }

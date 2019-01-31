@@ -44,14 +44,14 @@ open class HTTPResponse: HTTPMessage {
 
 // MARK: Convenience initializers
 
-extension HTTPResponse {
+public extension HTTPResponse {
   /// Creates an HTTP response to send textual content.
-  public convenience init(_ status: HTTPStatus = .ok, headers: HTTPHeaders = .empty, content: String) {
+  convenience init(_ status: HTTPStatus = .ok, headers: HTTPHeaders = .empty, content: String) {
     self.init(status, headers: headers, body: content.utf8Data)
   }
 
   /// Creates an HTTP response to send an error.
-  public convenience init(_ status: HTTPStatus = .internalServerError, headers: HTTPHeaders = .empty, error: Error) {
+  convenience init(_ status: HTTPStatus = .internalServerError, headers: HTTPHeaders = .empty, error: Error) {
     var errorHeaders = headers
     errorHeaders.connection = "close"
 
@@ -62,7 +62,7 @@ extension HTTPResponse {
 // MARK: CustomStringConvertible
 
 extension HTTPResponse: CustomStringConvertible {
-  open var description: String {
+  public var description: String {
     let typeName = type(of: self)
     return "<\(typeName): \(version) \(status), headers: \(headers.count), body: \(body.count)>"
   }
