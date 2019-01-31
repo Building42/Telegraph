@@ -26,7 +26,7 @@ public extension DateFormatter {
 
 public extension Date {
   /// Returns the date formatted as RFC1123.
-  public var rfc1123: String {
+  var rfc1123: String {
     return RFC1123.formatter.string(from: self)
   }
 }
