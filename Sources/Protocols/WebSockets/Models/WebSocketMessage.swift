@@ -9,17 +9,13 @@
 import Foundation
 
 open class WebSocketMessage {
-  public internal(set) var finBit = true
-  public internal(set) var maskBit = true
-  public internal(set) var opcode: WebSocketOpcode
-  public internal(set) var payload: WebSocketPayload
+  public var finBit = true
+  public var maskBit = true
+  public var opcode: WebSocketOpcode
+  public var payload: WebSocketPayload
 
-  internal init() {
-    self.opcode = .connectionClose
-    self.payload = .none
-  }
-
-  public init(opcode: WebSocketOpcode, payload: WebSocketPayload = .none) {
+  /// Creates a WebSocketMessage.
+  public init(opcode: WebSocketOpcode = .connectionClose, payload: WebSocketPayload = .none) {
     self.opcode = opcode
     self.payload = payload
   }
@@ -41,37 +37,41 @@ public enum WebSocketPayload {
   case close(code: UInt16, reason: String)
 }
 
-internal struct WebSocketMasks {
-  public static let finBit: UInt8 = 0b10000000
-  public static let opcode: UInt8 = 0b00001111
-  public static let maskBit: UInt8 = 0b10000000
-  public static let payloadLength: UInt8 = 0b01111111
+public struct WebSocketMasks {
+  static let finBit: UInt8 = 0b10000000
+  static let opcode: UInt8 = 0b00001111
+  static let maskBit: UInt8 = 0b10000000
+  static let payloadLength: UInt8 = 0b01111111
 }
 
 // MARK: Convenience initializers
 
-extension WebSocketMessage {
-  public convenience init(closeCode: UInt16, reason: String = "") {
+public extension WebSocketMessage {
+  /// Creates a WebSocketMessage that instructs to close the connection.
+  convenience init(closeCode: UInt16, reason: String = "") {
     self.init(opcode: .connectionClose, payload: .close(code: closeCode, reason: reason))
   }
 
-  public convenience init(error: WebSocketError) {
+  /// Creates a WebSocketMessage that reports an error and closes the connection.
+  convenience init(error: WebSocketError) {
     self.init(closeCode: error.code, reason: error.description)
   }
 
-  public convenience init(data: Data) {
+  /// Creates a WebSocketMessage with a binary payload.
+  convenience init(data: Data) {
     self.init(opcode: .binaryFrame, payload: .binary(data))
   }
 
-  public convenience init(text: String) {
+  /// Creates a WebSocketMessage with a text payload.
+  convenience init(text: String) {
     self.init(opcode: .textFrame, payload: .text(text))
   }
 }
 
 // MARK: Masking
 
-extension WebSocketMessage {
-  public func generateMask() -> [UInt8] {
+public extension WebSocketMessage {
+  func generateMask() -> [UInt8] {
     return [UInt8.random, UInt8.random, UInt8.random, UInt8.random]
   }
 }
@@ -79,7 +79,7 @@ extension WebSocketMessage {
 // MARK: CustomStringConvertible
 
 extension WebSocketMessage: CustomStringConvertible {
-  open var description: String {
+  public var description: String {
     let typeName = type(of: self)
     var info = "<\(typeName): opcode: \(opcode), payload: "
 
