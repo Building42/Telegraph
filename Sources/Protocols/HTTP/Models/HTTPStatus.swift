@@ -11,16 +11,23 @@
 //
 
 public struct HTTPStatus: Hashable {
-  /// The numeric code of the status.
+  /// The numeric code of the status (e.g. 404).
   public let code: Int
 
-  /// The phrase describing the status.
+  /// The phrase describing the status (e.g. "Not Found").
   public let phrase: String
 
-  /// Creates a new HTTPStatus based on a code and a phrase.
-  public init(code: Int, phrase: String = "") {
+  /// Indicates if the status is compared on code and phrase (true) or code only (false).
+  public let strict: Bool
+
+  /// Creates a HTTPStatus.
+  /// - Parameter code: The numeric code of the status (e.g. 404)
+  /// - Parameter phrase: The phrase describing the status (e.g. "Not Found").
+  /// - Parameter strict: The status is compared on code and phrase (true) or code only (false).
+  public init(code: Int, phrase: String, strict: Bool = false) {
     self.code = code
     self.phrase = phrase
+    self.strict = strict
   }
 }
 
@@ -60,7 +67,9 @@ public extension HTTPStatus {
 
 public extension HTTPStatus {
   static func == (lhs: HTTPStatus, rhs: HTTPStatus) -> Bool {
-    return lhs.code == rhs.code && lhs.phrase == rhs.phrase
+    if lhs.code != rhs.code { return false }
+    if lhs.strict == false && rhs.strict == false { return true }
+    return lhs.phrase == rhs.phrase
   }
 }
 
@@ -293,14 +302,4 @@ public extension HTTPStatus {
   /// 511 Network Authentication Required: client needs to authenticate to gain network access.
   /// Intended for use by intercepting proxies used to control access to the network.
   static let networkAuthenticationRequired = HTTPStatus(code: 511, phrase: "Network Authentication Required")
-}
-
-// MARK: - Status: Custom
-
-extension HTTPStatus {
-  /// Provides a way to create custom HTTPStatus values. The use of this function is discouraged, it is
-  /// recommended to use one of the static predefined status variables (for example: .ok or .notFound).
-  static func custom(code: Int, phrase: String) -> HTTPStatus {
-    return HTTPStatus(code: code, phrase: phrase)
-  }
 }
