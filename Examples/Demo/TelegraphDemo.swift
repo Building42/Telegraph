@@ -186,7 +186,7 @@ extension TelegraphDemo: ServerWebSocketDelegate {
     print("[SERVER]", "WebSocket connected - name:", name)
 
     webSocket.send(text: "Welcome client \(name)")
-    webSocket.send(data: Data(bytes: [0x00, 0x01, 0x02, 0x03, 0x04, 0x05]))
+    webSocket.send(data: Data([0x00, 0x01, 0x02, 0x03, 0x04, 0x05]))
   }
 
   /// Raised when a web socket client disconnects from the server.

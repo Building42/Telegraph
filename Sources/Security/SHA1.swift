@@ -16,9 +16,9 @@ public struct SHA1 {
   /// Creates a SHA1 digest of the provided data.
   public init(data: Data) {
     var buffer = [UInt8](repeating: 0, count: Int(CC_SHA1_DIGEST_LENGTH))
-    data.withUnsafeBytes { _ = CC_SHA1($0, CC_LONG(data.count), &buffer) }
+    data.withUnsafeBytes { _ = CC_SHA1($0.baseAddress, CC_LONG(data.count), &buffer) }
 
-    self.digest = Data(bytes: buffer)
+    self.digest = Data(buffer)
   }
 }
 

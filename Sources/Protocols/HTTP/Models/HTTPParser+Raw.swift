@@ -28,7 +28,8 @@ extension HTTPRawParser {
   /// Parses the incoming data and returns how many bytes were parsed.
   static func parse(parser: UnsafeMutablePointer<HTTPRawParser>, settings: UnsafeMutablePointer<HTTPRawParserSettings>, data: Data) -> Int {
     return data.withUnsafeBytes {
-      http_parser_execute(parser, settings, $0, data.count)
+      let pointer = $0.bindMemory(to: Int8.self).baseAddress
+      return http_parser_execute(parser, settings, pointer, data.count)
     }
   }
 
