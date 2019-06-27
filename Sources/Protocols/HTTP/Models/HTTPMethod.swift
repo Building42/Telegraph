@@ -19,6 +19,7 @@ public extension HTTPMethod {
   static let OPTIONS = HTTPMethod(name: "OPTIONS")
   static let CONNECT = HTTPMethod(name: "CONNECT")
   static let TRACE = HTTPMethod(name: "TRACE")
+  static let PATCH = HTTPMethod(name: "PATCH")
 }
 
 // MARK: CustomStringConvertible implementation
