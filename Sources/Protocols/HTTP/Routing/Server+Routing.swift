@@ -47,7 +47,7 @@ public extension Server {
 
   /// Adds a route that serves files from a directory.
   func serveDirectory(_ url: URL, _ uri: String = "/", index: String? = "index.html") {
-    var baseURI = URI(path: uri)
+    let baseURI = URI(path: uri)
 
     // Construct the uri, do not match exactly to support subdirectories
     var routeURI = baseURI.path
