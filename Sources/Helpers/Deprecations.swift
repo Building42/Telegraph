@@ -11,7 +11,7 @@ import Foundation
 // MARK: - DateFormatter
 
 public extension DateFormatter {
-  @available(*, deprecated, message: "use DateFormatter.rfc1123 or Date's rfc1123 variable")
+  @available(*, deprecated, renamed: "rfc1123")
   var rfc7231: DateFormatter {
     return .rfc1123
   }
@@ -37,7 +37,7 @@ public extension DispatchTimer {
 
 // MARK: - HTTPHeader
 
-@available(*, deprecated, message: "use HTTPHeaderName")
+@available(*, deprecated, renamed: "HTTPHeaderName")
 typealias HTTPHeader = HTTPHeaderName
 
 @available(*, deprecated, message: "use Dictionary")
@@ -53,30 +53,30 @@ public extension HTTPHeaderName {
 // MARK: - HTTPMethod
 
 public extension HTTPMethod {
-  @available(*, deprecated, message: "use HTTPMethod.GET")
+  @available(*, deprecated, renamed: "GET")
   static var get = HTTPMethod.GET
 
-  @available(*, deprecated, message: "use HTTPMethod.HEAD")
+  @available(*, deprecated, renamed: "HEAD")
   static var head = HTTPMethod.HEAD
 
-  @available(*, deprecated, message: "use HTTPMethod.DELETE")
+  @available(*, deprecated, renamed: "DELETE")
   static var delete = HTTPMethod.DELETE
 
-  @available(*, deprecated, message: "use HTTPMethod.OPTIONS")
+  @available(*, deprecated, renamed: "OPTIONS")
   static var options = HTTPMethod.OPTIONS
 
-  @available(*, deprecated, message: "use HTTPMethod.POST")
+  @available(*, deprecated, renamed: "POST")
   static var post = HTTPMethod.POST
 
-  @available(*, deprecated, message: "use HTTPMethod.PUT")
+  @available(*, deprecated, renamed: "PUT")
   static var put = HTTPMethod.PUT
 
-  @available(*, deprecated, message: "use HTTPMethod(name:)")
+  @available(*, deprecated, renamed: "init(name:)")
   init(rawValue: String) {
     self.init(name: rawValue.uppercased())
   }
 
-  @available(*, deprecated, message: "use HTTPMethod(name:)")
+  @available(*, deprecated, renamed: "init(name:)")
   static func method(_ name: String) -> HTTPMethod {
     return HTTPMethod(name: name)
   }
@@ -100,7 +100,7 @@ public extension HTTPResponse {
   @available(*, deprecated, message: "use DateFormatter.rfc1123 or Date's rfc1123 variable")
   static let dateFormatter = DateFormatter.rfc1123
 
-  @available(*, deprecated, message: "data: has been renamed to body:")
+  @available(*, deprecated, renamed: "init(status:data:)")
   convenience init(_ status: HTTPStatus = .ok, data: Data) {
     self.init(status, body: data)
   }
@@ -115,7 +115,7 @@ public extension HTTPResponse {
 // MARK: - HTTPVersion
 
 public extension HTTPVersion {
-  @available(*, deprecated, message: "use HTTPVersion(major:, minor:)")
+  @available(*, deprecated, renamed: "init(major:minor:)")
   init(_ major: UInt, _ minor: UInt) {
     self.init(major: major, minor: minor)
   }
@@ -124,13 +124,19 @@ public extension HTTPVersion {
 // MARK: - Server
 
 public extension Server {
-  @available(*, deprecated, message: "use start(port:)")
+  @available(*, deprecated, renamed: "start(port:)")
   func start(onPort port: UInt16) throws {
     try start(port: Int(port))
   }
 
-  @available(*, deprecated, message: "use start(port:interface:)")
+  @available(*, deprecated, renamed: "start(port:interface:)")
   func start(onInterface interface: String?, port: UInt16 = 0) throws {
     try start(port: Int(port), interface: interface)
   }
+
+  @available(swift, obsoleted: 5, renamed: "responseFor(request:)")
+  func handleIncoming(request: HTTPRequest) throws -> HTTPResponse? { return nil }
+
+  @available(swift, obsoleted: 5, renamed: "responseFor(error:)")
+  func handleIncoming(error: Error) throws -> HTTPResponse? { return nil }
 }
