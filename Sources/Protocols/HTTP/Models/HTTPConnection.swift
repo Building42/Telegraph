@@ -52,6 +52,11 @@ public class HTTPConnection: TCPConnection {
     return (socket, upgradeData)
   }
 
+  /// Sends raw data by writing it to the stream. This can be useful for writing body data over time to a keep-alive connection.
+  public func send(data: Data, timeout: TimeInterval) {
+    socket.write(data: data, timeout: timeout)
+  }
+
   /// Sends the request by writing it to the stream.
   public func send(request: HTTPRequest) {
     request.prepareForWrite()
