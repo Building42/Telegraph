@@ -224,7 +224,7 @@ public class HTTPAppDetailsHandler: HTTPRequestHandler {
 The CORS mechanism controls which sites will have permission to access the resources of your server. You can set CORS by sending the `Access-Control-Allow-Origin` header to the client. For development purposes it can be useful to allow all sites with the `*` value.
 
 ```swift
-response.headers["Access-Control-Allow-Origin"] = "*"
+response.headers.accessControlAllowOrigin = "*"
 ```
 
 If you want to make it a bit fancier, you can create a handler:
@@ -236,7 +236,7 @@ public class HTTPCORSHandler: HTTPRequestHandler {
 
     // Add access control header for GET requests
     if request.method == .GET {
-      response?.headers["Access-Control-Allow-Origin"] = "*"
+      response?.headers.accessControlAllowOrigin = "*"
     }
 
     return response
