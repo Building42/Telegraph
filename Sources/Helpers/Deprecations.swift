@@ -82,6 +82,13 @@ public extension HTTPMethod {
   }
 }
 
+// MARK: - HTTPRouteError
+
+@available(*, deprecated, message: "these specific errors are no longer thrown")
+public enum HTTPRouteError: Error {
+  case invalidURI
+}
+
 // MARK: - HTTPStatus
 
 public extension HTTPStatus {

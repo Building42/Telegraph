@@ -16,6 +16,7 @@
 		821FD9F1216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
 		821FD9F2216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
 		821FD9F3216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
+		8226A7DA22D3D486002DEFA9 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226A7D822D3D46D002DEFA9 /* RouteTests.swift */; };
 		822E9622218CD14000567C72 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9620218CD14000567C72 /* CocoaAsyncSocket.framework */; };
 		822E9623218CD14000567C72 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9621218CD14000567C72 /* HTTPParserC.framework */; };
 		822E9626218CD14900567C72 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9624218CD14800567C72 /* CocoaAsyncSocket.framework */; };
@@ -240,6 +241,7 @@
 /* Begin PBXFileReference section */
 		820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedSet.swift; sourceTree = "<group>"; };
 		821FD9F0216BE58E00D0F486 /* RFC1123.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFC1123.swift; sourceTree = "<group>"; };
+		8226A7D822D3D46D002DEFA9 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
 		822E9620218CD14000567C72 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		822E9621218CD14000567C72 /* HTTPParserC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPParserC.framework; path = Carthage/Build/iOS/HTTPParserC.framework; sourceTree = "<group>"; };
 		822E9624218CD14800567C72 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/tvOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 				825A71841ECD22F60043AC8D /* Host */,
 				825A71901ECD25C10043AC8D /* Resources */,
 				825A71811ECD22F60043AC8D /* HelperTests.swift */,
+				8226A7D822D3D46D002DEFA9 /* RouteTests.swift */,
 				825A71831ECD22F60043AC8D /* SecurityTests.swift */,
 			);
 			path = Tests;
@@ -1184,6 +1187,7 @@
 			files = (
 				825A718A1ECD230E0043AC8D /* HelperTests.swift in Sources */,
 				825A718B1ECD23100043AC8D /* SecurityTests.swift in Sources */,
+				8226A7DA22D3D486002DEFA9 /* RouteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
