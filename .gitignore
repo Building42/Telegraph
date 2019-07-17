@@ -17,7 +17,7 @@ xcuserdata
 *.perspectivev3
 
 # Carthage
-Carthage/
+Carthage/Build
 
 # Third party tools
 .idea/

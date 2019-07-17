@@ -73,7 +73,7 @@ You can build the Telegraph framework and the examples with these steps:
 
 1. install [Carthage](https://github.com/Carthage/Carthage) using Homebrew
 2. clone the repository
-3. run `carthage bootstrap`
+3. run `carthage bootstrap --use-submodules --no-build`
 4. open Telegraph.xcworkspace, select a scheme and build
 
 This is only necessary if you want to make changes to the framework or try out the examples.

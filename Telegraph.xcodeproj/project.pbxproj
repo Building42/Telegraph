@@ -10,19 +10,11 @@
 		820EA1DA20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
 		820EA1DB20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
 		820EA1DC20F9662F00CCCF6C /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */; };
-		820F1FEA218CE06600C0F374 /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825A71A21ECD28710043AC8D /* Telegraph.framework */; };
-		820F1FEB218CE07500C0F374 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9620218CD14000567C72 /* CocoaAsyncSocket.framework */; };
-		820F1FEC218CE07500C0F374 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9621218CD14000567C72 /* HTTPParserC.framework */; };
 		821FD9F1216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
 		821FD9F2216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
 		821FD9F3216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
+		82248EDA22DF9091008EB1B5 /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825A71A21ECD28710043AC8D /* Telegraph.framework */; };
 		8226A7DA22D3D486002DEFA9 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226A7D822D3D46D002DEFA9 /* RouteTests.swift */; };
-		822E9622218CD14000567C72 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9620218CD14000567C72 /* CocoaAsyncSocket.framework */; };
-		822E9623218CD14000567C72 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9621218CD14000567C72 /* HTTPParserC.framework */; };
-		822E9626218CD14900567C72 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9624218CD14800567C72 /* CocoaAsyncSocket.framework */; };
-		822E9627218CD14900567C72 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9625218CD14900567C72 /* HTTPParserC.framework */; };
-		822E962A218CD15100567C72 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9628218CD15100567C72 /* CocoaAsyncSocket.framework */; };
-		822E962B218CD15100567C72 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E9629218CD15100567C72 /* HTTPParserC.framework */; };
 		825A718A1ECD230E0043AC8D /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71811ECD22F60043AC8D /* HelperTests.swift */; };
 		825A718B1ECD23100043AC8D /* SecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71831ECD22F60043AC8D /* SecurityTests.swift */; };
 		825A718C1ECD23140043AC8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71851ECD22F60043AC8D /* AppDelegate.swift */; };
@@ -220,6 +212,16 @@
 		82D2AF04210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		82D2AF05210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		82D2AF06210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
+		82E02B3A22DFBB550026C3B1 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B3922DFBB550026C3B1 /* HTTPParserC.framework */; };
+		82E02B3C22DFBB580026C3B1 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B3B22DFBB580026C3B1 /* CocoaAsyncSocket.framework */; };
+		82E02B3E22DFBB600026C3B1 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B3D22DFBB600026C3B1 /* HTTPParserC.framework */; };
+		82E02B4022DFBB650026C3B1 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B3F22DFBB650026C3B1 /* CocoaAsyncSocket.framework */; };
+		82E02B4222DFBB6F0026C3B1 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B4122DFBB6F0026C3B1 /* HTTPParserC.framework */; };
+		82E02B4422DFBB730026C3B1 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B4322DFBB730026C3B1 /* CocoaAsyncSocket.framework */; };
+		82E02B4622DFBC400026C3B1 /* HTTPParserC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E02B4122DFBB6F0026C3B1 /* HTTPParserC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82E02B4722DFBC470026C3B1 /* CocoaAsyncSocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E02B4322DFBB730026C3B1 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82E02B4922DFBC670026C3B1 /* HTTPParserC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E02B4122DFBB6F0026C3B1 /* HTTPParserC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82E02B4A22DFBC6A0026C3B1 /* CocoaAsyncSocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E02B4322DFBB730026C3B1 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82EC461F22CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
 		82EC462022CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
 		82EC462122CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
@@ -238,16 +240,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		82E02B4522DFBC310026C3B1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				82E02B4722DFBC470026C3B1 /* CocoaAsyncSocket.framework in CopyFiles */,
+				82E02B4622DFBC400026C3B1 /* HTTPParserC.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82E02B4822DFBC5D0026C3B1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				82E02B4A22DFBC6A0026C3B1 /* CocoaAsyncSocket.framework in CopyFiles */,
+				82E02B4922DFBC670026C3B1 /* HTTPParserC.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		820EA1D920F9662F00CCCF6C /* SynchronizedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedSet.swift; sourceTree = "<group>"; };
 		821FD9F0216BE58E00D0F486 /* RFC1123.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFC1123.swift; sourceTree = "<group>"; };
 		8226A7D822D3D46D002DEFA9 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
-		822E9620218CD14000567C72 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		822E9621218CD14000567C72 /* HTTPParserC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPParserC.framework; path = Carthage/Build/iOS/HTTPParserC.framework; sourceTree = "<group>"; };
-		822E9624218CD14800567C72 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/tvOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		822E9625218CD14900567C72 /* HTTPParserC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPParserC.framework; path = Carthage/Build/tvOS/HTTPParserC.framework; sourceTree = "<group>"; };
-		822E9628218CD15100567C72 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		822E9629218CD15100567C72 /* HTTPParserC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPParserC.framework; path = Carthage/Build/Mac/HTTPParserC.framework; sourceTree = "<group>"; };
 		8253CA141E498EBA0078D520 /* Telegraph TestsHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Telegraph TestsHost.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		825A71811ECD22F60043AC8D /* HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
 		825A71831ECD22F60043AC8D /* SecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityTests.swift; sourceTree = "<group>"; };
@@ -324,6 +345,12 @@
 		8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPFileHandler.swift; sourceTree = "<group>"; };
 		82897602217402B60089D662 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		82D2AF03210D354600BF5BBA /* DataStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStream.swift; sourceTree = "<group>"; };
+		82E02B3922DFBB550026C3B1 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E02B3B22DFBB580026C3B1 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E02B3D22DFBB600026C3B1 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E02B3F22DFBB650026C3B1 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E02B4122DFBB6F0026C3B1 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E02B4322DFBB730026C3B1 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPHeader+Common.swift"; sourceTree = "<group>"; };
 		82FB49BD2195BBFB00C4E574 /* Deprecations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecations.swift; sourceTree = "<group>"; };
 		D9899DD31DF4A092008766B5 /* Telegraph Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telegraph Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -334,9 +361,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				820F1FEA218CE06600C0F374 /* Telegraph.framework in Frameworks */,
-				820F1FEB218CE07500C0F374 /* CocoaAsyncSocket.framework in Frameworks */,
-				820F1FEC218CE07500C0F374 /* HTTPParserC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +368,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				822E9622218CD14000567C72 /* CocoaAsyncSocket.framework in Frameworks */,
-				822E9623218CD14000567C72 /* HTTPParserC.framework in Frameworks */,
+				82E02B3C22DFBB580026C3B1 /* CocoaAsyncSocket.framework in Frameworks */,
+				82E02B3A22DFBB550026C3B1 /* HTTPParserC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,8 +377,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				822E9626218CD14900567C72 /* CocoaAsyncSocket.framework in Frameworks */,
-				822E9627218CD14900567C72 /* HTTPParserC.framework in Frameworks */,
+				82E02B4022DFBB650026C3B1 /* CocoaAsyncSocket.framework in Frameworks */,
+				82E02B3E22DFBB600026C3B1 /* HTTPParserC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +386,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				822E962A218CD15100567C72 /* CocoaAsyncSocket.framework in Frameworks */,
-				822E962B218CD15100567C72 /* HTTPParserC.framework in Frameworks */,
+				82E02B4422DFBB730026C3B1 /* CocoaAsyncSocket.framework in Frameworks */,
+				82E02B4222DFBB6F0026C3B1 /* HTTPParserC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,49 +395,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82248EDA22DF9091008EB1B5 /* Telegraph.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		822E95F6218CCA3F00567C72 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				822E9632218CD38600567C72 /* iOS */,
-				822E9633218CD38F00567C72 /* tvOS */,
-				822E9634218CD39400567C72 /* macOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		822E9632218CD38600567C72 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				822E9620218CD14000567C72 /* CocoaAsyncSocket.framework */,
-				822E9621218CD14000567C72 /* HTTPParserC.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		822E9633218CD38F00567C72 /* tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				822E9624218CD14800567C72 /* CocoaAsyncSocket.framework */,
-				822E9625218CD14900567C72 /* HTTPParserC.framework */,
-			);
-			name = tvOS;
-			sourceTree = "<group>";
-		};
-		822E9634218CD39400567C72 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				822E9628218CD15100567C72 /* CocoaAsyncSocket.framework */,
-				822E9629218CD15100567C72 /* HTTPParserC.framework */,
-			);
-			name = macOS;
-			sourceTree = "<group>";
-		};
 		825A717F1ECD22F60043AC8D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,13 +621,26 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		82E02B3022DFBB2B0026C3B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82E02B4322DFBB730026C3B1 /* CocoaAsyncSocket.framework */,
+				82E02B4122DFBB6F0026C3B1 /* HTTPParserC.framework */,
+				82E02B3F22DFBB650026C3B1 /* CocoaAsyncSocket.framework */,
+				82E02B3D22DFBB600026C3B1 /* HTTPParserC.framework */,
+				82E02B3B22DFBB580026C3B1 /* CocoaAsyncSocket.framework */,
+				82E02B3922DFBB550026C3B1 /* HTTPParserC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9899DC01DF4A091008766B5 = {
 			isa = PBXGroup;
 			children = (
 				825A71C41ECD2E890043AC8D /* Sources */,
 				825A717F1ECD22F60043AC8D /* Tests */,
 				D9899DCB1DF4A092008766B5 /* Products */,
-				822E95F6218CCA3F00567C72 /* Frameworks */,
+				82E02B3022DFBB2B0026C3B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -692,7 +693,7 @@
 				8253CA101E498EBA0078D520 /* Sources */,
 				8253CA111E498EBA0078D520 /* Frameworks */,
 				8253CA121E498EBA0078D520 /* Resources */,
-				820F1FED218CE0AF00C0F374 /* [Carthage] Copy Frameworks */,
+				82E02B4822DFBC5D0026C3B1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -767,6 +768,7 @@
 				D9899DCF1DF4A092008766B5 /* Sources */,
 				D9899DD01DF4A092008766B5 /* Frameworks */,
 				D9899DD11DF4A092008766B5 /* Resources */,
+				82E02B4522DFBC310026C3B1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -887,28 +889,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		820F1FED218CE0AF00C0F374 /* [Carthage] Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/HTTPParserC.framework",
-			);
-			name = "[Carthage] Copy Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CocoaAsyncSocket.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/HTTPParserC.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "carthage copy-frameworks\n";
-		};
 		8246E0601FB26D8C0006A6C5 /* [SwiftLint] Analyze Source */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1219,8 +1199,7 @@
 				CODE_SIGN_ENTITLEMENTS = Tests/Host/TelegraphTestsHost.entitlements;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(inherited)"
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Host/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1236,8 +1215,7 @@
 				CODE_SIGN_ENTITLEMENTS = Tests/Host/TelegraphTestsHost.entitlements;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(inherited)"
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Host/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1251,14 +1229,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1266,7 +1239,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-iOS";
 				PRODUCT_NAME = Telegraph;
 				SKIP_INSTALL = YES;
+				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1274,14 +1249,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1289,7 +1259,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-iOS";
 				PRODUCT_NAME = Telegraph;
 				SKIP_INSTALL = YES;
+				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1297,14 +1269,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1322,14 +1289,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/tvOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1347,15 +1309,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1373,15 +1330,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1427,7 +1379,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.26;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1495,7 +1446,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.26;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

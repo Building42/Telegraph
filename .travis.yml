@@ -37,7 +37,7 @@ before_install:
 
 before_script:
   # Build the dependencies
-  - carthage bootstrap --cache-builds
+  - carthage bootstrap --use-submodules --no-build
 
 script:
   # Produce a failure return code if any command errors

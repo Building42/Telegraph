@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		822E961B218CD02400567C72 /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E961A218CD02400567C72 /* Telegraph.framework */; };
-		822E962E218CD16F00567C72 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E962C218CD16F00567C72 /* CocoaAsyncSocket.framework */; };
-		822E962F218CD16F00567C72 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822E962D218CD16F00567C72 /* HTTPParserC.framework */; };
 		8284FF211ECEA0BB00303A00 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8284FF201ECEA0BB00303A00 /* index.html */; };
+		82E02AA922DFB4800026C3B1 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02AA822DFB4800026C3B1 /* CocoaAsyncSocket.framework */; };
+		82E02AAB22DFB4800026C3B1 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02AAA22DFB4800026C3B1 /* HTTPParserC.framework */; };
+		82E02AAD22DFB4800026C3B1 /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02AAC22DFB4800026C3B1 /* Telegraph.framework */; };
+		82E02AB022DFB49F0026C3B1 /* Telegraph.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02AAC22DFB4800026C3B1 /* Telegraph.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82E02AB122DFB4A20026C3B1 /* HTTPParserC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02AAA22DFB4800026C3B1 /* HTTPParserC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82E02AB222DFB4A40026C3B1 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02AA822DFB4800026C3B1 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82EF33F41ECD330C002DC910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF33F31ECD330C002DC910 /* AppDelegate.swift */; };
 		82EF33F61ECD330C002DC910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF33F51ECD330C002DC910 /* ViewController.swift */; };
 		82EF33F91ECD330C002DC910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EF33F71ECD330C002DC910 /* Main.storyboard */; };
@@ -22,11 +25,27 @@
 		82EF34591ECD3C19002DC910 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EF34541ECD3C19002DC910 /* logo.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		82E02A8422DFB2990026C3B1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				82E02AB222DFB4A40026C3B1 /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				82E02AB122DFB4A20026C3B1 /* HTTPParserC.framework in Embed Frameworks */,
+				82E02AB022DFB49F0026C3B1 /* Telegraph.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		822E961A218CD02400567C72 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		822E962C218CD16F00567C72 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		822E962D218CD16F00567C72 /* HTTPParserC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPParserC.framework; path = ../Carthage/Build/iOS/HTTPParserC.framework; sourceTree = "<group>"; };
 		8284FF201ECEA0BB00303A00 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		82E02AA822DFB4800026C3B1 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E02AAA22DFB4800026C3B1 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E02AAC22DFB4800026C3B1 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF33F01ECD330C002DC910 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF33F31ECD330C002DC910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82EF33F51ECD330C002DC910 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,9 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				822E961B218CD02400567C72 /* Telegraph.framework in Frameworks */,
-				822E962E218CD16F00567C72 /* CocoaAsyncSocket.framework in Frameworks */,
-				822E962F218CD16F00567C72 /* HTTPParserC.framework in Frameworks */,
+				82E02AA922DFB4800026C3B1 /* CocoaAsyncSocket.framework in Frameworks */,
+				82E02AAB22DFB4800026C3B1 /* HTTPParserC.framework in Frameworks */,
+				82E02AAD22DFB4800026C3B1 /* Telegraph.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,9 +129,9 @@
 		D4C1ED80EA03A2C0B2A71305 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				822E962C218CD16F00567C72 /* CocoaAsyncSocket.framework */,
-				822E962D218CD16F00567C72 /* HTTPParserC.framework */,
-				822E961A218CD02400567C72 /* Telegraph.framework */,
+				82E02AA822DFB4800026C3B1 /* CocoaAsyncSocket.framework */,
+				82E02AAA22DFB4800026C3B1 /* HTTPParserC.framework */,
+				82E02AAC22DFB4800026C3B1 /* Telegraph.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,7 +146,7 @@
 				82EF33EC1ECD330C002DC910 /* Sources */,
 				82EF33ED1ECD330C002DC910 /* Frameworks */,
 				82EF33EE1ECD330C002DC910 /* Resources */,
-				822E9603218CCB6300567C72 /* [Carthage] Copy Frameworks */,
+				82E02A8422DFB2990026C3B1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,31 +208,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		822E9603218CCB6300567C72 /* [Carthage] Copy Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/CocoaAsyncSocket.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/HTTPParserC.framework",
-			);
-			name = "[Carthage] Copy Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CocoaAsyncSocket.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/HTTPParserC.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		82EF33EC1ECD330C002DC910 /* Sources */ = {
@@ -284,7 +278,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -346,7 +339,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
