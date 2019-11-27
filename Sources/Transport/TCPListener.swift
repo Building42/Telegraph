@@ -59,7 +59,7 @@ public final class TCPListener: NSObject {
   /// Starts the listener with a queue to perform the delegate calls on.
   public func start(queue: DispatchQueue) throws {
     listenerSocket.setDelegate(self, delegateQueue: queue)
-    try listenerSocket.accept(onPort: listenerPort)
+    try listenerSocket.accept(onInterface: interface, port: listenerPort)
   }
 
   /// Stops the listener.
