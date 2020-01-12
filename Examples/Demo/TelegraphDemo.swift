@@ -80,7 +80,7 @@ extension TelegraphDemo {
 
     // Start the server on localhost
     // Note: we'll skip error handling in the demo
-    try! server.start(port: 9000)
+    try! server.start(port: 9000, interface: "localhost")
 
     // Log the url for easy access
     print("[SERVER]", "Server is running - url:", serverURL())
