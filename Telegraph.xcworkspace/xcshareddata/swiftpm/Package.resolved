@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CocoaAsyncSocket",
+        "repositoryURL": "https://github.com/Building42/CocoaAsyncSocket",
+        "state": {
+          "branch": "master",
+          "revision": "cb87f922cebcdb7e430deca0f17492e1382968b2",
+          "version": null
+        }
+      },
+      {
+        "package": "HTTPParserC",
+        "repositoryURL": "https://github.com/Building42/HTTPParserC",
+        "state": {
+          "branch": "master",
+          "revision": "73821bd5156e2e5dc18bc9b177b2cceaa50d64e0",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

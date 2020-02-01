@@ -6,16 +6,6 @@
    </FileRef>
    <Group
       location = "container:"
-      name = "Dependencies">
-      <FileRef
-         location = "group:Carthage/Checkouts/CocoaAsyncSocket/CocoaAsyncSocket.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Carthage/Checkouts/HTTPParserC/HTTPParserC.xcodeproj">
-      </FileRef>
-   </Group>
-   <Group
-      location = "container:"
       name = "Examples">
       <FileRef
          location = "group:Examples/iOS Example.xcodeproj">

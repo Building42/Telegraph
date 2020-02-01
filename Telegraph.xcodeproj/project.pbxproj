@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,13 @@
 		821FD9F1216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
 		821FD9F2216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
 		821FD9F3216BE58E00D0F486 /* RFC1123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821FD9F0216BE58E00D0F486 /* RFC1123.swift */; };
-		82248EDA22DF9091008EB1B5 /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825A71A21ECD28710043AC8D /* Telegraph.framework */; };
 		8226A7DA22D3D486002DEFA9 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8226A7D822D3D46D002DEFA9 /* RouteTests.swift */; };
+		8247322A23E6375200A9BAFA /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 8247322923E6375200A9BAFA /* CocoaAsyncSocket */; };
+		8247322C23E6375200A9BAFA /* HTTPParserC in Frameworks */ = {isa = PBXBuildFile; productRef = 8247322B23E6375200A9BAFA /* HTTPParserC */; };
+		8247322E23E6375E00A9BAFA /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 8247322D23E6375E00A9BAFA /* CocoaAsyncSocket */; };
+		8247323023E6375E00A9BAFA /* HTTPParserC in Frameworks */ = {isa = PBXBuildFile; productRef = 8247322F23E6375E00A9BAFA /* HTTPParserC */; };
+		8247323223E6378000A9BAFA /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 8247323123E6378000A9BAFA /* CocoaAsyncSocket */; };
+		8247323423E6378000A9BAFA /* HTTPParserC in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 8247323323E6378000A9BAFA /* HTTPParserC */; };
 		825A718A1ECD230E0043AC8D /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71811ECD22F60043AC8D /* HelperTests.swift */; };
 		825A718B1ECD23100043AC8D /* SecurityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71831ECD22F60043AC8D /* SecurityTests.swift */; };
 		825A718C1ECD23140043AC8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A71851ECD22F60043AC8D /* AppDelegate.swift */; };
@@ -209,19 +214,11 @@
 		82897603217402B60089D662 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82897602217402B60089D662 /* Endpoint.swift */; };
 		82897604217402B60089D662 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82897602217402B60089D662 /* Endpoint.swift */; };
 		82897605217402B60089D662 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82897602217402B60089D662 /* Endpoint.swift */; };
+		82A9A73923E644940072F4FC /* CocoaAsyncSocket in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 82A9A73823E644940072F4FC /* CocoaAsyncSocket */; };
+		82A9A73B23E644940072F4FC /* HTTPParserC in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 82A9A73A23E644940072F4FC /* HTTPParserC */; };
 		82D2AF04210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		82D2AF05210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		82D2AF06210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
-		82E02B3A22DFBB550026C3B1 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B3922DFBB550026C3B1 /* HTTPParserC.framework */; };
-		82E02B3C22DFBB580026C3B1 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B3B22DFBB580026C3B1 /* CocoaAsyncSocket.framework */; };
-		82E02B3E22DFBB600026C3B1 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B3D22DFBB600026C3B1 /* HTTPParserC.framework */; };
-		82E02B4022DFBB650026C3B1 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B3F22DFBB650026C3B1 /* CocoaAsyncSocket.framework */; };
-		82E02B4222DFBB6F0026C3B1 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B4122DFBB6F0026C3B1 /* HTTPParserC.framework */; };
-		82E02B4422DFBB730026C3B1 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B4322DFBB730026C3B1 /* CocoaAsyncSocket.framework */; };
-		82E02B4622DFBC400026C3B1 /* HTTPParserC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E02B4122DFBB6F0026C3B1 /* HTTPParserC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		82E02B4722DFBC470026C3B1 /* CocoaAsyncSocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E02B4322DFBB730026C3B1 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		82E02B4922DFBC670026C3B1 /* HTTPParserC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E02B4122DFBB6F0026C3B1 /* HTTPParserC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		82E02B4A22DFBC6A0026C3B1 /* CocoaAsyncSocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E02B4322DFBB730026C3B1 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82EC461F22CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
 		82EC462022CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
 		82EC462122CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
@@ -241,26 +238,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		82E02B4522DFBC310026C3B1 /* CopyFiles */ = {
+		8247321423E6242700A9BAFA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				82E02B4722DFBC470026C3B1 /* CocoaAsyncSocket.framework in CopyFiles */,
-				82E02B4622DFBC400026C3B1 /* HTTPParserC.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82E02B4822DFBC5D0026C3B1 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				82E02B4A22DFBC6A0026C3B1 /* CocoaAsyncSocket.framework in CopyFiles */,
-				82E02B4922DFBC670026C3B1 /* HTTPParserC.framework in CopyFiles */,
-			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -357,19 +342,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8253CA111E498EBA0078D520 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		825A719E1ECD28710043AC8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82E02B3C22DFBB580026C3B1 /* CocoaAsyncSocket.framework in Frameworks */,
-				82E02B3A22DFBB550026C3B1 /* HTTPParserC.framework in Frameworks */,
+				8247323223E6378000A9BAFA /* CocoaAsyncSocket in Frameworks */,
+				8247323423E6378000A9BAFA /* HTTPParserC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +355,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82E02B4022DFBB650026C3B1 /* CocoaAsyncSocket.framework in Frameworks */,
-				82E02B3E22DFBB600026C3B1 /* HTTPParserC.framework in Frameworks */,
+				8247322A23E6375200A9BAFA /* CocoaAsyncSocket in Frameworks */,
+				8247322C23E6375200A9BAFA /* HTTPParserC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,16 +364,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82E02B4422DFBB730026C3B1 /* CocoaAsyncSocket.framework in Frameworks */,
-				82E02B4222DFBB6F0026C3B1 /* HTTPParserC.framework in Frameworks */,
+				8247322E23E6375E00A9BAFA /* CocoaAsyncSocket in Frameworks */,
+				8247323023E6375E00A9BAFA /* HTTPParserC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9899DD01DF4A092008766B5 /* Frameworks */ = {
+		82A9A73723E6448E0072F4FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82248EDA22DF9091008EB1B5 /* Telegraph.framework in Frameworks */,
+				82A9A73923E644940072F4FC /* CocoaAsyncSocket in Frameworks */,
+				82A9A73B23E644940072F4FC /* HTTPParserC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,15 +670,17 @@
 			buildConfigurationList = 8253CA231E498EBA0078D520 /* Build configuration list for PBXNativeTarget "Telegraph TestsHost" */;
 			buildPhases = (
 				8253CA101E498EBA0078D520 /* Sources */,
-				8253CA111E498EBA0078D520 /* Frameworks */,
 				8253CA121E498EBA0078D520 /* Resources */,
-				82E02B4822DFBC5D0026C3B1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Telegraph TestsHost";
+			packageProductDependencies = (
+				82A9A73323E644710072F4FC /* CocoaAsyncSocket */,
+				82A9A73523E644710072F4FC /* HTTPParserC */,
+			);
 			productName = TelegraphTestsHost;
 			productReference = 8253CA141E498EBA0078D520 /* Telegraph TestsHost.app */;
 			productType = "com.apple.product-type.application";
@@ -713,12 +694,17 @@
 				825A719F1ECD28710043AC8D /* Headers */,
 				825A71A01ECD28710043AC8D /* Resources */,
 				8246E0601FB26D8C0006A6C5 /* [SwiftLint] Analyze Source */,
+				8247321423E6242700A9BAFA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Telegraph iOS";
+			packageProductDependencies = (
+				8247323123E6378000A9BAFA /* CocoaAsyncSocket */,
+				8247323323E6378000A9BAFA /* HTTPParserC */,
+			);
 			productName = "Telegraph iOS";
 			productReference = 825A71A21ECD28710043AC8D /* Telegraph.framework */;
 			productType = "com.apple.product-type.framework";
@@ -738,6 +724,10 @@
 			dependencies = (
 			);
 			name = "Telegraph tvOS";
+			packageProductDependencies = (
+				8247322923E6375200A9BAFA /* CocoaAsyncSocket */,
+				8247322B23E6375200A9BAFA /* HTTPParserC */,
+			);
 			productName = "Telegraph tvOS";
 			productReference = 825A71AF1ECD28CE0043AC8D /* Telegraph.framework */;
 			productType = "com.apple.product-type.framework";
@@ -757,6 +747,10 @@
 			dependencies = (
 			);
 			name = "Telegraph macOS";
+			packageProductDependencies = (
+				8247322D23E6375E00A9BAFA /* CocoaAsyncSocket */,
+				8247322F23E6375E00A9BAFA /* HTTPParserC */,
+			);
 			productName = "Telegraph macOS";
 			productReference = 825A71BC1ECD29020043AC8D /* Telegraph.framework */;
 			productType = "com.apple.product-type.framework";
@@ -766,9 +760,8 @@
 			buildConfigurationList = D9899DE11DF4A093008766B5 /* Build configuration list for PBXNativeTarget "Telegraph Tests" */;
 			buildPhases = (
 				D9899DCF1DF4A092008766B5 /* Sources */,
-				D9899DD01DF4A092008766B5 /* Frameworks */,
+				82A9A73723E6448E0072F4FC /* Frameworks */,
 				D9899DD11DF4A092008766B5 /* Resources */,
-				82E02B4522DFBC310026C3B1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -776,6 +769,10 @@
 				8253CA281E498EDC0078D520 /* PBXTargetDependency */,
 			);
 			name = "Telegraph Tests";
+			packageProductDependencies = (
+				82A9A73823E644940072F4FC /* CocoaAsyncSocket */,
+				82A9A73A23E644940072F4FC /* HTTPParserC */,
+			);
 			productName = TelegraphTests;
 			productReference = D9899DD31DF4A092008766B5 /* Telegraph Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -832,6 +829,10 @@
 				Base,
 			);
 			mainGroup = D9899DC01DF4A091008766B5;
+			packageReferences = (
+				8247321023E6242700A9BAFA /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */,
+				8247321523E632CB00A9BAFA /* XCRemoteSwiftPackageReference "HTTPParserC" */,
+			);
 			productRefGroup = D9899DCB1DF4A092008766B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1176,6 +1177,7 @@
 /* Begin PBXTargetDependency section */
 		8253CA281E498EDC0078D520 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 8253CA131E498EBA0078D520 /* Telegraph TestsHost */;
 			targetProxy = 8253CA271E498EDC0078D520 /* PBXContainerItemProxy */;
 		};
@@ -1198,12 +1200,13 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Tests/Host/TelegraphTestsHost.entitlements;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)"
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Host/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-TestsHost";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1214,12 +1217,13 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Tests/Host/TelegraphTestsHost.entitlements;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)"
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/Tests/Host/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-TestsHost";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1234,11 +1238,15 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-iOS";
 				PRODUCT_NAME = Telegraph;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1254,11 +1262,15 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-iOS";
 				PRODUCT_NAME = Telegraph;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1274,7 +1286,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-tvOS";
 				PRODUCT_NAME = Telegraph;
 				SDKROOT = appletvos;
@@ -1294,7 +1310,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-tvOS";
 				PRODUCT_NAME = Telegraph;
 				SDKROOT = appletvos;
@@ -1316,7 +1336,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-macOS";
 				PRODUCT_NAME = Telegraph;
@@ -1337,7 +1361,11 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Building42.Telegraph-macOS";
 				PRODUCT_NAME = Telegraph;
@@ -1464,8 +1492,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1480,9 +1509,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Host/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Building42.TelegraphTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Telegraph TestsHost.app/Telegraph TestsHost";
 			};
@@ -1494,9 +1528,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Host/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Building42.TelegraphTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Telegraph TestsHost.app/Telegraph TestsHost";
 			};
 			name = Release;
@@ -1559,6 +1598,78 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8247321023E6242700A9BAFA /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Building42/CocoaAsyncSocket";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8247321523E632CB00A9BAFA /* XCRemoteSwiftPackageReference "HTTPParserC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Building42/HTTPParserC";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8247322923E6375200A9BAFA /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321023E6242700A9BAFA /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
+		};
+		8247322B23E6375200A9BAFA /* HTTPParserC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321523E632CB00A9BAFA /* XCRemoteSwiftPackageReference "HTTPParserC" */;
+			productName = HTTPParserC;
+		};
+		8247322D23E6375E00A9BAFA /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321023E6242700A9BAFA /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
+		};
+		8247322F23E6375E00A9BAFA /* HTTPParserC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321523E632CB00A9BAFA /* XCRemoteSwiftPackageReference "HTTPParserC" */;
+			productName = HTTPParserC;
+		};
+		8247323123E6378000A9BAFA /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321023E6242700A9BAFA /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
+		};
+		8247323323E6378000A9BAFA /* HTTPParserC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321523E632CB00A9BAFA /* XCRemoteSwiftPackageReference "HTTPParserC" */;
+			productName = HTTPParserC;
+		};
+		82A9A73323E644710072F4FC /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321023E6242700A9BAFA /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
+		};
+		82A9A73523E644710072F4FC /* HTTPParserC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321523E632CB00A9BAFA /* XCRemoteSwiftPackageReference "HTTPParserC" */;
+			productName = HTTPParserC;
+		};
+		82A9A73823E644940072F4FC /* CocoaAsyncSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321023E6242700A9BAFA /* XCRemoteSwiftPackageReference "CocoaAsyncSocket" */;
+			productName = CocoaAsyncSocket;
+		};
+		82A9A73A23E644940072F4FC /* HTTPParserC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8247321523E632CB00A9BAFA /* XCRemoteSwiftPackageReference "HTTPParserC" */;
+			productName = HTTPParserC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D9899DC11DF4A091008766B5 /* Project object */;
 }

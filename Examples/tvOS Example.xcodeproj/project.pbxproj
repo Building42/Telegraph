@@ -8,12 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8284FF251ECEA49900303A00 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 8284FF241ECEA49900303A00 /* index.html */; };
-		82E02B0422DFB8DD0026C3B1 /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B0322DFB8DD0026C3B1 /* Telegraph.framework */; };
-		82E02B0822DFB8E30026C3B1 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B0722DFB8E30026C3B1 /* CocoaAsyncSocket.framework */; };
-		82E02B0C22DFB8F80026C3B1 /* HTTPParserC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B0522DFB8E10026C3B1 /* HTTPParserC.framework */; };
-		82E02B1822DFB9440026C3B1 /* Telegraph.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B0322DFB8DD0026C3B1 /* Telegraph.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		82E02B1922DFB9470026C3B1 /* HTTPParserC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B0522DFB8E10026C3B1 /* HTTPParserC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		82E02B1A22DFB94A0026C3B1 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82E02B0722DFB8E30026C3B1 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		82A9A71C23E63C7E0072F4FC /* Telegraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9A71B23E63C7E0072F4FC /* Telegraph.framework */; };
+		82A9A71D23E63C7E0072F4FC /* Telegraph.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82A9A71B23E63C7E0072F4FC /* Telegraph.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82EF341E1ECD33CF002DC910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF341D1ECD33CF002DC910 /* AppDelegate.swift */; };
 		82EF34201ECD33CF002DC910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF341F1ECD33CF002DC910 /* ViewController.swift */; };
 		82EF34231ECD33CF002DC910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82EF34211ECD33CF002DC910 /* Main.storyboard */; };
@@ -25,15 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		82E02B1022DFB9020026C3B1 /* Embed Frameworks */ = {
+		8247324523E6380C00A9BAFA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				82E02B1A22DFB94A0026C3B1 /* CocoaAsyncSocket.framework in Embed Frameworks */,
-				82E02B1922DFB9470026C3B1 /* HTTPParserC.framework in Embed Frameworks */,
-				82E02B1822DFB9440026C3B1 /* Telegraph.framework in Embed Frameworks */,
+				82A9A71D23E63C7E0072F4FC /* Telegraph.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,9 +36,7 @@
 
 /* Begin PBXFileReference section */
 		8284FF241ECEA49900303A00 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		82E02B0322DFB8DD0026C3B1 /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		82E02B0522DFB8E10026C3B1 /* HTTPParserC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTPParserC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		82E02B0722DFB8E30026C3B1 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82A9A71B23E63C7E0072F4FC /* Telegraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Telegraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF341A1ECD33CF002DC910 /* tvOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82EF341D1ECD33CF002DC910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82EF341F1ECD33CF002DC910 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,9 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82E02B0822DFB8E30026C3B1 /* CocoaAsyncSocket.framework in Frameworks */,
-				82E02B0C22DFB8F80026C3B1 /* HTTPParserC.framework in Frameworks */,
-				82E02B0422DFB8DD0026C3B1 /* Telegraph.framework in Frameworks */,
+				82A9A71C23E63C7E0072F4FC /* Telegraph.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +64,7 @@
 		7A76BC6732A40F727598219C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82E02B0722DFB8E30026C3B1 /* CocoaAsyncSocket.framework */,
-				82E02B0522DFB8E10026C3B1 /* HTTPParserC.framework */,
-				82E02B0322DFB8DD0026C3B1 /* Telegraph.framework */,
+				82A9A71B23E63C7E0072F4FC /* Telegraph.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -143,13 +131,15 @@
 				82EF34161ECD33CF002DC910 /* Sources */,
 				82EF34171ECD33CF002DC910 /* Frameworks */,
 				82EF34181ECD33CF002DC910 /* Resources */,
-				82E02B1022DFB9020026C3B1 /* Embed Frameworks */,
+				8247324523E6380C00A9BAFA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "tvOS Example";
+			packageProductDependencies = (
+			);
 			productName = "tvOS Example";
 			productReference = 82EF341A1ECD33CF002DC910 /* tvOS Example.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +170,8 @@
 				Base,
 			);
 			mainGroup = 82EF34111ECD33CF002DC910;
+			packageReferences = (
+			);
 			productRefGroup = 82EF341B1ECD33CF002DC910 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
