@@ -16,12 +16,9 @@ xcuserdata
 *.pbxuser
 *.perspectivev3
 
-# Carthage
-Carthage/Build
-
-# Third party tools
-.idea/
-FauxPasConfig/
+# Swift Package Manager
+.build/
+Package.resolved
 
 # Exceptions
 !default.pbxuser

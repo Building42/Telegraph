@@ -44,6 +44,20 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 
 ## Installation
 
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code.
+
+Xcode 11 or later has integrated support for the Swift Package Manager. You can add Telegraph to your project by choosing the File - Swift Packages - Add Package Dependency option. Use the repository url as specified below and select the version you want to use.
+
+Or you can manually add a `Package.swift` file to your project with:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/Building42/Telegraph.git")
+]
+```
+
 ### Carthage
 
 Carthage is a decentralized dependency manager that builds your dependencies into binary frameworks.
@@ -71,10 +85,10 @@ See [CocoaPods - Getting Started](https://guides.cocoapods.org/using/getting-sta
 
 You can build the Telegraph framework and the examples with these steps:
 
-1. install [Carthage](https://github.com/Carthage/Carthage) using Homebrew
-2. clone the repository
-3. run `carthage bootstrap --use-submodules --no-build`
-4. open Telegraph.xcworkspace, select a scheme and build
+1. clone the repository
+2. open Telegraph.xcworkspace
+3. make sure that Xcode downloads the Swift Package Dependencies
+4. select one of the example schemes and build
 
 This is only necessary if you want to make changes to the framework or try out the examples.
 

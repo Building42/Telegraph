@@ -3,20 +3,20 @@
     "pins": [
       {
         "package": "CocoaAsyncSocket",
-        "repositoryURL": "https://github.com/Building42/CocoaAsyncSocket",
+        "repositoryURL": "https://github.com/robbiehanson/CocoaAsyncSocket",
         "state": {
-          "branch": "master",
-          "revision": "cb87f922cebcdb7e430deca0f17492e1382968b2",
-          "version": null
+          "branch": null,
+          "revision": "0e00c967a010fc43ce528bd633d032f17158d393",
+          "version": "7.6.4"
         }
       },
       {
         "package": "HTTPParserC",
         "repositoryURL": "https://github.com/Building42/HTTPParserC",
         "state": {
-          "branch": "master",
+          "branch": null,
           "revision": "73821bd5156e2e5dc18bc9b177b2cceaa50d64e0",
-          "version": null
+          "version": "2.9.2"
         }
       }
     ]

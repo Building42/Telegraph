@@ -6,6 +6,8 @@
 //  Copyright © 2018 Building42. All rights reserved.
 //
 
+import Foundation
+
 public class SynchronizedSet<Element: Hashable> {
   private var innerSet = Set<Element>()
   private let queue = DispatchQueue(label: "Telegraph.SynchronizedSet", attributes: .concurrent)

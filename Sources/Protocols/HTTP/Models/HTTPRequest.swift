@@ -6,6 +6,8 @@
 //  Copyright © 2017 Building42. All rights reserved.
 //
 
+import Foundation
+
 open class HTTPRequest: HTTPMessage {
   public typealias Params = [String: String]
 

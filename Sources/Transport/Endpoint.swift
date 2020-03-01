@@ -6,6 +6,8 @@
 //  Copyright © 2018 Building42. All rights reserved.
 //
 
+import Foundation
+
 public struct Endpoint: Hashable {
   public typealias Host = String
   public typealias Port = Int
