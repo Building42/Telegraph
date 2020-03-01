@@ -5,7 +5,7 @@ on:
     branches:
       - master
   pull_request:
-    branches: 
+    branches:
       - master
 
 env:
@@ -13,48 +13,71 @@ env:
   WORKSPACE: Telegraph.xcworkspace
 
 jobs:
-  macOS:
-    name: macOS 
+  iOS:
+    name: Build iOS
     runs-on: macos-latest
     env:
-      SCHEME: Telegraph macOS
-    strategy:
-      matrix:
-        destination: ["platform=macOS,arch=x86_64"]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build macOS
-        run: |
-          set -o pipefail
-          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
-          
-  iOS:
-    name: iOS 
-    runs-on: macos-latest
-    env: 
       SCHEME: Telegraph iOS
     strategy:
       matrix:
-        destination: ["platform=iOS Simulator,name=iPhone 11 Pro"]
+        destination: ["iPhone XR", "iPhone 11 Pro", "iPad Pro (12.9-inch)"]
     steps:
       - uses: actions/checkout@v2
       - name: Build iOS
         run: |
           set -o pipefail
-          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
-          
-  tvOS:
-    name: tvOS 
+          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "platform=iOS Simulator,name=${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+
+  iOSLegacy:
+    name: Build iOS (legacy)
     runs-on: macos-latest
-    env: 
+    env:
+      SCHEME: Telegraph iOS
+    strategy:
+      matrix:
+        destination: ["iPad 2,OS=8.1", "iPhone 5s,OS=8.4", "iPhone 6,OS=9.3", "iPhone 7 Plus,OS=10.3.1", "iPhone 8,OS=11.4"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build iOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "platform=iOS Simulator,name=${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+
+  tvOS:
+    name: Build tvOS
+    runs-on: macos-latest
+    env:
       SCHEME: Telegraph tvOS
     strategy:
       matrix:
-        destination: ["platform=tvOS Simulator,name=Apple TV"]
+        destination: ["Apple TV", "Apple TV 4K"]
     steps:
       - uses: actions/checkout@v2
       - name: Build tvOS
         run: |
           set -o pipefail
-          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
-          
+          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "platform=tvOS Simulator,name=${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+
+  macOS:
+    name: Build macOS
+    runs-on: macos-latest
+    env:
+      SCHEME: Telegraph macOS
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build macOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "platform=macOS,arch=x86_64" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+
+  test:
+    name: Test
+    runs-on: macos-latest
+    env:
+      SCHEME: Telegraph iOS
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build iOS
+        run: |
+          set -o pipefail
+          xcodebuild test -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "platform=iOS Simulator,name=iPhone 11 Pro" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES | xcpretty -c;
