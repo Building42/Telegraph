@@ -20,22 +20,7 @@ jobs:
       SCHEME: Telegraph iOS
     strategy:
       matrix:
-        destination: ["iPhone XR", "iPhone 11 Pro", "iPad Pro (12.9-inch)"]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build iOS
-        run: |
-          set -o pipefail
-          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "platform=iOS Simulator,name=${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
-
-  iOSLegacy:
-    name: Build iOS (legacy)
-    runs-on: macos-latest
-    env:
-      SCHEME: Telegraph iOS
-    strategy:
-      matrix:
-        destination: ["iPad 2,OS=8.1", "iPhone 5s,OS=8.4", "iPhone 6,OS=9.3", "iPhone 7 Plus,OS=10.3.1", "iPhone 8,OS=11.4"]
+        destination: ["iPhone 11", "iPad Air (3rd generation)"]
     steps:
       - uses: actions/checkout@v2
       - name: Build iOS
