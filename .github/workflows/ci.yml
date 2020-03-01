@@ -1,0 +1,60 @@
+name: "Telegraph CI"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - master
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_11.3.1.app/Contents/Developer
+  WORKSPACE: Telegraph.xcworkspace
+
+jobs:
+  macOS:
+    name: macOS 
+    runs-on: macos-latest
+    env:
+      SCHEME: Telegraph macOS
+    strategy:
+      matrix:
+        destination: ["platform=macOS,arch=x86_64"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build macOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+          
+  iOS:
+    name: iOS 
+    runs-on: macos-latest
+    env: 
+      SCHEME: Telegraph iOS
+    strategy:
+      matrix:
+        destination: ["platform=iOS Simulator,name=iPhone 11 Pro"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build iOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+          
+  tvOS:
+    name: tvOS 
+    runs-on: macos-latest
+    env: 
+      SCHEME: Telegraph tvOS
+    strategy:
+      matrix:
+        destination: ["platform=tvOS Simulator,name=Apple TV"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build tvOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "${{ matrix.destination }}" -configuration Release ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+          
