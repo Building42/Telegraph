@@ -49,5 +49,6 @@ identifier_name:
   - ok
   - to
 excluded:
+  - .build
   - Carthage
   - Pods
