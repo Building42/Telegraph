@@ -1,13 +1,13 @@
 //
 //  HelperTests.swift
-//  TelegraphTests
+//  Telegraph Tests
 //
 //  Created by Yvo van Beek on 2/16/17.
 //  Copyright © 2017 Building42. All rights reserved.
 //
 
 import XCTest
-import Telegraph
+@testable import Telegraph
 
 class HelperTests: XCTestCase {
   /// Tests the SHA1 implementation.

@@ -1,13 +1,13 @@
 //
 //  SecurityTests.swift
-//  TelegraphTests
+//  Telegraph Tests
 //
 //  Created by Yvo van Beek on 1/26/17.
 //  Copyright © 2017 Building42. All rights reserved.
 //
 
 import XCTest
-import Telegraph
+@testable import Telegraph
 
 class SecurityTests: XCTestCase {
   private let testCertificateLabel = "Cert-Test"

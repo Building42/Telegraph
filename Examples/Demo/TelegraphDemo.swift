@@ -252,7 +252,7 @@ extension TelegraphDemo {
     let httpTask = httpClient.dataTask(with: request) { data, response, error in
       if let error = error {
         let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
-        print("[CLIENT]", "Request failed - status:", statusCode, "- error:", error.localizedDescription)
+        print("[CLIENT]", "Request failed - status:", statusCode, "- error: \(error)")
       } else {
         completionHandler(data, response!)
       }

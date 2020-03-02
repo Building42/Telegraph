@@ -1,13 +1,13 @@
 //
 //  RouteTests.swift
-//  TelegraphTests
+//  Telegraph Tests
 //
 //  Created by Yvo van Beek on 7/8/19.
 //  Copyright © 2019 Building42. All rights reserved.
 //
 
 import XCTest
-import Telegraph
+@testable import Telegraph
 
 class RouteTests: XCTestCase {
   /// Tests a simple route.
