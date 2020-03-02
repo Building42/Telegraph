@@ -378,6 +378,13 @@ There are only a few web servers available for iOS and many of them don't have S
 Basically what you want is a Certificate Authority and a Device certificate signed by that authority.
 You can find a nice tutorial at: https://jamielinux.com/docs/openssl-certificate-authority/
 
+See the Tools folder for a script that can create self-signed certificates for you. The script is very basic and you will probably need to edit some
+information in the `config-ca.cnf` and `config-localhost.cnf` files. The certificates generated with the script are meant for development purposes only.
+
+### Why aren't my certificates working on iOS 13 or macOS 10.15 (or later)?
+
+Apple has introduced new security requirements with iOS 13 and macOS 10.15. For more information see: https://support.apple.com/en-us/HT210176
+
 ### My server isn't working properly
 
 Please check the following:
