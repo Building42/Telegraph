@@ -8,10 +8,10 @@
 
 import Foundation
 
-extension HTTPMessage {
-  public static let webSocketMagicGUID = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
-  public static let webSocketProtocol = "websocket"
-  public static let webSocketVersion = "13"
+public extension HTTPMessage {
+  static let webSocketMagicGUID = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
+  static let webSocketProtocol = "websocket"
+  static let webSocketVersion = "13"
 
   /// Is this an upgrade to the WebSocket protocol?
   var isWebSocketUpgrade: Bool {
@@ -19,7 +19,7 @@ extension HTTPMessage {
   }
 }
 
-extension HTTPRequest {
+public extension HTTPRequest {
   /// Creates a websocket handshake request.
   static func webSocketHandshake(host: String, port: Int = 80, protocolName: String? = nil) -> HTTPRequest {
     let request = HTTPRequest()
