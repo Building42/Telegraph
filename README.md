@@ -37,7 +37,7 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 
 ## Versions
 
-- Swift 5.0: [master branch](https://github.com/Building42/Telegraph/tree/master)
+- Swift 5.x: [master branch](https://github.com/Building42/Telegraph/tree/master)
 - Swift 4.2: [swift-4.2 branch](https://github.com/Building42/Telegraph/tree/swift-4.2)
 - Swift 4.0: [swift-4 branch](https://github.com/Building42/Telegraph/tree/swift-4)
 - Swift 3.0: [swift-3 branch](https://github.com/Building42/Telegraph/tree/swift-3)
