@@ -73,8 +73,10 @@ See [Carthage - Quick Start](https://github.com/Carthage/Carthage/#quick-start) 
 CocoaPods is a dependency manager for Cocoa projects that makes dependencies a part of your workspace.
 
 ```ruby
-target '<Your Target Name>'
+source 'https://cdn.cocoapods.org/'
 use_frameworks!
+
+target '<Your Target Name>'
 
 pod 'Telegraph'
 ```
