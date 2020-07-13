@@ -86,7 +86,7 @@ open class WebSocketClient: WebSocket {
   /// Performs a handshake to initiate the websocket connection.
   private func performHandshake(socket: TCPSocket) {
     // Create the handshake request
-    let requestURI = URI(path: url.path, query: url.query)
+    let requestURI = URI(path: url.path, queryItems: URLComponents(string: url.absoluteString)?.queryItems)
     let handshakeRequest = HTTPRequest(uri: requestURI, headers: headers)
     handshakeRequest.webSocketHandshake(host: endpoint.host, port: endpoint.port)
 
