@@ -12,15 +12,15 @@ public struct URI {
   private var components: URLComponents
 
   /// Creates a URI from the provided path, query string.
-  public init(path: String = "/", queryItems: [URLQueryItem]? = nil) {
+  public init(path: String = "/", query: String? = nil) {
     self.components = URLComponents()
     self.path = path
-    self.queryItems = queryItems
+    self.query = query
   }
 
   /// Creates a URI from URLComponents. Takes only the path, query string.
   public init(components: URLComponents) {
-    self.init(path: components.path, queryItems: components.queryItems)
+    self.init(path: components.path, query: components.query)
   }
 
   /// Creates a URI from the provided URL. Takes only the path, query string and fragment.
@@ -45,7 +45,8 @@ public extension URI {
 
   /// The query string of the URI (e.g. lang=en&page=home). Does not contain a question mark.
   var query: String? {
-    get { return components.query }    
+    get { return components.query }
+    set { components.queryItems = URLComponents(string: "?\(newValue ?? "")")?.queryItems }
   }
 
   /// The query string items of the URI as an array.
