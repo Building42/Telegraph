@@ -46,7 +46,7 @@ public extension URI {
   /// The query string of the URI (e.g. lang=en&page=home). Does not contain a question mark.
   var query: String? {
     get { return components.query }
-    set { components.query = newValue }
+    set { components.queryItems = URLComponents(string: "?\(newValue ?? "")")?.queryItems }
   }
 
   /// The query string items of the URI as an array.
@@ -78,6 +78,6 @@ public extension URI {
 
 extension URI: CustomStringConvertible {
   public var description: String {
-    return components.description
+    return components.url?.relativeString ?? "/"
   }
 }
