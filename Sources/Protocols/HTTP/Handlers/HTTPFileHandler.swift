@@ -55,6 +55,12 @@ open class HTTPFileHandler: HTTPRequestHandler {
     guard let rawResourceType = attributes.fileType() else { return HTTPResponse(.forbidden) }
     let resourceType = FileAttributeType(rawValue: rawResourceType)
 
+    // Check for symbolic link destination
+    if resourceType == .typeSymbolicLink,
+       let destination = try? fileManager.destinationOfSymbolicLink(atPath: url.path) {
+        return try responseForURL(URL(fileURLWithPath: destination), byteRange: byteRange)
+    }
+    
     // Allow directories
     if resourceType == .typeDirectory {
       guard let index = index else { return HTTPResponse(.forbidden) }
