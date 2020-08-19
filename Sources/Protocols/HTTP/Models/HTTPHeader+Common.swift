@@ -81,7 +81,22 @@ public extension Dictionary where Key == HTTPHeaderName, Value == String {
     get { return self[.accessControlAllowOrigin] }
     set { self[.accessControlAllowOrigin] = newValue }
   }
-
+    
+  var accessControlAllowHeaders: String? {
+    get { return self[.accessControlAllowHeaders] }
+    set { self[.accessControlAllowHeaders] = newValue }
+  }
+    
+  var accessControlAllowMethods: String? {
+    get { return self[.accessControlAllowMethods] }
+    set { self[.accessControlAllowMethods] = newValue }
+  }
+    
+  var accessControlMaxAge: String? {
+    get { return self[.accessControlMaxAge] }
+    set { self[.accessControlMaxAge] = newValue }
+  }
+    
   var age: String? {
     get { return self[.age] }
     set { self[.age] = newValue }
