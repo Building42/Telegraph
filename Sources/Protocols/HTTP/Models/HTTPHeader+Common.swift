@@ -15,6 +15,9 @@ public extension HTTPHeaderName {
   static let acceptLanguage = HTTPHeaderName("Accept-Language")
   static let acceptRanges = HTTPHeaderName("Accept-Ranges")
   static let accessControlAllowOrigin = HTTPHeaderName("Access-Control-Allow-Origin")
+  static let accessControlAllowHeaders = HTTPHeaderName("Access-Control-Allow-Headers")
+  static let accessControlAllowMethods = HTTPHeaderName("Access-Control-Allow-Methods")
+  static let accessControlMaxAge = HTTPHeaderName("Access-Control-Max-Age")
   static let age = HTTPHeaderName("Age")
   static let allow = HTTPHeaderName("Allow")
   static let authorization = HTTPHeaderName("Authorization")
@@ -78,7 +81,22 @@ public extension Dictionary where Key == HTTPHeaderName, Value == String {
     get { return self[.accessControlAllowOrigin] }
     set { self[.accessControlAllowOrigin] = newValue }
   }
-
+    
+  var accessControlAllowHeaders: String? {
+    get { return self[.accessControlAllowHeaders] }
+    set { self[.accessControlAllowHeaders] = newValue }
+  }
+    
+  var accessControlAllowMethods: String? {
+    get { return self[.accessControlAllowMethods] }
+    set { self[.accessControlAllowMethods] = newValue }
+  }
+    
+  var accessControlMaxAge: String? {
+    get { return self[.accessControlMaxAge] }
+    set { self[.accessControlMaxAge] = newValue }
+  }
+    
   var age: String? {
     get { return self[.age] }
     set { self[.age] = newValue }
