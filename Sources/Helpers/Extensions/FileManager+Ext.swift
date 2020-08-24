@@ -17,6 +17,12 @@ public extension FileManager {
   func mimeType(of url: URL) -> String {
     let fallback = "application/octet-stream"
     let fileExt = url.pathExtension as CFString
+    
+    // Wasm extensions must return `application/wasm`
+    // Or else browsers will throw an error 
+    if fileExt as String == "wasm" {
+        return "application/wasm"
+    }
 
     guard let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExt, nil)?.takeRetainedValue() else { return fallback }
     guard let mimeType = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?.takeRetainedValue() else { return fallback }
