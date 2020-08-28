@@ -60,7 +60,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
        let destination = try? fileManager.destinationOfSymbolicLink(atPath: url.path) {
         return try responseForURL(URL(fileURLWithPath: destination), byteRange: byteRange)
     }
-    
+
     // Allow directories
     if resourceType == .typeDirectory {
       guard let index = index else { return HTTPResponse(.forbidden) }
