@@ -35,6 +35,16 @@ public extension DispatchTimer {
   }
 }
 
+// MARK: - FileManager
+
+public extension FileManager {
+  /// Provides the mime-type of the url based on the path extension.
+  @available(*, deprecated, message: "use <url>.mimeType")
+  func mimeType(of url: URL) -> String {
+    return url.mimeType
+  }
+}
+
 // MARK: - HTTPHeader
 
 @available(*, deprecated, renamed: "HTTPHeaderName")

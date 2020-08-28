@@ -24,3 +24,10 @@ public extension URL {
     return scheme == "https" || scheme == "wss"
   }
 }
+
+public extension URL {
+  /// Provides the mime-type of the url based on the path extension.
+  var mimeType: String {
+    return FileManager.default.mimeType(pathExtension: pathExtension)
+  }
+}

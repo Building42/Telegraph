@@ -77,7 +77,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
 
     // Construct a response
     let response = HTTPResponse()
-    response.headers.contentType = fileManager.mimeType(of: url)
+    response.headers.contentType = url.mimeType
     response.headers.lastModified = attributes.fileModificationDate()?.rfc1123
 
     // Is a range requested?

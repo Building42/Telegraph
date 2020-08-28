@@ -13,19 +13,22 @@ import Foundation
 #endif
 
 public extension FileManager {
-  /// Returns the mime type of a file.
-  func mimeType(of url: URL) -> String {
-    let fallback = "application/octet-stream"
-    let fileExt = url.pathExtension as CFString
-    
-    // Wasm extensions must return `application/wasm`
-    // Or else browsers will throw an error 
-    if fileExt as String == "wasm" {
-        return "application/wasm"
+  /// Returns the mime type for a path extension (e.g. wasm).
+  func mimeType(pathExtension: String) -> String {
+    // Check if there is an override for the extension
+    switch pathExtension {
+    case "wasm": return "application/wasm"
+    default: break
     }
 
-    guard let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExt, nil)?.takeRetainedValue() else { return fallback }
-    guard let mimeType = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?.takeRetainedValue() else { return fallback }
-    return mimeType as String
+    // Let the system determine the proper mime-type
+    if
+      let uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, pathExtension as CFString, nil)?.takeRetainedValue(),
+      let mimeType = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?.takeRetainedValue() {
+      return mimeType as String
+    }
+
+    // No mime-type found? Return the fallback
+    return "application/octet-stream"
   }
 }
