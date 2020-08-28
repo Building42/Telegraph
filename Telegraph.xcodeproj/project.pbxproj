@@ -222,6 +222,8 @@
 		82D2AF04210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		82D2AF05210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
 		82D2AF06210D354600BF5BBA /* DataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AF03210D354600BF5BBA /* DataStream.swift */; };
+		82EB7CCA24D4ACE5004C91B5 /* URITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EB7CC924D4ACE5004C91B5 /* URITests.swift */; };
+		82EB7CCB24D4AD78004C91B5 /* URI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A720E1ECD2E890043AC8D /* URI.swift */; };
 		82EC461F22CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
 		82EC462022CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
 		82EC462122CD1E26008A6A22 /* HTTPHeader+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */; };
@@ -335,6 +337,7 @@
 		8284FF1C1ECE8C8E00303A00 /* HTTPFileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPFileHandler.swift; sourceTree = "<group>"; };
 		82897602217402B60089D662 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		82D2AF03210D354600BF5BBA /* DataStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStream.swift; sourceTree = "<group>"; };
+		82EB7CC924D4ACE5004C91B5 /* URITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URITests.swift; sourceTree = "<group>"; };
 		82EC461E22CD1E26008A6A22 /* HTTPHeader+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPHeader+Common.swift"; sourceTree = "<group>"; };
 		82FB49BD2195BBFB00C4E574 /* Deprecations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deprecations.swift; sourceTree = "<group>"; };
 		D9899DD31DF4A092008766B5 /* Telegraph Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telegraph Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,6 +399,7 @@
 				8226A7D822D3D46D002DEFA9 /* RouteTests.swift */,
 				825A71831ECD22F60043AC8D /* SecurityTests.swift */,
 				8206413C240C7821003403F3 /* ServerTests.swift */,
+				82EB7CC924D4ACE5004C91B5 /* URITests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1170,6 +1174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				825A718A1ECD230E0043AC8D /* HelperTests.swift in Sources */,
+				82EB7CCA24D4ACE5004C91B5 /* URITests.swift in Sources */,
+				82EB7CCB24D4AD78004C91B5 /* URI.swift in Sources */,
 				825A718B1ECD23100043AC8D /* SecurityTests.swift in Sources */,
 				8206413D240C7821003403F3 /* ServerTests.swift in Sources */,
 				8226A7DA22D3D486002DEFA9 /* RouteTests.swift in Sources */,

@@ -8,28 +8,30 @@
 
 import Foundation
 
-public struct URI {
+public struct URI: Hashable, Equatable {
   private var components: URLComponents
 
-  /// Creates a URI from the provided path, query string.
+  /// Creates a URI from the provided path and query string.
   public init(path: String = "/", query: String? = nil) {
     self.components = URLComponents()
-    self.path = path
-    self.query = query
+    self.components.path = path
+    self.components.query = query
   }
 
-  /// Creates a URI from URLComponents. Takes only the path, query string.
+  /// Creates a URI from URLComponents.
   public init(components: URLComponents) {
-    self.init(path: components.path, query: components.query)
+    self.components = URLComponents()
+    self.components.percentEncodedPath = components.percentEncodedPath
+    self.components.percentEncodedQuery = components.percentEncodedQuery
   }
 
-  /// Creates a URI from the provided URL. Takes only the path, query string and fragment.
+  /// Creates a URI from the provided URL.
   public init?(url: URL) {
     guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
     self.init(components: components)
   }
 
-  /// Creates a URI from the provided string. Takes only the path, query string and fragment.
+  /// Creates a URI from the provided string.
   public init?(_ string: String) {
     guard let components = URLComponents(string: string) else { return nil }
     self.init(components: components)
@@ -37,22 +39,49 @@ public struct URI {
 }
 
 public extension URI {
-  /// The path of the URI (e.g. /index.html). Always starts with a slash.
+  /// The path of the URI. Always starts with a slash.
   var path: String {
-    get { return components.path }
-    set { components.path = newValue.hasPrefix("/") ? newValue : "/\(newValue)" }
+    get { return components.path.ensurePrefix("/") }
+    set { components.path = newValue }
   }
 
-  /// The query string of the URI (e.g. lang=en&page=home). Does not contain a question mark.
+  /// The query string of the URI.
   var query: String? {
     get { return components.query }
-    set { components.queryItems = URLComponents(string: "?\(newValue ?? "")")?.queryItems }
+    set { components.query = newValue }
   }
 
   /// The query string items of the URI as an array.
   var queryItems: [URLQueryItem]? {
     get { return components.queryItems }
     set { components.queryItems = newValue }
+  }
+}
+
+public extension URI {
+  /// Creates a URI from the provided percent encoded path and query string.
+  init(percentEncodedPath: String, percentEncodedQuery: String? = nil) {
+    self.components = URLComponents()
+    self.components.percentEncodedPath = percentEncodedPath
+    self.components.percentEncodedQuery = percentEncodedQuery
+  }
+
+  /// The path of the URI percent encoded.
+  var percentEncodedPath: String {
+    get { return components.percentEncodedPath.ensurePrefix("/") }
+    set { components.percentEncodedPath = newValue }
+  }
+
+  /// The query string of the URI percent encoded.
+  var percentEncodedQuery: String? {
+    get { return components.percentEncodedQuery }
+    set { components.percentEncodedQuery = newValue }
+  }
+
+  /// A string representing the entire URI.
+  var string: String {
+    guard let encodedQuery = percentEncodedQuery else { return percentEncodedPath }
+    return percentEncodedPath + "?" + encodedQuery
   }
 }
 
@@ -78,6 +107,14 @@ public extension URI {
 
 extension URI: CustomStringConvertible {
   public var description: String {
-    return components.url?.relativeString ?? "/"
+    return self.string
+  }
+}
+
+private extension String {
+  /// Ensures that this String has a specific prefix.
+  func ensurePrefix(_ prefix: String) -> String {
+    if hasPrefix(prefix) { return self }
+    return prefix + self
   }
 }
