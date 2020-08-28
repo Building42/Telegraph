@@ -909,7 +909,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\n  echo warning: SwiftLint is not installed\nfi\n";
 		};
 		8246E0611FB26DBF0006A6C5 /* [SwiftLint] Analyze Source */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -923,7 +923,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\n  echo warning: SwiftLint is not installed\nfi\n";
 		};
 		8246E0621FB26DD60006A6C5 /* [SwiftLint] Analyze Source */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -937,7 +937,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  echo 'Running Swiftlint'\n  swiftlint\nelse\n  echo 'Skipping SwiftLint'\n  echo warning: SwiftLint is not installed\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
