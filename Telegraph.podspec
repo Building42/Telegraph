@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Telegraph'
-  s.version = '0.28'
+  s.version = '0.29.0'
   s.license = 'MIT'
 
   s.summary = 'Secure Web Server for iOS, tvOS and macOS'
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/**/*.swift'
   s.swift_version = '5.0'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.tvos.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'
 
