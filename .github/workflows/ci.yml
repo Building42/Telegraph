@@ -3,10 +3,10 @@ name: "Telegraph CI"
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 env:
   DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
