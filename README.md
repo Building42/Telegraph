@@ -1,4 +1,4 @@
-![Telegraph: Secure Web Server for iOS, tvOS and macOS](https://github.com/Building42/Telegraph/raw/master/Resources/logo.png)
+![Telegraph: Secure Web Server for iOS, tvOS and macOS](https://github.com/Building42/Telegraph/raw/main/Resources/logo.png)
 
 [![Telegraph CI](https://github.com/Building42/Telegraph/actions/workflows/ci.yml/badge.svg)](https://github.com/Building42/Telegraph/actions/workflows/ci.yml)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
@@ -36,7 +36,7 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 
 ## Versions
 
-- Swift 5.x: [master branch](https://github.com/Building42/Telegraph/tree/master)
+- Swift 5.x: [main branch](https://github.com/Building42/Telegraph/tree/main)
 - Swift 4.2: [swift-4.2 branch](https://github.com/Building42/Telegraph/tree/swift-4.2)
 - Swift 4.0: [swift-4 branch](https://github.com/Building42/Telegraph/tree/swift-4)
 - Swift 3.0: [swift-3 branch](https://github.com/Building42/Telegraph/tree/swift-3)
@@ -437,4 +437,4 @@ Thank you to our contributors, your pull requests are most welcome and appreciat
 
 ## License
 
-Telegraph is released under the MIT license. See [LICENSE](https://github.com/Building42/Telegraph/blob/master/LICENSE) for details.
+Telegraph is released under the MIT license. See [LICENSE](https://github.com/Building42/Telegraph/blob/main/LICENSE) for details.
