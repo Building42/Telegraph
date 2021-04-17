@@ -1,6 +1,6 @@
 ![Telegraph: Secure Web Server for iOS, tvOS and macOS](https://github.com/Building42/Telegraph/raw/master/Resources/logo.png)
 
-[![Telegraph CI](https://github.com/Building42/Telegraph/workflows/Telegraph%20CI/badge.svg)](https://github.com/Building42/Telegraph/actions)
+[![Telegraph CI](https://github.com/Building42/Telegraph/actions/workflows/ci.yml/badge.svg)](https://github.com/Building42/Telegraph/actions/workflows/ci.yml)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/Telegraph.svg?style=flat)](https://cocoapods.org/pods/Telegraph)
@@ -14,7 +14,6 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 - [Installation](#installation)
 - [Build](#build)
 - [Usage](#usage)
-- [TODOs](#todos)
 - [FAQ](#faq)
 - [Authors](#authors)
 - [License](#license)
@@ -31,7 +30,7 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 
 ## Platforms
 
-- iOS 8.0+
+- iOS 9.0+
 - tvOS 9.0+
 - macOS 10.10+
 
