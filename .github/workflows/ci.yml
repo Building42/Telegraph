@@ -9,7 +9,7 @@ on:
       - master
 
 env:
-  DEVELOPER_DIR: /Applications/Xcode_11.6.app/Contents/Developer
+  DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
   WORKSPACE: Telegraph.xcworkspace
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       SCHEME: Telegraph iOS
     strategy:
       matrix:
-        destination: ["iPhone 11", "iPad Air (3rd generation)"]
+        destination: ["iPhone 8", "iPhone 12", "iPad Air (3rd generation)", "iPad Pro (9.7-inch)"]
     steps:
       - uses: actions/checkout@v2
       - name: Build iOS
