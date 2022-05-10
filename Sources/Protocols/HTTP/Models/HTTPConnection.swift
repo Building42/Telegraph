@@ -86,7 +86,7 @@ public class HTTPConnection: TCPConnection {
     }
 
     // Close the connection after writing if not keep-alive
-    if !response.keepAlive {
+    if !response.keepAlive && response.isComplete {
       close(immediately: false)
     }
   }
