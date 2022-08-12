@@ -14,7 +14,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
   public private(set) var baseURI: URI
   public private(set) var index: String?
 
-  private typealias ByteRange = (UInt64, UInt64?)
+  public typealias ByteRange = (UInt64, UInt64?)
 
   /// Creates a HTTPFileHandler to serve the provided directory at the provided URI.
   public init(directoryURL: URL, baseURI: URI = .root, index: String? = "index.html") {
@@ -43,7 +43,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
   }
 
   /// Creates a response that serves the provided URL.
-  private func responseForURL(_ url: URL, byteRange: ByteRange?, request: HTTPRequest) throws -> HTTPResponse {
+  open func responseForURL(_ url: URL, byteRange: ByteRange?, request: HTTPRequest) throws -> HTTPResponse {
     let fileManager = FileManager.default
 
     // Check if the requested path exists
@@ -75,23 +75,27 @@ open class HTTPFileHandler: HTTPRequestHandler {
       return HTTPResponse(.forbidden)
     }
 
-    let lastModified = attributes.fileModificationDate()
-
     // Construct a response
     let response = HTTPResponse()
     response.headers.contentType = url.mimeType
-    response.headers.lastModified = lastModified?.rfc1123
-    response.headers.cacheControl = "public, max-age=0"
 
-    // Return cached response if not modified
-    if let lastModified = lastModified,
-      let ifModifiedHeader = request.headers.ifModifiedSince,
-      let ifModifiedDate = DateFormatter.rfc1123.date(from: ifModifiedHeader) {
-        // round to lowest second because 'attributes.fileModificationDate()' is more accurate than 'rfc1123'
-        if lastModified.timeIntervalSince1970.rounded(.down) <= ifModifiedDate.timeIntervalSince1970.rounded(.down) {
+    // Do we know the last modified date of the file?
+    if let lastModifiedDate = attributes.fileModificationDate() {
+      response.headers.lastModified = lastModifiedDate.rfc1123
+
+      // Did the client send us a last modified date?
+      if let clientLastModified = request.headers.ifModifiedSince,
+         let clientLastModifiedDate = DateFormatter.rfc1123.date(from: clientLastModified) {
+        // Compare the two dates, round down because the local date is more precise than the one the client sent
+        let lastModifiedEpoch = lastModifiedDate.timeIntervalSince1970.rounded(.down)
+        let clientLastModifiedEpoch = clientLastModifiedDate.timeIntervalSince1970.rounded(.down)
+
+        // If the client is up-to-date, send a 304 not modified and don't send a body
+        if lastModifiedEpoch <= clientLastModifiedEpoch {
           response.status = .notModified
           return response
         }
+      }
     }
 
     // Is a range requested?
