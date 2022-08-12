@@ -13,10 +13,13 @@ open class HTTPResponse: HTTPMessage {
 
   public var status: HTTPStatus
 
+  internal let isComplete: Bool
+
   /// Initializes a new HTTPResponse
   public init(_ status: HTTPStatus = .ok, version: HTTPVersion = .default,
-              headers: HTTPHeaders = .empty, body: Data = Data()) {
+              headers: HTTPHeaders = .empty, body: Data = Data(), isComplete: Bool = true) {
     self.status = status
+    self.isComplete = isComplete
     super.init(version: version, headers: headers, body: body)
   }
 
@@ -32,12 +35,15 @@ open class HTTPResponse: HTTPMessage {
     // Set the date header
     headers.date = Date().rfc1123
 
-    // If a body is allowed set the content length (even when 0)
-    if status.supportsBody {
-      headers.contentLength = body.count
-    } else {
-      headers.contentLength = nil
-      body.count = 0
+    // A reponse might be followed by more data
+    if isComplete {
+      // If a body is allowed set the content length (even when 0)
+      if status.supportsBody {
+        headers.contentLength = body.count
+      } else {
+        headers.contentLength = nil
+        body.count = 0
+      }
     }
   }
 }
