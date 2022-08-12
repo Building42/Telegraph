@@ -32,7 +32,7 @@ import Foundation
 
 // swiftlint:disable function_body_length
 
-public protocol WebSocketParserDelegate: class {
+public protocol WebSocketParserDelegate: AnyObject {
   func parser(_ parser: WebSocketParser, didCompleteMessage message: WebSocketMessage)
 }
 

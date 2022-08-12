@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: HTTPConnectionDelegate
 
-public protocol HTTPConnectionDelegate: class {
+public protocol HTTPConnectionDelegate: AnyObject {
   func connection(_ httpConnection: HTTPConnection, didCloseWithError error: Error?)
   func connection(_ httpConnection: HTTPConnection, handleIncomingRequest request: HTTPRequest, error: Error?)
   func connection(_ httpConnection: HTTPConnection, handleIncomingResponse response: HTTPResponse, error: Error?)

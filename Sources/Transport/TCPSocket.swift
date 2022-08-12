@@ -20,7 +20,7 @@ public enum TCPSocketClose {
 
 // MARK: TCPSocketDelegate
 
-public protocol TCPSocketDelegate: class {
+public protocol TCPSocketDelegate: AnyObject {
   func socketDidOpen(_ socket: TCPSocket)
   func socketDidClose(_ socket: TCPSocket, error: Error?)
   func socketDidRead(_ socket: TCPSocket, data: Data, tag: Int)

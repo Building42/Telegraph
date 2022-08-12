@@ -9,7 +9,7 @@
 import Foundation
 import CocoaAsyncSocket
 
-public protocol TCPListenerDelegate: class {
+public protocol TCPListenerDelegate: AnyObject {
   /// Called when the listener accepts a new incoming socket
   func listener(_ listener: TCPListener, didAcceptSocket socket: TCPSocket)
 
