@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol ServerDelegate: class {
+public protocol ServerDelegate: AnyObject {
   /// Called when the server has stopped
   func serverDidStop(_ server: Server, error: Error?)
 }
 
-public protocol ServerWebSocketDelegate: class {
+public protocol ServerWebSocketDelegate: AnyObject {
   /// Called when a web socket connected
   func server(_ server: Server, webSocketDidConnect webSocket: WebSocket, handshake: HTTPRequest)
 

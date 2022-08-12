@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol TCPConnection: class, Hashable {
+public protocol TCPConnection: AnyObject, Hashable {
   var localEndpoint: Endpoint? { get }
   var remoteEndpoint: Endpoint? { get }
 

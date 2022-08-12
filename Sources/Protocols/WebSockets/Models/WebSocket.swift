@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol WebSocket: class {
+public protocol WebSocket: AnyObject {
   var localEndpoint: Endpoint? { get }
   var remoteEndpoint: Endpoint? { get }
 

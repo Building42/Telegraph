@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol WebSocketClientDelegate: class {
+public protocol WebSocketClientDelegate: AnyObject {
   func webSocketClient(_ client: WebSocketClient, didConnectToHost host: String)
   func webSocketClient(_ client: WebSocketClient, didDisconnectWithError error: Error?)
 
