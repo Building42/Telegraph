@@ -36,6 +36,7 @@ public extension HTTPHeaderName {
   static let expires = HTTPHeaderName("Expires")
   static let forwarded = HTTPHeaderName("Forwarded")
   static let host = HTTPHeaderName("Host")
+  static let ifModifiedSince = HTTPHeaderName("If-Modified-Since")
   static let lastModified = HTTPHeaderName("Last-Modified")
   static let location = HTTPHeaderName("Location")
   static let origin = HTTPHeaderName("Origin")
@@ -185,6 +186,11 @@ public extension Dictionary where Key == HTTPHeaderName, Value == String {
   var host: String? {
     get { return self[.host] }
     set { self[.host] = newValue }
+  }
+
+  var ifModifiedSince: String? {
+    get { return self[.ifModifiedSince] }
+    set { self[.ifModifiedSince] = newValue }
   }
 
   var lastModified: String? {

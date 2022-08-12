@@ -39,11 +39,11 @@ open class HTTPFileHandler: HTTPRequestHandler {
       byteRange = byteRangeInHeaders
     }
 
-    return try responseForURL(resourceURL, byteRange: byteRange)
+    return try responseForURL(resourceURL, byteRange: byteRange, request: request)
   }
 
   /// Creates a response that serves the provided URL.
-  private func responseForURL(_ url: URL, byteRange: ByteRange?) throws -> HTTPResponse {
+  private func responseForURL(_ url: URL, byteRange: ByteRange?, request: HTTPRequest) throws -> HTTPResponse {
     let fileManager = FileManager.default
 
     // Check if the requested path exists
@@ -58,7 +58,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
     // Check for symbolic link destination
     if resourceType == .typeSymbolicLink,
        let destination = try? fileManager.destinationOfSymbolicLink(atPath: url.path) {
-        return try responseForURL(URL(fileURLWithPath: destination), byteRange: byteRange)
+        return try responseForURL(URL(fileURLWithPath: destination), byteRange: byteRange, request: request)
     }
 
     // Allow directories
@@ -67,7 +67,7 @@ open class HTTPFileHandler: HTTPRequestHandler {
 
       // Create a response based on the index file in the directory
       let indexURL = url.appendingPathComponent(index, isDirectory: false)
-      return try responseForURL(indexURL, byteRange: byteRange)
+      return try responseForURL(indexURL, byteRange: byteRange, request: request)
     }
 
     // Only provide the data of files and symbolic links
@@ -75,10 +75,24 @@ open class HTTPFileHandler: HTTPRequestHandler {
       return HTTPResponse(.forbidden)
     }
 
+    let lastModified = attributes.fileModificationDate()
+
     // Construct a response
     let response = HTTPResponse()
     response.headers.contentType = url.mimeType
-    response.headers.lastModified = attributes.fileModificationDate()?.rfc1123
+    response.headers.lastModified = lastModified?.rfc1123
+    response.headers.cacheControl = "public, max-age=0"
+
+    // Return cached response if not modified
+    if let lastModified = lastModified,
+      let ifModifiedHeader = request.headers.ifModifiedSince,
+      let ifModifiedDate = DateFormatter.rfc1123.date(from: ifModifiedHeader) {
+        // round to lowest second because 'attributes.fileModificationDate()' is more accurate than 'rfc1123'
+        if lastModified.timeIntervalSince1970.rounded(.down) <= ifModifiedDate.timeIntervalSince1970.rounded(.down) {
+          response.status = .notModified
+          return response
+        }
+    }
 
     // Is a range requested?
     if let (byteStart, byteEndOrNil) = byteRange {
