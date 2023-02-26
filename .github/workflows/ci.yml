@@ -20,7 +20,7 @@ jobs:
       SCHEME: Telegraph iOS
     strategy:
       matrix:
-        destination: ["iPhone SE", "iPhone 14", "iPad Air", "iPad Pro (11-inch)"]
+        destination: ["iPhone SE (3rd generation)", "iPhone 8 Plus", "iPhone 14", "iPad Air (5th generation)", "iPad Pro (12.9-inch) (6th generation)"]
     steps:
       - uses: actions/checkout@v2
       - name: Build iOS
@@ -35,7 +35,7 @@ jobs:
       SCHEME: Telegraph tvOS
     strategy:
       matrix:
-        destination: ["Apple TV", "Apple TV 4K"]
+        destination: ["Apple TV", "Apple TV 4K (3rd generation)"]
     steps:
       - uses: actions/checkout@v2
       - name: Build tvOS
