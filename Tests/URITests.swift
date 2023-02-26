@@ -40,10 +40,15 @@ class URITests: XCTestCase {
 
   /// Test the URI's percent encoding.
   func testURIPercentEncoding() {
-    let uri1 = URI("https://www.apple.com/françois?query=xyz")
+    let uri1 = URI("https://www.apple.com/françois?query=x y z")
     let uri2 = URI("https://www.apple.com/fran%C3%A7ois?query=x%20y%20z")
 
-    XCTAssertNil(uri1)
+    XCTAssertEqual(uri1?.path, "/françois")
+    XCTAssertEqual(uri1?.query, "query=x y z")
+    XCTAssertEqual(uri1?.queryItems, [URLQueryItem(name: "query", value: "x y z")])
+    XCTAssertEqual(uri1?.percentEncodedPath, "/fran%C3%A7ois")
+    XCTAssertEqual(uri1?.percentEncodedQuery, "query=x%20y%20z")
+    XCTAssertEqual(uri1?.string, "/fran%C3%A7ois?query=x%20y%20z")
 
     XCTAssertEqual(uri2?.path, "/françois")
     XCTAssertEqual(uri2?.query, "query=x y z")
