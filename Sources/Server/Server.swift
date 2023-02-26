@@ -18,8 +18,8 @@ open class Server {
 
   private var listener: TCPListener?
   private var tlsConfig: TLSConfig?
-  private var httpConnections = SynchronizedSet<HTTPConnection>()
-  private var webSocketConnections = SynchronizedSet<WebSocketConnection>()
+  private var httpConnectionSet = SynchronizedSet<HTTPConnection>()
+  private var webSocketConnectionSet = SynchronizedSet<WebSocketConnection>()
 
   private let listenerQueue = DispatchQueue(label: "Telegraph.Server.listener")
   private let connectionsQueue = DispatchQueue(label: "Telegraph.Server.connections")
@@ -46,8 +46,8 @@ open class Server {
     listener?.stop()
 
     // Close the connections
-    httpConnections.forEach { $0.close(immediately: immediately) }
-    webSocketConnections.forEach { $0.close(immediately: immediately) }
+    httpConnectionSet.forEach { $0.close(immediately: immediately) }
+    webSocketConnectionSet.forEach { $0.close(immediately: immediately) }
   }
 
   /// Handles an incoming socket. The Server normally wraps the socket into a HTTP connection and starts parsing requests.
@@ -57,7 +57,7 @@ open class Server {
 
     // Wrap the socket in a HTTP connection
     let httpConnection = HTTPConnection(socket: socket, config: httpConfig)
-    httpConnections.insert(httpConnection)
+    httpConnectionSet.insert(httpConnection)
 
     // Open the HTTP connection
     httpConnection.delegate = self
@@ -92,14 +92,14 @@ open class Server {
     }
 
     // Remove the http connection
-    httpConnections.remove(connection)
+    httpConnectionSet.remove(connection)
 
     // Extract the socket and any WebSocket data already read
     let (socket, webSocketData) = connection.upgrade()
 
     // Add the websocket connection
     let webSocketConnection = WebSocketConnection(socket: socket, config: webSocketConfig)
-    webSocketConnections.insert(webSocketConnection)
+    webSocketConnectionSet.insert(webSocketConnection)
 
     // Open the websocket connection
     webSocketConnection.delegate = self
@@ -165,19 +165,29 @@ public extension Server {
     return tlsConfig != nil
   }
 
-  /// The number of active HTTP connections.
-  var httpConnectionCount: Int {
-    return httpConnections.count
+  /// The active HTTP connections.
+  var httpConnections: Set<HTTPConnection> {
+    return httpConnectionSet.toSet()
   }
 
-  /// The number of active WebSocket connections.
-  var webSocketCount: Int {
-    return webSocketConnections.count
+  /// The number of active HTTP connections.
+  var httpConnectionCount: Int {
+    return httpConnectionSet.count
+  }
+
+  /// The active WebSocket connections.
+  var webSocketConnections: Set<WebSocketConnection> {
+    return webSocketConnectionSet.toSet()
   }
 
   /// The WebSockets currently connected to this server.
   var webSockets: [WebSocket] {
-    return webSocketConnections.toArray()
+    return webSocketConnectionSet.toArray()
+  }
+
+  /// The number of active WebSocket connections.
+  var webSocketCount: Int {
+    return webSocketConnectionSet.count
   }
 }
 
@@ -219,7 +229,7 @@ extension Server: HTTPConnectionDelegate {
 
   /// Raised when an HTTP connection is closed, optionally with an error.
   public func connection(_ httpConnection: HTTPConnection, didCloseWithError error: Error?) {
-    httpConnections.remove(httpConnection)
+    httpConnectionSet.remove(httpConnection)
   }
 }
 
@@ -244,7 +254,7 @@ extension Server: WebSocketConnectionDelegate {
 
   /// Raised when a WebSocket connection is closed, optionally with an error.
   public func connection(_ webSocketConnection: WebSocketConnection, didCloseWithError error: Error?) {
-    webSocketConnections.remove(webSocketConnection)
+    webSocketConnectionSet.remove(webSocketConnection)
 
     delegateQueue.async { [weak self] in
       guard let self = self else { return }

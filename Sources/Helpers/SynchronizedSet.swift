@@ -63,4 +63,9 @@ public extension SynchronizedSet {
   func toArray() -> [Element] {
     return queue.sync { Array(innerSet) }
   }
+
+  /// Returns a copy of the set.
+  func toSet() -> Set<Element> {
+    return innerSet
+  }
 }
