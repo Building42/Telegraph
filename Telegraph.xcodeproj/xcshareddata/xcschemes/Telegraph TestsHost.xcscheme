@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "825A71BB1ECD29020043AC8D"
-               BuildableName = "Telegraph.framework"
-               BlueprintName = "Telegraph macOS"
+               BlueprintIdentifier = "8253CA131E498EBA0078D520"
+               BuildableName = "Telegraph TestsHost.app"
+               BlueprintName = "Telegraph TestsHost"
                ReferencedContainer = "container:Telegraph.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,15 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "825A71BB1ECD29020043AC8D"
-            BuildableName = "Telegraph.framework"
-            BlueprintName = "Telegraph macOS"
+            BlueprintIdentifier = "8253CA131E498EBA0078D520"
+            BuildableName = "Telegraph TestsHost.app"
+            BlueprintName = "Telegraph TestsHost"
             ReferencedContainer = "container:Telegraph.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -56,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "825A71BB1ECD29020043AC8D"
-            BuildableName = "Telegraph.framework"
-            BlueprintName = "Telegraph macOS"
+            BlueprintIdentifier = "8253CA131E498EBA0078D520"
+            BuildableName = "Telegraph TestsHost.app"
+            BlueprintName = "Telegraph TestsHost"
             ReferencedContainer = "container:Telegraph.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

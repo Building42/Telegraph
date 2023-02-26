@@ -4,7 +4,7 @@
 <dict>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.Building42.TelegraphTestsHost</string>
+		<string>$(AppIdentifierPrefix)com.building42.telegraph.tests-host</string>
 	</array>
 </dict>
 </plist>
