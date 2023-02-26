@@ -39,8 +39,9 @@ opt_in_rules:
   - sorted_first_last
   - toggle_bool
   - unneeded_parentheses_in_closure_argument
-  - unused_import
   - yoda_condition
+analyzer_rules:
+  - unused_import
 identifier_name:
   excluded:
   - x
