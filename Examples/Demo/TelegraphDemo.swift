@@ -6,6 +6,7 @@
 //  Copyright © 2017 Building42. All rights reserved.
 //
 
+import Foundation
 import Telegraph
 
 public class TelegraphDemo: NSObject {
@@ -19,16 +20,22 @@ public class TelegraphDemo: NSObject {
 
 public extension TelegraphDemo {
   func start() {
+    DispatchQueue.global().async {
+      self.startDemo()
+    }
+  }
+
+  func startDemo() {
     // Comment out this line if you want HTTP instead of HTTPS
-    loadCertificates()
+    self.loadCertificates()
 
     // Create and start the server
-    setupServer()
+    self.setupServer()
 
     // Demonstrate client requests and web socket connection
-    demoClientNormalRequest()
-    demoClientJSONRequest()
-    demoWebSocketConnect()
+    self.demoClientNormalRequest()
+    self.demoClientJSONRequest()
+    self.demoWebSocketConnect()
   }
 }
 
