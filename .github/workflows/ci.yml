@@ -20,7 +20,7 @@ jobs:
       SCHEME: Telegraph iOS
     strategy:
       matrix:
-        destination: ["iPhone 8", "iPhone 13", "iPad Air (3rd generation)", "iPad Pro (9.7-inch)"]
+        destination: ["iPhone SE", "iPhone 14", "iPad Air", "iPad Pro (11-inch)"]
     steps:
       - uses: actions/checkout@v2
       - name: Build iOS
@@ -65,4 +65,4 @@ jobs:
       - name: Test iOS
         run: |
           set -o pipefail
-          xcodebuild test -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "platform=iOS Simulator,name=iPhone 13 Pro" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES | xcpretty -c;
+          xcodebuild test -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "platform=iOS Simulator,name=iPhone 14 Pro" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES | xcpretty -c;
