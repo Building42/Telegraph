@@ -55,6 +55,27 @@ public extension HTTPResponse {
   convenience init(_ status: HTTPStatus = .ok, headers: HTTPHeaders = .empty, content: String) {
     self.init(status, headers: headers, body: content.utf8Data)
   }
+    
+    /// Creates an HTTP response to send codable content
+    /// Sends a 501 if there is an error encoding the data
+    /// - Parameters:
+    ///   - encodable: Encodable data to send to the client
+    ///   - encoder: Default assumption is that you are encoding as JSON, and the contentType header is set by default to reflect this. 
+    convenience init(_ status: HTTPStatus = .ok,version: HTTPVersion = .default,headers: HTTPHeaders = [.contentType:"application/json"],encodable: Codable,encoder:JSONEncoder = JSONEncoder(),isComplete: Bool = true) {
+        do {
+            let data = try encoder.encode(encodable)
+            self.init(
+                status,
+                version: version,
+                headers: headers,
+                body: data,
+                isComplete: isComplete
+            )
+        } catch  {
+            self.init(.internalServerError, content: "501: Internal server error")
+        }
+        
+    }
 
   /// Creates an HTTP response to send an error.
   convenience init(_ status: HTTPStatus = .internalServerError, headers: HTTPHeaders = .empty, error: Error) {
