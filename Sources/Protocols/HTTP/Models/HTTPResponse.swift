@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 open class HTTPResponse: HTTPMessage {
   public typealias Handler = (HTTPResponse, Error) -> Void
@@ -60,8 +61,15 @@ public extension HTTPResponse {
     /// Sends a 501 if there is an error encoding the data
     /// - Parameters:
     ///   - encodable: Encodable data to send to the client
-    ///   - encoder: Default assumption is that you are encoding as JSON, and the contentType header is set by default to reflect this. 
-    convenience init(_ status: HTTPStatus = .ok,version: HTTPVersion = .default,headers: HTTPHeaders = [.contentType:"application/json"],encodable: Codable,encoder:JSONEncoder = JSONEncoder(),isComplete: Bool = true) {
+    ///   - encoder: Any TopLevelEncoder. If you use a JSONEncoder (the default), then the contentType header will be set
+    @available(tvOS 13.0,macOS 10.15,iOS 13.0, *)
+    convenience init<Encoder: TopLevelEncoder>(_ status: HTTPStatus = .ok,version: HTTPVersion = .default,headers: HTTPHeaders = .empty,encodable: Codable,encoder:Encoder = JSONEncoder(),isComplete: Bool = true) where Encoder.Output == Data  {
+        
+        var headers = headers
+        if encoder is JSONEncoder, headers[.contentType] == nil {
+            headers[.contentType] = "application/json"
+        }
+        
         do {
             let data = try encoder.encode(encodable)
             self.init(
@@ -74,7 +82,6 @@ public extension HTTPResponse {
         } catch  {
             self.init(.internalServerError, content: "501: Internal server error")
         }
-        
     }
 
   /// Creates an HTTP response to send an error.
