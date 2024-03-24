@@ -30,8 +30,6 @@ import Foundation
 // +---------------------------------------------------------------+
 //
 
-// swiftlint:disable function_body_length
-
 public protocol WebSocketParserDelegate: AnyObject {
   func parser(_ parser: WebSocketParser, didCompleteMessage message: WebSocketMessage)
 }
@@ -61,6 +59,8 @@ public class WebSocketParser {
   public init(maxPayloadLength: Int = 10_485_760) {
     self.maxPayloadLength = UInt64(maxPayloadLength)
   }
+
+// swiftlint:disable function_body_length
 
   /// Parses the incoming data into a websocket message.
   public func parse(data: Data) throws {
@@ -170,6 +170,8 @@ public class WebSocketParser {
       }
     }
   }
+
+// swiftlint:enable function_body_length
 
   /// Resets the parser.
   public func reset() {
