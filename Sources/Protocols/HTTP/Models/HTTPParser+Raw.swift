@@ -21,7 +21,7 @@ extension HTTPRawParser {
   /// Creates a new HTTPRawParser.
   static func make() -> HTTPRawParser {
     var parser = HTTPRawParser()
-    http_parser_init(&parser, HTTP_BOTH)
+    http_parser_init(&parser, HTTP_REQUEST)
     return parser
   }
 
@@ -35,7 +35,7 @@ extension HTTPRawParser {
 
   /// Resets the parser.
   static func reset(parser: UnsafeMutablePointer<HTTPRawParser>) {
-    http_parser_init(parser, HTTP_BOTH)
+    http_parser_init(parser, HTTP_REQUEST)
   }
 
   /// Returns the context.
