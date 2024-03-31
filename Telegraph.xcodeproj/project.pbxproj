@@ -1636,7 +1636,7 @@
 			repositoryURL = "https://github.com/Building42/HTTPParserC";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.9.2;
+				minimumVersion = 9.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

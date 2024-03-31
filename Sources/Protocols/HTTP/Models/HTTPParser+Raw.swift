@@ -10,9 +10,10 @@ import HTTPParserC
 
 // MARK: Types
 
-typealias HTTPRawParser = http_parser
-typealias HTTPRawParserSettings = http_parser_settings
-typealias HTTPRawParserErrorCode = http_errno
+typealias HTTPRawParser = llhttp_t
+typealias HTTPRawParserSettings = llhttp_settings_t
+typealias HTTPRawParserErrorCode = llhttp_errno
+typealias HTTPRawMethod = llhttp_method_t
 typealias ChunkPointer = UnsafePointer<Int8>
 
 // MARK: HTTPRawParser
@@ -20,22 +21,33 @@ typealias ChunkPointer = UnsafePointer<Int8>
 extension HTTPRawParser {
   /// Creates a new HTTPRawParser.
   static func make() -> HTTPRawParser {
-    var parser = HTTPRawParser()
-    http_parser_init(&parser, HTTP_BOTH)
-    return parser
+    return HTTPRawParser()
   }
 
-  /// Parses the incoming data and returns how many bytes were parsed.
-  static func parse(parser: UnsafeMutablePointer<HTTPRawParser>, settings: UnsafeMutablePointer<HTTPRawParserSettings>, data: Data) -> Int {
+  /// Completes the initialization steps of the parser.
+  static func prepare(parser: UnsafeMutablePointer<HTTPRawParser>, settings: UnsafeMutablePointer<HTTPRawParserSettings>) {
+    llhttp_init(parser, HTTP_BOTH, settings)
+  }
+
+  /// Parses the incoming data and returns an optional error.
+  static func parse(parser: UnsafeMutablePointer<HTTPRawParser>, data: Data) -> Bool {
     return data.withUnsafeBytes {
       let pointer = $0.bindMemory(to: Int8.self).baseAddress
-      return http_parser_execute(parser, settings, pointer, data.count)
+      var resultCode = llhttp_execute(parser, pointer, data.count)
+
+      // No need to pause after upgrade requests
+      if resultCode == HPE_PAUSED_UPGRADE {
+        llhttp_resume_after_upgrade(parser)
+        resultCode = HPE_OK
+      }
+
+      return resultCode == HPE_OK
     }
   }
 
   /// Resets the parser.
   static func reset(parser: UnsafeMutablePointer<HTTPRawParser>) {
-    http_parser_init(parser, HTTP_BOTH)
+    llhttp_reset(parser)
   }
 
   /// Returns the context.
@@ -57,14 +69,13 @@ extension HTTPRawParser {
 
   /// Returns the error that occurred during parsing.
   var httpError: HTTPError? {
-    if http_errno == HPE_OK.rawValue { return nil }
-    return HTTPError(code: HTTPRawParserErrorCode(http_errno))
+    return HTTPError(rawCode: error)
   }
 
   /// Returns the HTTP method.
   var httpMethod: HTTPMethod {
-    let methodCode = http_method(method)
-    let methodName = String(cString: http_method_str(methodCode))
+    let methodCode = HTTPRawMethod(UInt32(method))
+    let methodName = String(cString: llhttp_method_name(methodCode))
     return HTTPMethod(name: methodName)
   }
 
@@ -78,34 +89,14 @@ extension HTTPRawParser {
     return HTTPVersion(major: UInt(http_major), minor: UInt(http_minor))
   }
 
-  /// Returns a boolean indicating if the parser is parsing a HTTP request.
-  var isParsingRequest: Bool {
-    return type == HTTP_REQUEST.rawValue
-  }
-
-  /// Returns a boolean indicating if the parser is parsing a HTTP request.
-  var isParsingResponse: Bool {
-    return type == HTTP_RESPONSE.rawValue
-  }
-
   /// Returns a boolean indicating if the parser is ready to parse.
   var isReady: Bool {
-    return http_errno == HPE_OK.rawValue
-  }
-
-  /// Returns a boolean indicating if the status has been fully parsed.
-  var isStatusComplete: Bool {
-    return state >= 16
+    return error == HPE_OK.rawValue
   }
 
   /// Returns a boolean indicating if the parser detected a connection upgrade.
   var isUpgradeDetected: Bool {
     return upgrade == 1
-  }
-
-  /// Returns a boolean indicating if the URL has been fully parsed.
-  var isURLComplete: Bool {
-    return state >= 31
   }
 }
 
@@ -115,7 +106,7 @@ extension HTTPRawParserSettings {
   /// Creates a new HTTPRawParserSettings.
   static func make() -> HTTPRawParserSettings {
     var settings = HTTPRawParserSettings()
-    http_parser_settings_init(&settings)
+    llhttp_settings_init(&settings)
     return settings
   }
 }
@@ -123,7 +114,9 @@ extension HTTPRawParserSettings {
 // MARK: RawParserErrorCode to HTTPError mapping
 
 extension HTTPError {
-  init(code: HTTPRawParserErrorCode) {
+  init?(code: HTTPRawParserErrorCode) {
+    if code == HPE_OK { return nil }
+
     switch code {
     case HPE_INVALID_EOF_STATE:
       self = .unexpectedStreamEnd
@@ -133,16 +126,20 @@ extension HTTPError {
       self = .invalidVersion
     case HPE_INVALID_METHOD:
       self = .invalidMethod
-    case HPE_INVALID_URL, HPE_INVALID_HOST, HPE_INVALID_PORT, HPE_INVALID_PATH, HPE_INVALID_QUERY_STRING, HPE_INVALID_FRAGMENT:
+    case HPE_INVALID_URL:
       self = .invalidURI
     case HPE_INVALID_HEADER_TOKEN:
       self = .invalidHeader
     case HPE_INVALID_CONTENT_LENGTH:
       self = .invalidContentLength
-    case HPE_HEADER_OVERFLOW:
-      self = .headerOverflow
     default:
       self = .parseFailed(code: Int(code.rawValue))
     }
+  }
+
+  init?(rawCode: Int32) {
+    let errorCode = HTTPRawParserErrorCode(UInt32(rawCode))
+    guard let error = HTTPError(code: errorCode) else { return nil }
+    self = error
   }
 }

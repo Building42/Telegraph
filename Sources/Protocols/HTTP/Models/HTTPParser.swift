@@ -20,11 +20,18 @@ public final class HTTPParser {
   public private(set) var isMessageComplete = false
   public var isUpgradeDetected: Bool { return rawParser.isUpgradeDetected }
 
-  private var request: HTTPRequest? { return message as? HTTPRequest }
-  private var response: HTTPResponse? { return message as? HTTPResponse }
-
   private var rawParser: HTTPRawParser
   private var rawParserSettings: HTTPRawParserSettings
+
+  private var request: HTTPRequest? {
+    if message == nil { message = HTTPRequest() }
+    return message as? HTTPRequest
+  }
+
+  private var response: HTTPResponse? {
+    if message == nil { message = HTTPResponse() }
+    return message as? HTTPResponse
+  }
 
   private var urlData = Data()
   private var statusData = Data()
@@ -36,8 +43,9 @@ public final class HTTPParser {
   public init() {
     rawParser = HTTPRawParser.make()
     rawParserSettings = HTTPRawParserSettings.make()
+    HTTPRawParser.prepare(parser: &rawParser, settings: &rawParserSettings)
 
-    // Attach ourself as the context of the raw parser
+    // Keep a reference of this instance on the raw parser
     rawParser.setContext(self)
 
     // Provide the callback for when the parser is starting a new message.
@@ -89,15 +97,15 @@ public final class HTTPParser {
     }
 
     // Parse the provided data
-    let bytesParsed = HTTPRawParser.parse(parser: &rawParser, settings: &rawParserSettings, data: data)
+    let success = HTTPRawParser.parse(parser: &rawParser, data: data)
 
     // Was there an error?
-    if let error = rawParser.httpError {
+    if !success, let error = rawParser.httpError {
       cleanup()
       throw error
     }
 
-    return bytesParsed
+    return data.count
   }
 
   /// Resets the parser.
@@ -123,16 +131,12 @@ extension HTTPParser {
   /// Raised when the raw parser starts a new message.
   func parserDidBeginMessage(_ rawParser: HTTPRawParser) -> Int32 {
     isMessageComplete = false
-    message = rawParser.isParsingRequest ? HTTPRequest() : HTTPResponse()
     return continueParsing
   }
 
   /// Raised when the raw parser parsed part of the URL.
   func parserDidParseURL(_ rawParser: HTTPRawParser, chunk: ChunkPointer?, count: Int) -> Int32 {
     urlData.append(chunk, count: count)
-
-    // Not done parsing the URI? Continue
-    guard rawParser.isURLComplete else { return continueParsing }
 
     // Check that the URI is valid
     guard let uriString = String(data: urlData, encoding: .utf8),
@@ -149,9 +153,6 @@ extension HTTPParser {
   /// Raised when the raw parser parsed part of the status.
   func parserDidParseStatus(_ rawParser: HTTPRawParser, chunk: ChunkPointer?, count: Int) -> Int32 {
     statusData.append(chunk, count: count)
-
-    // Not done parsing the status? Continue
-    guard rawParser.isStatusComplete else { return continueParsing }
 
     // Validate and set the status
     guard let phrase = String(data: statusData, encoding: .utf8) else { return stopParsing }
