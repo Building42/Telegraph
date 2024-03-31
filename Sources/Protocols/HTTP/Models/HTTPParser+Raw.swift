@@ -26,7 +26,7 @@ extension HTTPRawParser {
 
   /// Completes the initialization steps of the parser.
   static func prepare(parser: UnsafeMutablePointer<HTTPRawParser>, settings: UnsafeMutablePointer<HTTPRawParserSettings>) {
-    llhttp_init(parser, HTTP_BOTH, settings)
+    llhttp_init(parser, LLHTTP_BOTH, settings)
   }
 
   /// Parses the incoming data and returns an optional error.

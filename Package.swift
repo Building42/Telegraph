@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/robbiehanson/CocoaAsyncSocket.git", from: "7.6.5"),
-        .package(url: "https://github.com/Building42/HTTPParserC.git", from: "2.9.4")
+        .package(url: "https://github.com/Building42/HTTPParserC.git", from: "9.2.0")
     ],
     targets: [
         .target(

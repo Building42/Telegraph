@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/**/*.swift'
   s.swift_version = '5.0'
 
-  s.ios.deployment_target = '9.0'
-  s.tvos.deployment_target = '9.0'
-  s.osx.deployment_target = '10.10'
+  s.ios.deployment_target = '12.0'
+  s.tvos.deployment_target = '12.0'
+  s.macos.deployment_target = '10.13'
 
   s.dependency 'CocoaAsyncSocket', '~> 7.6'
-  s.dependency 'HTTPParserC', '~> 2.9'
+  s.dependency 'HTTPParserC', '~> 9.2'
 end
