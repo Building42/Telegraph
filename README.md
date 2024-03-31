@@ -34,20 +34,13 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 - tvOS 9.0+
 - macOS 10.10+
 
-## Versions
-
-- Swift 5.x: [main branch](https://github.com/Building42/Telegraph/tree/main)
-- Swift 4.2: [swift-4.2 branch](https://github.com/Building42/Telegraph/tree/swift-4.2)
-- Swift 4.0: [swift-4 branch](https://github.com/Building42/Telegraph/tree/swift-4)
-- Swift 3.0: [swift-3 branch](https://github.com/Building42/Telegraph/tree/swift-3)
-
 ## Installation
 
 ### Swift Package Manager
 
 The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code.
 
-Xcode 11 or later has integrated support for the Swift Package Manager. You can add Telegraph to your project by choosing the File - Swift Packages - Add Package Dependency option. Use the repository url as specified below and select the version you want to use.
+You can add Telegraph to your project by choosing the File - Swift Packages - Add Package Dependency option. Use the repository url as specified below and select the version you want to use.
 
 Or you can manually add a `Package.swift` file to your project with:
 
@@ -57,26 +50,11 @@ dependencies: [
 ]
 ```
 
-### Carthage
-
-Carthage is a decentralized dependency manager that builds your dependencies into binary frameworks.
-
-```ogdl
-github "Building42/Telegraph"
-```
-
-See [Carthage - Quick Start](https://github.com/Carthage/Carthage/#quick-start) for more information.
-
 ### CocoaPods
 
 CocoaPods is a dependency manager for Cocoa projects that makes dependencies a part of your workspace.
 
 ```ruby
-source 'https://cdn.cocoapods.org/'
-use_frameworks!
-
-target '<Your Target Name>'
-
 pod 'Telegraph'
 ```
 
