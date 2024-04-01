@@ -22,4 +22,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'CocoaAsyncSocket', '~> 7.6'
   s.dependency 'HTTPParserC', '~> 9.2'
+
+  s.resource_bundles = {'Telegraph' => ['Sources/PrivacyInfo.xcprivacy']}
 end
