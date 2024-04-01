@@ -24,7 +24,7 @@ Telegraph is a Secure Web Server for iOS, tvOS and macOS written in Swift.
 - [x] Secure traffic, HTTPS/TLS encryption
 - [x] WebSocket client and server
 - [x] Uses well tested socket library [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket)
-- [x] Uses performant, low memory, HTTP parser C library [http-parser](https://github.com/nodejs/http-parser)
+- [x] Uses performant low memory HTTP parser library [llhttp](https://github.com/nodejs/llhttp)
 - [x] Customizable, from time-outs to message handlers
 - [x] Simple, well commented code
 
@@ -403,7 +403,7 @@ This library was written in Swift and for performance reasons I haven't decorate
 
 This library was created by:
 
-- [Yvo van Beek](https://github.com/Zyphrax)
+- [Yvo van Beek](https://github.com/yvbeek)
 - [Bernd de Graaf](https://github.com/Vernadsky)
 
 Code and design was inspired by:
