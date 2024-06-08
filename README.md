@@ -316,8 +316,9 @@ public class AwesomeWebSocketHandler: WebSocketMessageHandler {
 Now that we have a secure WebSocket server, we can use a secure WebSocket client as well by passing the CA certificate. Note that you only have to specify the CA certificate if the certificate isn't a root CA trusted by Apple or if you want to benefit from [certificate pinning](https://security.stackexchange.com/questions/29988/what-is-certificate-pinning).
 
 ```swift
-client = try! WebSocketClient("wss://localhost:9000", certificates: [caCertificate])
+let client = try! WebSocketClient("wss://localhost:9000", certificates: [caCertificate])
 client.delegate = self
+client.connect()
 
 // You can specify headers too
 client.headers.authorization = "Bearer secret-token"
